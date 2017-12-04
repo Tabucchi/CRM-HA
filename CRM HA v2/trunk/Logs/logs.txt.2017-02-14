@@ -1,0 +1,22 @@
+ERROR 11 crm.MensajeError - Pedidos - 14/02/2017 10:03:06 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 12 crm.MensajeError - Pedidos - 14/02/2017 10:05:19 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 5 crm.MensajeError - Pedidos - 14/02/2017 10:05:52 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 11 crm.CargaUnidad - CargaUnidad - 14/02/2017 03:40:44 p.m.- Se produjo una excepción de tipo 'System.Exception'. - UnificacionUnidades - Admin
+ERROR 11 crm.CargaUnidad - CargaUnidad - 14/02/2017 03:40:44 p.m.- Subproceso anulado. - CrearUnidadesModificacion - Admin
+ERROR 11 crm.CargaUnidad - CargaUnidad - 14/02/2017 03:40:45 p.m.- Subproceso anulado. - CargarArchivo - Admin
+ERROR 11 crm.CargaUnidad - CargaUnidad - 14/02/2017 03:41:18 p.m.- Se produjo una excepción de tipo 'System.Exception'. - UnificacionUnidades - Admin
+ERROR 11 crm.CargaUnidad - CargaUnidad - 14/02/2017 03:41:18 p.m.- Subproceso anulado. - CrearUnidadesModificacion - Admin
+ERROR 11 crm.CargaUnidad - CargaUnidad - 14/02/2017 03:41:18 p.m.- Subproceso anulado. - CargarArchivo - Admin
+ERROR 13 crm.CargaUnidad - CargaUnidad - 14/02/2017 03:43:05 p.m.- Se produjo una excepción de tipo 'System.Exception'. - UnificacionUnidades - Admin
+ERROR 13 crm.CargaUnidad - CargaUnidad - 14/02/2017 03:43:05 p.m.- Subproceso anulado. - CrearUnidadesModificacion - Admin
+ERROR 13 crm.CargaUnidad - CargaUnidad - 14/02/2017 03:43:05 p.m.- Subproceso anulado. - CargarArchivo - Admin
+ERROR 12 crm.CargaUnidad - CargaUnidad - 14/02/2017 03:43:51 p.m.- Se produjo una excepción de tipo 'System.Exception'. - UnificacionUnidades - Admin
+ERROR 12 crm.CargaUnidad - CargaUnidad - 14/02/2017 03:43:51 p.m.- Subproceso anulado. - CrearUnidadesModificacion - Admin
+ERROR 12 crm.CargaUnidad - CargaUnidad - 14/02/2017 03:43:51 p.m.- Subproceso anulado. - CargarArchivo - Admin
+ERROR 20 crm.CargaUnidad - CargaUnidad - 14/02/2017 03:59:10 p.m.- Se produjo una excepción de tipo 'System.Exception'. - UnificacionUnidades - Admin
+ERROR 20 crm.CargaUnidad - CargaUnidad - 14/02/2017 03:59:11 p.m.- Subproceso anulado. - CrearUnidadesModificacion - Admin
+ERROR 20 crm.CargaUnidad - CargaUnidad - 14/02/2017 03:59:11 p.m.- Subproceso anulado. - CargarArchivo - Admin
+ERROR 20 crm.CargaUnidad - CargaUnidad - 14/02/2017 04:00:03 p.m.- Se produjo una excepción de tipo 'System.Exception'. - UnificacionUnidades - Admin
+ERROR 20 crm.CargaUnidad - CargaUnidad - 14/02/2017 04:00:03 p.m.- Subproceso anulado. - CrearUnidadesModificacion - Admin
+ERROR 20 crm.CargaUnidad - CargaUnidad - 14/02/2017 04:00:03 p.m.- Subproceso anulado. - CargarArchivo - Admin
+ERROR RemoteServer_Worker-1 JobScheduler - JobScheduler - 14/02/2017 04:07:25 p.m.- Subproceso anulado. - Execute

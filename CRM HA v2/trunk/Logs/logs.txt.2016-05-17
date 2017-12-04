@@ -1,0 +1,32 @@
+ERROR 10 crm.DetalleCuota - DetalleCuota - 17/05/2016 10:51:29 a.m.- Se produjo una excepción de tipo 'System.Exception'. - btnVerImagen_Click
+ERROR 14 crm.DetalleCuota - DetalleCuota - 17/05/2016 10:51:57 a.m.- Se produjo una excepción de tipo 'System.Exception'. - btnVerImagen_Click
+ERROR 6 crm.MensajeError - Pedidos - 17/05/2016 10:53:22 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 5 crm.MensajeError - Pedidos - 17/05/2016 10:55:20 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 10 crm.MensajeError - Pedidos - 17/05/2016 10:56:19 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 8 crm.MensajeError - Pedidos - 17/05/2016 11:02:40 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 10 crm.MensajeError - Pedidos - 17/05/2016 11:03:07 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 11 crm.MensajeError - Pedidos - 17/05/2016 11:04:58 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 13 crm.DetalleCuota - DetalleCuota - 17/05/2016 11:12:45 a.m.- Subproceso anulado. - btnVerImagen_Click
+ERROR 5 crm.DetalleCuota - DetalleCuota - 17/05/2016 11:14:11 a.m.- Subproceso anulado. - CrearPdfRecibo
+ERROR 5 crm.DetalleCuota - DetalleCuota - 17/05/2016 11:14:11 a.m.- No se puede redirigir después de enviar los encabezados HTTP. - ImprimirRecibo
+ERROR 5 crm.DetalleCuota - Cliente - 17/05/2016 11:14:11 a.m.- No se puede redirigir después de enviar los encabezados HTTP. - Page_Load
+ERROR 5 crm.DetalleCuota - DetalleCuota - 17/05/2016 11:14:30 a.m.- Subproceso anulado. - CrearPdfRecibo
+ERROR 5 crm.DetalleCuota - DetalleCuota - 17/05/2016 11:14:30 a.m.- No se puede redirigir después de enviar los encabezados HTTP. - ImprimirRecibo
+ERROR 5 crm.DetalleCuota - Cliente - 17/05/2016 11:14:30 a.m.- No se puede redirigir después de enviar los encabezados HTTP. - Page_Load
+ERROR 5 crm.DetalleCuota - DetalleCuota - 17/05/2016 11:15:21 a.m.- Subproceso anulado. - CrearPdfRecibo
+ERROR 5 crm.DetalleCuota - DetalleCuota - 17/05/2016 11:15:21 a.m.- No se puede redirigir después de enviar los encabezados HTTP. - ImprimirRecibo
+ERROR 8 crm.DetalleCuota - DetalleCuota - 17/05/2016 11:16:25 a.m.- Subproceso anulado. - CrearPdfRecibo
+ERROR 8 crm.DetalleCuota - Cliente - 17/05/2016 11:16:25 a.m.- No se puede redirigir después de enviar los encabezados HTTP. - Page_Load
+ERROR 12 crm.DetalleCuota - DetalleCuota - 17/05/2016 11:18:48 a.m.- Subproceso anulado. - CrearPdfRecibo
+ERROR 10 crm.DetalleCuota - Cliente - 17/05/2016 11:19:53 a.m.- Subproceso anulado. - Page_Load
+ERROR 10 crm.DetalleCuota - Cliente - 17/05/2016 11:23:57 a.m.- Referencia a objeto no establecida como instancia de un objeto. - btnAdvertenciaAceptar_Click
+ERROR 15 crm.DetalleCuota - Cliente - 17/05/2016 11:24:19 a.m.- Subproceso anulado. - btnAdvertenciaAceptar_Click
+ERROR 6 crm.DetalleCuota - Cliente - 17/05/2016 01:02:00 p.m.- Referencia a objeto no establecida como instancia de un objeto. - btnAdvertenciaAceptar_Click
+ERROR 9 crm.MensajeError - Pedidos - 17/05/2016 01:30:00 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 13 crm.DetalleCuota - Cliente - 17/05/2016 01:30:42 p.m.- Subproceso anulado. - btnAdvertenciaAceptar_Click
+ERROR 15 crm.DetalleCuota - Cliente - 17/05/2016 02:44:09 p.m.- Subproceso anulado. - btnAdvertenciaAceptar_Click
+ERROR 12 crm.DetalleCuota - DetalleCuota - 17/05/2016 04:12:23 p.m.- Subproceso anulado. - btnImprimir_Click
+ERROR 5 crm.DetalleCuota - DetalleCuota - 17/05/2016 04:13:50 p.m.- Subproceso anulado. - btnPago_Click
+ERROR 13 crm.DetalleCuota - DetalleCuota - 17/05/2016 04:14:15 p.m.- Subproceso anulado. - btnPago_Click
+ERROR 11 crm.DetalleCuota - DetalleCuota - 17/05/2016 04:15:16 p.m.- Subproceso anulado. - btnAnularPago_Click
+ERROR 17 crm.DetalleCuota - DetalleCuota - 17/05/2016 04:24:17 p.m.- Subproceso anulado. - btnAnularPago_Click

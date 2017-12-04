@@ -1,0 +1,28 @@
+ERROR 9 crm.Unidad - Unidad - 13/02/2017 11:49:35 a.m.- Referencia a objeto no establecida como instancia de un objeto. - Page_Load - Admin
+ERROR 13 crm.MensajeError - Pedidos - 13/02/2017 12:18:30 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 11 crm.MensajeError - Pedidos - 13/02/2017 12:19:15 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 8 crm.MensajeError - Pedidos - 13/02/2017 12:26:54 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 7 crm.MensajeError - Pedidos - 13/02/2017 12:45:12 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 11 crm.MensajeError - Pedidos - 13/02/2017 12:51:40 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 8 crm.MensajeError - Pedidos - 13/02/2017 12:58:07 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 5 crm.MensajeError - Pedidos - 13/02/2017 12:58:08 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 8 crm.CargaUnidad - CargaUnidad - 13/02/2017 02:43:11 p.m.- Se produjo una excepción de tipo 'System.Exception'. - InsercionUnidades - Admin
+ERROR 8 crm.CargaUnidad - CargaUnidad - 13/02/2017 02:43:11 p.m.- Subproceso anulado. - CrearUnidadesModificacion - Admin
+ERROR 8 crm.CargaUnidad - CargaUnidad - 13/02/2017 02:43:12 p.m.- Subproceso anulado. - CargarArchivo - Admin
+ERROR 30 crm.CargaUnidad - CargaUnidad - 13/02/2017 02:57:46 p.m.- Se produjo una excepción de tipo 'System.Exception'. - InsercionUnidades - Admin
+ERROR 30 crm.CargaUnidad - CargaUnidad - 13/02/2017 02:57:46 p.m.- Subproceso anulado. - CrearUnidadesModificacion - Admin
+ERROR 30 crm.CargaUnidad - CargaUnidad - 13/02/2017 02:57:55 p.m.- Subproceso anulado. - CargarArchivo - Admin
+ERROR 40 crm.CargaUnidad - CargaUnidad - 13/02/2017 03:00:00 p.m.- Se produjo una excepción de tipo 'System.Exception'. - InsercionUnidades - Admin
+ERROR 40 crm.CargaUnidad - CargaUnidad - 13/02/2017 03:00:00 p.m.- Subproceso anulado. - CrearUnidadesModificacion - Admin
+ERROR 40 crm.CargaUnidad - CargaUnidad - 13/02/2017 03:00:00 p.m.- Subproceso anulado. - CargarArchivo - Admin
+ERROR 8 crm.Unidad - Unidad - 13/02/2017 03:07:13 p.m.- Referencia a objeto no establecida como instancia de un objeto. - Page_Load - Admin
+ERROR 8 crm.Unidad - Unidad - 13/02/2017 03:07:13 p.m.- Subproceso anulado. - Page_Load - Admin
+ERROR 8 crm.Unidad - Unidad - 13/02/2017 03:07:36 p.m.- Referencia a objeto no establecida como instancia de un objeto. - Page_Load - Admin
+ERROR 8 crm.Unidad - Unidad - 13/02/2017 03:07:36 p.m.- Subproceso anulado. - Page_Load - Admin
+ERROR 12 crm.Unidad - Unidad - 13/02/2017 03:08:09 p.m.- Referencia a objeto no establecida como instancia de un objeto. - Page_Load - Admin
+ERROR 12 crm.Unidad - Unidad - 13/02/2017 03:08:09 p.m.- Subproceso anulado. - Page_Load - Admin
+ERROR 10 crm.MensajeError - Pedidos - 13/02/2017 04:08:44 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 9 crm.DetalleCuota - Cliente - 13/02/2017 04:27:54 p.m.- Referencia a objeto no establecida como instancia de un objeto. - Page_Load
+ERROR 9 crm.DetalleCuota2 - Cliente - 13/02/2017 04:28:12 p.m.- Referencia a objeto no establecida como instancia de un objeto. - Page_Load
+ERROR 12 crm.DetalleCuota2 - Cliente - 13/02/2017 04:32:13 p.m.- Referencia a objeto no establecida como instancia de un objeto. - Page_Load
+ERROR 13 crm.DetalleCuota2 - Cliente - 13/02/2017 04:34:04 p.m.- Referencia a objeto no establecida como instancia de un objeto. - Page_Load

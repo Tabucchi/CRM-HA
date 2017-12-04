@@ -1,0 +1,8 @@
+ERROR 20 crm.DetalleCuota2 - Cliente - 21/02/2017 02:03:09 p.m.- Se produjo una excepción de tipo 'System.Exception'. - Page_Load
+ERROR 19 crm.DetalleCuota2 - Cliente - 21/02/2017 02:03:27 p.m.- Se produjo una excepción de tipo 'System.Exception'. - Page_Load
+ERROR 24 crm.DetalleCuota2 - Cliente - 21/02/2017 02:04:38 p.m.- Se produjo una excepción de tipo 'System.Exception'. - Page_Load
+ERROR 30 crm.DetalleCuota2 - Cliente - 21/02/2017 02:14:40 p.m.- Se produjo una excepción de tipo 'System.Exception'. - Page_Load
+ERROR 9 crm.ActualizarPrecio - CargaUnidad - 21/02/2017 03:26:57 p.m.- Referencia a objeto no establecida como instancia de un objeto. - CargarArchivo - Admin
+ERROR 16 crm.ActualizarPrecio - CargaUnidad - 21/02/2017 03:28:53 p.m.- La cadena de entrada no tiene el formato correcto. - CargarArchivo - Admin
+ERROR 10 crm.CargaUnidad - CargaUnidad - 21/02/2017 05:21:42 p.m.- Wrong Local header signature: 0xE011CFD0 - CargarArchivo - Admin
+ERROR 12 crm.CargaUnidad - CargaUnidad - 21/02/2017 05:22:14 p.m.- Wrong Local header signature: 0xE011CFD0 - CargarArchivo - Admin

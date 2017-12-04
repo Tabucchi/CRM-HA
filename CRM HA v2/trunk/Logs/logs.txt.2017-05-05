@@ -1,0 +1,22 @@
+ERROR 10 crm.MensajeError - Pedidos - 05/05/2017 11:22:54 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 8 crm.MensajeError - Pedidos - 05/05/2017 11:25:55 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 8 crm.MensajeError - Pedidos - 05/05/2017 11:34:26 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 6 crm.MensajeError - Pedidos - 05/05/2017 11:40:11 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 10 crm.MensajeError - Pedidos - 05/05/2017 12:17:51 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 12 crm.MensajeError - Pedidos - 05/05/2017 12:39:39 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 39 crm.MensajeError - Pedidos - 05/05/2017 12:41:23 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 15 crm.MensajeError - Pedidos - 05/05/2017 01:01:52 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 15 crm.MensajeError - Pedidos - 05/05/2017 01:02:54 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 16 crm.MensajeError - Pedidos - 05/05/2017 01:06:12 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 10 crm.MensajeError - Pedidos - 05/05/2017 02:03:23 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 6 crm.MensajeError - Pedidos - 05/05/2017 02:09:26 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 13 crm.MensajeError - Pedidos - 05/05/2017 02:52:46 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 5 crm.MensajeError - Pedidos - 05/05/2017 02:53:12 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 10 crm.MensajeError - Pedidos - 05/05/2017 03:05:05 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 9 crm.MensajeError - Pedidos - 05/05/2017 03:35:38 p.m.- Sólo se permiten controles Content directamente en una página de contenido que contenga controles Content. - Page_Load - Admin
+ERROR 11 crm.MensajeError - Pedidos - 05/05/2017 03:43:08 p.m.- Sólo se permiten controles Content directamente en una página de contenido que contenga controles Content. - Page_Load - Admin
+ERROR 8 crm.MensajeError - Pedidos - 05/05/2017 03:46:05 p.m.- El tipo 'System.Web.UI.WebControls.ListView' no tiene ninguna propiedad pública cuyo nombre sea 'Literal'. - Page_Load - Admin
+ERROR 9 crm.MensajeError - Pedidos - 05/05/2017 04:06:26 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 18 crm.MensajeError - Pedidos - 05/05/2017 04:06:49 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 16 crm.MensajeError - Pedidos - 05/05/2017 04:14:39 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 40 crm.MensajeError - Pedidos - 05/05/2017 05:08:57 p.m.- Se debe asignar una llamada a Bind a una propiedad de un control dentro de una plantilla. - Page_Load - Admin

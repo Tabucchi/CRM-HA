@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style>
+        .head {
+            border-right: 1px solid #dadada;
+            color: #777;
+            text-transform: uppercase;
+            font-weight: bold;
+            text-shadow: 0px 1px 0px #fff;
+            padding-top: 1%;
+            padding-bottom: 1%;
+        }
+
+        .borderTd{
+            border-top: inherit !important;
+            border: 1px dotted gray;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr height="75px">
+            <td align="left">
+                <img src="http://www.naex.com.ar/crmHA/sistema/email/imgs/encabezado.png" border="0" height="75" style="width: 100%;">
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <table width="96%" height="100%" cellpadding="0" cellspacing="0" border="0">
+                    <tbody>
+                        <tr>
+                            <td height="20">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td height="100%" valign="top">
+                                <b>[#Cliente]</b>, le enviamos este e-mail con el fin de informarle sobre el importe correspondiente a la cuota del mes de [#Mes] de [#Year] 
+                                correspondiente a la unidad funcional que usted adquirió.
+                                <br><br>
+                                
+                                <table style="margin-top:-12px; width:100%; margin-left: -5px; margin-left: -40px;">
+                                    <thead id="tableHead" style="background-color: #E9E9E9; border-bottom: 1px solid #dadada;">
+                                        <tr>
+                                            <td class="head" style="text-align: center">NRO</td>
+                                            <td class="head" style="text-align: center">[#Indice] (%)</td>
+                                            <td class="head" style="width: 10%; text-align: center">SALDO AJUSTADO</td>
+                                            <td class="head" style="text-align: center">MONTO</td>
+                                            <td class="head" style="width: 8%; text-align: center">GASTOS ADTVO.</td>
+                                            <td class="head" style="width: 8%; text-align: center">1re Venc.</td>
+                                            <td class="head" style="text-align: center">IMPORTE</td>
+                                            <td class="head" style="width: 8%; text-align: center">2do Venc.</td>
+                                            <td class="head" style="text-align: center">IMPORTE</td>
+                                        </tr>
+                                        </thead>
+                                    <tr style="cursor: pointer">
+                                        <td class="borderTd" style="width: 5%; text-align: center">
+                                            [#Nro]
+                                        </td>
+                                        <td class="borderTd" style="width: 7%; text-align: center">
+                                            [#CAC]
+                                        </td>
+                                        <td class="borderTd" style="width: 14%; text-align: right; padding-right: 7px;">
+                                            [#MontoAjustado]
+                                        </td>
+                                        <td class="borderTd" style="width: 12%; text-align: right; padding-right: 7px;">
+                                            [#Monto]
+                                        </td>
+                                        <td class="borderTd" style="width: 11%; text-align: right; padding-right: 7px;">
+                                            [#Comision]
+                                        </td>
+                                        <td class="borderTd" style="width: 12%; text-align: center">
+                                            [#Fecha1]
+                                        </td>
+                                        <td class="borderTd" style="width: 14%; text-align: right; padding-right: 7px;">
+                                            [#Monto1]
+                                            <asp:Label ID="lbVencimiento1" runat="Server" Text='<%#Eval("GetVencimiento1") %>' />
+                                        </td>
+                                        <td class="borderTd" style="width: 12%; text-align: center">
+                                            [#Fecha2]
+                                        </td>
+                                        <td class="borderTd" style="width: 14%; text-align: right; padding-right: 7px;">
+                                            [#Monto2]
+                                        </td>
+                                    </tr>
+                                </table>
+
+                                <br>
+                                <br>Ante cualquier duda, comuníquese con nosotros.
+                                <br>Muchas Gracias
+                                <br>
+                                <p>
+                                    <font style="font-style:oblique;font-size:12px">
+                                        <b>Importante:</b> este correo es informativo, por favor no responder a esta dirección de correo, ya que no se encuentra habilitada para recibir mensajes.
+                                    </font>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="20">&nbsp;</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        <tr height="11px">
+            <td>
+                <img src="http://www.naex.com.ar/crmHA/sistema/email/imgs/direccionPie.png" border="0" height="30" style="width: 100%;">
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

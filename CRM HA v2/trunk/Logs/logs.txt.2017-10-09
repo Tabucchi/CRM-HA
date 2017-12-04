@@ -1,0 +1,14 @@
+ERROR 15 crm.MensajeError - Pedidos - 09/10/2017 10:46:55 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 36 crm.MensajeError - Pedidos - 09/10/2017 01:52:14 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 20 crm.MensajeError - Pedidos - 09/10/2017 02:13:58 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 21 crm.MensajeError - Pedidos - 09/10/2017 02:14:55 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 27 crm.MensajeError - Pedidos - 09/10/2017 02:16:28 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 8 crm.MensajeError - Pedidos - 09/10/2017 02:24:30 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 8 crm.MensajeError - Pedidos - 09/10/2017 02:25:30 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 22 crm.CuotasCliente - CuotasCliente - 09/10/2017 03:11:55 p.m.- Referencia a objeto no establecida como instancia de un objeto. - CalcularTotales - Admin
+ERROR 22 crm.CuotasCliente - CuotasCliente - 09/10/2017 03:12:46 p.m.- Referencia a objeto no establecida como instancia de un objeto. - CalcularTotales - Admin
+ERROR 26 crm.CuotasCliente - CuotasCliente - 09/10/2017 03:14:31 p.m.- Referencia a objeto no establecida como instancia de un objeto. - CalcularTotales - Admin
+ERROR 8 crm.CuotasCliente - CuotasCliente - 09/10/2017 03:16:15 p.m.- Referencia a objeto no establecida como instancia de un objeto. - CalcularTotales - Admin
+ERROR 6 crm.CuotasCliente - CuotasCliente - 09/10/2017 03:16:57 p.m.- Referencia a objeto no establecida como instancia de un objeto. - CalcularTotales - Admin
+ERROR 8 crm.CuotasCliente - CuotasCliente - 09/10/2017 03:18:18 p.m.- Referencia a objeto no establecida como instancia de un objeto. - CalcularTotales - Admin
+ERROR 13 crm.CuotasCliente - CuotasCliente - 09/10/2017 03:22:54 p.m.- La cadena de entrada no tiene el formato correcto. - CalcularTotales - Admin

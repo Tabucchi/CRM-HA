@@ -1,0 +1,352 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="NaexCRMModelStoreContainer" CdmEntityContainer="NaexCRMEntities">
+    <EntitySetMapping Name="tAccion">
+      <EntityTypeMapping TypeName="NaexCRMModel.tAccion">
+        <MappingFragment StoreEntitySet="tAccion">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tAsignacionResponsable">
+      <EntityTypeMapping TypeName="NaexCRMModel.tAsignacionResponsable">
+        <MappingFragment StoreEntitySet="tAsignacionResponsable">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idResponsable" ColumnName="idResponsable" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="idAsigno" ColumnName="idAsigno" />
+          <ScalarProperty Name="idPedido" ColumnName="idPedido" />
+          <ScalarProperty Name="Comentario" ColumnName="Comentario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tCategoria">
+      <EntityTypeMapping TypeName="NaexCRMModel.tCategoria">
+        <MappingFragment StoreEntitySet="tCategoria">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tCategoriaInventario">
+      <EntityTypeMapping TypeName="NaexCRMModel.tCategoriaInventario">
+        <MappingFragment StoreEntitySet="tCategoriaInventario">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="numero" ColumnName="numero" />
+          <ScalarProperty Name="contador" ColumnName="contador" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tCliente">
+      <EntityTypeMapping TypeName="NaexCRMModel.tCliente">
+        <MappingFragment StoreEntitySet="tCliente">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idEmpresa" ColumnName="idEmpresa" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Interno" ColumnName="Interno" />
+          <ScalarProperty Name="Mail" ColumnName="Mail" />
+          <ScalarProperty Name="Ip" ColumnName="Ip" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="UsuarioRed" ColumnName="UsuarioRed" />
+          <ScalarProperty Name="PasswordRed" ColumnName="PasswordRed" />
+          <ScalarProperty Name="ClaveSistema" ColumnName="ClaveSistema" />
+          <ScalarProperty Name="Papelera" ColumnName="Papelera" />
+          <ScalarProperty Name="Autorizado" ColumnName="Autorizado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tClientePosible">
+      <EntityTypeMapping TypeName="NaexCRMModel.tClientePosible">
+        <MappingFragment StoreEntitySet="tClientePosible">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idEmpresa" ColumnName="idEmpresa" />
+          <ScalarProperty Name="rubro" ColumnName="rubro" />
+          <ScalarProperty Name="contacto" ColumnName="contacto" />
+          <ScalarProperty Name="puestoContacto" ColumnName="puestoContacto" />
+          <ScalarProperty Name="contactoVinculado" ColumnName="contactoVinculado" />
+          <ScalarProperty Name="Mail" ColumnName="Mail" />
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+          <ScalarProperty Name="idAccion1" ColumnName="idAccion1" />
+          <ScalarProperty Name="idEstadoAccion1" ColumnName="idEstadoAccion1" />
+          <ScalarProperty Name="idAccion2" ColumnName="idAccion2" />
+          <ScalarProperty Name="idEstadoAccion2" ColumnName="idEstadoAccion2" />
+          <ScalarProperty Name="idAccion3" ColumnName="idAccion3" />
+          <ScalarProperty Name="idEstadoAccion3" ColumnName="idEstadoAccion3" />
+          <ScalarProperty Name="idAccion4" ColumnName="idAccion4" />
+          <ScalarProperty Name="idEstadoAccion4" ColumnName="idEstadoAccion4" />
+          <ScalarProperty Name="idEstado" ColumnName="idEstado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tComentario">
+      <EntityTypeMapping TypeName="NaexCRMModel.tComentario">
+        <MappingFragment StoreEntitySet="tComentario">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idPedido" ColumnName="idPedido" />
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="VisibilidadCliente" ColumnName="VisibilidadCliente" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tComentarioCompra">
+      <EntityTypeMapping TypeName="NaexCRMModel.tComentarioCompra">
+        <MappingFragment StoreEntitySet="tComentarioCompra">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idCompra" ColumnName="idCompra" />
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tCompra">
+      <EntityTypeMapping TypeName="NaexCRMModel.tCompra">
+        <MappingFragment StoreEntitySet="tCompra">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idPedido" ColumnName="idPedido" />
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+          <ScalarProperty Name="idEmpresa" ColumnName="idEmpresa" />
+          <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+          <ScalarProperty Name="idEstado" ColumnName="idEstado" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="totalProveedor" ColumnName="totalProveedor" />
+          <ScalarProperty Name="totalCliente" ColumnName="totalCliente" />
+          <ScalarProperty Name="iva" ColumnName="iva" />
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="NewId" ColumnName="NewId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tDatosTecnicos">
+      <EntityTypeMapping TypeName="NaexCRMModel.tDatosTecnicos">
+        <MappingFragment StoreEntitySet="tDatosTecnicos">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tEmpresa">
+      <EntityTypeMapping TypeName="NaexCRMModel.tEmpresa">
+        <MappingFragment StoreEntitySet="tEmpresa">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Datos" ColumnName="Datos" />
+          <ScalarProperty Name="Papelera" ColumnName="Papelera" />
+          <ScalarProperty Name="Cuit" ColumnName="Cuit" />
+          <ScalarProperty Name="DominioMail" ColumnName="DominioMail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tEstado">
+      <EntityTypeMapping TypeName="NaexCRMModel.tEstado">
+        <MappingFragment StoreEntitySet="tEstado">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tEstadoCompra">
+      <EntityTypeMapping TypeName="NaexCRMModel.tEstadoCompra">
+        <MappingFragment StoreEntitySet="tEstadoCompra">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tImagen">
+      <EntityTypeMapping TypeName="NaexCRMModel.tImagen">
+        <MappingFragment StoreEntitySet="tImagen">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="imagen" ColumnName="imagen" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tInventario">
+      <EntityTypeMapping TypeName="NaexCRMModel.tInventario">
+        <MappingFragment StoreEntitySet="tInventario">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idImagen" ColumnName="idImagen" />
+          <ScalarProperty Name="idCategoria" ColumnName="idCategoria" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="empresa" ColumnName="empresa" />
+          <ScalarProperty Name="nro" ColumnName="nro" />
+          <ScalarProperty Name="valor" ColumnName="valor" />
+          <ScalarProperty Name="cantUnidades" ColumnName="cantUnidades" />
+          <ScalarProperty Name="idResponsable" ColumnName="idResponsable" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tItem">
+      <EntityTypeMapping TypeName="NaexCRMModel.tItem">
+        <MappingFragment StoreEntitySet="tItem">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="importeProveedor" ColumnName="importeProveedor" />
+          <ScalarProperty Name="importeCliente" ColumnName="importeCliente" />
+          <ScalarProperty Name="idProveedor" ColumnName="idProveedor" />
+          <ScalarProperty Name="idCompra" ColumnName="idCompra" />
+          <ScalarProperty Name="NroPedidoProveedor" ColumnName="NroPedidoProveedor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tItem2">
+      <EntityTypeMapping TypeName="NaexCRMModel.tItem2">
+        <MappingFragment StoreEntitySet="tItem2">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idPedido" ColumnName="idPedido" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="Costo" ColumnName="Costo" />
+          <ScalarProperty Name="Precio" ColumnName="Precio" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+          <ScalarProperty Name="idEstado" ColumnName="idEstado" />
+          <ScalarProperty Name="idAprobo" ColumnName="idAprobo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tLog">
+      <EntityTypeMapping TypeName="NaexCRMModel.tLog">
+        <MappingFragment StoreEntitySet="tLog">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+          <ScalarProperty Name="Accion" ColumnName="Accion" />
+          <ScalarProperty Name="Mensaje" ColumnName="Mensaje" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tManual">
+      <EntityTypeMapping TypeName="NaexCRMModel.tManual">
+        <MappingFragment StoreEntitySet="tManual">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="titulo" ColumnName="titulo" />
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="idEmpresa" ColumnName="idEmpresa" />
+          <ScalarProperty Name="Papelera" ColumnName="Papelera" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tModoResolucion">
+      <EntityTypeMapping TypeName="NaexCRMModel.tModoResolucion">
+        <MappingFragment StoreEntitySet="tModoResolucion">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tNovedad">
+      <EntityTypeMapping TypeName="NaexCRMModel.tNovedad">
+        <MappingFragment StoreEntitySet="tNovedad">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tPedido">
+      <EntityTypeMapping TypeName="NaexCRMModel.tPedido">
+        <MappingFragment StoreEntitySet="tPedido">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idEmpresa" ColumnName="idEmpresa" />
+          <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+          <ScalarProperty Name="Titulo" ColumnName="Titulo" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="FechaARealizar" ColumnName="FechaARealizar" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="idCategoria" ColumnName="idCategoria" />
+          <ScalarProperty Name="idPrioridad" ColumnName="idPrioridad" />
+          <ScalarProperty Name="idAsignacionResponsable" ColumnName="idAsignacionResponsable" />
+          <ScalarProperty Name="idModoResolucion" ColumnName="idModoResolucion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tPedidoMail">
+      <EntityTypeMapping TypeName="NaexCRMModel.tPedidoMail">
+        <MappingFragment StoreEntitySet="tPedidoMail">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idPedido" ColumnName="idPedido" />
+          <ScalarProperty Name="nroMail" ColumnName="nroMail" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tPrioridad">
+      <EntityTypeMapping TypeName="NaexCRMModel.tPrioridad">
+        <MappingFragment StoreEntitySet="tPrioridad">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tProveedor">
+      <EntityTypeMapping TypeName="NaexCRMModel.tProveedor">
+        <MappingFragment StoreEntitySet="tProveedor">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Mail" ColumnName="Mail" />
+          <ScalarProperty Name="Papelera" ColumnName="Papelera" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tRegistroAcceso">
+      <EntityTypeMapping TypeName="NaexCRMModel.tRegistroAcceso">
+        <MappingFragment StoreEntitySet="tRegistroAcceso">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="ip" ColumnName="ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tResponsableEmpresa">
+      <EntityTypeMapping TypeName="NaexCRMModel.tResponsableEmpresa">
+        <MappingFragment StoreEntitySet="tResponsableEmpresa">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idEmpresa" ColumnName="idEmpresa" />
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tUsuario">
+      <EntityTypeMapping TypeName="NaexCRMModel.tUsuario">
+        <MappingFragment StoreEntitySet="tUsuario">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+          <ScalarProperty Name="Clave" ColumnName="Clave" />
+          <ScalarProperty Name="Mail" ColumnName="Mail" />
+          <ScalarProperty Name="idCategoria" ColumnName="idCategoria" />
+          <ScalarProperty Name="Papelera" ColumnName="Papelera" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tResponsableInventario">
+      <EntityTypeMapping TypeName="NaexCRMModel.tResponsableInventario">
+        <MappingFragment StoreEntitySet="tResponsableInventario">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+          <ScalarProperty Name="idEmpresaInventario" ColumnName="idEmpresaInventario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

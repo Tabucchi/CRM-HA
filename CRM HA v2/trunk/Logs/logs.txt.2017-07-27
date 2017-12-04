@@ -1,0 +1,8 @@
+ERROR 24 crm.MensajeError - Pedidos - 27/07/2017 12:09:09 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 33 crm.MensajeError - Pedidos - 27/07/2017 12:19:15 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 35 crm.MensajeError - Pedidos - 27/07/2017 12:19:56 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 9 crm.CuotasCliente - CuotasCliente - 27/07/2017 02:02:16 p.m.- Se produjo una excepción de tipo 'System.Exception'. - CalcularTotales - Admin
+ERROR 13 crm.CuotasCliente - CuotasCliente - 27/07/2017 02:08:40 p.m.- Se produjo una excepción de tipo 'System.Exception'. - CalcularTotales - Admin
+ERROR 5 crm.CuotasCliente - CuotasCliente - 27/07/2017 02:20:43 p.m.- Referencia a objeto no establecida como instancia de un objeto. - CalcularTotales - Admin
+ERROR 14 crm.CuotasCliente - CuotasCliente - 27/07/2017 02:28:44 p.m.- Referencia a objeto no establecida como instancia de un objeto. - CalcularTotales - Admin
+ERROR RemoteServer_Worker-1 JobScheduler - JobScheduler - 27/07/2017 05:45:02 p.m.- Referencia a objeto no establecida como instancia de un objeto. - Execute

@@ -1,0 +1,7 @@
+ERROR 23 crm.DetalleCuota - Cliente - 25/01/2017 02:46:26 p.m.- Se produjo una excepción de tipo 'System.Exception'. - Page_Load
+ERROR 22 crm.DetalleCuota - Cliente - 25/01/2017 02:46:44 p.m.- Se produjo una excepción de tipo 'System.Exception'. - Page_Load
+ERROR 8 crm.DetalleCuota2 - Cliente - 25/01/2017 02:47:40 p.m.- Se produjo una excepción de tipo 'System.Exception'. - Page_Load
+ERROR 13 crm.DetalleCuota - Cliente - 25/01/2017 02:47:59 p.m.- Se produjo una excepción de tipo 'System.Exception'. - Page_Load
+ERROR 9 crm.MensajeError - Pedidos - 25/01/2017 03:10:33 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 10 crm.MensajeError - Pedidos - 25/01/2017 03:16:16 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 14 crm.MensajeError - Pedidos - 25/01/2017 03:16:54 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin

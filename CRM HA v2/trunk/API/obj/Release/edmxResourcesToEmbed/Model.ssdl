@@ -1,0 +1,360 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NaexCRMModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tAccion">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Tipo" Type="varchar" MaxLength="60" />
+  </EntityType>
+  <EntityType Name="tAsignacionResponsable">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idResponsable" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="Fecha" Type="datetime" />
+    <Property Name="idAsigno" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="idPedido" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="Comentario" Type="varchar" MaxLength="512" />
+  </EntityType>
+  <EntityType Name="tCategoria">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Tipo" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tCategoriaInventario">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="50" />
+    <Property Name="numero" Type="varchar" MaxLength="5" />
+    <Property Name="contador" Type="varchar" MaxLength="5" />
+  </EntityType>
+  <EntityType Name="tCliente">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idEmpresa" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="Nombre" Type="varchar" MaxLength="32" />
+    <Property Name="Interno" Type="varchar" MaxLength="16" />
+    <Property Name="Mail" Type="varchar" MaxLength="64" />
+    <Property Name="Ip" Type="varchar" MaxLength="64" />
+    <Property Name="Password" Type="varchar" MaxLength="64" />
+    <Property Name="UsuarioRed" Type="varchar" MaxLength="64" />
+    <Property Name="PasswordRed" Type="varchar" MaxLength="64" />
+    <Property Name="ClaveSistema" Type="varchar" MaxLength="64" />
+    <Property Name="Papelera" Type="smallint" />
+    <Property Name="Autorizado" Type="smallint" />
+  </EntityType>
+  <EntityType Name="tClientePosible">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idEmpresa" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="rubro" Type="varchar" MaxLength="60" />
+    <Property Name="contacto" Type="varchar" MaxLength="60" />
+    <Property Name="puestoContacto" Type="varchar" MaxLength="60" />
+    <Property Name="contactoVinculado" Type="varchar" MaxLength="60" />
+    <Property Name="Mail" Type="varchar" MaxLength="64" />
+    <Property Name="idUsuario" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="idAccion1" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="idEstadoAccion1" Type="smallint" />
+    <Property Name="idAccion2" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="idEstadoAccion2" Type="smallint" />
+    <Property Name="idAccion3" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="idEstadoAccion3" Type="smallint" />
+    <Property Name="idAccion4" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="idEstadoAccion4" Type="smallint" />
+    <Property Name="idEstado" Type="numeric" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="tComentario">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idPedido" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="idUsuario" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="Fecha" Type="datetime" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="1024" />
+    <Property Name="VisibilidadCliente" Type="bit" />
+    <Property Name="Tipo" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="tComentarioCompra">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idCompra" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="idUsuario" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="Fecha" Type="datetime" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="1024" />
+    <Property Name="Tipo" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="tCompra">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idPedido" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="idUsuario" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="idEmpresa" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="idCliente" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="idEstado" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="Fecha" Type="datetime" />
+    <Property Name="totalProveedor" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="totalCliente" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="iva" Type="tinyint" />
+    <Property Name="codigo" Type="varchar" MaxLength="60" />
+    <Property Name="NewId" Type="int" />
+  </EntityType>
+  <EntityType Name="tDatosTecnicos">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Tipo" Type="varchar" MaxLength="128" />
+  </EntityType>
+  <EntityType Name="tEmpresa">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="64" />
+    <Property Name="Direccion" Type="varchar" MaxLength="64" />
+    <Property Name="Telefono" Type="varchar" MaxLength="32" />
+    <Property Name="Datos" Type="text" />
+    <Property Name="Papelera" Type="smallint" />
+    <Property Name="Cuit" Type="varchar" MaxLength="13" />
+    <Property Name="DominioMail" Type="varchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="tEstado">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Tipo" Type="varchar" MaxLength="32" />
+  </EntityType>
+  <EntityType Name="tEstadoCompra">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Tipo" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tImagen">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="100" />
+    <Property Name="imagen" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="tInventario">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idImagen" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="idCategoria" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="descripcion" Type="varchar" MaxLength="500" />
+    <Property Name="empresa" Type="int" />
+    <Property Name="nro" Type="varchar" MaxLength="50" />
+    <Property Name="valor" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="cantUnidades" Type="int" />
+    <Property Name="idResponsable" Type="numeric" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="tItem">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cantidad" Type="int" />
+    <Property Name="descripcion" Type="varchar" MaxLength="60" />
+    <Property Name="importeProveedor" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="importeCliente" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="idProveedor" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="idCompra" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="NroPedidoProveedor" Type="numeric" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="tItem2">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idPedido" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="Nombre" Type="varchar" MaxLength="128" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="512" />
+    <Property Name="Cantidad" Type="int" />
+    <Property Name="Costo" Type="varchar" MaxLength="16" />
+    <Property Name="Precio" Type="varchar" MaxLength="16" />
+    <Property Name="Fecha" Type="date" />
+    <Property Name="idUsuario" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="idEstado" Type="tinyint" />
+    <Property Name="idAprobo" Type="numeric" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="tLog">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idUsuario" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="Accion" Type="varchar" MaxLength="64" />
+    <Property Name="Mensaje" Type="varchar" MaxLength="512" />
+  </EntityType>
+  <EntityType Name="tManual">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="titulo" Type="varchar" MaxLength="100" />
+    <Property Name="idUsuario" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="fecha" Type="date" />
+    <Property Name="idEmpresa" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="Papelera" Type="tinyint" />
+    <Property Name="descripcion" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="tModoResolucion">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Tipo" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tNovedad">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="1024" />
+    <Property Name="fecha" Type="date" />
+    <Property Name="idUsuario" Type="numeric" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="tPedido">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idEmpresa" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="idCliente" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="idUsuario" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="Titulo" Type="varchar" MaxLength="256" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="1024" />
+    <Property Name="Fecha" Type="datetime" />
+    <Property Name="FechaARealizar" Type="datetime" />
+    <Property Name="Estado" Type="tinyint" />
+    <Property Name="idCategoria" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="idPrioridad" Type="tinyint" />
+    <Property Name="idAsignacionResponsable" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="idModoResolucion" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="tPedidoMail">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idPedido" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="nroMail" Type="varchar" MaxLength="200" />
+    <Property Name="fecha" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tPrioridad">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Tipo" Type="varchar" MaxLength="32" />
+  </EntityType>
+  <EntityType Name="tProveedor">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="64" />
+    <Property Name="Telefono" Type="varchar" MaxLength="32" />
+    <Property Name="Direccion" Type="varchar" MaxLength="64" />
+    <Property Name="Mail" Type="varchar" MaxLength="32" />
+    <Property Name="Papelera" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="tRegistroAcceso">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idUsuario" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="Fecha" Type="datetime" />
+    <Property Name="descripcion" Type="varchar" MaxLength="50" />
+    <Property Name="ip" Type="varchar" MaxLength="24" />
+  </EntityType>
+  <EntityType Name="tResponsableEmpresa">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idEmpresa" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="idUsuario" Type="numeric" Precision="18" Scale="0" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'NaexCRM.dbo.tResponsableInventario' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="tResponsableInventario">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Tipo" Type="varchar" MaxLength="50" />
+    <Property Name="idEmpresaInventario" Type="numeric" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="tUsuario">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="64" />
+    <Property Name="Usuario" Type="varchar" MaxLength="16" />
+    <Property Name="Clave" Type="varchar" MaxLength="128" />
+    <Property Name="Mail" Type="varchar" MaxLength="64" />
+    <Property Name="idCategoria" Type="tinyint" />
+    <Property Name="Papelera" Type="tinyint" />
+  </EntityType>
+  <EntityContainer Name="NaexCRMModelStoreContainer">
+    <EntitySet Name="tAccion" EntityType="Self.tAccion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tAsignacionResponsable" EntityType="Self.tAsignacionResponsable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tCategoria" EntityType="Self.tCategoria" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tCategoriaInventario" EntityType="Self.tCategoriaInventario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tCliente" EntityType="Self.tCliente" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tClientePosible" EntityType="Self.tClientePosible" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tComentario" EntityType="Self.tComentario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tComentarioCompra" EntityType="Self.tComentarioCompra" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tCompra" EntityType="Self.tCompra" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tDatosTecnicos" EntityType="Self.tDatosTecnicos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tEmpresa" EntityType="Self.tEmpresa" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tEstado" EntityType="Self.tEstado" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tEstadoCompra" EntityType="Self.tEstadoCompra" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tImagen" EntityType="Self.tImagen" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tInventario" EntityType="Self.tInventario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tItem" EntityType="Self.tItem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tItem2" EntityType="Self.tItem2" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tLog" EntityType="Self.tLog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tManual" EntityType="Self.tManual" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tModoResolucion" EntityType="Self.tModoResolucion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tNovedad" EntityType="Self.tNovedad" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tPedido" EntityType="Self.tPedido" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tPedidoMail" EntityType="Self.tPedidoMail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tPrioridad" EntityType="Self.tPrioridad" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tProveedor" EntityType="Self.tProveedor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tRegistroAcceso" EntityType="Self.tRegistroAcceso" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tResponsableEmpresa" EntityType="Self.tResponsableEmpresa" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tUsuario" EntityType="Self.tUsuario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tResponsableInventario" EntityType="Self.tResponsableInventario" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tResponsableInventario].[id] AS [id], 
+    [tResponsableInventario].[Tipo] AS [Tipo], 
+    [tResponsableInventario].[idEmpresaInventario] AS [idEmpresaInventario]
+    FROM [dbo].[tResponsableInventario] AS [tResponsableInventario]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

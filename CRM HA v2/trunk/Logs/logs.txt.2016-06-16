@@ -1,0 +1,17 @@
+ERROR 18 crm.DetalleCuota - DetalleCuota - 16/06/2016 02:30:34 p.m.- Se produjo una excepción de tipo 'System.Exception'. - btnEliminar_Click
+ERROR 13 crm.DetalleCuota - DetalleCuota - 16/06/2016 03:13:33 p.m.- Se produjo una excepción de tipo 'System.Exception'. - btnEliminar_Click
+ERROR 9 crm.DetalleCuota - DetalleCuota - 16/06/2016 03:15:15 p.m.- Se produjo una excepción de tipo 'System.Exception'. - btnEliminar_Click
+ERROR 8 crm.MensajeError - Pedidos - 16/06/2016 03:30:22 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 10 crm.MensajeError - Pedidos - 16/06/2016 03:37:01 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 10 crm.MensajeError - Pedidos - 16/06/2016 03:37:05 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 8 crm.DetalleCuota - DetalleCuota - 16/06/2016 03:57:21 p.m.- Se produjo una excepción de tipo 'System.Exception'. - btnEliminar_Click
+ERROR 16 crm.DetalleCuota - DetalleCuota - 16/06/2016 04:00:55 p.m.- Se produjo una excepción de tipo 'System.Exception'. - btnEliminar_Click
+ERROR 11 crm.DetalleCuota - DetalleCuota - 16/06/2016 04:03:52 p.m.- Se produjo una excepción de tipo 'System.Exception'. - btnEliminar_Click
+ERROR 8 crm.DetalleCuota - DetalleCuota - 16/06/2016 04:04:22 p.m.- Se produjo una excepción de tipo 'System.Exception'. - btnEliminar_Click
+ERROR 10 crm.DetalleCuota - DetalleCuota - 16/06/2016 04:05:55 p.m.- Se produjo una excepción de tipo 'System.Exception'. - btnEliminar_Click
+ERROR 13 crm.DetalleCuota - DetalleCuota - 16/06/2016 04:09:40 p.m.- Subproceso anulado. - btnEliminar_Click
+ERROR 13 crm.DetalleCuota - DetalleCuota - 16/06/2016 04:10:39 p.m.- Subproceso anulado. - btnEliminar_Click
+ERROR 5 crm.MensajeError - Pedidos - 16/06/2016 04:26:57 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 9 crm.MensajeError - Pedidos - 16/06/2016 04:58:25 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 10 crm.MensajeError - Pedidos - 16/06/2016 04:58:27 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 10 crm.MensajeError - Pedidos - 16/06/2016 04:58:55 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin

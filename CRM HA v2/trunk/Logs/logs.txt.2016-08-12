@@ -1,0 +1,22 @@
+ERROR 9 crm.MensajeError - Pedidos - 12/08/2016 11:00:40 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 14 crm.MensajeError - Pedidos - 12/08/2016 11:00:44 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 11 crm.MensajeError - Pedidos - 12/08/2016 11:01:32 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 56 crm.MensajeError - Pedidos - 12/08/2016 11:11:45 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 15 crm.MensajeError - Pedidos - 12/08/2016 03:07:09 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 9 crm.MensajeError - Pedidos - 12/08/2016 03:13:40 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 14 crm.MensajeError - Pedidos - 12/08/2016 03:14:20 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 20 crm.MensajeError - Pedidos - 12/08/2016 03:15:48 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 10 crm.DetalleCuota - Cliente - 12/08/2016 03:39:03 p.m.- El descriptor de acceso de la propiedad 'GetFechaPago' inició la excepción 'Se produjo una excepción de tipo 'System.Exception'.' en el objeto 'DLL.Negocio.cCuota' - Page_Load
+ERROR 13 crm.DetalleCuota - Cliente - 12/08/2016 03:39:24 p.m.- El descriptor de acceso de la propiedad 'GetFechaPago' inició la excepción 'Se produjo una excepción de tipo 'System.Exception'.' en el objeto 'DLL.Negocio.cCuota' - Page_Load
+ERROR 10 crm.DetalleCuota - Cliente - 12/08/2016 03:41:40 p.m.- El descriptor de acceso de la propiedad 'GetFechaPago' inició la excepción 'Se produjo una excepción de tipo 'System.Exception'.' en el objeto 'DLL.Negocio.cCuota' - Page_Load
+ERROR 13 crm.DetalleCuota - Cliente - 12/08/2016 03:42:36 p.m.- El descriptor de acceso de la propiedad 'GetFechaPago' inició la excepción 'Se produjo una excepción de tipo 'System.Exception'.' en el objeto 'DLL.Negocio.cCuota' - Page_Load
+ERROR 11 crm.DetalleCuota - Cliente - 12/08/2016 04:29:06 p.m.- DataSourceID de 'cbCuota' debe ser el identificador de un control del tipo IDataSource. No se pudo encontrar un identificador 'odsCuota'. - Page_Load
+ERROR 12 crm.DetalleCuota - Cliente - 12/08/2016 04:33:57 p.m.- DataSourceID de 'cbCuota' debe ser el identificador de un control del tipo IDataSource. No se pudo encontrar un identificador 'odsCuota'. - Page_Load
+ERROR 13 crm.DetalleCuota - Cliente - 12/08/2016 04:35:37 p.m.- DataSourceID de 'cbCuota' debe ser el identificador de un control del tipo IDataSource. No se pudo encontrar un identificador 'odsCuota'. - Page_Load
+ERROR 11 crm.DetalleCuota - Cliente - 12/08/2016 05:16:35 p.m.- No se pudo encontrar el tipo especificado en la propiedad TypeName de ObjectDataSource 'odsCuota'. - Page_Load
+ERROR 10 crm.DetalleCuota - Cliente - 12/08/2016 05:18:50 p.m.- No se pudo encontrar el tipo especificado en la propiedad TypeName de ObjectDataSource 'odsCuota'. - Page_Load
+ERROR 17 crm.DetalleCuota - Cliente - 12/08/2016 05:19:01 p.m.- No se pudo encontrar el tipo especificado en la propiedad TypeName de ObjectDataSource 'odsCuota'. - Page_Load
+ERROR 13 crm.DetalleCuota - Cliente - 12/08/2016 05:20:06 p.m.- No se pudo encontrar el tipo especificado en la propiedad TypeName de ObjectDataSource 'odsCuota'. - Page_Load
+ERROR 10 crm.DetalleCuota - Cliente - 12/08/2016 05:23:01 p.m.- No se pudo encontrar el tipo especificado en la propiedad TypeName de ObjectDataSource 'odsCuota'. - Page_Load
+ERROR 8 crm.DetalleCuota - Cliente - 12/08/2016 05:26:12 p.m.- No se pudo encontrar el tipo especificado en la propiedad TypeName de ObjectDataSource 'odsCuota'. - Page_Load
+ERROR 11 crm.DetalleCuota - Cliente - 12/08/2016 05:34:59 p.m.- No se pudo encontrar el tipo especificado en la propiedad TypeName de ObjectDataSource 'odsPadFirma'. - Page_Load

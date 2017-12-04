@@ -1,0 +1,16 @@
+ERROR 8 crm.DetalleCuota2 - Cliente - 23/05/2017 09:53:26 a.m.- El descriptor de acceso de la propiedad 'GetFechaPago' inició la excepción 'Referencia a objeto no establecida como instancia de un objeto.' en el objeto 'DLL.Negocio.cCuota' - Page_Load
+ERROR 14 crm.MensajeError - Pedidos - 23/05/2017 10:04:23 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 24 crm.DetalleCuota2 - Cliente - 23/05/2017 11:21:03 a.m.- Se produjo una excepción de tipo 'System.Exception'. - Page_Load
+ERROR 24 crm.DetalleCuota2 - Cliente - 23/05/2017 11:23:07 a.m.- Se produjo una excepción de tipo 'System.Exception'. - Page_Load
+ERROR 19 crm.DetalleCuota2 - Cliente - 23/05/2017 11:25:21 a.m.- Se produjo una excepción de tipo 'System.Exception'. - Page_Load
+ERROR 14 crm.DetalleCuota2 - Cliente - 23/05/2017 11:59:47 a.m.- Referencia a objeto no establecida como instancia de un objeto. - Page_Load
+ERROR 16 crm.DetalleCuota2 - Cliente - 23/05/2017 12:08:46 p.m.- Referencia a objeto no establecida como instancia de un objeto. - Page_Load
+ERROR 66 crm.DetalleCuota2 - Cliente - 23/05/2017 01:52:35 p.m.- Referencia a objeto no establecida como instancia de un objeto. - Page_Load
+ERROR 11 crm.DetalleCuota2 - Cliente - 23/05/2017 03:21:15 p.m.- Referencia a objeto no establecida como instancia de un objeto. - Page_Load
+ERROR 56 crm.MensajeError - Pedidos - 23/05/2017 03:46:29 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 55 crm.MensajeError - Pedidos - 23/05/2017 03:47:12 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 55 crm.MensajeError - Pedidos - 23/05/2017 03:47:30 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 55 crm.DetalleCuota2 - Cliente - 23/05/2017 03:47:44 p.m.- Se produjo una excepción de tipo 'System.Exception'. - Page_Load
+ERROR 58 crm.DetalleCuota2 - Cliente - 23/05/2017 03:48:52 p.m.- Se produjo una excepción de tipo 'System.Exception'. - Page_Load
+ERROR 73 crm.DetalleCuota2 - Cliente - 23/05/2017 04:56:20 p.m.- Referencia a objeto no establecida como instancia de un objeto. - Page_Load
+ERROR 107 crm.DetalleCuota2 - Cliente - 23/05/2017 05:25:41 p.m.- Se produjo una excepción de tipo 'System.Exception'. - Page_Load

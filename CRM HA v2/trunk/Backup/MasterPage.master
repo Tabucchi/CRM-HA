@@ -1,0 +1,65 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" Inherits="MasterPage" Codebehind="MasterPage.master.cs" %>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="UTF-8">
+	<title>CRM</title>
+	<link href='http://fonts.googleapis.com/css?family=Lato:300italic,300,900' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="css/masterStyle.css">
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script type="text/javascript" src="js/global.js"></script>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>   
+
+<body>
+    <form id="form1" runat="server">
+    	<header>
+		<hgroup>
+			<a href="/default.aspx" id="logo">Logo</a>
+			<nav>
+				<ul>
+					<li><a href="#"><span class="tickets"></span>Tickets</a>
+						<ul>
+							<li><a href="./IngresoPedido.aspx"><span class="tickets-nuv"></span>Nuevo Ticket</a></li>
+							<li><a href="./Pedidos.aspx"><span class="tickets-ctr"></span>Control de Ticket</a></li>
+							<li><a href="./PedidosAcobrar.aspx"><span class="tickets-cbr"></span>Tickets a Cobrar</a></li>
+						</ul>
+					</li>
+					<li><a href="#"><span class="clientes"></span>Clientes</a>
+						<ul>
+							<li><a href="./Agenda.aspx"><span class="clientes-dir"></span>Directorio de Clientes</a></li>
+							<li><a href="./AgendaClientesPosibles.aspx"><span class="clientes-nuv"></span>Nuevos Casos</a></li>
+						</ul>
+					</li>
+					<li><a href="#"><span class="cuenta"></span>Cuenta</a>
+						<ul>
+							<li><a href="./CambiarContraseña.aspx"><span class="cuenta-cam"></span>Cambiar Contraseña</a></li>
+							<li><a href="Login.aspx"><span class="cuenta-sal"></span>Salir</a></li>
+						</ul>
+					</li>                    
+					<li >
+                        <asp:Panel ID="pnlAdmin" runat="server" Visible="false">
+                        <a href="#"><span class="admin"></span>Admin</a>
+						<ul>
+							<li><a href="./Usuario.aspx"><span class="admin-usr"></span>Gestion de Usuarios</a></li>
+                            <li><a href="./ResponsableEmpresa.aspx"  style="width:300px"><span class="admin-usr"></span>Responsables por empresa</a></li>
+							<li><a href="./BuscarCompra.aspx"><span class="admin-com"></span>Compras</a></li>
+							<li><a href="./Stats.aspx"><span class="admin-est"></span>Estadisticas</a></li>
+						</ul>
+                        </asp:Panel>
+					</li>
+                    
+				</ul>	
+			</nav>
+		</hgroup>
+	</header>
+   	<div id="wrapper">
+        <div id="main" role="main" >
+           <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+        </div>
+	</div>
+   </form>
+</body>
+</html>

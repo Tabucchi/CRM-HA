@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="Scripts/jquery-1.7.1.min.js" type="text/javascript"></script>
+    <script src="Scripts/jquery-ui-1.8.20.js" type="text/javascript"></script>
+    <script src="Scripts/jquery.validate.min.js" type="text/javascript"></script>
+</head>
+<body>
+    <select id="method">
+        <option value="get">GET</option>
+        <option value="post">POST</option>
+        <option value="put">PUT</option>
+    </select>
+    <input type="button" value="Try it" onclick="sendRequest()" />
+
+    <span id='value1'>(Result)</span>
+    <script>
+        // TODO: Replace with the URL of your WebService app
+        //var serviceUrl = 'http://localhost:8001/api/LeaderBoards';
+        //var serviceUrl = 'http://localhost:60831/api/Attendees';
+        var serviceUrl = 'http://localhost:61214/api/ActivityQuestions';
+        //var serviceUrl = 'http://localhost:8001/';
+        //var serviceUrl = 'http://localhost:8001/';
+
+
+        function sendSessionsRequest() {
+            $.ajax({
+                type: method,
+                url: serviceUrl + 'api/sessions/10131/',
+                dataType: 'json'
+                //,
+                //data: leaderBoard
+                //data: attendeesList
+            }).done(function (data) {
+                debugger;
+                $('#value1').text("Done:" + data);
+            }).error(function (jqXHR, textStatus, errorThrown) {
+                debugger;
+                $('#value1').text("error:" + jqXHR.responseText || textStatus);
+            });
+        }
+
+
+
+
+        function sendRequest() {
+            var method = $('#method').val();
+
+            var ActivityQuestion = {
+                attendeeName: 'Un participante intelectual...5',
+                questionContent: 'Me pareció haber visto una linda pregunta',
+                deviceId: 'DeviceIdTest123',
+                idEvent: '10155',
+                idActivity: '1001',
+                questionTitle: 'QuestionTitle',
+                attendeeEmail: 'sarasa@email.com'
+            }
+
+            var leaderBoard = {
+                FirstName: 'gamer.data.FirstName',
+                LastName: 'gamer.data.LastName',
+                Email: 'gamer.data.Email.2',
+                Trivias: 'trivias',
+                TriviasTime: 'triviasTime',
+                AnswerDateTime: 'dateFormatted',
+                IdGamer: '0',
+                AdminScores: 'adminScores',
+                AdminScoresId: 'adminScoresId',
+                AdminNotes: 'adminNotes'
+            }
+
+            var attendee = {
+                FirstName: 'gamer.data.FirstName',
+                LastName: 'gamer.data.LastName',
+                Email: 'gamer.data.Email.2'
+            }
+            var attendee2 = {
+                FirstName: 'gamer.data.FirstName',
+                LastName: 'gamer.data.LastName',
+                Email: 'gamer.data.Email.2'
+            }
+
+            var attendees = [];
+            var attendeesList = {};
+            debugger;
+            attendees.push({
+                FirstName: 'gamer.data.FirstName',
+                LastName: 'gamer.data.LastName',
+                Email: 'gamer.data.Email.2'
+            });
+            attendees.push({
+                FirstName: 'gamer.data.FirstName',
+                LastName: 'gamer.data.LastName',
+                Email: 'gamer.data.Email.2'
+            });
+            attendeesList.attendees = attendees;
+
+            //for (var i = 0; i < attendeeList.length; i++) {
+            //    attendees.push({
+            //        id: status.options[i].text,
+            //        optionValue: status.options[i].value
+            //    });
+            //}
+
+            //var attendees =
+            //    {
+            //        "attendees":
+            //        [
+            //            { "firstName": "John", "lastName": "Doe" },
+            //            { "firstName": "Anna", "lastName": "Smith" },
+            //            { "firstName": "Peter", "lastName": "Jones" }
+            //        ]
+            //    }
+
+            $.ajax({
+                type: method,
+                url: serviceUrl,
+                dataType: 'json',
+                //data: leaderBoard
+                //data: attendeesList
+                data: ActivityQuestion
+            }).done(function (data) {
+                $('#value1').text("Done:" + data);
+            }).error(function (jqXHR, textStatus, errorThrown) {
+                debugger;
+                $('#value1').text("error:" + jqXHR.responseText || textStatus);
+            });
+        }
+    </script>
+</body>
+</html>

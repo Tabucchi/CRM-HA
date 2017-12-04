@@ -1,0 +1,12 @@
+ERROR 56 crm.MensajeError - Pedidos - 03/10/2017 04:24:13 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 10 crm.MensajeError - Pedidos - 03/10/2017 04:31:41 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 15 crm.MensajeError - Pedidos - 03/10/2017 04:32:10 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 25 crm.MensajeError - Pedidos - 03/10/2017 04:37:20 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 19 crm.MensajeError - Pedidos - 03/10/2017 04:42:09 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 13 crm.MensajeError - Pedidos - 03/10/2017 04:44:42 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 16 crm.Morosos - Morosos - 03/10/2017 04:49:56 p.m.- Se produjo una excepción de tipo 'System.Exception'. - btnAgregarComentario_Click
+ERROR 15 crm.Morosos - Morosos - 03/10/2017 04:50:56 p.m.- Se produjo una excepción de tipo 'System.Exception'. - btnAgregarComentario_Click
+ERROR 8 crm.Morosos - Morosos - 03/10/2017 04:51:57 p.m.- Se produjo una excepción de tipo 'System.Exception'. - btnAgregarComentario_Click
+ERROR 14 crm.Morosos - Morosos - 03/10/2017 04:57:21 p.m.- Se produjo una excepción de tipo 'System.Exception'. - btnAgregarComentario_Click
+ERROR 14 crm.Morosos - Morosos - 03/10/2017 04:58:03 p.m.- Se produjo una excepción de tipo 'System.Exception'. - btnAgregarComentario_Click
+ERROR 13 crm.Morosos - Morosos - 03/10/2017 05:02:32 p.m.- Se produjo una excepción de tipo 'System.Exception'. - btnAgregarComentario_Click

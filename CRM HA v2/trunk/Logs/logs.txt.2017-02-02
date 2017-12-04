@@ -1,0 +1,18 @@
+ERROR 10 crm.MensajeError - Pedidos - 02/02/2017 10:24:06 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 13 crm.MensajeError - Pedidos - 02/02/2017 10:25:57 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 10 crm.MensajeError - Pedidos - 02/02/2017 10:26:37 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 11 crm.MensajeError - Pedidos - 02/02/2017 10:27:54 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 6 crm.MensajeError - Pedidos - 02/02/2017 11:38:57 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 13 crm.MensajeError - Pedidos - 02/02/2017 11:40:33 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 14 crm.DetalleCuota2 - Cliente - 02/02/2017 12:11:22 p.m.- Se produjo una excepción de tipo 'System.Exception'. - Page_Load
+ERROR 13 crm.MensajeError - Pedidos - 02/02/2017 02:45:49 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 14 crm.DetalleCuota2 - Cliente - 02/02/2017 02:55:56 p.m.- Se produjo una excepción de tipo 'System.Exception'. - Page_Load
+ERROR 17 crm.MensajeError - Pedidos - 02/02/2017 04:28:09 p.m.- c:\Users\ntabucchi\Documents\Proyectos\NAEX\branches\CRM HA\trunk\Controles\Cuotas.ascx(118): error CS1061: 'System.Web.UI.Control' no contiene una definición de 'DataItem' ni se encontró ningún método de extensión 'DataItem' que acepte un primer argumento de tipo 'System.Web.UI.Control' (¿falta una directiva using o una referencia de ensamblado?) - Page_Load - Admin
+ERROR 9 crm.MensajeError - Pedidos - 02/02/2017 04:29:07 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 11 crm.DetalleCuota2 - Cliente - 02/02/2017 04:43:57 p.m.- Se produjo una excepción de tipo 'System.Exception'. - Page_Load
+ERROR 10 crm.MensajeError - Pedidos - 02/02/2017 04:45:49 p.m.- Etiqueta de servidor incorrecta. - Page_Load - Admin
+ERROR 14 crm.MensajeError - Pedidos - 02/02/2017 04:46:03 p.m.- Etiqueta de servidor incorrecta. - Page_Load - Admin
+ERROR 17 crm.MensajeError - Pedidos - 02/02/2017 04:46:07 p.m.- Etiqueta de servidor incorrecta. - Page_Load - Admin
+ERROR 14 crm.MensajeError - Pedidos - 02/02/2017 04:46:42 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 17 crm.MensajeError - Pedidos - 02/02/2017 04:46:54 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 10 crm.MensajeError - Pedidos - 02/02/2017 04:47:09 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin

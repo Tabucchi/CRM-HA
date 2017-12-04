@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DBE27B7C-B808-4495-8CFE-58CA16888A64}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DLL</RootNamespace>
+    <AssemblyName>DLL</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="NPOI">
+      <HintPath>..\..\RequiredBins\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML">
+      <HintPath>..\..\RequiredBins\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net">
+      <HintPath>..\..\RequiredBins\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats">
+      <HintPath>..\..\RequiredBins\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Auxiliares\cAtributo.cs" />
+    <Compile Include="Auxiliares\cAuxiliar.cs" />
+    <Compile Include="Auxiliares\cComprobante.cs" />
+    <Compile Include="Auxiliares\cCuotasObra.cs" />
+    <Compile Include="Auxiliares\cExcel.cs" />
+    <Compile Include="Auxiliares\cMoroso.cs" />
+    <Compile Include="Auxiliares\cResumenObra.cs" />
+    <Compile Include="Auxiliares\cUnidadesVendidas.cs" />
+    <Compile Include="Auxiliares\cValorDolar.cs" />
+    <Compile Include="Auxiliares\iAutorComentario.cs" />
+    <Compile Include="Auxiliares\cCuotasCliente.cs" />
+    <Compile Include="Base de Datos\cActualizarPrecioDAO.cs" />
+    <Compile Include="Base de Datos\cApoderadoDAO.cs" />
+    <Compile Include="Base de Datos\cArchivoDAO.cs" />
+    <Compile Include="Base de Datos\cAsignacionResponsableDAO.cs" />
+    <Compile Include="Base de Datos\cAutorizacionUVADAO.cs" />
+    <Compile Include="Base de Datos\cComentarioMorososDAO.cs" />
+    <Compile Include="Base de Datos\cCondonacionDAO.cs" />
+    <Compile Include="Base de Datos\cCuentaCorrienteUsuarioDAO.cs" />
+    <Compile Include="Base de Datos\cItemCCUDAO.cs" />
+    <Compile Include="Base de Datos\cDomicilioDAO.cs" />
+    <Compile Include="Base de Datos\cNotaDebitoDAO.cs" />
+    <Compile Include="Base de Datos\cNotaCreditoDAO.cs" />
+    <Compile Include="Base de Datos\cReciboPagoDAO.cs" />
+    <Compile Include="Base de Datos\cCampoGenericoDAO.cs" />
+    <Compile Include="Base de Datos\cCategoriaInventarioDAO.cs" />
+    <Compile Include="Base de Datos\cClienteDAO.cs" />
+    <Compile Include="Base de Datos\cComentarioCCDAO.cs" />
+    <Compile Include="Base de Datos\cComentarioDAO.cs" />
+    <Compile Include="Base de Datos\cCuentaCorrienteDAO.cs" />
+    <Compile Include="Base de Datos\cCuotaDAO.cs" />
+    <Compile Include="Base de Datos\cDataBase.cs" />
+    <Compile Include="Base de Datos\cEmpresaDAO.cs" />
+    <Compile Include="Base de Datos\cFormaPagoOVDAO.cs" />
+    <Compile Include="Base de Datos\cHistorialPrecioDAO.cs" />
+    <Compile Include="Base de Datos\cImagenCuotaDAO.cs" />
+    <Compile Include="Base de Datos\cImagenDAO.cs" />
+    <Compile Include="Base de Datos\cIndiceCACDAO.cs" />
+    <Compile Include="Base de Datos\cInventarioDAO.cs" />
+    <Compile Include="Base de Datos\cItemDAO.cs" />
+    <Compile Include="Base de Datos\cItemDAO2.cs" />
+    <Compile Include="Base de Datos\cManualDAO.cs" />
+    <Compile Include="Base de Datos\cNovedadDAO.cs" />
+    <Compile Include="Base de Datos\cOperacionVentaDAO.cs" />
+    <Compile Include="Base de Datos\cPedidoDAO.cs" />
+    <Compile Include="Base de Datos\cProveedorDAO.cs" />
+    <Compile Include="Base de Datos\cProyectoDAO.cs" />
+    <Compile Include="Base de Datos\cReciboDAO.cs" />
+    <Compile Include="Base de Datos\cRegistroPagoDAO.cs" />
+    <Compile Include="Base de Datos\cReservaDAO.cs" />
+    <Compile Include="Base de Datos\cResponsableEmpresaDAO.cs" />
+    <Compile Include="Base de Datos\cTotalesSaldos.cs" />
+    <Compile Include="Base de Datos\cUnidadDAO.cs" />
+    <Compile Include="Base de Datos\cUsuarioDAO.cs" />
+    <Compile Include="Base de Datos\cEmpresaUnidadDAO.cs" />
+    <Compile Include="Base de Datos\cUVADAO.cs" />
+    <Compile Include="Base de Datos\cValorDolarDAO.cs" />
+    <Compile Include="cSendMail.cs" />
+    <Compile Include="cSendMailPostVenta.cs" />
+    <Compile Include="DataSetUnidades.cs">
+      <DependentUpon>DataSetUnidades.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataSetUnidades.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetUnidades.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ILog.cs" />
+    <Compile Include="Negocio\cActualizarPrecio.cs" />
+    <Compile Include="Negocio\cApoderado.cs" />
+    <Compile Include="Negocio\cArchivo.cs" />
+    <Compile Include="Negocio\cAsignacionResponsable.cs" />
+    <Compile Include="Negocio\cAutorizacionUVA.cs" />
+    <Compile Include="Negocio\cCampoGenerico.cs" />
+    <Compile Include="Negocio\cCategoriaInventario.cs" />
+    <Compile Include="Negocio\cCliente.cs" />
+    <Compile Include="Negocio\cComentarioCC.cs" />
+    <Compile Include="Negocio\cComentario.cs" />
+    <Compile Include="Negocio\cComentarioMorosos.cs" />
+    <Compile Include="Negocio\cCuentaCorrienteUsuario.cs" />
+    <Compile Include="Negocio\cItemCCU.cs" />
+    <Compile Include="Negocio\cDomicilio.cs" />
+    <Compile Include="Negocio\cEmpresa.cs" />
+    <Compile Include="Negocio\cEmpresaUnidad.cs" />
+    <Compile Include="Negocio\cFormaPagoOV.cs" />
+    <Compile Include="Negocio\cHistorialPrecio.cs" />
+    <Compile Include="Negocio\cImagen.cs" />
+    <Compile Include="Negocio\cImagenCuota.cs" />
+    <Compile Include="Negocio\cIndiceCAC.cs" />
+    <Compile Include="Negocio\cInventario.cs" />
+    <Compile Include="Negocio\cItem.cs" />
+    <Compile Include="Negocio\cItem2.cs" />
+    <Compile Include="Negocio\cManual.cs" />
+    <Compile Include="Negocio\cNotaDebito.cs" />
+    <Compile Include="Negocio\cNovedad.cs" />
+    <Compile Include="Negocio\cOperacionVenta.cs" />
+    <Compile Include="Negocio\cPedido.cs" />
+    <Compile Include="Negocio\cProveedor.cs" />
+    <Compile Include="Negocio\cProyecto.cs" />
+    <Compile Include="Negocio\cNotaCredito.cs" />
+    <Compile Include="Negocio\cRecibo.cs" />
+    <Compile Include="Negocio\cCondonacion.cs" />
+    <Compile Include="Negocio\cRegistroPago.cs" />
+    <Compile Include="Negocio\cReserva.cs" />
+    <Compile Include="Negocio\cResponsableEmpresa.cs" />
+    <Compile Include="Negocio\cCuentaCorriente.cs" />
+    <Compile Include="Negocio\cCuota.cs" />
+    <Compile Include="Negocio\cUnidad.cs" />
+    <Compile Include="Negocio\cUsuario.cs" />
+    <Compile Include="Negocio\cReciboPago.cs" />
+    <Compile Include="Negocio\cUVA.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="DataSetUnidades.xsc">
+      <DependentUpon>DataSetUnidades.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetUnidades.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetUnidades.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetUnidades.xss">
+      <DependentUpon>DataSetUnidades.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

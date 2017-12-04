@@ -1,0 +1,10 @@
+ERROR 14 crm.MensajeError - Pedidos - 03/05/2017 11:45:09 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 7 crm.MensajeError - Pedidos - 03/05/2017 11:47:11 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 14 crm.MensajeError - Pedidos - 03/05/2017 11:49:43 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 11 OperacionVenta - OperacionVenta - 03/05/2017 11:51:59 a.m.- 'cbUnidad' tiene un SelectedValue que no es válido porque no existe en la lista de elementos.
+Nombre del parámetro: value - cbEmpresa_SelectedIndexChanged
+ERROR 111 crm.DetalleCuota2 - Cliente - 03/05/2017 01:49:04 p.m.- Referencia a objeto no establecida como instancia de un objeto. - Page_Load
+ERROR 5 crm.DetalleCuota2 - Cliente - 03/05/2017 01:57:35 p.m.- Referencia a objeto no establecida como instancia de un objeto. - Page_Load
+ERROR 26 crm.DetalleCuota2 - Cliente - 03/05/2017 02:07:34 p.m.- Referencia a objeto no establecida como instancia de un objeto. - Page_Load
+ERROR 26 crm.DetalleCuota2 - Cliente - 03/05/2017 02:08:03 p.m.- Referencia a objeto no establecida como instancia de un objeto. - Page_Load
+ERROR 11 crm.DetalleCuota2 - Cliente - 03/05/2017 03:32:16 p.m.- Referencia a objeto no establecida como instancia de un objeto. - Page_Load

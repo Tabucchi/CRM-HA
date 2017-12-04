@@ -1,0 +1,7 @@
+ERROR 14 crm.MensajeError - Pedidos - 20/07/2017 01:53:16 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 10 crm.MensajeError - Pedidos - 20/07/2017 01:59:05 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 8 crm.CuotasCliente - CuotasCliente - 20/07/2017 02:05:19 p.m.- Referencia a objeto no establecida como instancia de un objeto. - CalcularTotales - Admin
+ERROR 8 crm.CuotasCliente - CuotasCliente - 20/07/2017 02:15:13 p.m.- Referencia a objeto no establecida como instancia de un objeto. - CalcularTotales - Admin
+ERROR 15 crm.MensajeError - Pedidos - 20/07/2017 02:54:13 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 11 crm.CuotasCliente - CuotasCliente - 20/07/2017 02:59:02 p.m.- Referencia a objeto no establecida como instancia de un objeto. - CalcularTotales - Admin
+ERROR 18 crm.CuotasCliente - CuotasCliente - 20/07/2017 03:36:33 p.m.- Referencia a objeto no establecida como instancia de un objeto. - CalcularTotales - Admin

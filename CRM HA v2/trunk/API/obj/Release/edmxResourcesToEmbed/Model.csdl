@@ -1,0 +1,352 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NaexCRMModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tAccion">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Tipo" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tAsignacionResponsable">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idResponsable" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Fecha" Type="DateTime" Precision="3" />
+    <Property Name="idAsigno" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="idPedido" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Comentario" Type="String" MaxLength="512" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tCategoria">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Tipo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tCategoriaInventario">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="numero" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="contador" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tCliente">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idEmpresa" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Nombre" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="Interno" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="Mail" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="Ip" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="UsuarioRed" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="PasswordRed" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="ClaveSistema" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="Papelera" Type="Int16" />
+    <Property Name="Autorizado" Type="Int16" />
+  </EntityType>
+  <EntityType Name="tClientePosible">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idEmpresa" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="rubro" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="contacto" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="puestoContacto" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="contactoVinculado" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="Mail" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="idUsuario" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="idAccion1" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="idEstadoAccion1" Type="Int16" />
+    <Property Name="idAccion2" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="idEstadoAccion2" Type="Int16" />
+    <Property Name="idAccion3" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="idEstadoAccion3" Type="Int16" />
+    <Property Name="idAccion4" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="idEstadoAccion4" Type="Int16" />
+    <Property Name="idEstado" Type="Decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="tComentario">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idPedido" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="idUsuario" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Fecha" Type="DateTime" Precision="3" />
+    <Property Name="Descripcion" Type="String" MaxLength="1024" FixedLength="false" Unicode="false" />
+    <Property Name="VisibilidadCliente" Type="Boolean" />
+    <Property Name="Tipo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tComentarioCompra">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idCompra" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="idUsuario" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Fecha" Type="DateTime" Precision="3" />
+    <Property Name="Descripcion" Type="String" MaxLength="1024" FixedLength="false" Unicode="false" />
+    <Property Name="Tipo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tCompra">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idPedido" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="idUsuario" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="idEmpresa" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="idCliente" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="idEstado" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Fecha" Type="DateTime" Precision="3" />
+    <Property Name="totalProveedor" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="totalCliente" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="iva" Type="Byte" />
+    <Property Name="codigo" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="NewId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tDatosTecnicos">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Tipo" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tEmpresa">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="Direccion" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="Telefono" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="Datos" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Papelera" Type="Int16" />
+    <Property Name="Cuit" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="DominioMail" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tEstado">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Tipo" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tEstadoCompra">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Tipo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tImagen">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="imagen" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="tInventario">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idImagen" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="idCategoria" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="descripcion" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="empresa" Type="Int32" />
+    <Property Name="nro" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="valor" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="cantUnidades" Type="Int32" />
+    <Property Name="idResponsable" Type="Decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="tItem">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="cantidad" Type="Int32" />
+    <Property Name="descripcion" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="importeProveedor" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="importeCliente" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="idProveedor" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="idCompra" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="NroPedidoProveedor" Type="Decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="tItem2">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idPedido" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Nombre" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="512" FixedLength="false" Unicode="false" />
+    <Property Name="Cantidad" Type="Int32" />
+    <Property Name="Costo" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="Precio" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="Fecha" Type="DateTime" Precision="0" />
+    <Property Name="idUsuario" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="idEstado" Type="Byte" />
+    <Property Name="idAprobo" Type="Decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="tLog">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idUsuario" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Accion" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="Mensaje" Type="String" MaxLength="512" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tManual">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="titulo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="idUsuario" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="fecha" Type="DateTime" Precision="0" />
+    <Property Name="idEmpresa" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Papelera" Type="Byte" />
+    <Property Name="descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tModoResolucion">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Tipo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tNovedad">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="descripcion" Type="String" MaxLength="1024" FixedLength="false" Unicode="false" />
+    <Property Name="fecha" Type="DateTime" Precision="0" />
+    <Property Name="idUsuario" Type="Decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="tPedido">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idEmpresa" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="idCliente" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="idUsuario" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Titulo" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="1024" FixedLength="false" Unicode="false" />
+    <Property Name="Fecha" Type="DateTime" Precision="3" />
+    <Property Name="FechaARealizar" Type="DateTime" Precision="3" />
+    <Property Name="Estado" Type="Byte" />
+    <Property Name="idCategoria" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="idPrioridad" Type="Byte" />
+    <Property Name="idAsignacionResponsable" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="idModoResolucion" Type="Byte" />
+  </EntityType>
+  <EntityType Name="tPedidoMail">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idPedido" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="nroMail" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="fecha" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tPrioridad">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Tipo" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tProveedor">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="Telefono" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="Direccion" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="Mail" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="Papelera" Type="Byte" />
+  </EntityType>
+  <EntityType Name="tRegistroAcceso">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idUsuario" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Fecha" Type="DateTime" Precision="3" />
+    <Property Name="descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ip" Type="String" MaxLength="24" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tResponsableEmpresa">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idEmpresa" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="idUsuario" Type="Decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="tUsuario">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="Usuario" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="Clave" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="Mail" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="idCategoria" Type="Byte" />
+    <Property Name="Papelera" Type="Byte" />
+  </EntityType>
+  <EntityType Name="tResponsableInventario">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Decimal" Precision="18" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Tipo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="idEmpresaInventario" Type="Decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityContainer Name="NaexCRMEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tAccion" EntityType="Self.tAccion" />
+    <EntitySet Name="tAsignacionResponsable" EntityType="Self.tAsignacionResponsable" />
+    <EntitySet Name="tCategoria" EntityType="Self.tCategoria" />
+    <EntitySet Name="tCategoriaInventario" EntityType="Self.tCategoriaInventario" />
+    <EntitySet Name="tCliente" EntityType="Self.tCliente" />
+    <EntitySet Name="tClientePosible" EntityType="Self.tClientePosible" />
+    <EntitySet Name="tComentario" EntityType="Self.tComentario" />
+    <EntitySet Name="tComentarioCompra" EntityType="Self.tComentarioCompra" />
+    <EntitySet Name="tCompra" EntityType="Self.tCompra" />
+    <EntitySet Name="tDatosTecnicos" EntityType="Self.tDatosTecnicos" />
+    <EntitySet Name="tEmpresa" EntityType="Self.tEmpresa" />
+    <EntitySet Name="tEstado" EntityType="Self.tEstado" />
+    <EntitySet Name="tEstadoCompra" EntityType="Self.tEstadoCompra" />
+    <EntitySet Name="tImagen" EntityType="Self.tImagen" />
+    <EntitySet Name="tInventario" EntityType="Self.tInventario" />
+    <EntitySet Name="tItem" EntityType="Self.tItem" />
+    <EntitySet Name="tItem2" EntityType="Self.tItem2" />
+    <EntitySet Name="tLog" EntityType="Self.tLog" />
+    <EntitySet Name="tManual" EntityType="Self.tManual" />
+    <EntitySet Name="tModoResolucion" EntityType="Self.tModoResolucion" />
+    <EntitySet Name="tNovedad" EntityType="Self.tNovedad" />
+    <EntitySet Name="tPedido" EntityType="Self.tPedido" />
+    <EntitySet Name="tPedidoMail" EntityType="Self.tPedidoMail" />
+    <EntitySet Name="tPrioridad" EntityType="Self.tPrioridad" />
+    <EntitySet Name="tProveedor" EntityType="Self.tProveedor" />
+    <EntitySet Name="tRegistroAcceso" EntityType="Self.tRegistroAcceso" />
+    <EntitySet Name="tResponsableEmpresa" EntityType="Self.tResponsableEmpresa" />
+    <EntitySet Name="tUsuario" EntityType="Self.tUsuario" />
+    <EntitySet Name="tResponsableInventario" EntityType="Self.tResponsableInventario" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,4 @@
+ERROR 24 crm.DetalleCuota - DetalleCuota - 08/08/2016 12:25:53 p.m.- Referencia a objeto no establecida como instancia de un objeto. - btnEliminar_Click
+ERROR 8 crm.DetalleCuota - DetalleCuota - 08/08/2016 12:28:10 p.m.- Referencia a objeto no establecida como instancia de un objeto. - btnEliminar_Click
+ERROR 5 crm.DetalleCuota - DetalleCuota - 08/08/2016 03:14:53 p.m.- El proceso no puede obtener acceso al archivo 'C:\Users\ntabucchi\Documents\Proyectos\NAEX\branches\CRM HA\trunk\Archivos\ImagenCuota\156.jpg' porque está siendo utilizado en otro proceso. - btnEliminar_Click
+ERROR 13 crm.DetalleCuota - DetalleCuota - 08/08/2016 03:15:52 p.m.- El proceso no puede obtener acceso al archivo 'C:\Users\ntabucchi\Documents\Proyectos\NAEX\branches\CRM HA\trunk\Archivos\ImagenCuota\156.jpg' porque está siendo utilizado en otro proceso. - btnEliminar_Click

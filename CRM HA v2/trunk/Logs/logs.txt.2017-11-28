@@ -1,0 +1,2 @@
+ERROR RemoteServer_Worker-1 JobScheduler - JobScheduler - 28/11/2017 09:19:32 a.m.- Se produjo una excepción de tipo 'System.Exception'. - Execute
+ERROR RemoteServer_Worker-1 JobSchedulerCuotas - JobSchedulerCuotas - 28/11/2017 09:19:34 a.m.- Se produjo una excepción de tipo 'System.Exception'. - Execute

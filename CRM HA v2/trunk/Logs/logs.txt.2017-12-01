@@ -1,0 +1,10 @@
+ERROR 5 crm.ResumenSaldo - ResumenSaldo - 01/12/2017 03:33:34 p.m.- Referencia a objeto no establecida como instancia de un objeto. - CalcularTotales - Admin
+ERROR 8 crm.ResumenSaldo - ResumenSaldo - 01/12/2017 03:35:07 p.m.- Referencia a objeto no establecida como instancia de un objeto. - CalcularTotales - Admin
+ERROR 8 crm.ResumenSaldo - ResumenSaldo - 01/12/2017 03:38:24 p.m.- La cadena de entrada no tiene el formato correcto. - CalcularTotales - Admin
+ERROR 17 crm.DetalleCuota2 - DetalleCuota - 01/12/2017 05:28:48 p.m.- Referencia a objeto no establecida como instancia de un objeto. - Page_Load
+ERROR 10 crm.DetalleCuota2 - DetalleCuota - 01/12/2017 05:29:46 p.m.- Referencia a objeto no establecida como instancia de un objeto. - Page_Load
+ERROR 13 crm.DetalleCuota2 - DetalleCuota - 01/12/2017 05:30:15 p.m.- Referencia a objeto no establecida como instancia de un objeto. - Page_Load
+ERROR 10 crm.DetalleCuota2 - DetalleCuota - 01/12/2017 05:33:11 p.m.- Referencia a objeto no establecida como instancia de un objeto. - Page_Load
+ERROR 16 crm.DetalleCuota2 - DetalleCuota - 01/12/2017 05:38:47 p.m.- Referencia a objeto no establecida como instancia de un objeto. - Page_Load
+ERROR 16 crm.DetalleCuota2 - DetalleCuota - 01/12/2017 05:39:12 p.m.- Referencia a objeto no establecida como instancia de un objeto. - Page_Load
+ERROR 22 crm.DetalleCuota2 - DetalleCuota - 01/12/2017 05:40:54 p.m.- Referencia a objeto no establecida como instancia de un objeto. - Page_Load

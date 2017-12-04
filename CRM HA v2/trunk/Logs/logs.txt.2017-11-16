@@ -1,0 +1,4 @@
+ERROR 15 crm.MensajeError - Pedidos - 15/11/2017 05:06:54 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 39 crm.MensajeError - Pedidos - 16/11/2017 02:23:12 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 7 crm.DetalleCC - DetalleCC - 16/11/2017 02:52:43 p.m.- Referencia a objeto no establecida como instancia de un objeto. - btnAnularReserva_Click
+ERROR 10 crm.CuentaCorriente - CuentaCorriente - 16/11/2017 03:36:36 p.m.- El descriptor de acceso de la propiedad 'GetTotal' inició la excepción 'Referencia a objeto no establecida como instancia de un objeto.' en el objeto 'DLL.Negocio.cCuentaCorrienteUsuario' - Page_Load
