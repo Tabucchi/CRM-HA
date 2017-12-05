@@ -42,7 +42,7 @@
                             <li><a href="./ListaOperacionVenta.aspx"><span class="list-operaciones"></span>Operaciones de venta</a></li>
 							<li><a href="./CC.aspx"><span class="list-pagos"></span>Historial de Pagos</a></li>
                             <li><a href="./CuentaCorriente.aspx"><span class="list-cc"></span>Cuentas Corrientes</a></li>
-                            <li><a href="./Morosos.aspx"><span class="list-moroso"></span>Morosos</a></li>
+                            <li><a href="./Morosos.aspx"><span class="list-moroso"></span>Deudas pendientes</a></li>
 						</ul>
 					</li>                      
                     <li>
