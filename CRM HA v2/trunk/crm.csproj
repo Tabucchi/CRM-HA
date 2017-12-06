@@ -417,6 +417,13 @@
     <Compile Include="Mensaje.aspx.designer.cs">
       <DependentUpon>Mensaje.aspx</DependentUpon>
     </Compile>
+    <Compile Include="MensajeConstruccion.aspx.cs">
+      <DependentUpon>MensajeConstruccion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MensajeConstruccion.aspx.designer.cs">
+      <DependentUpon>MensajeConstruccion.aspx</DependentUpon>
+    </Compile>
     <Compile Include="MensajeError.aspx.cs">
       <DependentUpon>MensajeError.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -709,6 +716,7 @@
     <Content Include="images\bg-content.jpg" />
     <Content Include="images\bg_01.jpg" />
     <Content Include="images\bg_02.jpg" />
+    <Content Include="images\construccion.png" />
     <Content Include="images\encabezadoCC.png" />
     <Content Include="images\encabezadoHA.png" />
     <Content Include="images\encabezadoHistorial.png" />
@@ -818,6 +826,7 @@
     <Content Include="MailTemplate\NuevoTicketCliente.html" />
     <Content Include="MailTemplate\AvisoPagoTemplate.html" />
     <Content Include="Mensaje.aspx" />
+    <Content Include="MensajeConstruccion.aspx" />
     <Content Include="MensajeError.aspx" />
     <Content Include="MensajePostVenta.aspx" />
     <Content Include="Morosos.aspx" />

@@ -42,14 +42,15 @@
                             <li><a href="./ListaOperacionVenta.aspx"><span class="list-operaciones"></span>Operaciones de venta</a></li>
 							<li><a href="./CC.aspx"><span class="list-pagos"></span>Historial de Pagos</a></li>
                             <li><a href="./CuentaCorriente.aspx"><span class="list-cc"></span>Cuentas Corrientes</a></li>
-                            <li><a href="./Morosos.aspx"><span class="list-moroso"></span>Morosos</a></li>
+                            <li><a href="./Morosos.aspx"><span class="list-moroso"></span>Deudas pendientes</a></li>
 						</ul>
 					</li>                      
                     <li>
                         <asp:Panel ID="pnlDatosAnalisis" runat="server" Visible="true">
                         <a href="#"><span class="admin"></span>Datos de análisis</a>
 						<ul>
-							<li><a href="./CuotasCliente.aspx" style="font-size:11.5px"><span class="list-ccc"></span>Cuotas a cobrar por Cliente</a></li>
+							<%--<li><a href="./CuotasCliente.aspx" style="font-size:11.5px"><span class="list-ccc"></span>Cuotas a cobrar por Cliente</a></li>--%>
+                            <li><a href="./MensajeConstruccion.aspx" style="font-size:11.5px"><span class="list-ccc"></span>Cuotas a cobrar por Cliente</a></li>
                             <li><a href="./CuotasObra.aspx" style="font-size:11.5px"><span class="list-cco"></span>Cuotas a cobrar por Obra</a></li>
                             <li><a href="./UnidadesVendidas.aspx" style="font-size:11.5px"><span class="list-vendidas"></span>Unidades vendidas</a></li>
                             <li><a href="./Comprobantes.aspx" style="font-size:11.5px"><span class="list-comprobantes"></span>Comprobantes</a></li>

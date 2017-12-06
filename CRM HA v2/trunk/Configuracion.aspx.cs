@@ -470,7 +470,7 @@ namespace crm
             DateTime fecha = DateTime.Now;
 
             //lbFechaIndiceUVA.Text = String.Format("{0:MMMM yyyy}", fecha);
-            mpeIndiceUVA.Show();
+            //mpeIndiceUVA.Show();
         }
 
         protected void btnFinalizarIndiceUVA_Click(object sender, EventArgs e)
@@ -538,7 +538,7 @@ namespace crm
 
         protected void btnCancelarUVA_Click(object sender, EventArgs e)
         {
-            mpeIndiceUVA.Hide();
+            //mpeIndiceUVA.Hide();
         }
         #endregion
 

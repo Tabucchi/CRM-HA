@@ -625,6 +625,18 @@ namespace DLL.Negocio
             return DAO.GetCuotasActivaByFecha(fecha);
         }
 
+        public static List<cCuota> GetCuotasActivaCAC()
+        {
+            cCuotaDAO DAO = new cCuotaDAO();
+            return DAO.GetCuotasActivaCAC();
+        }
+
+        public static List<cCuota> GetCuotasActivaUVA()
+        {
+            cCuotaDAO DAO = new cCuotaDAO();
+            return DAO.GetCuotasActivaUVA();
+        }
+
         public static List<cCuota> GetCuotasActivaByFechaConCAC(DateTime fecha)
         {
             cCuotaDAO DAO = new cCuotaDAO();

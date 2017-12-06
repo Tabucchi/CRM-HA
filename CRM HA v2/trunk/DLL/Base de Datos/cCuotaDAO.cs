@@ -444,6 +444,50 @@ namespace DLL.Base_de_Datos
             return cuota;
         }
 
+        //Trae las cuotas con CAC activas de cada forma de pago
+        public List<cCuota> GetCuotasActivaCAC()
+        {
+            cCuotaDAO DAO = new cCuotaDAO();
+            List<cCuota> cuota = new List<cCuota>();
+            string query = "SELECT c.id FROM (SELECT c.*, row_number() over (partition by c.idFormaPagoOV order by c.id ASC) as rn FROM tCuota c INNER JOIN ";
+            query += " tCuentaCorriente cc ON c.idCuentaCorriente=cc.id INNER JOIN tOperacionVenta op ON cc.idOperacionVenta=op.id WHERE c.estado=1 and cc.estado=" + (Int16)estadoCuenta_Cuota.Activa;
+            query += " AND op.cac = 1) c INNER JOIN tFormaPagoOV fp ON c.idFormaPagoOV = fp.id WHERE c.rn = 1 order by c.idCuentaCorriente";
+
+            SqlCommand com = new SqlCommand(query);
+            com.CommandText = query.ToString();
+            ArrayList idList = cDataBase.GetInstance().ExecuteReader(com);
+            if (idList == null)
+                return null;
+
+            for (int i = 0; idList.Count > i; i++)
+            {
+                cuota.Add(DAO.Load(Convert.ToString(idList[i])));
+            }
+            return cuota;
+        }
+
+        //Trae las cuotas con UVA activas de cada forma de pago
+        public List<cCuota> GetCuotasActivaUVA()
+        {
+            cCuotaDAO DAO = new cCuotaDAO();
+            List<cCuota> cuota = new List<cCuota>();
+            string query = "SELECT c.id FROM (SELECT c.*, row_number() over (partition by c.idFormaPagoOV order by c.id ASC) as rn FROM tCuota c INNER JOIN ";
+            query += " tCuentaCorriente cc ON c.idCuentaCorriente=cc.id INNER JOIN tOperacionVenta op ON cc.idOperacionVenta=op.id WHERE c.estado=1 and cc.estado=" + (Int16)estadoCuenta_Cuota.Activa;
+            query += " AND op.uva = 1) c INNER JOIN tFormaPagoOV fp ON c.idFormaPagoOV = fp.id WHERE c.rn = 1 order by c.idCuentaCorriente";
+
+            SqlCommand com = new SqlCommand(query);
+            com.CommandText = query.ToString();
+            ArrayList idList = cDataBase.GetInstance().ExecuteReader(com);
+            if (idList == null)
+                return null;
+
+            for (int i = 0; idList.Count > i; i++)
+            {
+                cuota.Add(DAO.Load(Convert.ToString(idList[i])));
+            }
+            return cuota;
+        }
+
         public List<cCuota> GetCuotasActivaByFechaConCAC(DateTime fecha)
         {
             //Lista las cuotas desde 15 del mes hasta el 14 del siguiente mes para actualizar el índice CAC de las cuotas del actual mes.
@@ -509,6 +553,7 @@ namespace DLL.Base_de_Datos
             }
             return cuota;
         }
+
 
         public string GetTotalACobrar()
         {

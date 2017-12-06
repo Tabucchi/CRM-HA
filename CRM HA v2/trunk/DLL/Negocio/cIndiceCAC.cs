@@ -105,104 +105,94 @@ namespace DLL.Negocio
         {
             try
             {
-                string aux = null;
-                List<cCuota> cuotas = cCuota.GetCuotasActivaByFecha(fecha);
+                List<cCuota> cuotas = cCuota.GetCuotasActivaCAC();
 
                 foreach (cCuota c in cuotas)
                 {
-                    if (aux != c.IdCuentaCorriente)
+                    cCuentaCorriente cc = cCuentaCorriente.Load(c.IdCuentaCorriente);
+                    decimal interes = 0;
+
+                    string monedaCuota = null;
+                    cFormaPagoOV formaPago = cFormaPagoOV.Load(c.IdFormaPagoOV);
+
+                    if (c.IdFormaPagoOV == "-1")
+                        monedaCuota = cc.GetMoneda;
+                    else
+                        monedaCuota = formaPago.GetMoneda;
+
+                    if (monedaCuota == tipoMoneda.Pesos.ToString())
                     {
-                        cCuentaCorriente cc = cCuentaCorriente.Load(c.IdCuentaCorriente);
-                        decimal interes = 0;
+                        string indiceBase = cc.IdIndiceCAC;
+                                
+                        decimal vCAC = 0;
+                        cOperacionVenta ov = cOperacionVenta.Load(cc.IdOperacionVenta);
 
-                        if (cc.Id != "10278" && cc.Id != "10542")
+                        if (formaPago.CantCuotas > 1)
+                            vCAC = cCuota.CalcularVariacionMensualCAC(indice_anterior.ToString(), _nuevoIndice, true);
+                        else
+                            vCAC = cCuota.CalcularVariacionMensualCAC(ov.IdIndiceCAC, _nuevoIndice, true);
+                                
+                        //Si el indice CAC es menor respecto al mes anterior, el resultado es 0.
+                        if (cIndiceCAC.Load(indice_anterior).Valor > cIndiceCAC.Load(_nuevoIndice).Valor)
                         {
-                            string monedaCuota = null;
-                            cFormaPagoOV formaPago = cFormaPagoOV.Load(c.IdFormaPagoOV);
-                            if (c.IdFormaPagoOV == "-1")
-                                monedaCuota = cc.GetMoneda;
-                            else
-                                monedaCuota = formaPago.GetMoneda;
-
-                            if (monedaCuota == tipoMoneda.Pesos.ToString())
-                            {
-                                string indiceBase = cc.IdIndiceCAC;
-                                
-                                //MODIFICAR
-                                //decimal vCAC = cCuota.CalcularVariacionMensualCAC(cCuentaCorriente.Load(c.IdCuentaCorriente).IdIndiceCAC, _nuevoIndice.ToString());
-                                decimal vCAC = cCuota.CalcularVariacionMensualCAC(indice_anterior.ToString(), _nuevoIndice, true);
-                                
-                                //Si el indice CAC es menor respecto al mes anterior, el resultado es 0.
-                                if (cIndiceCAC.Load(indice_anterior).Valor > cIndiceCAC.Load(_nuevoIndice).Valor)
-                                {
-                                    c.VariacionCAC = 0;
-                                    vCAC = 0;
-                                }
-                                else
-                                    c.VariacionCAC = vCAC;
-
-                                decimal _saldo = cc.Saldo;
-
-                                if (c.Nro == 1)
-                                    _saldo = cCuota.CalcularSaldoByIndice(formaPago.Valor, vCAC);
-                                else
-                                {
-                                    int _saldoAnterior = c.Nro - 1;
-                                    _saldo = cCuota.CalcularSaldoByIndice(cCuota.GetCuotaByNro(cc.Id, _saldoAnterior, c.IdFormaPagoOV).Saldo, vCAC);
-                                }
-                                                                
-                                if (formaPago.InteresAnual != 0)
-                                {
-                                    interes = Convert.ToDecimal(formaPago.InteresAnual) / 12;
-                                    interes = interes + 100;
-                                    _saldo = (_saldo * interes) / 100;
-                                }
-
-                                decimal valorCuota = 0;
-                                /*if (cc.CantCuotas != 0)
-                                    valorCuota = c.Nro != 1 ? cCuota.CalcularCuota(cc.CantCuotas - c.Nro + 1, _saldo) : cCuota.CalcularCuota(fp.CantCuotas, _saldo);
-                                else
-                                {*/
-                                cOperacionVenta ov = cOperacionVenta.Load(cc.IdOperacionVenta);
-
-                                List<cFormaPagoOV> fps = cFormaPagoOV.GetFormaPagoOVByIdOV(ov.Id);
-                                foreach (cFormaPagoOV f in fps)
-                                {
-                                    if (c.IdFormaPagoOV == f.Id)
-                                    {
-                                        if (f.GetMoneda == tipoMoneda.Pesos.ToString())
-                                        {
-                                            cFormaPagoOV fp = cFormaPagoOV.Load(f.Id);
-
-                                            int _cantAnticipo = cCuota.GetCuotasAnticipos(cc.Id, fp.Id).Count;
-                                            //int _cantCuota = ((fp.CantCuotas - c.Nro) + 1) - _cantAnticipo;
-                                            int _cantCuota = (fp.CantCuotas - c.Nro) + 1;
-                                            _cantCuota = _cantCuota - _cantAnticipo;
-
-                                            valorCuota = c.Nro != 1 ? cCuota.CalcularCuota(_cantCuota, _saldo) : cCuota.CalcularCuota(fp.CantCuotas, _saldo);
-
-                                            actualizarCuotas(cc.Id, c.Nro, fp.CantCuotas, _cantAnticipo, tipoMoneda.Pesos.ToString(), _saldo, ov);
-                                        }
-                                    }
-                                }
-                                //}
-
-                                c.Monto = valorCuota;
-                                c.MontoAjustado = _saldo;
-                                c.Saldo = _saldo - valorCuota;
-
-                                decimal _vencimiento1 = valorCuota + cCuota.CalcularComisionIva(valorCuota, c.Comision, cc.Iva);
-                                c.TotalComision = cCuota.CalcularComisionIva(valorCuota, c.Comision, cc.Iva);
-                                c.Vencimiento1 = _vencimiento1;
-                                c.Vencimiento2 = cCuota.Calcular2Venc(_vencimiento1);
-                                c.Save();
-                            }
-
-                            aux = c.IdCuentaCorriente;
-                            Thread.Sleep(500);
+                            c.VariacionCAC = 0;
+                            vCAC = 0;
                         }
+                        else
+                            c.VariacionCAC = vCAC;
+
+                        decimal _saldo = cc.Saldo;
+
+                        if (c.Nro == 1)
+                            _saldo = cCuota.CalcularSaldoByIndice(formaPago.Valor, vCAC);
+                        else
+                        {
+                            int _saldoAnterior = c.Nro - 1;
+                            _saldo = cCuota.CalcularSaldoByIndice(cCuota.GetCuotaByNro(cc.Id, _saldoAnterior, c.IdFormaPagoOV).Saldo, vCAC);
+                        }
+                                                                
+                        if (formaPago.InteresAnual != 0)
+                        {
+                            interes = Convert.ToDecimal(formaPago.InteresAnual) / 12;
+                            interes = interes + 100;
+                            _saldo = (_saldo * interes) / 100;
+                        }
+
+                        decimal valorCuota = 0;
+                                
+                        List<cFormaPagoOV> fps = cFormaPagoOV.GetFormaPagoOVByIdOV(ov.Id);
+                        foreach (cFormaPagoOV f in fps)
+                        {
+                            if (c.IdFormaPagoOV == f.Id)
+                            {
+                                if (f.GetMoneda == tipoMoneda.Pesos.ToString())
+                                {
+                                    cFormaPagoOV fp = cFormaPagoOV.Load(f.Id);
+
+                                    int _cantAnticipo = cCuota.GetCuotasAnticipos(cc.Id, fp.Id).Count;
+                                    int _cantCuota = (fp.CantCuotas - c.Nro) + 1;
+                                    _cantCuota = _cantCuota - _cantAnticipo;
+
+                                    valorCuota = c.Nro != 1 ? cCuota.CalcularCuota(_cantCuota, _saldo) : cCuota.CalcularCuota(fp.CantCuotas, _saldo);
+
+                                    actualizarCuotas(cc.Id, c.Nro, fp.CantCuotas, _cantAnticipo, tipoMoneda.Pesos.ToString(), _saldo, ov);
+                                }
+                            }
+                        }
+
+                        c.Monto = valorCuota;
+                        c.MontoAjustado = _saldo;
+                        c.Saldo = _saldo - valorCuota;
+
+                        decimal _vencimiento1 = valorCuota + cCuota.CalcularComisionIva(valorCuota, c.Comision, cc.Iva);
+                        c.TotalComision = cCuota.CalcularComisionIva(valorCuota, c.Comision, cc.Iva);
+                        c.Vencimiento1 = _vencimiento1;
+                        c.Vencimiento2 = cCuota.Calcular2Venc(_vencimiento1);
+                        c.Save();
                     }
                 }
+
+                Thread.Sleep(500);
             }
             catch (Exception ex)
             {
