@@ -144,7 +144,7 @@ namespace DLL.Negocio
                         decimal _saldo = cc.Saldo;
 
                         if (c.Nro == 1)
-                            _saldo = cCuota.CalcularSaldoByIndice(formaPago.Valor, vCAC);
+                            _saldo = cCuota.CalcularSaldoByIndice(formaPago.Monto, vCAC);
                         else
                         {
                             int _saldoAnterior = c.Nro - 1;
