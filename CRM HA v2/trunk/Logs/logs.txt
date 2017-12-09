@@ -1,0 +1,10 @@
+ERROR 12 crm.CuentaCorriente - CuotasCliente - 09/12/2017 12:10:12 a.m.- Referencia a objeto no establecida como instancia de un objeto. - CalcularTotales - Admin
+ERROR 12 crm.CuentaCorriente - CuentaCorriente - 09/12/2017 12:10:13 a.m.- Subproceso anulado. - Page_Load
+ERROR 8 crm.MensajeError - Pedidos - 09/12/2017 12:14:45 a.m.- Etiqueta de servidor 'ajax:ToolkitScriptManager' desconocida. - Page_Load - Admin
+ERROR 8 crm.DetalleCuota2 - DetalleCuota - 09/12/2017 12:48:57 a.m.- Se produjo una excepción de tipo 'System.Exception'. - Page_Load
+ERROR 6 crm.TotalDeudaCliente - CuentaCorriente - 09/12/2017 01:45:14 p.m.- El descriptor de acceso de la propiedad 'GetTotalDeuda' inició la excepción 'Referencia a objeto no establecida como instancia de un objeto.' en el objeto 'DLL.Negocio.cCuentaCorrienteUsuario' - Page_Load
+ERROR 29 crm.TotalDeudaCliente - CuentaCorriente - 09/12/2017 02:13:41 p.m.- Se produjo una excepción de tipo 'System.Exception'. - Page_Load
+ERROR 24 crm.MensajeError - Pedidos - 09/12/2017 02:13:41 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 6 crm.TotalDeudaCliente - CuentaCorriente - 09/12/2017 04:44:42 p.m.- Se produjo una excepción de tipo 'System.Exception'. - Page_Load
+ERROR 11 crm.MensajeError - Pedidos - 09/12/2017 04:44:43 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 11 crm.MensajeError - Pedidos - 09/12/2017 07:47:08 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin

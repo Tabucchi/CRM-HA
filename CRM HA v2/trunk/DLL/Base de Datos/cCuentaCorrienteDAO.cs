@@ -71,10 +71,11 @@ namespace DLL.Base_de_Datos
                 return cDataBase.GetInstance().UpdateObject(cuentacorriente.Id, GetTable, AttributesClass(cuentacorriente));
         }
 
-        public List<cCuentaCorriente> GetCuentaCorriente(string _idEmpresa, Int16 _estado, string _obra, string _moneda)
+        public List<cCuentaCorriente> GetCuentaCorriente(string _idEmpresa, Int16 _estado, string _obra, Int16 _moneda)
         {
             List<cCuentaCorriente> cc = new List<cCuentaCorriente>();
-            string query = "SELECT cc.id FROM " + GetTable + " cc INNER JOIN tEmpresaUnidad eu ON cc.idEmpresaUnidad = eu.id INNER JOIN tEmpresa e ON e.id = eu.idEmpresa WHERE ";
+            string query = "SELECT cc.id FROM " + GetTable + " cc INNER JOIN tEmpresaUnidad eu ON cc.idEmpresaUnidad = eu.id INNER JOIN tEmpresa e ON e.id = eu.idEmpresa ";
+            query += " INNER JOIN tOperacionVenta ov ON cc.idOperacionVenta=ov.id WHERE";
             
             if (!string.IsNullOrEmpty(_idEmpresa) || _idEmpresa == "0")
                 query += " cc.idEmpresa = '" + _idEmpresa + "' AND";
@@ -89,11 +90,27 @@ namespace DLL.Base_de_Datos
             if (!string.IsNullOrEmpty(_obra))
                 query += " AND eu.idProyecto= '" + _obra + "'";
 
-            if (!string.IsNullOrEmpty(_moneda) && _moneda != "-1") {
-                if (_moneda == tipoMoneda.Dolar.ToString())
-                    query += " AND cc.monedaAcordada= '" + 0 + "'";
-                else
-                    query += " AND cc.monedaAcordada= '" + 1 + "'";
+            //if (!string.IsNullOrEmpty(_moneda) && _moneda != "-1") {
+            //    if (_moneda == tipoMoneda.Dolar.ToString())
+            //        query += " AND cc.monedaAcordada= '" + 0 + "'";
+            //    else
+            //        query += " AND cc.monedaAcordada= '" + 1 + "'";
+            //}
+
+            switch (_moneda)
+            {
+                case (Int16)eMonedaIndice.Dolar:
+                    query += " AND cc.monedaAcordada=" + (Int16)tipoMoneda.Dolar;
+                    break;
+                case (Int16)eMonedaIndice.Pesos:
+                    query += " AND cc.monedaAcordada=" + (Int16)tipoMoneda.Pesos;
+                    break;
+                case (Int16)eMonedaIndice.CAC:
+                    query += " AND ov.cac=" + Convert.ToInt16(true);
+                    break;
+                case (Int16)eMonedaIndice.UVA:
+                    query += " AND ov.uva=" + Convert.ToInt16(true);
+                    break;
             }
 
             query += " Order by e.Apellido, e.Nombre ASC";
@@ -104,6 +121,10 @@ namespace DLL.Base_de_Datos
                 return null;
             for (int i = 0; idList.Count > i; i++)
             {
+                if (Convert.ToString(idList[i]) == null)
+                    i++;
+
+
                 cc.Add(Load(Convert.ToString(idList[i])));
             }
             return cc;

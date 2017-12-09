@@ -25,6 +25,8 @@ public enum eTipoOperacion { Cuota = 0, PagoCuota = 1, NotaCredito = 2, NotaDebi
 
 public enum eIndice { CAC = 0, UVA = 1}
 
+public enum eMonedaIndice { Todos = 0, Dolar = 1, Pesos = 2, CAC = 3, UVA = 4}
+
 public class cCampoGenerico
 {
     private string id;

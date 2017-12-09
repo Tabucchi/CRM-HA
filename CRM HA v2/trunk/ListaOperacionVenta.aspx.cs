@@ -19,7 +19,9 @@ namespace crm
             {
                 if (cUsuario.Load(HttpContext.Current.User.Identity.Name).IdCategoria == (Int16)eCategoria.Administración)
                     pnlNuevoOV.Visible = true;
-                    
+
+                
+
                 Cargar();
                 CalcularTotales();
             }
@@ -48,9 +50,24 @@ namespace crm
 
                 cbEstado.DataSource = cOperacionVenta.CargarComboEstadoOV();
                 cbEstado.DataBind();
+
+                cbMonedaIndice.DataSource = cOperacionVenta.CargarComboMonedaIndiceOV();
+                cbMonedaIndice.DataBind();
                 #endregion
 
-                ListarTodos();
+                cbEstado.SelectedIndex = (Int16)estadoOperacionVenta.Activo;
+
+                DateTime date = DateTime.Now;
+                DateTime desde = new DateTime(date.Year, date.Month, 1);
+                DateTime hasta = new DateTime(date.Month == 12 ? date.Year + 1 : date.Year, date.Month == 12 ? 1 : date.Month + 1, 1);
+
+                txtFechaDesde.Text = String.Format("{0:dd/MM/yyyy}", desde);
+                txtFechaHasta.Text = String.Format("{0:dd/MM/yyyy}", hasta);
+
+                lvOperacionVenta.DataSource = cOperacionVenta.Search(cbEmpresa.SelectedValue, cbProyectos.SelectedValue, (Int16)cbEstado.SelectedIndex, (Int16)cbMonedaIndice.SelectedIndex, txtFechaDesde.Text, txtFechaHasta.Text); ;
+                lvOperacionVenta.DataBind();
+
+                //ListarTodos();
             }
             catch (Exception ex)
             {
@@ -72,10 +89,21 @@ namespace crm
         {
             try
             {
-                List<cOperacionVenta> ovs = cOperacionVenta.Search(cbEmpresa.SelectedValue, cbProyectos.SelectedValue, (cbEstado.SelectedIndex - 1).ToString());
+                string desde = null;
+                string hasta = null;
+
+                if (!string.IsNullOrEmpty(txtFechaDesde.Text))
+                    desde = String.Format("{0:yyyy-MM-dd}", Convert.ToDateTime(txtFechaDesde.Text));
+
+                if (!string.IsNullOrEmpty(txtFechaHasta.Text))
+                    hasta = String.Format("{0:yyyy-MM-dd}", Convert.ToDateTime(txtFechaHasta.Text));
+
+                List<cOperacionVenta> ovs = cOperacionVenta.Search(cbEmpresa.SelectedValue, cbProyectos.SelectedValue, (Int16)cbEstado.SelectedIndex, (Int16)cbMonedaIndice.SelectedIndex, desde, hasta);
                 lvOperacionVenta.DataSource = ovs;
                 lvOperacionVenta.DataBind();
-                CalcularTotales();
+
+                if(ovs != null)
+                    CalcularTotales();
             }
             catch (Exception ex)
             {

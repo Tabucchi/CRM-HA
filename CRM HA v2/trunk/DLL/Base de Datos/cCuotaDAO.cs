@@ -52,6 +52,9 @@ namespace DLL.Base_de_Datos
 
         public cCuota Load(string id)
         {
+            
+
+
             Hashtable atributos = cDataBase.GetInstance().LoadObject(id, GetTable);
             cCuota cuota = new cCuota();
             cuota.Id = Convert.ToString(atributos["id"]);
@@ -711,7 +714,16 @@ namespace DLL.Base_de_Datos
 
             SqlCommand com = new SqlCommand(query);
             string id = cDataBase.GetInstance().ExecuteScalar(com);
-            return Load(Convert.ToString(id));
+
+            int asd = 0;
+            if (id == null)
+                asd++;
+
+
+            if (!string.IsNullOrEmpty(id))
+                return Load(Convert.ToString(id));
+            else
+                return null;
         }
 
         public cCuota GetFirstActiva(string idCC, string _idFormaPago)
@@ -1318,6 +1330,30 @@ namespace DLL.Base_de_Datos
             com.Parameters.Add("@fechaDesde", SqlDbType.DateTime);
             com.Parameters["@fechaDesde"].Value = dateDesde;
 
+            com.CommandText = query.ToString();
+
+            ArrayList idList = cDataBase.GetInstance().ExecuteReader(com);
+            if (idList == null)
+                return null;
+
+            for (int i = 0; idList.Count > i; i++)
+            {
+                cuota.Add(DAO.Load(Convert.ToString(idList[i])));
+            }
+            return cuota;
+        }
+
+        public List<cCuota> GetCuotasActivasByEmpresa(string _idEmpresa)
+        {
+            cCuotaDAO DAO = new cCuotaDAO();
+            List<cCuota> cuota = new List<cCuota>();
+            string query = "SELECT c.id FROM tCuota c INNER JOIN tFormaPagoOV fp ON c.idFormaPagoOV=fp.id INNER JOIN tOperacionVenta o ON o.id=fp.idOperacionVenta ";
+            query += " INNER JOIN tEmpresaUnidad eu ON o.id= eu.idOv INNER JOIN tCuentaCorriente cc ON c.idCuentaCorriente=cc.id ";
+            query += " WHERE o.estado='" + (Int16)estadoOperacionVenta.Activo + "' AND eu.idEmpresa='" + _idEmpresa + "'";
+            query += " AND c.estado='" + (Int16)estadoCuenta_Cuota.Activa + "' AND cc.estado='" + (Int16)estadoCuenta_Cuota.Activa + "'";
+            query += " GROUP BY c.id";
+
+            SqlCommand com = new SqlCommand();
             com.CommandText = query.ToString();
 
             ArrayList idList = cDataBase.GetInstance().ExecuteReader(com);

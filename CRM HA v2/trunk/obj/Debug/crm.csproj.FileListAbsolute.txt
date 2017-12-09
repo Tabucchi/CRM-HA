@@ -141,3 +141,6 @@ C:\Users\ntabucchi\Documents\GitHub\CRM-HA\CRM HA v2\trunk\bin\Quartz.xml
 C:\Users\ntabucchi\Documents\GitHub\CRM-HA\CRM HA v2\trunk\obj\Debug\crm.csprojResolveAssemblyReference.cache
 C:\Users\ntabucchi\Documents\GitHub\CRM-HA\CRM HA v2\trunk\obj\Debug\crm.dll
 C:\Users\ntabucchi\Documents\GitHub\CRM-HA\CRM HA v2\trunk\obj\Debug\crm.pdb
+C:\Users\Nicolas\Documents\GitHub\CRM-HA\CRM HA v2\trunk\obj\Debug\crm.csprojResolveAssemblyReference.cache
+C:\Users\Nicolas\Documents\GitHub\CRM-HA\CRM HA v2\trunk\obj\Debug\crm.dll
+C:\Users\Nicolas\Documents\GitHub\CRM-HA\CRM HA v2\trunk\obj\Debug\crm.pdb

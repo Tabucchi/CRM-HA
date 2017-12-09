@@ -237,9 +237,15 @@ namespace crm
         {
             decimal _saldoTotal = 0;
             DataTable dtSaldo1 = cCuota.GetCuotasObraByFecha(_idProyecto, dateDesde, dateHasta);
+
             
+
             foreach (DataRow dr in dtSaldo1.Rows)
             {
+                int aad = 0;
+                if (dr[0].ToString()=="212")
+                    aad++;
+
                 //Si tiene más de una obra diferente
                 ArrayList cantProyectos = cUnidad.GetCantProyectosByOV(dr[5].ToString());
                 

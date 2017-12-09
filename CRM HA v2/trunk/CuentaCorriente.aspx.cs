@@ -65,29 +65,15 @@ namespace crm
             try
             {
                 decimal _totalCtaCte = 0;
-                decimal _totalDeuda = 0;
-                decimal _total = 0;
 
                 foreach (ListViewItem item in lvCC.Items)
                 {
                     Label lbTotalCtaCte = item.FindControl("lbSaldo") as Label;
                     _totalCtaCte += Convert.ToDecimal(lbTotalCtaCte.Text);
-
-                    Label lbTotalDeuda = item.FindControl("lbTotalDeuda") as Label;
-                    _totalDeuda += Convert.ToDecimal(lbTotalDeuda.Text);
-
-                    Label lbTotal = item.FindControl("lbTotal") as Label;
-                    _total += Convert.ToDecimal(lbTotal.Text);
                 }
 
                 Label lblTotalCtaCte = (Label)lvCC.FindControl("lbTotalCtaCte");
                 lblTotalCtaCte.Text = String.Format("{0:#,#0.00}", _totalCtaCte);
-
-                Label lblTotalDeuda = (Label)lvCC.FindControl("lbTotalTotalDeuda");
-                lblTotalDeuda.Text = String.Format("{0:#,#0.00}", _totalDeuda);
-
-                Label lblTotal = (Label)lvCC.FindControl("lbTotalTotal");
-                lblTotal.Text = String.Format("{0:#,#0.00}", _total);
             }
             catch (Exception ex)
             {
