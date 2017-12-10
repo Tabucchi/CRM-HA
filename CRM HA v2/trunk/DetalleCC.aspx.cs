@@ -1104,6 +1104,9 @@ namespace crm
 
             decimal montoTotal = usrCtrl.sumMontoCuota();
 
+            if (cFormaPagoOV.Load(cCuota.Load(hfIdCuota.Value).IdFormaPagoOV).GetMoneda == tipoMoneda.Dolar.ToString())
+                montoTotal = montoTotal * cValorDolar.LoadActualValue();
+
             //Débito del adelanto
             _nuevoSaldo = _saldo + (montoTotal * -1);
 
