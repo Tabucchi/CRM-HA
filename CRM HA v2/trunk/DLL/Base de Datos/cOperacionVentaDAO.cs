@@ -101,13 +101,13 @@ namespace DLL.Base_de_Datos
             return cc;
         }
 
-        public List<cOperacionVenta> Search(string _idEmpresa, string _idProyecto, string _idEstado)
+        public List<cOperacionVenta> Search(string _idEmpresa, string _idProyecto, Int16 _idEstado, Int16 _monedaIndice, string _desde, string _hasta)
         {
             List<cOperacionVenta> ovs = new List<cOperacionVenta>();
             string blanco = " ";
             string query = "SELECT ov.* FROM tOperacionVenta ov INNER JOIN tEmpresaUnidad eu ON ov.idEmpresaUnidad=eu.id INNER JOIN tEmpresa e ON e.id = eu.idEmpresa WHERE ov.id<>'-1'";
 
-            if (_idEstado != "-1")
+            if (_idEstado != (Int16)estadoOperacionVenta.Todas)
                 query += blanco + "AND ov.estado=" + _idEstado;
 
             if (_idEmpresa != "0")
@@ -118,9 +118,37 @@ namespace DLL.Base_de_Datos
                 query += blanco + "AND eu.idProyecto= '" + _idProyecto + "'";
             }
 
+            switch(_monedaIndice){
+                case (Int16)eMonedaIndice.Dolar:
+                    query += blanco + "AND ov.monedaAcordada=" + (Int16)tipoMoneda.Dolar;
+                    break;
+                case (Int16)eMonedaIndice.Pesos:
+                    query += blanco + "AND ov.monedaAcordada=" + (Int16)tipoMoneda.Pesos;
+                    break;
+                case (Int16)eMonedaIndice.CAC:
+                    query += blanco + "AND ov.cac=" + Convert.ToInt16(true);
+                    break;
+                case (Int16)eMonedaIndice.UVA:
+                    query += blanco + "AND ov.uva=" + Convert.ToInt16(true);
+                    break;
+            }
+
+            if (_desde != null && _hasta != null)
+                query += " AND ov.fecha BETWEEN @fechaDesde AND @fechaHasta";
+            
             query += blanco + "ORDER BY e.Apellido, e.Nombre ASC";
 
             SqlCommand com = new SqlCommand(query);
+
+            if (_desde != null && _hasta != null)
+            {
+                com.Parameters.Add("@fechaDesde", SqlDbType.DateTime);
+                com.Parameters["@fechaDesde"].Value = _desde;
+
+                com.Parameters.Add("@fechaHasta", SqlDbType.DateTime);
+                com.Parameters["@fechaHasta"].Value = _hasta;
+            }
+
             ArrayList idList = cDataBase.GetInstance().ExecuteReader(com);
             if (idList == null)
                 return null;

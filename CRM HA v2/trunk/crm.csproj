@@ -642,6 +642,13 @@
     <Compile Include="Test.aspx.designer.cs">
       <DependentUpon>Test.aspx</DependentUpon>
     </Compile>
+    <Compile Include="TotalDeudaCliente.aspx.cs">
+      <DependentUpon>TotalDeudaCliente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TotalDeudaCliente.aspx.designer.cs">
+      <DependentUpon>TotalDeudaCliente.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Unidad.aspx.cs">
       <DependentUpon>Unidad.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -844,6 +851,7 @@
     <Content Include="sidebar.ascx" />
     <Content Include="stats.aspx" />
     <Content Include="Test.aspx" />
+    <Content Include="TotalDeudaCliente.aspx" />
     <Content Include="Unidad.aspx" />
     <Content Include="UnidadesVendidas.aspx" />
     <Content Include="Usuario.aspx" />

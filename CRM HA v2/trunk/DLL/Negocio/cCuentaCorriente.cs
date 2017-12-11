@@ -127,32 +127,41 @@ namespace DLL.Negocio
                         if (fp.GetMoneda == tipoMoneda.Pesos.ToString())
                         {
                             cCuota c = cCuota.GetFirst(id, fp.Id);
-                            if (c.Estado == (Int16)estadoCuenta_Cuota.Activa)
-                                _saldoPesos += saldoCuota;
-                            else
-                                _saldoPesos = saldoCuota;
+                            if (c != null)
+                            {
+                                if (c.Estado == (Int16)estadoCuenta_Cuota.Activa)
+                                    _saldoPesos += saldoCuota;
+                                else
+                                    _saldoPesos = saldoCuota;
+                            }
                         }
                         else
                         {
                             cCuota c = cCuota.GetFirst(id, fp.Id);
-                            if (c.Estado == (Int16)estadoCuenta_Cuota.Activa)
-                                _saldoPesos += cValorDolar.ConvertToPeso(saldoCuota, op.ValorDolar);
-                            else
-                                _saldoPesos = cValorDolar.ConvertToPeso(saldoCuota, op.ValorDolar);
+                            if (c != null)
+                            {
+                                if (c.Estado == (Int16)estadoCuenta_Cuota.Activa)
+                                    _saldoPesos += cValorDolar.ConvertToPeso(saldoCuota, op.ValorDolar);
+                                else
+                                    _saldoPesos = cValorDolar.ConvertToPeso(saldoCuota, op.ValorDolar);
+                            }
                         }
 
                         if (saldoCuota == 0)
                         {
                             cCuota c = cCuota.GetFirst(id, fp.Id);
-                            if (c.Estado != (Int16)estadoCuenta_Cuota.Pagado)
+                            if (c != null)
                             {
-                                if (fp.GetMoneda == tipoMoneda.Dolar.ToString())
+                                if (c.Estado != (Int16)estadoCuenta_Cuota.Pagado)
                                 {
-                                    _saldoPesos += cValorDolar.ConvertToPeso(c.MontoAjustado, op.ValorDolar);
-                                }
-                                else
-                                {
-                                    _saldoPesos += c.MontoAjustado;
+                                    if (fp.GetMoneda == tipoMoneda.Dolar.ToString())
+                                    {
+                                        _saldoPesos += cValorDolar.ConvertToPeso(c.MontoAjustado, op.ValorDolar);
+                                    }
+                                    else
+                                    {
+                                        _saldoPesos += c.MontoAjustado;
+                                    }
                                 }
                             }
                         }
@@ -164,7 +173,7 @@ namespace DLL.Negocio
                     return "0";
             }
         }
-
+        
         public decimal GetSaldoByFormaPago(string _idFp)
         {
             //if (IdOperacionVenta != "-1")
@@ -404,7 +413,7 @@ namespace DLL.Negocio
             return DAO.Save(this);
         }
 
-        public static List<cCuentaCorriente> GetCuentaCorriente(string _idEmpresa, Int16 _estado, string _obra, string _moneda)
+        public static List<cCuentaCorriente> GetCuentaCorriente(string _idEmpresa, Int16 _estado, string _obra, Int16 _moneda)
         {
             cCuentaCorrienteDAO DAO = new cCuentaCorrienteDAO();
             return DAO.GetCuentaCorriente(_idEmpresa, _estado, _obra, _moneda);
@@ -444,8 +453,12 @@ namespace DLL.Negocio
             foreach (string item in unidades)
             {
                 int value = (int)Enum.Parse(typeof(estadoCuenta_Cuota), item);
-                if (value != (Int16)estadoCuenta_Cuota.Anticipo && value != (Int16)estadoCuenta_Cuota.Pendiente)
-                    collection.Add(new ListItem(item.Replace("_", " "), value.ToString()));
+
+                if (value != (Int16)estadoCuenta_Cuota.Anulado && value != (Int16)estadoCuenta_Cuota.Validar)
+                {
+                    if (value != (Int16)estadoCuenta_Cuota.Anticipo && value != (Int16)estadoCuenta_Cuota.Pendiente)
+                        collection.Add(new ListItem(item.Replace("_", " "), value.ToString()));
+                }
             }
 
             return collection;

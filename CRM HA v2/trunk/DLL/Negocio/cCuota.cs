@@ -961,9 +961,7 @@ namespace DLL.Negocio
             cCuotaDAO DAO = new cCuotaDAO();
             return DAO.GetCuotasVencidas(_idCuentaCorriente);
         }
-
-
-
+        
         public static List<cCuota> GetCuotasActivasByRangoNro(string _idCuentaCorriente, string _nro)
         {
             cCuotaDAO DAO = new cCuotaDAO();
@@ -1168,6 +1166,12 @@ namespace DLL.Negocio
         {
             cCuotaDAO DAO = new cCuotaDAO();
             return DAO.GetCuotasProyectoRestantesRepetidos(_dateDesde, _tipoMoneda);
+        }
+
+        public static List<cCuota> GetCuotasActivasByEmpresa(string _idEmpresa)
+        {
+            cCuotaDAO DAO = new cCuotaDAO();
+            return DAO.GetCuotasActivasByEmpresa(_idEmpresa);
         }
 
         public static List<cCuota> GetItemByCuotasPendientes(string _idCCU)

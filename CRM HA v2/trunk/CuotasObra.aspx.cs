@@ -235,9 +235,18 @@ namespace crm
                 
         public decimal CalcularSaldo(string _idProyecto, DateTime dateDesde, DateTime dateHasta)
         {
+
+            int aad = 0;
+            if (_idProyecto == "16")
+                aad++;
+
+            if (_idProyecto == "42")
+                aad++;
+
+
             decimal _saldoTotal = 0;
             DataTable dtSaldo1 = cCuota.GetCuotasObraByFecha(_idProyecto, dateDesde, dateHasta);
-            
+
             foreach (DataRow dr in dtSaldo1.Rows)
             {
                 //Si tiene más de una obra diferente

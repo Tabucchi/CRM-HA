@@ -21,7 +21,7 @@ namespace crm
                 {
                     CargarCombo();
 
-                    List<cCuentaCorriente> cc = cCuentaCorriente.GetCuentaCorriente("", Convert.ToInt16(estadoCuenta_Cuota.Activa), "", "");
+                    List<cCuentaCorriente> cc = cCuentaCorriente.GetCuentaCorriente("", Convert.ToInt16(estadoCuenta_Cuota.Activa), "", (Int16)cbMonedaIndice.SelectedIndex);
                     lvCC.DataSource = cc;
                     lvCC.DataBind();
                     CalcularTotales(cc);
@@ -67,8 +67,8 @@ namespace crm
             ddlEmpresa.Items.Insert(0, it);
 
             //Moneda
-            ddlMoneda.DataSource = cCampoGenerico.CargarComboMoneda();
-            ddlMoneda.DataBind();
+            cbMonedaIndice.DataSource = cOperacionVenta.CargarComboMonedaIndiceOV();
+            cbMonedaIndice.DataBind();
         }
         #endregion
         
@@ -77,12 +77,12 @@ namespace crm
         {
             string cliente = ddlEmpresa.SelectedValue == "0" ? "" : ddlEmpresa.SelectedValue;
             string obra = ddlObra.SelectedValue == "0" ? "" : ddlObra.SelectedValue;
-            string moneda = ddlMoneda.SelectedValue == "Seleccione una moneda..." ? "-1" : ddlMoneda.SelectedValue;
+            //string moneda = ddlMoneda.SelectedValue == "Seleccione una moneda..." ? "-1" : ddlMoneda.SelectedValue;
 
-            List<cCuentaCorriente> cc = cCuentaCorriente.GetCuentaCorriente(cliente, Convert.ToInt16(ddlEstado.SelectedValue), obra, moneda);
+            List<cCuentaCorriente> cc = cCuentaCorriente.GetCuentaCorriente(cliente, Convert.ToInt16(ddlEstado.SelectedValue), obra, (Int16)cbMonedaIndice.SelectedIndex);
             lvCC.DataSource = cc;
             lvCC.DataBind();
-            if(cc.Count != 0)
+            if(cc.Count != 0 && cc != null)
                 CalcularTotales(cc);
         }
         #endregion

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Web.UI.WebControls;
 
-public enum estadoOperacionVenta { A_confirmar = 0, Activo = 1, Cancelado = 2, Anulado = 3 }
+public enum estadoOperacionVenta { A_confirmar = 0, Activo = 1, Cancelado = 2, Anulado = 3, Todas = 4 }
 
 namespace DLL.Negocio
 {
@@ -278,10 +278,10 @@ namespace DLL.Negocio
             return DAO.GetOperacionesVenta();
         }
 
-        public static List<cOperacionVenta> Search(string _idEmpresa, string _idProyecto, string _idEstado)
+        public static List<cOperacionVenta> Search(string _idEmpresa, string _idProyecto, Int16 _idEstado, Int16 _monedaIndice, string _desde, string _hasta)
         {
             cOperacionVentaDAO DAO = new cOperacionVentaDAO();
-            return DAO.Search(_idEmpresa, _idProyecto, _idEstado);
+            return DAO.Search(_idEmpresa, _idProyecto, _idEstado, _monedaIndice, _desde, _hasta);
         }
 
         public static ListItemCollection CargarComboEstadoOV()
@@ -289,12 +289,35 @@ namespace DLL.Negocio
             ListItemCollection collection = new ListItemCollection();
             string[] unidades = Enum.GetNames(typeof(estadoOperacionVenta));
 
-            collection.Add(new ListItem("Todas", "-1"));
-
             foreach (string item in unidades)
             {
                 int value = (int)Enum.Parse(typeof(estadoOperacionVenta), item);
                 collection.Add(new ListItem(item.Replace("_", " "), value.ToString()));
+            }
+
+            return collection;
+        }
+
+        public static ListItemCollection CargarComboMonedaIndiceOV()
+        {
+            ListItemCollection collection = new ListItemCollection();
+            string[] unidades = Enum.GetNames(typeof(eMonedaIndice));
+
+            foreach (string item in unidades)
+            {
+                int value = (int)Enum.Parse(typeof(eMonedaIndice), item);
+
+                switch(value){
+                    case (Int16)eMonedaIndice.CAC:
+                        collection.Add(new ListItem(item.Replace(eMonedaIndice.CAC.ToString(), "Pesos/CAC"), value.ToString()));
+                        break;
+                    case (Int16)eMonedaIndice.UVA:
+                        collection.Add(new ListItem(item.Replace(eMonedaIndice.UVA.ToString(), "Pesos/UVA"), value.ToString()));
+                        break;
+                    default:
+                        collection.Add(new ListItem(item, value.ToString()));
+                        break;
+                }                
             }
 
             return collection;

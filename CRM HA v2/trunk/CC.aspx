@@ -42,8 +42,8 @@
             </div>
             <div>
                 <label style="width:33%">
-                    <span>Moneda</span>
-                    <asp:DropDownList ID="ddlMoneda" runat="server" Height="32px"></asp:DropDownList>
+                    <span>Moneda/índice</span>
+                    <asp:DropDownList ID="cbMonedaIndice" runat="server" Height="32px"></asp:DropDownList>
                 </label>
                 <label class="col3 rigthLabel" style="margin-right: 38px !important">
                     <asp:Button ID="btnBuscar" Text="Buscar" CssClass="formBtnNar" runat="server" onclick="btnBuscar_Click" />

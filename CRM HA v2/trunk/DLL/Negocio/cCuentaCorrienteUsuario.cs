@@ -36,32 +36,34 @@ namespace DLL.Negocio
                 return String.Format("{0:#,#0.00}", saldo);
             }
         }
+        public string GetSaldoPositivo
+        {
+            get
+            {
+                decimal saldo = Convert.ToDecimal(cItemCCU.GetLastSaldoByIdCCU(Id));
+                return String.Format("{0:#,#0.00}", saldo * -1);
+            }
+        }
         public string GetTotalDeuda
         {
             get
             {
-                List<cCuentaCorriente> cuentas = cCuentaCorriente.GetCuentaCorrienteByIdCliente(IdEmpresa, (Int16)estadoCuenta_Cuota.Activa);
+                List<cCuota> cuotas = cCuota.GetCuotasActivasByEmpresa(IdEmpresa);
                 decimal total = 0;
 
-                foreach(cCuentaCorriente c in cuentas){
-                    total += Convert.ToDecimal(c.GetSaldoPesos);
+                if (cuotas != null)
+                {
+                    foreach (cCuota c in cuotas)
+                    {
+                        if (c.GetMoneda == tipoMoneda.Dolar.ToString())
+                            total += c.Monto * cValorDolar.LoadActualValue();
+                        else
+                            total += c.Monto;
+                    }
                 }
-
+                
                 return String.Format("{0:#,#0.00}", total);
 
-                /*DateTime date = Convert.ToDateTime(DateTime.Now.Year.ToString() + " - " + DateTime.Now.Month.ToString() + " - " + "1");
-                decimal total = 0;
-                
-                DataTable dtTotal = cCuota.GetCuotasMesRestantesMontoByEmpresa(IdEmpresa, date.AddMonths(2));
-                foreach (DataRow dr in dtTotal.Rows)
-                {
-                    if (dr[1].ToString() == Convert.ToString((Int16)tipoMoneda.Dolar))
-                        total += Convert.ToDecimal(dr[0].ToString()) * Convert.ToDecimal(dr[2].ToString());
-                    else
-                        total += Convert.ToDecimal(dr[0].ToString());
-                }
-
-                return String.Format("{0:#,#0.00}", total * -1);*/
             }
         }
 
