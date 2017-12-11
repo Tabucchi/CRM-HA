@@ -80,7 +80,7 @@ namespace crm
                     foreach (DataRow dr in dtSaldo1.Rows)
                     {
                         if (dr[1].ToString() == "0")
-                            _saldo1 += Convert.ToDecimal(dr[0].ToString()) * Convert.ToDecimal(dr[2].ToString());
+                            _saldo1 += Convert.ToDecimal(dr[0].ToString()) * cValorDolar.LoadActualValue();
                         else
                             _saldo1 += Convert.ToDecimal(dr[0].ToString());
                     }
@@ -91,7 +91,7 @@ namespace crm
                     foreach (DataRow dr in dtSaldo2.Rows)
                     {
                         if (dr[1].ToString() == "0")
-                            _saldo2 += Convert.ToDecimal(dr[0].ToString()) * Convert.ToDecimal(dr[2].ToString());
+                            _saldo2 += Convert.ToDecimal(dr[0].ToString()) * cValorDolar.LoadActualValue();
                         else
                             _saldo2 += Convert.ToDecimal(dr[0].ToString());
                     }
@@ -102,7 +102,7 @@ namespace crm
                     foreach (DataRow dr in dtSaldo3.Rows)
                     {
                         if (dr[1].ToString() == "0")
-                            _saldo3 += Convert.ToDecimal(dr[0].ToString()) * Convert.ToDecimal(dr[2].ToString());
+                            _saldo3 += Convert.ToDecimal(dr[0].ToString()) * cValorDolar.LoadActualValue();
                         else
                             _saldo3 += Convert.ToDecimal(dr[0].ToString());
                     }
@@ -113,7 +113,7 @@ namespace crm
                     foreach (DataRow dr in dtSaldo4.Rows)
                     {
                         if (dr[1].ToString() == "0")
-                            _saldo4 += Convert.ToDecimal(dr[0].ToString()) * Convert.ToDecimal(dr[2].ToString());
+                            _saldo4 += Convert.ToDecimal(dr[0].ToString()) * cValorDolar.LoadActualValue();
                         else
                             _saldo4 += Convert.ToDecimal(dr[0].ToString());
                     }
@@ -128,7 +128,7 @@ namespace crm
                     foreach (DataRow dr in dtMesesRestantes.Rows)
                     {
                         if (dr[1].ToString() == "0")
-                            _mesesRestantes += Convert.ToDecimal(dr[0].ToString()) * Convert.ToDecimal(dr[2].ToString());
+                            _mesesRestantes += Convert.ToDecimal(dr[0].ToString()) * cValorDolar.LoadActualValue();
                         else
                             _mesesRestantes += Convert.ToDecimal(dr[0].ToString());
                     }

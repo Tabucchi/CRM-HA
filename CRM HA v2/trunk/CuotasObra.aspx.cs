@@ -276,6 +276,15 @@ namespace crm
                         {
                             dr1 = dt.NewRow();
 
+                            if (dr[9].ToString() == "204")
+                                aad++;
+
+                            if (dr[9].ToString() == "166")
+                                aad++;
+
+                            if (dr[9].ToString() == "418")
+                                aad++;
+
                             cEmpresaUnidad eu = cEmpresaUnidad.GetUnidad(u.CodigoUF, u.IdProyecto);
 
                             #region Pesificar
@@ -305,8 +314,12 @@ namespace crm
                                 cuota = Convert.ToDecimal(dr[2].ToString());
                             #endregion
 
-                            decimal porcentajeUnidad = Math.Round((valorApeso * 100) / valorBoletoApeso, 5);
-                            decimal porcentajeCuota = Math.Round((porcentajeUnidad * cuota) / 100, 5);
+
+                            if(dr[10].ToString() =="3986")
+                                 aad++;
+
+                            decimal porcentajeUnidad = (valorApeso * 100) / valorBoletoApeso;
+                            decimal porcentajeCuota = Math.Round((porcentajeUnidad * cuota) / 100, 2);
 
                             dr1["idUnidad"] = u.Id;
                             dr1["PorcentajeUnidad"] = porcentajeUnidad;
@@ -404,8 +417,8 @@ namespace crm
                                 cuota = Convert.ToDecimal(dr[2].ToString());
                             #endregion
 
-                            decimal porcentajeUnidad = Math.Round((valorApeso * 100) / valorBoletoApeso, 5);
-                            decimal porcentajeCuota = Math.Round((porcentajeUnidad * cuota) / 100, 5);
+                            decimal porcentajeUnidad = (valorApeso * 100) / valorBoletoApeso;
+                            decimal porcentajeCuota = Math.Round((porcentajeUnidad * cuota) / 100, 2);
 
                             dr1["idUnidad"] = u.Id;
                             dr1["PorcentajeUnidad"] = porcentajeUnidad;

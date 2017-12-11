@@ -71,7 +71,7 @@ namespace DLL.Negocio
         {
             get
             {
-                decimal total = Convert.ToDecimal(GetSaldo) + Convert.ToDecimal(GetTotalDeuda);
+                decimal total = Convert.ToDecimal(GetSaldoPositivo) + Convert.ToDecimal(GetTotalDeuda);
                 return String.Format("{0:#,#0.00}", total);
             }
         }

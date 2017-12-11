@@ -56,8 +56,6 @@
                         <tr>     
                             <td style="text-align: center; width:30%;">CLIENTE</td>
                             <td style="text-align: center; width:22%;">SALDO EN CUENTA CORRIENTE</td>
-                            <td style="text-align: center; width:21%;">TOTAL CUOTAS A VENCER</td>
-                            <td style="text-align: center; width:21%;">TOTAL</td>
                             <td style="width:6%;"></td>
                         </tr>
                     </thead>
@@ -75,8 +73,6 @@
                             <tr>
                                 <td style="width: 30%;"></td>                           
                                 <td style="width: 21%; text-align:right; padding-right: 14px;"><b><asp:Label ID="lbTotalCtaCte" runat="server"></asp:Label></b></td>
-                                <td style="width: 21%; text-align:right; padding-right: 18px;"><b><asp:Label ID="lbTotalTotalDeuda" runat="server"></asp:Label></b></td></td> 
-                                <td style="width: 21%; text-align:right; padding-right: 16px;"><b><asp:Label ID="lbTotalTotal" runat="server"></asp:Label></b></td>
                                 <td style="width: 8%;"></td> 
                             </tr>
                         </tfoot>                   
@@ -92,12 +88,6 @@
                 </td>
                 <td style="text-align: right; width:21%;">
                     <asp:Label ID="lbSaldo" runat="Server" Text='<%#Eval("GetSaldo", "{0:#,#.00}") %>' />
-                </td>
-                <td style="text-align: right; width:21%;">
-                    <asp:Label ID="lbTotalDeuda" runat="Server" Text='<%#Eval("GetTotalDeuda") %>' />
-                </td>
-                <td style="text-align: right; width:21%;">
-                    <asp:Label ID="lbTotal" runat="Server" Text='<%#Eval("GetTotal") %>' />
                 </td>
                 <td style="width:6%;">
                     <a class="detailBtn" href="DetalleCC.aspx?idCC=<%# Eval("id") %>"></a>

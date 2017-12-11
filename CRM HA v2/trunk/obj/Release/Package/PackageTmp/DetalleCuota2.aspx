@@ -48,7 +48,7 @@
                 <span><asp:Label ID="lblMonedaAcordada" runat="server"></asp:Label></span>
             </p>
             <p class="">
-                <strong style="width:150px">SALDO AJUSTADO SIN GASTOS (Dólar):</strong>
+                <strong style="width:150px">SALDO AJUSTADO AL PRIMER MES ADEUDADO SIN GASTOS (Dólar):</strong>
                 <span><asp:Label ID="lblSaldoDolar" runat="server"></asp:Label></span>
             </p>
             
@@ -68,7 +68,7 @@
                 <span><asp:Label ID="lblDolar" runat="server"></asp:Label></span>
             </p>
             <p class="">
-                <strong style="width:150px">SALDO AJUSTADO SIN GASTOS (Pesos):</strong>
+                <strong style="width:150px">SALDO AJUSTADO AL PRIMER MES ADEUDADO SIN GASTOS (Pesos):</strong>
                 <span><asp:Label ID="lblSaldoPesos" runat="server"></asp:Label></span>
             </p>
         </div>

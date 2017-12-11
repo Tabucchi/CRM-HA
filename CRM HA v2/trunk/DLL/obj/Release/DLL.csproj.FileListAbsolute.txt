@@ -78,3 +78,17 @@ C:\Users\Nicolas\Documents\GitHub\CRM-HA\CRM HA v2\trunk\DLL\bin\Release\NPOI.Op
 C:\Users\Nicolas\Documents\GitHub\CRM-HA\CRM HA v2\trunk\DLL\obj\Release\DLL.csprojResolveAssemblyReference.cache
 C:\Users\Nicolas\Documents\GitHub\CRM-HA\CRM HA v2\trunk\DLL\obj\Release\DLL.dll
 C:\Users\Nicolas\Documents\GitHub\CRM-HA\CRM HA v2\trunk\DLL\obj\Release\DLL.pdb
+C:\Users\ntabucchi\Documents\GitHub\CRM-HA\CRM HA v2\trunk\DLL\bin\Release\DLL.dll.config
+C:\Users\ntabucchi\Documents\GitHub\CRM-HA\CRM HA v2\trunk\DLL\bin\Release\DLL.dll
+C:\Users\ntabucchi\Documents\GitHub\CRM-HA\CRM HA v2\trunk\DLL\bin\Release\DLL.pdb
+C:\Users\ntabucchi\Documents\GitHub\CRM-HA\CRM HA v2\trunk\DLL\bin\Release\NPOI.dll
+C:\Users\ntabucchi\Documents\GitHub\CRM-HA\CRM HA v2\trunk\DLL\bin\Release\NPOI.OOXML.dll
+C:\Users\ntabucchi\Documents\GitHub\CRM-HA\CRM HA v2\trunk\DLL\bin\Release\NPOI.OpenXml4Net.dll
+C:\Users\ntabucchi\Documents\GitHub\CRM-HA\CRM HA v2\trunk\DLL\bin\Release\NPOI.OpenXmlFormats.dll
+C:\Users\ntabucchi\Documents\GitHub\CRM-HA\CRM HA v2\trunk\DLL\bin\Release\ICSharpCode.SharpZipLib.dll
+C:\Users\ntabucchi\Documents\GitHub\CRM-HA\CRM HA v2\trunk\DLL\bin\Release\NPOI.xml
+C:\Users\ntabucchi\Documents\GitHub\CRM-HA\CRM HA v2\trunk\DLL\bin\Release\NPOI.OOXML.xml
+C:\Users\ntabucchi\Documents\GitHub\CRM-HA\CRM HA v2\trunk\DLL\bin\Release\NPOI.OpenXml4Net.xml
+C:\Users\ntabucchi\Documents\GitHub\CRM-HA\CRM HA v2\trunk\DLL\obj\Release\DLL.csprojResolveAssemblyReference.cache
+C:\Users\ntabucchi\Documents\GitHub\CRM-HA\CRM HA v2\trunk\DLL\obj\Release\DLL.dll
+C:\Users\ntabucchi\Documents\GitHub\CRM-HA\CRM HA v2\trunk\DLL\obj\Release\DLL.pdb

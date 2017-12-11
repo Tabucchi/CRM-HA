@@ -1349,7 +1349,7 @@ namespace DLL.Base_de_Datos
             List<cCuota> cuota = new List<cCuota>();
             string query = "SELECT c.id FROM tCuota c INNER JOIN tFormaPagoOV fp ON c.idFormaPagoOV=fp.id INNER JOIN tOperacionVenta o ON o.id=fp.idOperacionVenta ";
             query += " INNER JOIN tEmpresaUnidad eu ON o.id= eu.idOv INNER JOIN tCuentaCorriente cc ON c.idCuentaCorriente=cc.id ";
-            query += " WHERE o.estado='" + (Int16)estadoOperacionVenta.Activo + "' AND eu.idEmpresa='" + _idEmpresa + "'";
+            query += " WHERE o.estado='" + (Int16)estadoOperacionVenta.Activo + "' AND eu.idEmpresa='" + _idEmpresa + "' AND c.fechaVencimiento1 > '2018-01-01'";
             query += " AND c.estado='" + (Int16)estadoCuenta_Cuota.Activa + "' AND cc.estado='" + (Int16)estadoCuenta_Cuota.Activa + "'";
             query += " GROUP BY c.id";
 
