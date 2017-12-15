@@ -144,9 +144,12 @@ namespace DLL.Negocio
                                 else
                                 {
                                     cCuota cuota_pagada = cCuota.GetFirstPagada(id, fp.Id);
-                                    if (cuota_pagada != null)
+                                    if (fp.CantCuotas > cuota_pagada.Nro)
                                     {
-                                        _saldoPesos += cuota_pagada.MontoAjustado;
+                                        if (cuota_pagada != null)
+                                        {
+                                            _saldoPesos += cuota_pagada.MontoAjustado;
+                                        }
                                     }
                                 }
                             }
