@@ -329,6 +329,12 @@ namespace DLL.Negocio
             return DAO.GetOV_AConfirmar();
         }
 
+        public static List<cOperacionVenta> GetOVByIdEmpresa(string _idEmpresa)
+        {
+            cOperacionVentaDAO DAO = new cOperacionVentaDAO();
+            return DAO.GetOVByIdEmpresa(_idEmpresa);
+        }
+
         public static string GetEmpresaByIdOv(string _idOv)
         {
             cOperacionVentaDAO DAO = new cOperacionVentaDAO();

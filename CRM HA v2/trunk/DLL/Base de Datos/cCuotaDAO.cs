@@ -732,7 +732,34 @@ namespace DLL.Base_de_Datos
 
             SqlCommand com = new SqlCommand(query);
             string id = cDataBase.GetInstance().ExecuteScalar(com);
-            return Load(Convert.ToString(id));
+            if (!string.IsNullOrEmpty(id))
+                return Load(Convert.ToString(id));
+            else
+                return null;
+        }
+
+        public cCuota GetFirstPendiente(string idCC, string _idFormaPago)
+        {
+            string query = "SELECT Top(1) id FROM tCuota WHERE idCuentaCorriente=" + idCC + " AND idFormaPagoOV = '" + _idFormaPago + "' AND estado='" + (Int16)estadoCuenta_Cuota.Pendiente + "' order by id ASC";
+
+            SqlCommand com = new SqlCommand(query);
+            string id = cDataBase.GetInstance().ExecuteScalar(com);
+            if (!string.IsNullOrEmpty(id))
+                return Load(Convert.ToString(id));
+            else
+                return null;
+        }
+
+        public cCuota GetFirstPagada(string idCC, string _idFormaPago)
+        {
+            string query = "SELECT Top(1) id FROM tCuota WHERE idCuentaCorriente=" + idCC + " AND idFormaPagoOV = '" + _idFormaPago + "' AND estado='" + (Int16)estadoCuenta_Cuota.Pagado + "' order by id ASC";
+
+            SqlCommand com = new SqlCommand(query);
+            string id = cDataBase.GetInstance().ExecuteScalar(com);
+            if (!string.IsNullOrEmpty(id))
+                return Load(Convert.ToString(id));
+            else
+                return null;
         }
 
         public cCuota GetFirstActivaOrPendiente(string idCC, string _idFormaPago)
