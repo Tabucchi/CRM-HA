@@ -732,7 +732,34 @@ namespace DLL.Base_de_Datos
 
             SqlCommand com = new SqlCommand(query);
             string id = cDataBase.GetInstance().ExecuteScalar(com);
-            return Load(Convert.ToString(id));
+            if (!string.IsNullOrEmpty(id))
+                return Load(Convert.ToString(id));
+            else
+                return null;
+        }
+
+        public cCuota GetFirstPendiente(string idCC, string _idFormaPago)
+        {
+            string query = "SELECT Top(1) id FROM tCuota WHERE idCuentaCorriente=" + idCC + " AND idFormaPagoOV = '" + _idFormaPago + "' AND estado='" + (Int16)estadoCuenta_Cuota.Pendiente + "' order by id ASC";
+
+            SqlCommand com = new SqlCommand(query);
+            string id = cDataBase.GetInstance().ExecuteScalar(com);
+            if (!string.IsNullOrEmpty(id))
+                return Load(Convert.ToString(id));
+            else
+                return null;
+        }
+
+        public cCuota GetFirstPagada(string idCC, string _idFormaPago)
+        {
+            string query = "SELECT Top(1) id FROM tCuota WHERE idCuentaCorriente=" + idCC + " AND idFormaPagoOV = '" + _idFormaPago + "' AND estado='" + (Int16)estadoCuenta_Cuota.Pagado + "' order by id ASC";
+
+            SqlCommand com = new SqlCommand(query);
+            string id = cDataBase.GetInstance().ExecuteScalar(com);
+            if (!string.IsNullOrEmpty(id))
+                return Load(Convert.ToString(id));
+            else
+                return null;
         }
 
         public cCuota GetFirstActivaOrPendiente(string idCC, string _idFormaPago)
@@ -1349,7 +1376,7 @@ namespace DLL.Base_de_Datos
             List<cCuota> cuota = new List<cCuota>();
             string query = "SELECT c.id FROM tCuota c INNER JOIN tFormaPagoOV fp ON c.idFormaPagoOV=fp.id INNER JOIN tOperacionVenta o ON o.id=fp.idOperacionVenta ";
             query += " INNER JOIN tEmpresaUnidad eu ON o.id= eu.idOv INNER JOIN tCuentaCorriente cc ON c.idCuentaCorriente=cc.id ";
-            query += " WHERE o.estado='" + (Int16)estadoOperacionVenta.Activo + "' AND eu.idEmpresa='" + _idEmpresa + "'";
+            query += " WHERE o.estado='" + (Int16)estadoOperacionVenta.Activo + "' AND eu.idEmpresa='" + _idEmpresa + "' AND c.fechaVencimiento1 > '2018-01-01'";
             query += " AND c.estado='" + (Int16)estadoCuenta_Cuota.Activa + "' AND cc.estado='" + (Int16)estadoCuenta_Cuota.Activa + "'";
             query += " GROUP BY c.id";
 

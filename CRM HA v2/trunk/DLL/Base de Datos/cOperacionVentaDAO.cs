@@ -172,6 +172,19 @@ namespace DLL.Base_de_Datos
             return ovs;
         }
 
+        public List<cOperacionVenta> GetOVByIdEmpresa(string _idEmpresa)
+        {
+            List<cOperacionVenta> ovs = new List<cOperacionVenta>();
+            string query = "SELECT DISTINCT o.id FROM tOperacionVenta o INNER JOIN tEmpresaUnidad e ON o.id=e.idOv WHERE e.idEmpresa='" + _idEmpresa + "' AND o.estado='" + (Int16)estadoOperacionVenta.Activo + "' AND e.papelera='" + (Int16)papelera.Activo + "'";
+            SqlCommand com = new SqlCommand(query);
+            ArrayList idList = cDataBase.GetInstance().ExecuteReader(com);
+            if (idList == null) return null;
+            for (int i = 0; idList.Count > i; i++)
+                ovs.Add(Load(Convert.ToString(idList[i])));
+
+            return ovs;
+        }
+
         public string GetEmpresaByIdOv(string _idOv)
         {
             string query = "SELECT TOP(1) e.id FROM [dbo].tEmpresaUnidad eu INNER JOIN tEmpresa e ON eu.idEmpresa = e.id WHERE eu.idOv = '" + _idOv + "'";

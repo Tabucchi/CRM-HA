@@ -878,6 +878,18 @@ namespace DLL.Negocio
             return DAO.GetFirstActiva(idCC, _idFormaPago);
         }
 
+        public static cCuota GetFirstPendiente(string idCC, string _idFormaPago)
+        { 
+            cCuotaDAO DAO = new cCuotaDAO();
+            return DAO.GetFirstPendiente(idCC, _idFormaPago);
+        }
+
+        public static cCuota GetFirstPagada(string idCC, string _idFormaPago)
+        {
+            cCuotaDAO DAO = new cCuotaDAO();
+            return DAO.GetFirstPagada(idCC, _idFormaPago);
+        }
+
         public static cCuota GetFirstActivaOrPendiente(string idCC, string _idFormaPago)
         {
             cCuotaDAO DAO = new cCuotaDAO();
@@ -995,8 +1007,8 @@ namespace DLL.Negocio
         public static decimal SaldoCC(string _idCC, string _idFormaPago, string _moneda)
         {
             decimal _saldo = GetSaldoCuota(_idCC, _idFormaPago, (Int16)estadoCuenta_Cuota.Pagado, _moneda);
-
-            if (_saldo != 0 && _saldo != null)
+            return _saldo;
+            /*if (_saldo != 0 && _saldo != null)
             {
                 int cuotasPendientes = cCuota.GetCuotasPendientes2(_idCC, _idFormaPago).Count;
                 if (cuotasPendientes > 0)
@@ -1048,7 +1060,7 @@ namespace DLL.Negocio
                 //    return 0;
                 //else
                 //    return GetSaldoCuota(_idCC, _idFormaPago, (Int16)estadoCuenta_Cuota.Pagado, _moneda);
-            }
+            }*/
         }
 
         public static decimal DeudaCC(string _idCC, string _idFormaPago, string _moneda)

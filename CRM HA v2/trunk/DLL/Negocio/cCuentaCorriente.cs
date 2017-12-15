@@ -117,23 +117,104 @@ namespace DLL.Negocio
 
                     return saldo;*/
 
+                    int asd=0;
+                    if (IdOperacionVenta == "189")
+                        asd++;
+
                     cOperacionVenta op = cOperacionVenta.Load(IdOperacionVenta);
                     List<cFormaPagoOV> saldos = cFormaPagoOV.GetFormaPagoOVByIdOV(op.Id);
                     decimal _saldoPesos = 0;
                     
                     foreach (cFormaPagoOV fp in saldos)
                     {
-                        decimal saldoCuota = cCuota.SaldoCC(id, fp.Id, fp.Moneda);
+                        if (fp.GetMoneda == tipoMoneda.Pesos.ToString())
+                        {
+                            cCuota cuota_pendiente = cCuota.GetFirstPendiente(id, fp.Id);
+                            if (cuota_pendiente != null)
+                            {
+                                _saldoPesos += cuota_pendiente.MontoAjustado;
+                            }
+                            else
+                            {
+                                cCuota cuota_activa = cCuota.GetFirstActiva(id, fp.Id);
+                                if (cuota_activa != null)
+                                {
+                                    _saldoPesos += cuota_activa.MontoAjustado;
+                                }
+                                else
+                                {
+                                    cCuota cuota_pagada = cCuota.GetFirstPagada(id, fp.Id);
+                                    if (fp.CantCuotas > cuota_pagada.Nro)
+                                    {
+                                        if (cuota_pagada != null)
+                                        {
+                                            _saldoPesos += cuota_pagada.MontoAjustado;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        else
+                        {
+                            cCuota cuota_pendiente = cCuota.GetFirstPendiente(id, fp.Id);
+                            if (cuota_pendiente != null)
+                            {
+                                _saldoPesos += cValorDolar.ConvertToPeso(cuota_pendiente.MontoAjustado, op.ValorDolar);
+                            }
+                            else
+                            {
+                                cCuota cuota_activa = cCuota.GetFirstActiva(id, fp.Id);
+                                if (cuota_activa != null)
+                                {
+                                    _saldoPesos += cValorDolar.ConvertToPeso(cuota_activa.MontoAjustado, op.ValorDolar);
+                                }
+                                else
+                                {
+                                    cCuota cuota_pagada = cCuota.GetFirstPagada(id, fp.Id);
+                                    if (fp.CantCuotas > cuota_pagada.Nro)
+                                    {
+                                        if (cuota_pagada != null)
+                                        {
+                                            _saldoPesos += cValorDolar.ConvertToPeso(cuota_pagada.MontoAjustado, op.ValorDolar);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+
+                        /*decimal saldoCuota = cCuota.SaldoCC(id, fp.Id, fp.Moneda);
+
+                        //_saldoPesos = saldoCuota;
                         if (fp.GetMoneda == tipoMoneda.Pesos.ToString())
                         {
                             cCuota c = cCuota.GetFirst(id, fp.Id);
+
                             if (c != null)
                             {
-                                if (c.Estado == (Int16)estadoCuenta_Cuota.Activa)
-                                    _saldoPesos += saldoCuota;
-                                else
-                                    _saldoPesos = saldoCuota;
+
+                                if (fp.CantCuotas >= c.Nro + 1)
+                                {
+                                    cCuota c1 = cCuota.GetCuotaByNro(id, c.Nro + 1, fp.Id);
+
+                                    if (c1 != null)
+                                    {
+                                        if (c1.Estado == (Int16)estadoCuenta_Cuota.Activa || c1.Estado == (Int16)estadoCuenta_Cuota.Pendiente)
+                                            _saldoPesos += c1.MontoAjustado;
+                                        else
+                                            _saldoPesos = saldoCuota;
+                                    }
+                                }
                             }
+
+
+                            //if (c != null)
+                            //{
+                            //    if (c.Estado == (Int16)estadoCuenta_Cuota.Activa)
+                            //        _saldoPesos += saldoCuota;
+                            //    else
+                            //        _saldoPesos = saldoCuota;
+                            //}
                         }
                         else
                         {
@@ -164,7 +245,7 @@ namespace DLL.Negocio
                                     }
                                 }
                             }
-                        }
+                        }*/
                     }
 
                     return String.Format("{0:#,#0.00}", _saldoPesos);

@@ -1,14 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeBehind="CuentaCorriente.aspx.cs" Inherits="crm.CuentaCorriente" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeBehind="TotalDeudaCliente.aspx.cs" Inherits="crm.TotalDeudaCliente" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajax" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <script type="text/javascript">
-        // simple redirect to your detail page, passing the selected ID 
-        function redir(id) {
-            window.location.href = "DetalleCC.aspx?idCC=" + id;
-        }
-    </script>
-
     <script src="js/autocomplete/jquery-1.4.1.min.js"></script>
     <link href="js/autocomplete/jquery.autocomplete.css" rel="stylesheet" />
     <script src="js/autocomplete/jquery.autocomplete.js"></script>
@@ -23,12 +16,11 @@
     <section>
         <div class="formHolder" id="searchBoxTop">
             <div class="headOptions headLine">
-                <h2>Cuentas Corrientes</h2>              
+                <h2>Total de deuda por cliente</h2>              
                 
                 <div style="float: right; margin-top: 3px;">
                     <label class="col2" style="width:510px">
                         <asp:Label ID="lbCantUnidades" runat="server" style="width: 15% !important;" Text="Clientes"></asp:Label>
-                        <%--<asp:DropDownList ID="cbEmpresa" runat="server" style="width:246px" AutoPostBack="True" OnSelectedIndexChanged="cbEmpresa_SelectedIndexChanged"/>--%>  
                         
                         <asp:UpdatePanel ID="UpdatePanel3" runat="server" UpdateMode="Conditional">
                             <ContentTemplate>                       
@@ -56,7 +48,8 @@
                         <tr>     
                             <td style="text-align: center; width:30%;">CLIENTE</td>
                             <td style="text-align: center; width:22%;">SALDO EN CUENTA CORRIENTE</td>
-                            <td style="width:6%;"></td>
+                            <td style="text-align: center; width:21%;">TOTAL CUOTAS A VENCER</td>
+                            <td style="text-align: center; width:21%;">TOTAL</td>
                         </tr>
                     </thead>
                 </table>
@@ -73,7 +66,8 @@
                             <tr>
                                 <td style="width: 30%;"></td>                           
                                 <td style="width: 21%; text-align:right; padding-right: 14px;"><b><asp:Label ID="lbTotalCtaCte" runat="server"></asp:Label></b></td>
-                                <td style="width: 8%;"></td> 
+                                <td style="width: 21%; text-align:right; padding-right: 18px;"><b><asp:Label ID="lbTotalTotalDeuda" runat="server"></asp:Label></b></td></td> 
+                                <td style="width: 21%; text-align:right; padding-right: 16px;"><b><asp:Label ID="lbTotalTotal" runat="server"></asp:Label></b></td>
                             </tr>
                         </tfoot>                   
                     </table>
@@ -82,15 +76,18 @@
         </LayoutTemplate>
                         
         <ItemTemplate>                             
-            <tr onclick="redir('<%# Eval("id") %>');" style="cursor: pointer">
+            <tr style="cursor: pointer">
                 <td style="text-align: left; width:30%;">
                     <asp:Label ID="lbNombre" runat="Server" Text='<%#Eval("GetEmpresa") %>' />
                 </td>
                 <td style="text-align: right; width:21%;">
-                    <asp:Label ID="lbSaldo" runat="Server" Text='<%#Eval("GetSaldo", "{0:#,#.00}") %>' />
+                    <asp:Label ID="lbSaldo" runat="Server" Text='<%#Eval("GetSaldoPositivo", "{0:#,#.00}") %>' />
                 </td>
-                <td style="width:6%;">
-                    <a class="detailBtn" href="DetalleCC.aspx?idCC=<%# Eval("id") %>"></a>
+                <td style="text-align: right; width:21%;">
+                    <asp:Label ID="lbTotalDeuda" runat="Server" Text='<%#Eval("GetTotalDeuda") %>' />
+                </td>
+                <td style="text-align: right; width:21%;">
+                    <asp:Label ID="lbTotal" runat="Server" Text='<%#Eval("GetTotal") %>' />
                 </td>
             </tr>
         </ItemTemplate>

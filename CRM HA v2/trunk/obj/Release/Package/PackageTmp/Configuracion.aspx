@@ -191,9 +191,9 @@
                             <%--<div style="float:left">
                                 <asp:Button ID="btnRenovarUVA" runat="server" CssClass="formBtnNar" Text="Renovar servicio" style="border: 1px solid rgba(0, 0, 0, 0.2); margin-right: 10px;"/>
                             </div>--%>
-                            <div style="float:right">
+                            <%--<div style="float:right">
                                 <asp:Button ID="btnIngresarUVA" runat="server" CssClass="formBtnNar" Text="Ingresar nuevo índice" style="border: 1px solid rgba(0, 0, 0, 0.2);" OnClick="btnIngresarUVA_Click"/>
-                            </div>
+                            </div>--%>
                         </div>
                     </div>
                 </div>
@@ -406,7 +406,7 @@
         DropShadow="true" /> 
 </section>
     
-    <section>
+    <%--<section>
         <asp:UpdatePanel ID="pnlIndiceUVA" runat="server" Width="410px" HorizontalAlign="Center" class="modal" style="background-color:white">
             <ContentTemplate>
                 <table style="width: 100%">               
@@ -414,7 +414,7 @@
                     <tr>
                         <td colspan="2"><modalTitle><b>Ingrese el índice UVA</b></modalTitle></td>
                     </tr> 
-                    <%--<tr>
+                    <tr>
                         <td style="width:25%; color:#706F6F; font-family:Tahoma,Verdana,Arial,Helvetica,sans-serif; font-size:12px; text-align:right;">
                             Índice: 
                         </td>
@@ -441,9 +441,9 @@
                                 </div>
                             </td>
                         </tr>
-                    </asp:Panel>--%>
+                    </asp:Panel>
                     <tr>            
-                        <%--<td>
+                        <td>
                             <div align="center">
                                 <asp:UpdateProgress ID="UpdateProgress2" runat="server" DisplayAfter="0" AssociatedUpdatePanelID="pnlIndiceUVA">
                                     <ProgressTemplate>
@@ -459,7 +459,7 @@
                                     </ProgressTemplate>
                                 </asp:UpdateProgress>
                             </div>
-                        </td>--%>
+                        </td>
                         <td>
                             <div style="float:right">
                                 <asp:Button ID="btnFinalizarIndiceUVA" runat="server" CssClass="formBtnNar" Text="Aceptar" OnClick="btnFinalizarIndiceUVA_Click"/>
@@ -477,7 +477,7 @@
             CancelControlID="lblCloseIndiceUVA"
             BackgroundCssClass="ModalBackground"
             DropShadow="true" /> 
-    </section>
+    </section>--%>
 
 </asp:Content>
 

@@ -235,15 +235,6 @@ namespace crm
                 
         public decimal CalcularSaldo(string _idProyecto, DateTime dateDesde, DateTime dateHasta)
         {
-
-            int aad = 0;
-            if (_idProyecto == "16")
-                aad++;
-
-            if (_idProyecto == "42")
-                aad++;
-
-
             decimal _saldoTotal = 0;
             DataTable dtSaldo1 = cCuota.GetCuotasObraByFecha(_idProyecto, dateDesde, dateHasta);
 
@@ -305,8 +296,8 @@ namespace crm
                                 cuota = Convert.ToDecimal(dr[2].ToString());
                             #endregion
 
-                            decimal porcentajeUnidad = Math.Round((valorApeso * 100) / valorBoletoApeso, 5);
-                            decimal porcentajeCuota = Math.Round((porcentajeUnidad * cuota) / 100, 5);
+                            decimal porcentajeUnidad = (valorApeso * 100) / valorBoletoApeso;
+                            decimal porcentajeCuota = Math.Round((porcentajeUnidad * cuota) / 100, 2);
 
                             dr1["idUnidad"] = u.Id;
                             dr1["PorcentajeUnidad"] = porcentajeUnidad;
@@ -404,8 +395,8 @@ namespace crm
                                 cuota = Convert.ToDecimal(dr[2].ToString());
                             #endregion
 
-                            decimal porcentajeUnidad = Math.Round((valorApeso * 100) / valorBoletoApeso, 5);
-                            decimal porcentajeCuota = Math.Round((porcentajeUnidad * cuota) / 100, 5);
+                            decimal porcentajeUnidad = (valorApeso * 100) / valorBoletoApeso;
+                            decimal porcentajeCuota = Math.Round((porcentajeUnidad * cuota) / 100, 2);
 
                             dr1["idUnidad"] = u.Id;
                             dr1["PorcentajeUnidad"] = porcentajeUnidad;
