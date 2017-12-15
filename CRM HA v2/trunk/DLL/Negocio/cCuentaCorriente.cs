@@ -117,6 +117,10 @@ namespace DLL.Negocio
 
                     return saldo;*/
 
+                    int asd=0;
+                    if (IdOperacionVenta == "189")
+                        asd++;
+
                     cOperacionVenta op = cOperacionVenta.Load(IdOperacionVenta);
                     List<cFormaPagoOV> saldos = cFormaPagoOV.GetFormaPagoOVByIdOV(op.Id);
                     decimal _saldoPesos = 0;
@@ -164,9 +168,12 @@ namespace DLL.Negocio
                                 else
                                 {
                                     cCuota cuota_pagada = cCuota.GetFirstPagada(id, fp.Id);
-                                    if (cuota_pagada != null)
+                                    if (fp.CantCuotas > cuota_pagada.Nro)
                                     {
-                                        _saldoPesos += cValorDolar.ConvertToPeso(cuota_pagada.MontoAjustado, op.ValorDolar);
+                                        if (cuota_pagada != null)
+                                        {
+                                            _saldoPesos += cValorDolar.ConvertToPeso(cuota_pagada.MontoAjustado, op.ValorDolar);
+                                        }
                                     }
                                 }
                             }
