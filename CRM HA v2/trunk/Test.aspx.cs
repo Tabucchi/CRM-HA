@@ -54,10 +54,10 @@ namespace crm
                                 //CAMBIAR
                                 switch (c.Nro)
                                 {
-                                    case 21:
+                                    case 2:
                                         //c.VariacionCAC = vCAC;
-                                        c.VariacionCAC = Convert.ToDecimal("8,78661");
-                                        vCAC = Convert.ToDecimal("8,78661");
+                                        c.VariacionUVA = Convert.ToDecimal("1,81200");
+                                        vCAC = Convert.ToDecimal("1,81200");
                                         break;
                                 }
                                 
@@ -203,7 +203,7 @@ namespace crm
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            ActualizarIndiceCACCuotas("10549", "307", 1, 21);
+            ActualizarIndiceCACCuotas("10581", "370", 2, 21);
         }
 
         protected void Button2_Click(object sender, EventArgs e)
