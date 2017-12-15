@@ -128,21 +128,21 @@ namespace DLL.Negocio
                             cCuota cuota_pendiente = cCuota.GetFirstPendiente(id, fp.Id);
                             if (cuota_pendiente != null)
                             {
-                                _saldoPesos = cuota_pendiente.MontoAjustado;
+                                _saldoPesos += cuota_pendiente.MontoAjustado;
                             }
                             else
                             {
                                 cCuota cuota_activa = cCuota.GetFirstActiva(id, fp.Id);
                                 if (cuota_activa != null)
                                 {
-                                    _saldoPesos = cuota_activa.MontoAjustado;
+                                    _saldoPesos += cuota_activa.MontoAjustado;
                                 }
                                 else
                                 {
                                     cCuota cuota_pagada = cCuota.GetFirstPagada(id, fp.Id);
                                     if (cuota_pagada != null)
                                     {
-                                        _saldoPesos = cuota_pagada.MontoAjustado;
+                                        _saldoPesos += cuota_pagada.MontoAjustado;
                                     }
                                 }
                             }
@@ -152,21 +152,21 @@ namespace DLL.Negocio
                             cCuota cuota_pendiente = cCuota.GetFirstPendiente(id, fp.Id);
                             if (cuota_pendiente != null)
                             {
-                                _saldoPesos = cValorDolar.ConvertToPeso(cuota_pendiente.MontoAjustado, op.ValorDolar);
+                                _saldoPesos += cValorDolar.ConvertToPeso(cuota_pendiente.MontoAjustado, op.ValorDolar);
                             }
                             else
                             {
                                 cCuota cuota_activa = cCuota.GetFirstActiva(id, fp.Id);
                                 if (cuota_activa != null)
                                 {
-                                    _saldoPesos = cValorDolar.ConvertToPeso(cuota_activa.MontoAjustado, op.ValorDolar);
+                                    _saldoPesos += cValorDolar.ConvertToPeso(cuota_activa.MontoAjustado, op.ValorDolar);
                                 }
                                 else
                                 {
                                     cCuota cuota_pagada = cCuota.GetFirstPagada(id, fp.Id);
                                     if (cuota_pagada != null)
                                     {
-                                        _saldoPesos = cValorDolar.ConvertToPeso(cuota_pagada.MontoAjustado, op.ValorDolar);
+                                        _saldoPesos += cValorDolar.ConvertToPeso(cuota_pagada.MontoAjustado, op.ValorDolar);
                                     }
                                 }
                             }
