@@ -1,0 +1,6 @@
+ERROR 8 crm.MensajeError - Pedidos - 18/11/2016 11:34:15 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 9 crm.MensajeError - Pedidos - 18/11/2016 11:38:23 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 9 crm.MensajeError - Pedidos - 18/11/2016 11:57:21 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 7 crm.MensajeError - Pedidos - 18/11/2016 11:57:43 a.m.- Etiqueta de servidor 'ajax:ToolkitScriptManager' desconocida. - Page_Load - Admin
+ERROR 36 crm.MensajeError - Pedidos - 18/11/2016 12:55:11 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 19 crm.MensajeError - Pedidos - 18/11/2016 02:25:45 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin

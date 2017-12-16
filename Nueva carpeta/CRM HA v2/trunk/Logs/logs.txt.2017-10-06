@@ -1,0 +1,26 @@
+ERROR 9 crm.Proyecto - Proyecto - 06/10/2017 09:50:36 a.m.- El descriptor de acceso de la propiedad 'ValorM2PorObra' inició la excepción 'La cadena de entrada no tiene el formato correcto.' en el objeto 'cProyecto' - Page_Load - Admin
+ERROR 16 crm.Proyecto - Proyecto - 06/10/2017 09:51:58 a.m.- El descriptor de acceso de la propiedad 'ValorM2PorObra' inició la excepción 'La cadena de entrada no tiene el formato correcto.' en el objeto 'cProyecto' - Page_Load - Admin
+ERROR 10 crm.Proyecto - Proyecto - 06/10/2017 09:53:38 a.m.- La cadena de entrada no tiene el formato correcto. - CalcularTotales - Admin
+ERROR 10 crm.Proyecto - Proyecto - 06/10/2017 09:53:39 a.m.- Subproceso anulado. - Page_Load - Admin
+ERROR 13 crm.Proyecto - Proyecto - 06/10/2017 09:55:09 a.m.- La cadena de entrada no tiene el formato correcto. - CalcularTotales - Admin
+ERROR 13 crm.Proyecto - Proyecto - 06/10/2017 09:55:09 a.m.- Subproceso anulado. - Page_Load - Admin
+ERROR 13 crm.Proyecto - Proyecto - 06/10/2017 09:55:39 a.m.- La cadena de entrada no tiene el formato correcto. - CalcularTotales - Admin
+ERROR 13 crm.Proyecto - Proyecto - 06/10/2017 09:55:39 a.m.- Subproceso anulado. - Page_Load - Admin
+ERROR 13 crm.Proyecto - Proyecto - 06/10/2017 09:56:12 a.m.- La cadena de entrada no tiene el formato correcto. - CalcularTotales - Admin
+ERROR 13 crm.Proyecto - Proyecto - 06/10/2017 09:56:12 a.m.- Subproceso anulado. - Page_Load - Admin
+ERROR 6 crm.Unidad - Unidad - 06/10/2017 10:00:37 a.m.- Referencia a objeto no establecida como instancia de un objeto. - CalcularTotales - Admin
+ERROR 6 crm.Unidad - Unidad - 06/10/2017 10:00:38 a.m.- Subproceso anulado. - Page_Load - Admin
+ERROR 6 crm.Unidad - Unidad - 06/10/2017 10:04:53 a.m.- Referencia a objeto no establecida como instancia de un objeto. - CalcularTotales - Admin
+ERROR 6 crm.Unidad - Unidad - 06/10/2017 10:04:53 a.m.- Subproceso anulado. - Page_Load - Admin
+ERROR 7 crm.Unidad - Unidad - 06/10/2017 10:05:58 a.m.- Referencia a objeto no establecida como instancia de un objeto. - CalcularTotales - Admin
+ERROR 7 crm.Unidad - Unidad - 06/10/2017 10:05:58 a.m.- Subproceso anulado. - Page_Load - Admin
+ERROR 7 crm.Unidad - Unidad - 06/10/2017 10:09:12 a.m.- Referencia a objeto no establecida como instancia de un objeto. - CalcularTotales - Admin
+ERROR 7 crm.Unidad - Unidad - 06/10/2017 10:09:12 a.m.- Subproceso anulado. - Page_Load - Admin
+ERROR 7 crm.Unidad - Unidad - 06/10/2017 10:09:46 a.m.- Referencia a objeto no establecida como instancia de un objeto. - CalcularTotales - Admin
+ERROR 7 crm.Unidad - Unidad - 06/10/2017 10:09:46 a.m.- Subproceso anulado. - Page_Load - Admin
+ERROR 13 crm.Unidad - Unidad - 06/10/2017 10:10:16 a.m.- Referencia a objeto no establecida como instancia de un objeto. - CalcularTotales - Admin
+ERROR 13 crm.Unidad - Unidad - 06/10/2017 10:10:16 a.m.- Subproceso anulado. - Page_Load - Admin
+ERROR 11 crm.Unidad - Unidad - 06/10/2017 10:11:59 a.m.- Referencia a objeto no establecida como instancia de un objeto. - CalcularTotales - Admin
+ERROR 11 crm.Unidad - Unidad - 06/10/2017 10:11:59 a.m.- Subproceso anulado. - Page_Load - Admin
+ERROR 11 crm.Unidad - Unidad - 06/10/2017 10:12:24 a.m.- Referencia a objeto no establecida como instancia de un objeto. - CalcularTotales - Admin
+ERROR 11 crm.Unidad - Unidad - 06/10/2017 10:12:25 a.m.- Subproceso anulado. - Page_Load - Admin

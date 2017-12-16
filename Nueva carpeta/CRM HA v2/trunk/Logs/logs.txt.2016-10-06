@@ -1,0 +1,6 @@
+ERROR 26 crm.MensajeError - Pedidos - 06/10/2016 12:36:16 p.m.- La propiedad 'Text' de 'asp:ListItem' no permite objetos secundarios. - Page_Load - Admin
+ERROR 26 crm.MensajeError - Pedidos - 06/10/2016 03:08:20 p.m.- El tipo 'System.Web.UI.WebControls.ListView' no tiene ninguna propiedad pública cuyo nombre sea 'table'. - Page_Load - Admin
+ERROR 17 crm.MensajeError - Pedidos - 06/10/2016 04:30:50 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 8 crm.MensajeError - Pedidos - 06/10/2016 04:35:50 p.m.- La clase base incluye el campo 'lbCantidad', pero su tipo (System.Web.UI.HtmlControls.HtmlInputText) no es compatible con el tipo de control (System.Web.UI.WebControls.Label). - Page_Load - Admin
+ERROR 30 crm.MensajeError - Pedidos - 06/10/2016 04:37:45 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 8 crm.MensajeError - Pedidos - 06/10/2016 05:44:10 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin

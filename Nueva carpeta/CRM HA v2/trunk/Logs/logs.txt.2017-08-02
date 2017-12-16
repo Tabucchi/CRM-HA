@@ -1,0 +1,2 @@
+ERROR 56 crm.CuentaCorriente - CuentaCorriente - 02/08/2017 12:56:19 p.m.- Referencia a objeto no establecida como instancia de un objeto. - Page_Load
+ERROR 65 crm.CuentaCorriente - CuentaCorriente - 02/08/2017 01:01:59 p.m.- El descriptor de acceso de la propiedad 'GetEmpresa' inició la excepción 'Referencia a objeto no establecida como instancia de un objeto.' en el objeto 'DLL.Negocio.cCuentaCorrienteUsuario' - Page_Load

@@ -1,0 +1,11 @@
+ERROR 13 crm.MensajeError - Pedidos - 11/11/2016 09:41:44 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 8 crm.MensajeError - Pedidos - 11/11/2016 09:44:37 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 9 crm.MensajeError - Pedidos - 11/11/2016 09:45:08 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 12 crm.MensajeError - Pedidos - 11/11/2016 11:06:08 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 15 crm.MensajeError - Pedidos - 11/11/2016 03:02:59 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 11 crm.MensajeError - Pedidos - 11/11/2016 04:04:58 p.m.- La clase base incluye el campo 'pnlHistorial', pero su tipo (System.Web.UI.UpdatePanel) no es compatible con el tipo de control (System.Web.UI.WebControls.Panel). - Page_Load - Admin
+ERROR 6 crm.MensajeError - Pedidos - 11/11/2016 04:09:36 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 8 crm.MensajeError - Pedidos - 11/11/2016 04:10:59 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 8 crm.MensajeError - Pedidos - 11/11/2016 04:11:25 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 6 crm.MensajeError - Pedidos - 11/11/2016 04:25:31 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 11 crm.MensajeError - Pedidos - 11/11/2016 05:31:41 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin

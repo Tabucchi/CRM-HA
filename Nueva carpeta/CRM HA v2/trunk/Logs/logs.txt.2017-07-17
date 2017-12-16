@@ -1,0 +1,2 @@
+ERROR 22 crm.DetalleCuota2 - Cliente - 17/07/2017 11:01:16 a.m.- Se produjo una excepción de tipo 'System.Exception'. - Page_Load
+ERROR 11 crm.MensajeError - Pedidos - 17/07/2017 02:27:22 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin

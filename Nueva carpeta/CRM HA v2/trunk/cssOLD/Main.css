@@ -1,0 +1,336 @@
+﻿body 
+{
+	background: none repeat scroll 0 0 #FFFFFF;
+    -x-system-font:none;
+	color:#706F6F;
+	font-family:Tahoma,Verdana,Arial,Helvetica,sans-serif;
+	font-size:11px;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	line-height:normal;
+	margin:0;
+	padding:0;
+	text-align:center;
+}
+
+.panelSuperior {
+	background-color: #FFE117;
+    height: 50px;
+    min-width: 980px;
+}
+
+.panelSuperior.Contenido  
+{
+    clear: both;
+    content: ".";
+    display: block;
+    font-size: 0;
+    height: 0;
+    line-height: 0;
+    visibility: hidden;
+}
+
+.lfloat {
+    float: left;
+}
+
+.rfloat {
+    float: right;
+}
+
+.ufloat
+{
+	vertical-align:top;
+}
+
+.loggedout_menubar {
+    margin: 0 auto;
+    padding-top: 10px;
+    width: 964px;
+}
+
+.contenido {
+	margin: 0 auto;
+    padding-top: 39px;
+    width: 970px;
+}
+
+.menubar_menu 
+{
+	cursor:pointer;
+	color: #706F6F;
+	font-weight:bold;	
+	text-decoration:none;
+    font-family: Lucida Sans,Calibri,Tahoma,verdana,arial,sans-serif;
+    font-size:14px;
+    padding-top:16px;
+    padding-left:16px;
+}
+
+.menubar_menu:hover
+{
+	color: #000000;
+}
+
+.ModalPopup 
+{
+	background: url('../Imagenes/fondo-login.png') repeat-x scroll 0 0 transparent;
+	color: #333333;
+	font-family: Tahoma,verdana,arial,sans-serif;
+    font-size: 13px;
+    line-height: 1.28;
+    text-align: left;
+    border-width:2px; 
+    border-style:solid; 
+    border-color:Gray; 
+    padding: 0px 10px 10px 10px; 
+}
+      
+.ModalBackground    
+{
+	text-align:center;
+    background-color:Gray;
+    filter:alpha(opacity=70);
+    opacity:0.7;
+}
+
+.watermarked {
+    background-color: #F0F8FF;
+    border: 1px solid #BEBEBE;
+    color: #FF0000;
+    height: 20px;
+    padding: 2px 0 0 2px;
+    width: 400px;
+}
+
+.watermarked2 {
+    border: 1px solid #BEBEBE;
+    color: #585858;
+    height: 20px;
+    padding: 2px 0 0 2px;
+    width: 400px;
+}
+
+.textbox 
+{
+	height:18px;
+	width:400px;
+}
+
+.boton
+{	
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: bold;
+    color: #333333;
+    padding: 2px 6px;
+	margin-left: 32px;
+}
+
+.grayArea {
+    border-top: 1px solid #B3B3B3;
+    min-height: 253px;
+}
+
+.pal {
+    padding: 20px;
+}
+
+.noborder {
+    border: medium none;
+}
+
+.uiBoxGray {
+    background-color: #F2F2F2;
+    border: 1px solid #CCCCCC;
+}
+
+.spacer {
+    padding: 5px 0;
+}
+
+.mensaje 
+{
+	color:gray;
+	font-size:18px;
+	padding: 20px;
+}
+
+.PrettyGrid
+{
+  width: 100%;
+}
+
+.PrettyGrid div.Pagination,
+.PrettyGrid div.Pagination a,
+.PrettyGrid div.Pagination span
+{
+  color: #00FFFF;
+  background: #284775;
+  font-weight: normal;
+  padding: 2px;
+}
+
+.PrettyGrid table
+{
+  border: solid 1px #CCCCCC;
+  width: 100%;
+}
+
+.column_head 
+{
+	background-color:#FFE117;
+}
+
+.invisible
+{
+	display:none;
+}
+
+.red
+{
+	color:#FF0000;
+}
+
+.blue
+{
+	color:#6C9FD9;
+}
+
+.green
+{
+	color:#008000;
+}
+
+.drop-menu 
+{
+  display: block;
+  height: 25px;
+  letter-spacing: -1px;
+  margin: 0 auto;
+  max-height: 25px;
+  padding: 5px;
+  position: relative;
+  text-align:right;
+  z-index: 1000;
+}
+
+.sub-menu {
+    border-left: 1px solid #343F4A;
+	border-right: 1px solid #343F4A;
+	border-bottom: 1px solid #343F4A;
+	border-top: 1px solid #343F4A;
+	background-color: #E2E2E2;
+  	display: none;
+	border-top: none;
+	margin-left: -8px !important;
+	margin-top: 2px;
+	padding: 8px;
+	width: 135px;
+	font-size: 10px;
+}
+
+.sub-menu li {
+  display: block; 
+  list-style-type: none;
+  padding: 3px 0;
+}
+
+.sub-menu li img {
+  margin-right: 10px;
+  vertical-align: top;
+}
+
+.sub-menu li:hover 
+{	
+	color:#FFFFFF;
+}
+
+.sub-menu a 
+{
+  font-weight:normal;	
+  font-family: Calibri,Tahoma,verdana,arial,sans-serif;
+  font-size:15px;
+  color: #706F6F;
+}
+
+.Tab 
+{
+	color:#706F6F;
+	font-family:Tahoma,Verdana,Arial,Helvetica,sans-serif;
+	font-size:11px;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	line-height:normal;
+}
+
+.titulo1
+{
+ color: #4E4E4E;
+ font-family: Calibri; 
+ font-weight: bold; 
+ font-size: 24px;
+ text-align: left;
+ padding-left: 20px;
+}
+
+.TextBox
+{
+	text-align:center;
+}
+
+.VeryPoorStrength
+{
+background: Red;
+color:White;
+font-weight:bold;
+}
+.WeakStrength
+{
+background: orange;
+color:White;
+font-weight:bold;
+}
+.AverageStrength
+{
+background: #A52A2A;
+color:black;
+font-weight:bold;
+}
+.GoodStrength
+{
+background: blue;
+color:White;
+font-weight:bold;
+}
+.ExcellentStrength
+{
+background: Green;
+color:White;
+font-weight:bold;
+width:500px;
+}
+
+.border
+{
+	border: medium solid #800000;
+	width:200px;      
+}
+
+.barBorder
+{
+	border: solid 1px red;
+	width: 200px;
+}
+
+.barInternal
+{
+	background: #C9D034;
+}
+
+.barInternalGreen
+{
+	background: green;
+}

@@ -1,0 +1,20 @@
+ERROR 13 crm.MensajeError - Pedidos - 07/04/2017 09:49:24 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 5 crm.MensajeError - Pedidos - 07/04/2017 09:50:14 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 6 crm.MensajeError - Pedidos - 07/04/2017 09:53:51 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 14 crm.MensajeError - Pedidos - 07/04/2017 09:55:32 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 12 crm.MensajeError - Pedidos - 07/04/2017 10:02:59 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 15 crm.MensajeError - Pedidos - 07/04/2017 10:09:36 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 16 crm.MensajeError - Pedidos - 07/04/2017 10:52:10 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 16 crm.MensajeError - Pedidos - 07/04/2017 10:53:10 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 63 crm.DetalleCuota2 - Cliente - 07/04/2017 11:52:20 a.m.- Referencia a objeto no establecida como instancia de un objeto. - Page_Load
+ERROR 37 crm.MensajeError - Pedidos - 07/04/2017 11:54:42 a.m.- La clase base incluye el campo 'pnlNotaDebito', pero su tipo (System.Web.UI.WebControls.Panel) no es compatible con el tipo de control (System.Web.UI.UpdatePanel). - Page_Load - Admin
+ERROR 16 crm.MensajeError - Pedidos - 07/04/2017 04:20:12 p.m.- El tipo 'System.Web.UI.UpdatePanel' no tiene ninguna propiedad pública cuyo nombre sea 'section'. - Page_Load - Admin
+ERROR 17 crm.MensajeError - Pedidos - 07/04/2017 04:20:36 p.m.- La clase base incluye el campo 'pnlNotaDebito', pero su tipo (System.Web.UI.UpdatePanel) no es compatible con el tipo de control (System.Web.UI.WebControls.Panel). - Page_Load - Admin
+ERROR 5 crm.MensajeError - Pedidos - 07/04/2017 05:25:00 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 9 crm.MensajeError - Pedidos - 07/04/2017 05:26:14 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 8 crm.MensajeError - Pedidos - 07/04/2017 05:29:47 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 11 crm.MensajeError - Pedidos - 07/04/2017 05:31:08 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 8 crm.MensajeError - Pedidos - 07/04/2017 05:31:21 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 10 crm.MensajeError - Pedidos - 07/04/2017 05:32:09 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 9 crm.MensajeError - Pedidos - 07/04/2017 05:33:20 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 8 crm.MensajeError - Pedidos - 07/04/2017 05:33:44 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin

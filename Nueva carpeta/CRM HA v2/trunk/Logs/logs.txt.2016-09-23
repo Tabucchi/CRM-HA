@@ -1,0 +1,5 @@
+ERROR 13 crm.MensajeError - Pedidos - 23/09/2016 10:57:30 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 7 crm.MensajeError - Pedidos - 23/09/2016 10:58:39 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 9 crm.MensajeError - Pedidos - 23/09/2016 11:01:07 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 8 crm.DetalleCuota - Cliente - 23/09/2016 03:45:00 p.m.- Referencia a objeto no establecida como instancia de un objeto. - Page_Load
+ERROR 11 crm.DetalleCuota - Cliente - 23/09/2016 03:47:08 p.m.- Referencia a objeto no establecida como instancia de un objeto. - Page_Load

@@ -1,0 +1,75 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" Inherits="MasterPageCliente" Codebehind="~/MasterPageCliente.master.cs" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <link href="Estilos/Main.css" type="text/css" rel="stylesheet">
+    <title>NAEX</title>
+	<link href='http://fonts.googleapis.com/css?family=Lato:300italic,300,900' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="css/masterStyle.css">
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script type="text/javascript" src="js/global.js"></script>
+
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>   
+    <script type="text/javascript" language="JavaScript">
+        flag = 'true';
+        function activar() {
+            if (flag == 'true') {
+                document.getElementById('lbMicuenta').style.display = 'inline-block';
+                flag = 'false';
+            }
+            else {
+                document.getElementById('lbMicuenta').style.display = 'none';
+                flag = 'true';
+            }
+        }
+    </script>
+<body>
+    <form id="form1" runat="server">
+        	<header>
+		<hgroup>
+			<a href="/Clientes.aspx" id="logo">Logo</a>
+			<nav>
+				<ul>
+                    <li> <span class="admin"></span> <a href="#">Menu</a>
+                        <ul>
+					        <li><a href="./IngresarPedidoCliente.aspx"><span class="tickets-nuv"></span>Abrir Tickets</a></li>
+					        <li><a href="./Clientes.aspx"><span class="tickets-ctr"></span>Control de Tickets</a></li>
+                            <li><a href="./CambiarContraseñaCliente.aspx"><span class="cuenta-cam"></span>Cambiar Contraseña</a></li>
+					        <%--<li><a href="./EstadisticasClientes.aspx"><span class="admin-est"></span>Estadísticas</a></li>--%>
+					        <li><a href="./Login.aspx"><span class="cuenta-sal"></span>Cerrar sesión</a></li>
+				        </ul>
+                    </li>
+                </ul>	
+			</nav>
+		</hgroup>
+	</header>
+   	<div id="wrapper">
+        <div id="main" role="main" >
+            <div class="panelSuperior">
+                <div class="loggedout_menubar">           
+                </div>
+                <div> 
+                    <div class="contenido">
+                        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </div>
+            </div>
+        </div>
+	</div>
+
+    <div class="panelSuperior">
+        <div class="loggedout_menubar"></div>
+        <div> 
+            <div class="contenido">
+            </div>
+        </div>
+    </div>
+    </form>
+</body>
+</html>

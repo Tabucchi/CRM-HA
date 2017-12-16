@@ -1,0 +1,12 @@
+ERROR 11 crm.MensajeError - Pedidos - 24/01/2017 02:25:37 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 13 crm.MensajeError - Pedidos - 24/01/2017 03:55:10 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 13 crm.MensajeError - Pedidos - 24/01/2017 03:56:26 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 14 crm.MensajeError - Pedidos - 24/01/2017 03:56:53 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 13 crm.MensajeError - Pedidos - 24/01/2017 03:59:51 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 19 crm.MensajeError - Pedidos - 24/01/2017 04:05:22 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 19 crm.MensajeError - Pedidos - 24/01/2017 04:06:34 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 10 crm.Unidad - Unidad - 24/01/2017 04:36:15 p.m.- Referencia a objeto no establecida como instancia de un objeto. - lvUnidades_ItemCommand - Admin
+ERROR 10 crm.Unidad - Unidad - 24/01/2017 04:36:43 p.m.- Referencia a objeto no establecida como instancia de un objeto. - lvUnidades_ItemCommand - Admin
+ERROR 13 crm.Unidad - Unidad - 24/01/2017 04:37:10 p.m.- Referencia a objeto no establecida como instancia de un objeto. - lvUnidades_ItemCommand - Admin
+ERROR 9 crm.Unidad - Unidad - 24/01/2017 04:38:26 p.m.- Referencia a objeto no establecida como instancia de un objeto. - lvUnidades_ItemCommand - Admin
+ERROR 8 crm.Unidad - Unidad - 24/01/2017 04:38:51 p.m.- Referencia a objeto no establecida como instancia de un objeto. - lvUnidades_ItemCommand - Admin

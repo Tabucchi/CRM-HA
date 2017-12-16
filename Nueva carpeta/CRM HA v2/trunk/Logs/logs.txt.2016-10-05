@@ -1,0 +1,7 @@
+ERROR 8 crm.MensajeError - Pedidos - 05/10/2016 09:55:52 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 9 crm.MensajeError - Pedidos - 05/10/2016 09:57:19 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 33 crm.MensajeError - Pedidos - 05/10/2016 10:04:42 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 13 crm.MensajeError - Pedidos - 05/10/2016 11:58:55 a.m.- La clase base incluye el campo 'pnlCargaMasiva', pero su tipo (System.Web.UI.UpdatePanel) no es compatible con el tipo de control (System.Web.UI.WebControls.Panel). - Page_Load - Admin
+ERROR 27 crm.MensajeError - Pedidos - 05/10/2016 12:25:35 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 8 crm.CargaUnidad - CargaUnidad - 05/10/2016 12:45:01 p.m.- Subproceso anulado. - btnCargarUnidad_Click - Admin
+ERROR 14 crm.CargaUnidad - CargaUnidad - 05/10/2016 12:46:06 p.m.- Subproceso anulado. - btnCargarUnidad_Click - Admin

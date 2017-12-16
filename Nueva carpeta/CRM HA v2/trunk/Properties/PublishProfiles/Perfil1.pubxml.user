@@ -1,0 +1,802 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+Este archivo es utilizado por el proceso de paquete/publicación de nuestro proyecto Web. Puede personalizar el comportamiento de este proceso
+editando este archivo MSBuild. Para conocer más acerca de esto, visite http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile>2015-03-09T14:22:02.0000000-03:00</TimeStampOfAssociatedLegacyPublishXmlFile>
+    <_PublishTargetUrl>C:\PUBLICACIONES\crm ha 1</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="ActualizarPrecio.aspx">
+      <publishTime>06/19/2017 12:38:40</publishTime>
+    </File>
+    <File Include="Agenda.aspx">
+      <publishTime>09/20/2017 11:54:18</publishTime>
+    </File>
+    <File Include="AgendaCC.aspx">
+      <publishTime>09/22/2016 14:51:46</publishTime>
+    </File>
+    <File Include="AgendaClientesPosibles.aspx">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="AnticipoCuotas.aspx">
+      <publishTime>02/07/2017 12:34:38</publishTime>
+    </File>
+    <File Include="Archivo/Carga Masiva CRM.xls">
+      <publishTime>11/12/2015 15:16:08</publishTime>
+    </File>
+    <File Include="Aviso.aspx">
+      <publishTime>05/27/2016 13:29:40</publishTime>
+    </File>
+    <File Include="bin/AjaxControlToolkit.dll">
+      <publishTime>05/13/2014 15:12:48</publishTime>
+    </File>
+    <File Include="bin/Common.Logging.dll">
+      <publishTime>05/13/2014 15:17:39</publishTime>
+    </File>
+    <File Include="bin/crm.dll">
+      <publishTime>12/15/2017 15:46:08</publishTime>
+    </File>
+    <File Include="bin/DLL.dll">
+      <publishTime>12/15/2017 15:46:05</publishTime>
+    </File>
+    <File Include="bin/ICSharpCode.SharpZipLib.dll">
+      <publishTime>01/02/2013 09:15:51</publishTime>
+    </File>
+    <File Include="bin/log4net.dll">
+      <publishTime>05/13/2014 15:17:39</publishTime>
+    </File>
+    <File Include="bin/Microsoft.QualityTools.Testing.Fakes.dll">
+      <publishTime>05/10/2013 02:38:22</publishTime>
+    </File>
+    <File Include="bin/NPOI.dll">
+      <publishTime>01/04/2014 23:51:16</publishTime>
+    </File>
+    <File Include="bin/NPOI.OOXML.dll">
+      <publishTime>01/04/2014 23:51:21</publishTime>
+    </File>
+    <File Include="bin/NPOI.OpenXml4Net.dll">
+      <publishTime>01/04/2014 23:51:16</publishTime>
+    </File>
+    <File Include="bin/NPOI.OpenXmlFormats.dll">
+      <publishTime>01/04/2014 23:51:20</publishTime>
+    </File>
+    <File Include="bin/OpenPop.dll">
+      <publishTime>05/17/2013 15:03:07</publishTime>
+    </File>
+    <File Include="bin/Quartz.dll">
+      <publishTime>04/16/2014 16:10:13</publishTime>
+    </File>
+    <File Include="BuscarCompra.aspx">
+      <publishTime>10/03/2014 11:38:16</publishTime>
+    </File>
+    <File Include="CambiarContraseña.aspx">
+      <publishTime>10/12/2015 12:23:32</publishTime>
+    </File>
+    <File Include="CambiarContraseñaCliente.aspx">
+      <publishTime>10/12/2015 13:41:36</publishTime>
+    </File>
+    <File Include="CargaMasivaPedidos.aspx">
+      <publishTime>11/12/2015 16:15:39</publishTime>
+    </File>
+    <File Include="CargaUnidad.aspx">
+      <publishTime>02/05/2017 09:52:58</publishTime>
+    </File>
+    <File Include="CC.aspx">
+      <publishTime>12/11/2017 09:24:17</publishTime>
+    </File>
+    <File Include="CCCliente.aspx">
+      <publishTime>08/24/2016 15:34:10</publishTime>
+    </File>
+    <File Include="Cliente.aspx">
+      <publishTime>07/03/2016 17:20:08</publishTime>
+    </File>
+    <File Include="ClientePosible.aspx">
+      <publishTime>10/03/2014 11:40:54</publishTime>
+    </File>
+    <File Include="Clientes.aspx">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Compra.aspx">
+      <publishTime>10/03/2014 11:58:51</publishTime>
+    </File>
+    <File Include="Compras.aspx">
+      <publishTime>10/03/2014 11:54:21</publishTime>
+    </File>
+    <File Include="Comprobantes.aspx">
+      <publishTime>09/25/2017 14:25:53</publishTime>
+    </File>
+    <File Include="Configuracion.aspx">
+      <publishTime>12/06/2017 12:29:13</publishTime>
+    </File>
+    <File Include="Controles/Cuotas.ascx">
+      <publishTime>10/20/2017 15:15:18</publishTime>
+    </File>
+    <File Include="Controles/CuotasAnticipo.ascx">
+      <publishTime>04/19/2017 16:28:22</publishTime>
+    </File>
+    <File Include="Controles/CuotasManuales.ascx">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Controles/ImagenCuota.ashx">
+      <publishTime>03/18/2016 15:46:22</publishTime>
+    </File>
+    <File Include="Controles/MensajeIndiceCac.ascx">
+      <publishTime>03/31/2017 15:16:10</publishTime>
+    </File>
+    <File Include="Controles/MensajeIndiceUVA.ascx">
+      <publishTime>10/23/2017 16:54:13</publishTime>
+    </File>
+    <File Include="Controles/WebUserControl1.ascx">
+      <publishTime>11/29/2016 17:20:28</publishTime>
+    </File>
+    <File Include="CotizacionCliente.aspx">
+      <publishTime>10/03/2014 11:54:55</publishTime>
+    </File>
+    <File Include="css/Datepicker.css">
+      <publishTime>08/08/2016 11:28:58</publishTime>
+    </File>
+    <File Include="css/masterStyle.css">
+      <publishTime>11/13/2017 15:06:44</publishTime>
+    </File>
+    <File Include="css/modal - Copia.css">
+      <publishTime>04/08/2017 14:59:51</publishTime>
+    </File>
+    <File Include="css/modal.css">
+      <publishTime>04/08/2017 12:24:12</publishTime>
+    </File>
+    <File Include="css/modal.min.css">
+      <publishTime>04/08/2017 12:24:12</publishTime>
+    </File>
+    <File Include="css/orange.css">
+      <publishTime>12/12/2016 16:22:42</publishTime>
+    </File>
+    <File Include="css/orange1.css">
+      <publishTime>05/13/2016 17:29:52</publishTime>
+    </File>
+    <File Include="CuentaCorriente.aspx">
+      <publishTime>12/11/2017 09:24:17</publishTime>
+    </File>
+    <File Include="CuotaClientes.aspx">
+      <publishTime>08/22/2017 15:39:58</publishTime>
+    </File>
+    <File Include="CuotasCliente.aspx">
+      <publishTime>11/13/2017 10:01:52</publishTime>
+    </File>
+    <File Include="CuotasClienteObra.aspx">
+      <publishTime>11/24/2017 15:43:20</publishTime>
+    </File>
+    <File Include="CuotasObra.aspx">
+      <publishTime>04/12/2017 09:52:07</publishTime>
+    </File>
+    <File Include="DatosTecnicos.aspx">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Default.aspx">
+      <publishTime>07/11/2017 12:17:58</publishTime>
+    </File>
+    <File Include="DetalleCC.aspx">
+      <publishTime>11/16/2017 14:43:41</publishTime>
+    </File>
+    <File Include="DetalleCC1.aspx">
+      <publishTime>04/09/2017 12:46:42</publishTime>
+    </File>
+    <File Include="DetalleCuota.aspx">
+      <publishTime>01/10/2017 11:49:02</publishTime>
+    </File>
+    <File Include="DetalleCuota2.aspx">
+      <publishTime>12/11/2017 09:24:17</publishTime>
+    </File>
+    <File Include="DetalleCuotaCliente.aspx">
+      <publishTime>09/08/2016 15:59:28</publishTime>
+    </File>
+    <File Include="DetalleCuotaNew.aspx">
+      <publishTime>12/21/2016 12:51:07</publishTime>
+    </File>
+    <File Include="DetalleManual.aspx">
+      <publishTime>02/12/2016 16:08:24</publishTime>
+    </File>
+    <File Include="DetalleOperacionVenta.aspx">
+      <publishTime>11/07/2017 12:13:26</publishTime>
+    </File>
+    <File Include="DetallePedido.aspx">
+      <publishTime>02/16/2016 10:58:48</publishTime>
+    </File>
+    <File Include="DetallePedidoCliente.aspx">
+      <publishTime>03/10/2014 12:10:25</publishTime>
+    </File>
+    <File Include="DetalleUnidadesVendidas.aspx">
+      <publishTime>11/22/2017 10:33:39</publishTime>
+    </File>
+    <File Include="EditarCliente.aspx">
+      <publishTime>02/05/2017 10:02:20</publishTime>
+    </File>
+    <File Include="EnvioCuotas.aspx">
+      <publishTime>10/27/2017 15:08:09</publishTime>
+    </File>
+    <File Include="EstadisticasClientes.aspx">
+      <publishTime>03/10/2014 12:13:09</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>11/29/2017 15:55:09</publishTime>
+    </File>
+    <File Include="Historial.aspx">
+      <publishTime>08/09/2017 17:01:59</publishTime>
+    </File>
+    <File Include="HistorialPrecio.aspx">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="images/addClient.png">
+      <publishTime>02/16/2016 12:41:38</publishTime>
+    </File>
+    <File Include="images/advertise.png">
+      <publishTime>04/23/2015 17:02:26</publishTime>
+    </File>
+    <File Include="images/anulado.gif">
+      <publishTime>05/08/2016 15:45:50</publishTime>
+    </File>
+    <File Include="images/bg-content-body.jpg">
+      <publishTime>05/13/2014 15:08:04</publishTime>
+    </File>
+    <File Include="images/bg-content.jpg">
+      <publishTime>05/13/2014 15:08:04</publishTime>
+    </File>
+    <File Include="images/bg_01.jpg">
+      <publishTime>02/17/2016 16:50:24</publishTime>
+    </File>
+    <File Include="images/bg_02.jpg">
+      <publishTime>02/17/2016 16:50:24</publishTime>
+    </File>
+    <File Include="images/construccion.png">
+      <publishTime>12/06/2017 09:46:19</publishTime>
+    </File>
+    <File Include="images/encabezadoCC.png">
+      <publishTime>04/04/2017 17:00:04</publishTime>
+    </File>
+    <File Include="images/encabezadoHA.png">
+      <publishTime>07/10/2016 10:09:04</publishTime>
+    </File>
+    <File Include="images/encabezadoHistorial.png">
+      <publishTime>03/17/2017 17:15:22</publishTime>
+    </File>
+    <File Include="images/encabezadoMail.png">
+      <publishTime>03/14/2016 13:32:44</publishTime>
+    </File>
+    <File Include="images/encabezadoSubtotalCuotasPorObra.png">
+      <publishTime>08/08/2017 12:23:42</publishTime>
+    </File>
+    <File Include="images/Error.png">
+      <publishTime>02/19/2016 16:38:46</publishTime>
+    </File>
+    <File Include="images/etiquetas/finance.png">
+      <publishTime>03/21/2016 16:22:16</publishTime>
+    </File>
+    <File Include="images/etiquetas/notaCredito.png">
+      <publishTime>06/19/2017 11:29:26</publishTime>
+    </File>
+    <File Include="images/etiquetas/notaDebito.png">
+      <publishTime>06/19/2017 12:29:56</publishTime>
+    </File>
+    <File Include="images/etiquetas/recibo.png">
+      <publishTime>06/19/2017 11:29:21</publishTime>
+    </File>
+    <File Include="images/etiquetas/ticket.png">
+      <publishTime>03/21/2016 16:00:42</publishTime>
+    </File>
+    <File Include="images/graphics.png">
+      <publishTime>03/20/2017 13:47:38</publishTime>
+    </File>
+    <File Include="images/house.png">
+      <publishTime>03/20/2017 11:52:48</publishTime>
+    </File>
+    <File Include="images/iconExcel.png">
+      <publishTime>10/26/2016 15:07:30</publishTime>
+    </File>
+    <File Include="images/iconPdf.png">
+      <publishTime>07/10/2016 11:12:08</publishTime>
+    </File>
+    <File Include="images/iconPrint.png">
+      <publishTime>07/10/2016 11:26:02</publishTime>
+    </File>
+    <File Include="images/icons/build.png">
+      <publishTime>02/04/2017 18:27:00</publishTime>
+    </File>
+    <File Include="images/icons/build1.png">
+      <publishTime>02/04/2017 18:38:58</publishTime>
+    </File>
+    <File Include="images/icons/build2.png">
+      <publishTime>02/04/2017 18:44:28</publishTime>
+    </File>
+    <File Include="images/icons/build3.png">
+      <publishTime>02/04/2017 18:45:40</publishTime>
+    </File>
+    <File Include="images/icons/icon_01.png">
+      <publishTime>02/16/2016 12:11:32</publishTime>
+    </File>
+    <File Include="images/icons/icon_02.png">
+      <publishTime>02/16/2016 12:11:32</publishTime>
+    </File>
+    <File Include="images/icons/icon_03.png">
+      <publishTime>02/16/2016 12:11:32</publishTime>
+    </File>
+    <File Include="images/icons/icon_04.png">
+      <publishTime>02/16/2016 12:11:32</publishTime>
+    </File>
+    <File Include="images/icons/icon_05.png">
+      <publishTime>02/16/2016 12:11:30</publishTime>
+    </File>
+    <File Include="images/icons/icon_06.png">
+      <publishTime>02/16/2016 12:11:32</publishTime>
+    </File>
+    <File Include="images/icons/icon_07.png">
+      <publishTime>02/16/2016 12:11:32</publishTime>
+    </File>
+    <File Include="images/icons/icon_08.png">
+      <publishTime>02/16/2016 12:11:32</publishTime>
+    </File>
+    <File Include="images/icons/icon_09.png">
+      <publishTime>02/16/2016 12:11:32</publishTime>
+    </File>
+    <File Include="images/icons/icon_10.png">
+      <publishTime>02/16/2016 12:11:32</publishTime>
+    </File>
+    <File Include="images/icons/icon_11.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="images/icons/icon_12.png">
+      <publishTime>02/16/2016 12:11:32</publishTime>
+    </File>
+    <File Include="images/icons/icon_13.png">
+      <publishTime>02/16/2016 12:11:32</publishTime>
+    </File>
+    <File Include="images/icons/icon_14.png">
+      <publishTime>02/16/2016 12:11:30</publishTime>
+    </File>
+    <File Include="images/icons/icon_15.png">
+      <publishTime>02/16/2016 12:11:32</publishTime>
+    </File>
+    <File Include="images/icons/icon_16.png">
+      <publishTime>02/16/2016 12:11:32</publishTime>
+    </File>
+    <File Include="images/icons/icon_17.png">
+      <publishTime>02/16/2016 12:11:32</publishTime>
+    </File>
+    <File Include="images/icons/icon_18.png">
+      <publishTime>02/16/2016 12:11:32</publishTime>
+    </File>
+    <File Include="images/icons/icon_19.png">
+      <publishTime>02/16/2016 12:11:32</publishTime>
+    </File>
+    <File Include="images/icons/icon_20.png">
+      <publishTime>02/16/2016 12:11:32</publishTime>
+    </File>
+    <File Include="images/icons/icon_21.png">
+      <publishTime>02/16/2016 12:11:32</publishTime>
+    </File>
+    <File Include="images/icons/icon_22.png">
+      <publishTime>02/16/2016 12:11:32</publishTime>
+    </File>
+    <File Include="images/icons/icon_23.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="images/icons/icon_27.png">
+      <publishTime>08/03/2016 12:15:50</publishTime>
+    </File>
+    <File Include="images/icons/icon_28.png">
+      <publishTime>08/03/2016 12:15:52</publishTime>
+    </File>
+    <File Include="images/icons/icon_29.png">
+      <publishTime>08/03/2016 12:24:12</publishTime>
+    </File>
+    <File Include="images/icons/icon_30.png">
+      <publishTime>02/16/2016 12:11:32</publishTime>
+    </File>
+    <File Include="images/icons/icon_31.png">
+      <publishTime>03/21/2016 10:28:26</publishTime>
+    </File>
+    <File Include="images/icons/icon_34.png">
+      <publishTime>09/18/2017 10:38:28</publishTime>
+    </File>
+    <File Include="images/icons/icon_35.png">
+      <publishTime>09/18/2017 15:51:16</publishTime>
+    </File>
+    <File Include="images/icons/icon_36.png">
+      <publishTime>09/18/2017 14:25:24</publishTime>
+    </File>
+    <File Include="images/icons/icon_37.png">
+      <publishTime>09/18/2017 14:35:12</publishTime>
+    </File>
+    <File Include="images/icons/icon_38.png">
+      <publishTime>09/18/2017 14:42:20</publishTime>
+    </File>
+    <File Include="images/icons/icon_39.png">
+      <publishTime>09/18/2017 14:46:37</publishTime>
+    </File>
+    <File Include="images/icons/icon_40.png">
+      <publishTime>09/18/2017 15:17:52</publishTime>
+    </File>
+    <File Include="images/icon_next.png">
+      <publishTime>08/08/2016 10:52:40</publishTime>
+    </File>
+    <File Include="images/login_07.png">
+      <publishTime>02/17/2016 16:50:24</publishTime>
+    </File>
+    <File Include="images/login_11.png">
+      <publishTime>02/17/2016 16:50:24</publishTime>
+    </File>
+    <File Include="images/login_13.png">
+      <publishTime>02/17/2016 16:50:24</publishTime>
+    </File>
+    <File Include="images/login_15.png">
+      <publishTime>02/17/2016 16:50:24</publishTime>
+    </File>
+    <File Include="images/login_18.png">
+      <publishTime>02/19/2016 16:38:42</publishTime>
+    </File>
+    <File Include="images/logo.png">
+      <publishTime>03/18/2016 11:07:50</publishTime>
+    </File>
+    <File Include="images/logoLogin.png">
+      <publishTime>03/18/2016 11:07:46</publishTime>
+    </File>
+    <File Include="images/menu/cuentaCorriente.png">
+      <publishTime>06/04/2017 20:31:06</publishTime>
+    </File>
+    <File Include="images/menu/directorio.png">
+      <publishTime>06/04/2017 21:18:00</publishTime>
+    </File>
+    <File Include="images/menu/historial.png">
+      <publishTime>09/18/2017 15:59:26</publishTime>
+    </File>
+    <File Include="images/menu/historialPago.png">
+      <publishTime>06/04/2017 20:35:20</publishTime>
+    </File>
+    <File Include="images/menu/newCliente.png">
+      <publishTime>06/04/2017 21:21:30</publishTime>
+    </File>
+    <File Include="images/menu/newOV.png">
+      <publishTime>06/04/2017 20:36:56</publishTime>
+    </File>
+    <File Include="images/menu/obras.png">
+      <publishTime>06/04/2017 21:28:32</publishTime>
+    </File>
+    <File Include="images/menu/operacionesVenta.png">
+      <publishTime>06/04/2017 21:23:30</publishTime>
+    </File>
+    <File Include="images/menu/precios.png">
+      <publishTime>06/04/2017 20:42:00</publishTime>
+    </File>
+    <File Include="images/menu/reserva.png">
+      <publishTime>09/18/2017 15:56:04</publishTime>
+    </File>
+    <File Include="images/menu/unidades.png">
+      <publishTime>06/04/2017 21:14:20</publishTime>
+    </File>
+    <File Include="images/nav-bg.png">
+      <publishTime>05/13/2014 15:08:06</publishTime>
+    </File>
+    <File Include="images/nav-break.png">
+      <publishTime>02/16/2016 12:11:30</publishTime>
+    </File>
+    <File Include="images/notFound.jpg">
+      <publishTime>03/18/2016 16:51:04</publishTime>
+    </File>
+    <File Include="images/people.png">
+      <publishTime>03/20/2017 12:23:24</publishTime>
+    </File>
+    <File Include="images/pieHA.png">
+      <publishTime>07/10/2016 10:37:22</publishTime>
+    </File>
+    <File Include="images/pieMail.png">
+      <publishTime>02/19/2016 17:12:48</publishTime>
+    </File>
+    <File Include="images/twitter.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="images/twitter_27.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="images/twitter_29.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="images/twitter_32.png">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="images/ui-icons_444444_256x240.png">
+      <publishTime>08/08/2016 10:44:20</publishTime>
+    </File>
+    <File Include="images/ui-icons_555555_256x240.png">
+      <publishTime>08/08/2016 10:46:28</publishTime>
+    </File>
+    <File Include="images/ui-icons_777777_256x240.png">
+      <publishTime>08/08/2016 10:45:56</publishTime>
+    </File>
+    <File Include="images/Warning.png">
+      <publishTime>03/14/2016 10:40:48</publishTime>
+    </File>
+    <File Include="Indice.aspx">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="IngresarPedidoCliente.aspx">
+      <publishTime>07/10/2014 10:19:00</publishTime>
+    </File>
+    <File Include="IngresoPedido.aspx">
+      <publishTime>04/18/2016 15:01:24</publishTime>
+    </File>
+    <File Include="Inventario.aspx">
+      <publishTime>03/18/2016 17:12:18</publishTime>
+    </File>
+    <File Include="js/autocomplete/autocomplete.min.css">
+      <publishTime>03/07/2015 13:13:32</publishTime>
+    </File>
+    <File Include="js/autocomplete/jquery-1.4.1.min.js">
+      <publishTime>06/07/2015 12:08:34</publishTime>
+    </File>
+    <File Include="js/autocomplete/jquery-ui.min.css">
+      <publishTime>03/07/2015 13:13:32</publishTime>
+    </File>
+    <File Include="js/autocomplete/jquery-ui.min.js">
+      <publishTime>03/07/2015 13:11:34</publishTime>
+    </File>
+    <File Include="js/autocomplete/jquery.autocomplete.css">
+      <publishTime>06/07/2015 12:08:34</publishTime>
+    </File>
+    <File Include="js/autocomplete/jquery.autocomplete.js">
+      <publishTime>06/07/2015 12:08:34</publishTime>
+    </File>
+    <File Include="js/autocomplete/jquery.min.js">
+      <publishTime>03/07/2015 13:11:34</publishTime>
+    </File>
+    <File Include="js/autocomplete/jquery.ui.autocomplete.css">
+      <publishTime>04/06/2015 13:22:40</publishTime>
+    </File>
+    <File Include="js/autocomplete/jquery.ui.autocomplete.js">
+      <publishTime>04/06/2015 12:16:42</publishTime>
+    </File>
+    <File Include="js/autocomplete/jquery.ui.menu.js">
+      <publishTime>04/06/2015 10:02:16</publishTime>
+    </File>
+    <File Include="js/autocomplete/jquery.ui.position.js">
+      <publishTime>03/06/2015 13:11:38</publishTime>
+    </File>
+    <File Include="js/datepicker/jquery.ui.datepicker.css">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="js/datepicker/jquery.ui.datepicker.js">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="js/datepicker2/demos.css">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="js/datepicker2/jquery.ui.all.css">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="js/datepicker2/jquery.ui.datepicker.js">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="js/global.js">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="js/jquery-1.10.2.js">
+      <publishTime>05/26/2015 13:28:46</publishTime>
+    </File>
+    <File Include="js/jquery-1.7.1.js">
+      <publishTime>09/12/2017 15:40:13</publishTime>
+    </File>
+    <File Include="js/jquery-1.8.2.js">
+      <publishTime>08/08/2016 11:23:30</publishTime>
+    </File>
+    <File Include="js/jquery-ui.js">
+      <publishTime>08/08/2016 11:23:30</publishTime>
+    </File>
+    <File Include="js/jquery.mask">
+      <publishTime>12/29/2016 11:47:42</publishTime>
+    </File>
+    <File Include="js/jquery.mask.js">
+      <publishTime>12/29/2016 11:47:44</publishTime>
+    </File>
+    <File Include="js/jquery.maskMoney.js">
+      <publishTime>06/02/2017 11:34:42</publishTime>
+    </File>
+    <File Include="js/jquery.ui.core.js">
+      <publishTime>05/26/2015 13:30:06</publishTime>
+    </File>
+    <File Include="js/jquery.ui.widget.js">
+      <publishTime>05/26/2015 13:30:06</publishTime>
+    </File>
+    <File Include="js/script.js">
+      <publishTime>02/11/2016 12:37:56</publishTime>
+    </File>
+    <File Include="ListadoReserva.aspx">
+      <publishTime>10/27/2017 11:32:28</publishTime>
+    </File>
+    <File Include="ListaOperacionVenta.aspx">
+      <publishTime>12/11/2017 09:24:17</publishTime>
+    </File>
+    <File Include="Login.aspx">
+      <publishTime>03/29/2017 12:47:04</publishTime>
+    </File>
+    <File Include="MailTemplate/AsignarPedido.html">
+      <publishTime>07/10/2016 11:27:50</publishTime>
+    </File>
+    <File Include="MailTemplate/AvisoActualizacionPrecios.html">
+      <publishTime>12/28/2016 16:29:42</publishTime>
+    </File>
+    <File Include="MailTemplate/AvisoCuota.html">
+      <publishTime>10/27/2017 14:20:09</publishTime>
+    </File>
+    <File Include="MailTemplate/AvisoPagoTemplate.html">
+      <publishTime>05/27/2016 16:11:44</publishTime>
+    </File>
+    <File Include="MailTemplate/AvisoVencimientoTemplate.html">
+      <publishTime>02/25/2016 16:42:28</publishTime>
+    </File>
+    <File Include="MailTemplate/Comentario.html">
+      <publishTime>02/16/2016 12:01:40</publishTime>
+    </File>
+    <File Include="MailTemplate/FinalizarTicketCliente.html">
+      <publishTime>02/15/2016 15:51:08</publishTime>
+    </File>
+    <File Include="MailTemplate/FinalizarTicketSoporte.html">
+      <publishTime>02/16/2016 12:00:50</publishTime>
+    </File>
+    <File Include="MailTemplate/NuevaConsulta.html">
+      <publishTime>03/27/2017 16:17:14</publishTime>
+    </File>
+    <File Include="MailTemplate/NuevoTicketCliente.html">
+      <publishTime>02/16/2016 12:01:40</publishTime>
+    </File>
+    <File Include="Manual.aspx">
+      <publishTime>07/20/2015 17:04:54</publishTime>
+    </File>
+    <File Include="MasterPage.master">
+      <publishTime>12/11/2017 09:24:17</publishTime>
+    </File>
+    <File Include="MasterPageCliente.master">
+      <publishTime>02/05/2016 16:28:02</publishTime>
+    </File>
+    <File Include="MasterPageCotizacion.master">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="MasterPagePostVenta.Master">
+      <publishTime>01/12/2016 15:19:04</publishTime>
+    </File>
+    <File Include="Mensaje.aspx">
+      <publishTime>02/15/2016 17:25:58</publishTime>
+    </File>
+    <File Include="MensajeConstruccion.aspx">
+      <publishTime>06/12/2017 09:58:38</publishTime>
+    </File>
+    <File Include="MensajeError.aspx">
+      <publishTime>05/21/2015 13:15:16</publishTime>
+    </File>
+    <File Include="MensajePostVenta.aspx">
+      <publishTime>01/12/2016 15:11:36</publishTime>
+    </File>
+    <File Include="Morosos.aspx">
+      <publishTime>10/19/2017 17:04:35</publishTime>
+    </File>
+    <File Include="MyAutocompleteService.asmx">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Novedad.aspx">
+      <publishTime>03/07/2016 17:06:36</publishTime>
+    </File>
+    <File Include="NuevoCliente.aspx">
+      <publishTime>06/09/2017 11:14:32</publishTime>
+    </File>
+    <File Include="OperacionVenta.aspx">
+      <publishTime>11/29/2017 12:05:36</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>04/18/2016 15:19:42</publishTime>
+    </File>
+    <File Include="Pedidos.aspx">
+      <publishTime>11/11/2016 12:55:48</publishTime>
+    </File>
+    <File Include="PedidosAcobrar.aspx">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Pendientes.ascx">
+      <publishTime>04/09/2017 10:55:51</publishTime>
+    </File>
+    <File Include="PendientesNotasCredito.aspx">
+      <publishTime>04/25/2017 10:02:22</publishTime>
+    </File>
+    <File Include="PendientesOperacionesVenta.aspx">
+      <publishTime>10/11/2017 11:31:31</publishTime>
+    </File>
+    <File Include="PendientesPrecios.aspx">
+      <publishTime>08/14/2017 22:10:20</publishTime>
+    </File>
+    <File Include="PendientesReservas.aspx">
+      <publishTime>05/02/2017 09:40:50</publishTime>
+    </File>
+    <File Include="PlanillaRecibo.aspx">
+      <publishTime>05/29/2017 17:33:06</publishTime>
+    </File>
+    <File Include="PlanillaResumenHistorialPago.aspx">
+      <publishTime>05/31/2017 10:02:17</publishTime>
+    </File>
+    <File Include="PostVenta.aspx">
+      <publishTime>01/12/2016 15:21:46</publishTime>
+    </File>
+    <File Include="Proveedor.aspx">
+      <publishTime>03/10/2014 12:37:49</publishTime>
+    </File>
+    <File Include="Proyecto.aspx">
+      <publishTime>10/17/2017 16:34:26</publishTime>
+    </File>
+    <File Include="Proyectos.aspx">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Reportes/Cliente.cs">
+      <publishTime>07/10/2016 11:12:47</publishTime>
+    </File>
+    <File Include="Reportes/Cliente.rpt">
+      <publishTime>07/10/2016 11:12:46</publishTime>
+    </File>
+    <File Include="Reportes/Recibo.cs">
+      <publishTime>07/10/2016 10:58:16</publishTime>
+    </File>
+    <File Include="Reportes/Recibo.rpt">
+      <publishTime>07/10/2016 10:58:15</publishTime>
+    </File>
+    <File Include="Reserva.aspx">
+      <publishTime>11/16/2017 15:42:37</publishTime>
+    </File>
+    <File Include="ResponsableEmpresa.aspx">
+      <publishTime>02/07/2015 13:37:00</publishTime>
+    </File>
+    <File Include="ResumenObra.aspx">
+      <publishTime>10/17/2017 14:13:38</publishTime>
+    </File>
+    <File Include="ResumenSaldo.aspx">
+      <publishTime>12/01/2017 15:31:34</publishTime>
+    </File>
+    <File Include="SaldoPorProyecto.aspx">
+      <publishTime>04/07/2017 17:34:02</publishTime>
+    </File>
+    <File Include="Saldos.aspx">
+      <publishTime>05/13/2017 18:19:42</publishTime>
+    </File>
+    <File Include="sidebar.ascx">
+      <publishTime>10/08/2015 12:48:26</publishTime>
+    </File>
+    <File Include="stats.aspx">
+      <publishTime>10/14/2016 17:24:18</publishTime>
+    </File>
+    <File Include="Test.aspx">
+      <publishTime>10/18/2017 16:50:01</publishTime>
+    </File>
+    <File Include="TotalDeudaCliente.aspx">
+      <publishTime>12/11/2017 09:24:17</publishTime>
+    </File>
+    <File Include="Unidad.aspx">
+      <publishTime>09/22/2017 13:01:57</publishTime>
+    </File>
+    <File Include="UnidadesVendidas.aspx">
+      <publishTime>11/28/2017 17:22:51</publishTime>
+    </File>
+    <File Include="Usuario.aspx">
+      <publishTime>09/25/2017 14:52:56</publishTime>
+    </File>
+    <File Include="Web-Service/GetTickets.asmx">
+      <publishTime>02/16/2016 12:11:08</publishTime>
+    </File>
+    <File Include="Web-Service/Search_CS.ashx">
+      <publishTime>09/13/2017 12:08:16</publishTime>
+    </File>
+    <File Include="web.config">
+      <publishTime>12/15/2017 14:03:49</publishTime>
+    </File>
+    <File Include="web1.config">
+      <publishTime>08/12/2015 17:16:08</publishTime>
+    </File>
+    <File Include="WebForm1.aspx">
+      <publishTime>11/02/2017 10:56:30</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

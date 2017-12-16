@@ -48,7 +48,7 @@ namespace DLL.Negocio
         {
             get
             {
-                /*List<cCuota> cuotas = cCuota.GetCuotasActivasByEmpresa(IdEmpresa);
+                List<cCuota> cuotas = cCuota.GetCuotasActivasByEmpresa(IdEmpresa);
                 decimal total = 0;
 
                 if (cuotas != null)
@@ -62,8 +62,8 @@ namespace DLL.Negocio
                     }
                 }
                 
-                return String.Format("{0:#,#0.00}", total);*/
-                decimal total = 0;
+                return String.Format("{0:#,#0.00}", total);
+             /*   decimal total = 0;
 
                 List<cOperacionVenta> operaciones = cOperacionVenta.GetOVByIdEmpresa(IdEmpresa);
                 foreach (cOperacionVenta o in operaciones)
@@ -131,7 +131,7 @@ namespace DLL.Negocio
                         }
                     }
                 }
-                return String.Format("{0:#,#0.00}", total);
+                return String.Format("{0:#,#0.00}", total);*/
             }
         }
 

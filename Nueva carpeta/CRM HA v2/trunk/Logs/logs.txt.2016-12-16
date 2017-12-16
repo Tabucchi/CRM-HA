@@ -1,0 +1,13 @@
+ERROR 22 crm.MensajeError - Pedidos - 16/12/2016 11:22:27 a.m.- La etiqueta contiene atributos 'style' duplicados. - Page_Load - Admin
+ERROR 32 crm.MensajeError - Pedidos - 16/12/2016 11:22:45 a.m.- La etiqueta contiene atributos 'style' duplicados. - Page_Load - Admin
+ERROR 22 crm.MensajeError - Pedidos - 16/12/2016 11:23:01 a.m.- La etiqueta contiene atributos 'style' duplicados. - Page_Load - Admin
+ERROR 8 crm.MensajeError - Pedidos - 16/12/2016 11:24:13 a.m.- La etiqueta contiene atributos 'style' duplicados. - Page_Load - Admin
+ERROR 27 crm.MensajeError - Pedidos - 16/12/2016 11:33:34 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 16 crm.MensajeError - Pedidos - 16/12/2016 11:40:08 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 7 crm.MensajeError - Pedidos - 16/12/2016 11:44:11 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 13 crm.MensajeError - Pedidos - 16/12/2016 11:52:38 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 13 crm.MensajeError - Pedidos - 16/12/2016 11:56:23 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 13 crm.MensajeError - Pedidos - 16/12/2016 11:58:48 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 8 crm.MensajeError - Pedidos - 16/12/2016 02:57:23 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 20 crm.MensajeError - Pedidos - 16/12/2016 03:47:27 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 13 crm.MensajeError - Pedidos - 16/12/2016 05:14:56 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin

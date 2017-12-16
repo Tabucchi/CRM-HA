@@ -1,0 +1,12 @@
+ERROR 18 crm.MensajeError - Pedidos - 20/12/2016 10:46:31 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 22 crm.MensajeError - Pedidos - 20/12/2016 10:48:05 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 7 crm.MensajeError - Pedidos - 20/12/2016 10:49:26 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 22 crm.MensajeError - Pedidos - 20/12/2016 10:49:38 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 8 crm.MensajeError - Pedidos - 20/12/2016 10:52:53 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 35 crm.MensajeError - Pedidos - 20/12/2016 11:23:01 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 13 crm.MensajeError - Pedidos - 20/12/2016 11:32:58 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 8 crm.MensajeError - Pedidos - 20/12/2016 11:34:14 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 10 crm.MensajeError - Pedidos - 20/12/2016 11:50:25 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 10 crm.DetalleCuotaNew - Cliente - 20/12/2016 03:51:47 p.m.- Referencia a objeto no establecida como instancia de un objeto. - Page_Load
+ERROR 10 crm.DetalleCuotaNew - Cliente - 20/12/2016 03:52:14 p.m.- Se produjo una excepción de tipo 'System.Exception'. - Page_Load
+ERROR 37 crm.MensajeError - Pedidos - 20/12/2016 04:14:46 p.m.- El contenido literal ('23') no está permitido en 'System.Web.UI.WebControls.ListItemCollection'. - Page_Load - Admin

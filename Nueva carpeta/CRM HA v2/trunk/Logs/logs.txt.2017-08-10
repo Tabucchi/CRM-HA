@@ -1,0 +1,13 @@
+ERROR 14 crm.MensajeError - Pedidos - 10/08/2017 09:30:14 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 14 crm.MensajeError - Pedidos - 10/08/2017 11:19:59 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 6 crm.MensajeError - Pedidos - 10/08/2017 11:22:41 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 17 OperacionVenta - OperacionVenta - 10/08/2017 12:14:59 p.m.- 'cbProyectos' tiene un SelectedValue que no es válido porque no existe en la lista de elementos.
+Nombre del parámetro: value - cbEmpresa_SelectedIndexChanged
+ERROR 9 OperacionVenta - OperacionVenta - 10/08/2017 12:15:20 p.m.- 'cbProyectos' tiene un SelectedValue que no es válido porque no existe en la lista de elementos.
+Nombre del parámetro: value - cbEmpresa_SelectedIndexChanged
+ERROR 17 OperacionVenta - OperacionVenta - 10/08/2017 12:16:34 p.m.- 'cbProyectos' tiene un SelectedValue que no es válido porque no existe en la lista de elementos.
+Nombre del parámetro: value - cbEmpresa_SelectedIndexChanged
+ERROR 18 crm.MensajeError - Pedidos - 10/08/2017 12:19:17 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 8 crm.MensajeError - Pedidos - 10/08/2017 12:23:36 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 12 crm.MensajeError - Pedidos - 10/08/2017 12:36:18 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 20 crm.MensajeError - Pedidos - 10/08/2017 12:41:41 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin

@@ -1,0 +1,13 @@
+ERROR 19 crm.MensajeError - Pedidos - 20/03/2017 10:11:44 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 11 crm.MensajeError - Pedidos - 20/03/2017 10:12:28 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 15 crm.MensajeError - Pedidos - 20/03/2017 10:19:54 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 9 crm.Proyecto - Proyecto - 20/03/2017 03:01:56 p.m.- El descriptor de acceso de la propiedad 'GetSupTotal' inició la excepción 'Referencia a objeto no establecida como instancia de un objeto.' en el objeto 'cProyecto' - Page_Load - Admin
+ERROR 11 crm.Proyecto - Proyecto - 20/03/2017 03:02:11 p.m.- El descriptor de acceso de la propiedad 'GetSupTotal' inició la excepción 'Referencia a objeto no establecida como instancia de un objeto.' en el objeto 'cProyecto' - Page_Load - Admin
+ERROR 6 crm.Proyecto - Proyecto - 20/03/2017 03:10:08 p.m.- Referencia a objeto no establecida como instancia de un objeto. - CalcularTotales - Admin
+ERROR 6 crm.Proyecto - Unidad - 20/03/2017 03:10:08 p.m.- Subproceso anulado. - Page_Load - Admin
+ERROR 6 crm.Proyecto - Proyecto - 20/03/2017 03:10:08 p.m.- Subproceso anulado. - Page_Load - Admin
+ERROR 9 crm.Proyecto - Proyecto - 20/03/2017 03:10:32 p.m.- Referencia a objeto no establecida como instancia de un objeto. - CalcularTotales - Admin
+ERROR 9 crm.Proyecto - Unidad - 20/03/2017 03:10:32 p.m.- Subproceso anulado. - Page_Load - Admin
+ERROR 9 crm.Proyecto - Proyecto - 20/03/2017 03:10:32 p.m.- Subproceso anulado. - Page_Load - Admin
+ERROR 11 crm.MensajeError - Pedidos - 20/03/2017 04:19:58 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 10 crm.MensajeError - Pedidos - 20/03/2017 04:25:00 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin

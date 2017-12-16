@@ -1,0 +1,50 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" Inherits="MasterPageCotizacion" Codebehind="MasterPageCotizacion.master.cs" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <link href="Estilos/Main.css" type="text/css" rel="stylesheet">
+    <title>NAEX</title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>   
+    <script type="text/javascript" language="JavaScript">
+        flag = 'true';
+        function activar() {
+            if (flag == 'true') {
+                document.getElementById('lbMicuenta').style.display = 'inline-block';
+                flag = 'false';
+            }
+            else {
+                document.getElementById('lbMicuenta').style.display = 'none';
+                flag = 'true';
+            }
+        }
+    </script>
+<body>
+    <form id="form1" runat="server">
+    
+    <div class="panelSuperior">
+        <div class="loggedout_menubar">           
+            <asp:ImageButton ID="logo" ImageUrl="~/Imagenes/logo-naex.png" PostBackUrl="~/Default.aspx" CssClass="lfloat" Height="36" Width="150" runat="server" />
+                
+            <div class="rfloat">        
+                <div class="menubar_menu">
+                    <div class="drop-menu">
+                        <asp:Label ID="lbCotización" runat="server" Text="Cotización" Font-Size="18px"></asp:Label>     
+                          
+                    </div>              
+                </div>
+            </div>
+        </div>
+        <div> 
+            <div class="contenido">
+                <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+    </div>
+    </form>
+</body>
+</html>

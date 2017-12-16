@@ -1,0 +1,10 @@
+ERROR 8 crm.MensajeError - Pedidos - 07/11/2016 10:59:06 a.m.- El tipo 'System.Web.UI.WebControls.Literal' no tiene ninguna propiedad pública cuyo nombre sea 'style'. - Page_Load - Admin
+ERROR 7 crm.MensajeError - Pedidos - 07/11/2016 11:02:28 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 15 crm.MensajeError - Pedidos - 07/11/2016 11:02:55 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 7 crm.MensajeError - Pedidos - 07/11/2016 11:03:29 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 7 crm.MensajeError - Pedidos - 07/11/2016 11:07:41 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 13 crm.MensajeError - Pedidos - 07/11/2016 11:18:35 a.m.- El tipo 'System.Web.UI.WebControls.Literal' no tiene ninguna propiedad pública cuyo nombre sea 'style'. - Page_Load - Admin
+ERROR 17 crm.MensajeError - Pedidos - 07/11/2016 11:20:03 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 12 crm.MensajeError - Pedidos - 07/11/2016 05:26:41 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 26 crm.MensajeError - Pedidos - 07/11/2016 05:26:44 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 25 crm.MensajeError - Pedidos - 07/11/2016 05:26:45 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin

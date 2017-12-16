@@ -1,0 +1,7 @@
+ERROR 11 crm.MensajeError - Pedidos - 22/09/2016 03:03:50 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 6 crm.MensajeError - Pedidos - 22/09/2016 03:05:50 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 10 crm.MensajeError - Pedidos - 22/09/2016 03:06:44 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 9 crm.MensajeError - Pedidos - 22/09/2016 04:08:23 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 9 crm.MensajeError - Pedidos - 22/09/2016 04:08:32 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 11 crm.MensajeError - Pedidos - 22/09/2016 04:49:35 p.m.- La clase base incluye el campo 'pnlEditCliente', pero su tipo (System.Web.UI.UpdatePanel) no es compatible con el tipo de control (System.Web.UI.WebControls.Panel). - Page_Load - Admin
+ERROR 7 crm.MensajeError - Pedidos - 22/09/2016 05:30:28 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin

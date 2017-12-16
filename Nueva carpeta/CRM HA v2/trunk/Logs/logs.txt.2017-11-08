@@ -1,0 +1,4 @@
+ERROR 7 crm.MensajeError - Pedidos - 08/11/2017 03:52:54 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 7 crm.MensajeError - Pedidos - 08/11/2017 03:54:02 p.m.- La clase base incluye el campo 'pnlCancelarReserva', pero su tipo (System.Web.UI.WebControls.Panel) no es compatible con el tipo de control (System.Web.UI.UpdatePanel). - Page_Load - Admin
+ERROR 11 crm.MensajeError - Pedidos - 08/11/2017 03:58:45 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 14 crm.MensajeError - Pedidos - 08/11/2017 04:08:10 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin

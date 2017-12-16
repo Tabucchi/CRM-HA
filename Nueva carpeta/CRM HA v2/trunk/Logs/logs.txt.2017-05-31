@@ -1,0 +1,13 @@
+ERROR 7 crm.MensajeError - Pedidos - 31/05/2017 09:22:28 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 5 crm.MensajeError - Pedidos - 31/05/2017 09:29:45 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 15 crm.MensajeError - Pedidos - 31/05/2017 09:31:00 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 12 crm.MensajeError - Pedidos - 31/05/2017 09:32:10 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 16 crm.MensajeError - Pedidos - 31/05/2017 09:32:56 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 5 crm.MensajeError - Pedidos - 31/05/2017 09:35:47 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 35 crm.MensajeError - Pedidos - 31/05/2017 11:08:26 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 8 crm.MensajeError - Pedidos - 31/05/2017 11:28:00 a.m.- La clase base incluye el campo 'pnlIndiceCAC', pero su tipo (System.Web.UI.UpdatePanel) no es compatible con el tipo de control (System.Web.UI.WebControls.Panel). - Page_Load - Admin
+ERROR 7 crm.MensajeError - Pedidos - 31/05/2017 11:28:17 a.m.- La clase base incluye el campo 'pnlIndiceCAC', pero su tipo (System.Web.UI.UpdatePanel) no es compatible con el tipo de control (System.Web.UI.WebControls.Panel). - Page_Load - Admin
+ERROR 8 crm.MensajeError - Pedidos - 31/05/2017 12:59:15 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 8 crm.MensajeError - Pedidos - 31/05/2017 05:29:00 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 13 crm.MensajeError - Pedidos - 31/05/2017 05:30:25 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 5 crm.MensajeError - Pedidos - 31/05/2017 05:31:06 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin

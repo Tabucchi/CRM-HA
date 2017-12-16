@@ -1,0 +1,6 @@
+ERROR 12 crm.Unidad - Unidad - 10/04/2017 05:18:01 p.m.- DataBinding: 'DLL.Negocio.cUnidad' no contiene una propiedad con el nombre 'GetNombreCompleto'. - Page_Load - Admin
+ERROR 12 crm.Unidad - Unidad - 10/04/2017 05:18:01 p.m.- Subproceso anulado. - Page_Load - Admin
+ERROR 12 crm.Unidad - Unidad - 10/04/2017 05:18:25 p.m.- DataBinding: 'DLL.Negocio.cUnidad' no contiene una propiedad con el nombre 'GetNombreCompleto'. - Page_Load - Admin
+ERROR 12 crm.Unidad - Unidad - 10/04/2017 05:18:25 p.m.- Subproceso anulado. - Page_Load - Admin
+ERROR 8 crm.Unidad - Unidad - 10/04/2017 05:18:59 p.m.- DataBinding: 'DLL.Negocio.cUnidad' no contiene una propiedad con el nombre 'GetNombreCompleto'. - Page_Load - Admin
+ERROR 8 crm.Unidad - Unidad - 10/04/2017 05:18:59 p.m.- Subproceso anulado. - Page_Load - Admin

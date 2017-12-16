@@ -1,0 +1,12 @@
+ERROR 8 crm.MensajeError - Pedidos - 05/12/2016 10:50:05 a.m.- La etiqueta contiene atributos 'CssClass' duplicados. - Page_Load - Admin
+ERROR 11 crm.MensajeError - Pedidos - 05/12/2016 10:50:41 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 38 crm.MensajeError - Pedidos - 05/12/2016 11:01:05 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 41 crm.MensajeError - Pedidos - 05/12/2016 11:01:27 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 42 crm.MensajeError - Pedidos - 05/12/2016 11:01:46 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 17 crm.MensajeError - Pedidos - 05/12/2016 11:14:43 a.m.- Etiqueta de servidor incorrecta. - Page_Load - Admin
+ERROR 12 crm.MensajeError - Pedidos - 05/12/2016 12:32:39 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 9 crm.MensajeError - Pedidos - 05/12/2016 12:50:30 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 9 crm.MensajeError - Pedidos - 05/12/2016 12:53:23 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 11 crm.MensajeError - Pedidos - 05/12/2016 12:53:40 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 11 crm.MensajeError - Pedidos - 05/12/2016 12:55:36 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 13 crm.MensajeError - Pedidos - 05/12/2016 12:57:55 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin

@@ -1,0 +1,5 @@
+ERROR 13 crm.MensajeError - Pedidos - 27/11/2017 01:52:59 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 21 OperacionVenta - OperacionVenta - 27/11/2017 03:52:53 p.m.- 'cbUnidad' tiene un SelectedValue que no es válido porque no existe en la lista de elementos.
+Nombre del parámetro: value - cbEmpresa_SelectedIndexChanged
+ERROR 21 OperacionVenta - OperacionVenta - 27/11/2017 03:53:21 p.m.- 'cbUnidad' tiene un SelectedValue que no es válido porque no existe en la lista de elementos.
+Nombre del parámetro: value - cbEmpresa_SelectedIndexChanged

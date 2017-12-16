@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "crm", "crm.csproj", "{09275823-EB5F-4B9B-A676-8961C35C4DD2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DLL", "DLL\DLL.csproj", "{DBE27B7C-B808-4495-8CFE-58CA16888A64}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{09275823-EB5F-4B9B-A676-8961C35C4DD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09275823-EB5F-4B9B-A676-8961C35C4DD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09275823-EB5F-4B9B-A676-8961C35C4DD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09275823-EB5F-4B9B-A676-8961C35C4DD2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBE27B7C-B808-4495-8CFE-58CA16888A64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBE27B7C-B808-4495-8CFE-58CA16888A64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBE27B7C-B808-4495-8CFE-58CA16888A64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBE27B7C-B808-4495-8CFE-58CA16888A64}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

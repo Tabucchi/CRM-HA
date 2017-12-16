@@ -1,0 +1,5 @@
+ERROR 16 crm.MensajeError - Pedidos - 19/06/2017 02:25:16 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 13 crm.CuentaCorriente - CuentaCorriente - 19/06/2017 03:55:21 p.m.- El descriptor de acceso de la propiedad 'GetEmpresa' inició la excepción 'Referencia a objeto no establecida como instancia de un objeto.' en el objeto 'DLL.Negocio.cCuentaCorrienteUsuario' - Page_Load
+ERROR 17 crm.DetalleCuota2 - Cliente - 19/06/2017 04:54:27 p.m.- Se produjo una excepción de tipo 'System.Exception'. - Page_Load
+ERROR RemoteServer_Worker-1 JobScheduler - JobScheduler - 19/06/2017 04:56:35 p.m.- Referencia a objeto no establecida como instancia de un objeto. - Execute
+ERROR 18 crm.MensajeError - Pedidos - 19/06/2017 04:56:35 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin

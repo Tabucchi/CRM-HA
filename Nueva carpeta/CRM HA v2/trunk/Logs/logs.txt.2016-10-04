@@ -1,0 +1,8 @@
+ERROR 16 crm.MensajeError - Pedidos - 04/10/2016 03:47:08 p.m.- El tipo 'System.Web.UI.WebControls.ListView' no tiene ninguna propiedad pública cuyo nombre sea 'section'. - Page_Load - Admin
+ERROR 9 crm.MensajeError - Pedidos - 04/10/2016 03:51:36 p.m.- Los controles de contenido tienen que ser controles de nivel superior en una página de contenido o una página maestra anidada que haga referencia a una página maestra. - Page_Load - Admin
+ERROR 11 crm.MensajeError - Pedidos - 04/10/2016 03:52:54 p.m.- Los controles de contenido tienen que ser controles de nivel superior en una página de contenido o una página maestra anidada que haga referencia a una página maestra. - Page_Load - Admin
+ERROR 7 crm.MensajeError - Pedidos - 04/10/2016 03:57:19 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 7 crm.MensajeError - Pedidos - 04/10/2016 04:21:17 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 9 crm.MensajeError - Pedidos - 04/10/2016 04:22:18 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 10 crm.MensajeError - Pedidos - 04/10/2016 04:27:00 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 15 crm.MensajeError - Pedidos - 04/10/2016 04:44:02 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin

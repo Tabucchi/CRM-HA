@@ -1,0 +1,9 @@
+ERROR 18 crm.MensajeError - Pedidos - 08/05/2017 09:37:38 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 9 crm.MensajeError - Pedidos - 08/05/2017 10:16:13 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 15 crm.MensajeError - Pedidos - 08/05/2017 10:16:13 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 10 crm.MensajeError - Pedidos - 08/05/2017 11:22:52 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 15 crm.MensajeError - Pedidos - 08/05/2017 02:58:30 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 70 crm.DetalleCuota2 - Cliente - 08/05/2017 04:57:33 p.m.- Referencia a objeto no establecida como instancia de un objeto. - Page_Load
+ERROR 5 crm.DetalleCuota2 - Cliente - 08/05/2017 05:07:01 p.m.- Se produjo una excepción de tipo 'System.Exception'. - Page_Load
+ERROR 5 crm.DetalleCuota2 - Cliente - 08/05/2017 05:07:06 p.m.- Se produjo una excepción de tipo 'System.Exception'. - Page_Load
+ERROR 12 crm.DetalleCuota2 - Cliente - 08/05/2017 05:26:24 p.m.- El descriptor de acceso de la propiedad 'GetFechaPago' inició la excepción 'Referencia a objeto no establecida como instancia de un objeto.' en el objeto 'DLL.Negocio.cCuota' - Page_Load

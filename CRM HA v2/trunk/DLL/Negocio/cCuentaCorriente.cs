@@ -117,10 +117,6 @@ namespace DLL.Negocio
 
                     return saldo;*/
 
-                    int asd=0;
-                    if (IdOperacionVenta == "189")
-                        asd++;
-
                     cOperacionVenta op = cOperacionVenta.Load(IdOperacionVenta);
                     List<cFormaPagoOV> saldos = cFormaPagoOV.GetFormaPagoOVByIdOV(op.Id);
                     decimal _saldoPesos = 0;

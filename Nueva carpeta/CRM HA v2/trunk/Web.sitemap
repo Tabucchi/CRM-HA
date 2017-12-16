@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="~/Default.aspx" title="Menu Principal"  description="Home">
+      <siteMapNode url="~/Administracion.aspx" title="Administración" >    
+          <siteMapNode url="~/AsignarResponsable.aspx" title="Asignar Responsable" />
+          <siteMapNode url="~/DlgComentarios.aspx" title="Agregar Comentarios" /> 
+          <siteMapNode url="~/FinalizarPedido.aspx" title="Finalizar Pedido" />
+          <siteMapNode url="~/IngresoItems.aspx" title="Ingresar Items" />
+      </siteMapNode>
+    
+      <siteMapNode url="~/dlgChangePass.aspx" title ="Cambio de Contraseña" />
+      <siteMapNode url="~/companyDetails.aspx" title ="Datos y Anotaciones" />
+      <siteMapNode url="~/ABM.aspx" title ="Administración de Clientes" />
+      <siteMapNode url="~/Item_Busqueda.aspx" title="Items" />
+    
+      <siteMapNode url="~/dlgIngresarPedido.aspx" title="Ingreso de Pedidos">    
+          <siteMapNode url="~/dlgAltaEmpresa.aspx" title="Nueva Empresa" />
+          <siteMapNode url="~/dlgAltaCliente.aspx" title="Nuevo Cliente" />
+      </siteMapNode>
+  </siteMapNode>
+</siteMap>

@@ -1,0 +1,13 @@
+ERROR 15 crm.MensajeError - Pedidos - 11/05/2017 09:57:21 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 15 crm.MensajeError - Pedidos - 11/05/2017 09:58:56 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 12 crm.MensajeError - Pedidos - 11/05/2017 10:17:24 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 12 crm.DetalleCC - DetalleCC - 11/05/2017 10:40:38 a.m.- Se produjo una excepción de tipo 'System.Exception'. - btnNotaDebito_Click
+ERROR 9 crm.DetalleCC - DetalleCC - 11/05/2017 10:42:07 a.m.- Se produjo una excepción de tipo 'System.Exception'. - btnNotaDebito_Click
+ERROR 20 crm.MensajeError - Pedidos - 11/05/2017 02:23:29 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 22 crm.MensajeError - Pedidos - 11/05/2017 02:24:07 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 22 crm.MensajeError - Pedidos - 11/05/2017 02:24:49 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 22 crm.MensajeError - Pedidos - 11/05/2017 02:26:36 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 12 crm.MensajeError - Pedidos - 11/05/2017 04:33:48 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 11 crm.MensajeError - Pedidos - 11/05/2017 04:34:59 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 11 crm.MensajeError - Pedidos - 11/05/2017 04:44:17 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 10 crm.MensajeError - Pedidos - 11/05/2017 04:45:54 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin

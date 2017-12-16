@@ -1,0 +1,7 @@
+ERROR 15 crm.MensajeError - Pedidos - 17/08/2016 11:01:11 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 8 crm.MensajeError - Pedidos - 17/08/2016 11:01:48 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 16 crm.MensajeError - Pedidos - 17/08/2016 11:03:04 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 7 crm.DetalleCuota - Cliente - 17/08/2016 11:06:59 a.m.- El descriptor de acceso de la propiedad 'GetFechaPago' inició la excepción 'Referencia a objeto no establecida como instancia de un objeto.' en el objeto 'DLL.Negocio.cCuota' - Page_Load
+ERROR 14 crm.DetalleCuota - Cliente - 17/08/2016 11:07:27 a.m.- El descriptor de acceso de la propiedad 'GetFechaPago' inició la excepción 'Referencia a objeto no establecida como instancia de un objeto.' en el objeto 'DLL.Negocio.cCuota' - Page_Load
+ERROR 12 crm.DetalleCuota - Cliente - 17/08/2016 11:10:13 a.m.- El descriptor de acceso de la propiedad 'GetFechaPago' inició la excepción 'Referencia a objeto no establecida como instancia de un objeto.' en el objeto 'DLL.Negocio.cCuota' - Page_Load
+ERROR 15 crm.DetalleCuota - Cliente - 17/08/2016 11:12:51 a.m.- El descriptor de acceso de la propiedad 'GetFechaPago' inició la excepción 'Referencia a objeto no establecida como instancia de un objeto.' en el objeto 'DLL.Negocio.cCuota' - Page_Load

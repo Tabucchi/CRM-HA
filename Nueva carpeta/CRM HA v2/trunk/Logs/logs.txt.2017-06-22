@@ -1,0 +1,2 @@
+ERROR 32 crm.CuentaCorriente - CuentaCorriente - 22/06/2017 10:04:18 a.m.- Referencia a objeto no establecida como instancia de un objeto. - Page_Load
+ERROR 17 crm.DetalleCuota2 - Cliente - 22/06/2017 02:38:37 p.m.- Se produjo una excepción de tipo 'System.Exception'. - Page_Load

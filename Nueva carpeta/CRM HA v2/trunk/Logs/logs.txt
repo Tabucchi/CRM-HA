@@ -1,0 +1,7 @@
+ERROR 10 crm.DetalleCuota2 - DetalleCuota - 15/12/2017 12:59:23 p.m.- Se produjo una excepción de tipo 'System.Exception'. - Page_Load
+ERROR 13 crm.DetalleCuota2 - DetalleCuota - 15/12/2017 01:01:38 p.m.- Se produjo una excepción de tipo 'System.Exception'. - Page_Load
+ERROR 12 crm.DetalleCuota2 - DetalleCuota - 15/12/2017 01:04:58 p.m.- Se produjo una excepción de tipo 'System.Exception'. - Page_Load
+ERROR 12 crm.DetalleCuota2 - DetalleCuota - 15/12/2017 03:27:45 p.m.- Se produjo una excepción de tipo 'System.Exception'. - Page_Load
+ERROR 5 crm.DetalleCuota2 - DetalleCuota - 15/12/2017 03:29:23 p.m.- Se produjo una excepción de tipo 'System.Exception'. - Page_Load
+ERROR 16 crm.DetalleCuota2 - DetalleCuota - 15/12/2017 03:30:40 p.m.- Se produjo una excepción de tipo 'System.Exception'. - Page_Load
+ERROR 13 crm.TotalDeudaCliente - CuentaCorriente - 15/12/2017 04:32:33 p.m.- El descriptor de acceso de la propiedad 'GetTotalDeuda' inició la excepción 'Referencia a objeto no establecida como instancia de un objeto.' en el objeto 'DLL.Negocio.cCuentaCorrienteUsuario' - Page_Load

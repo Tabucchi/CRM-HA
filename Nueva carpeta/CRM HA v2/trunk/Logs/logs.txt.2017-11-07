@@ -1,0 +1,10 @@
+ERROR 31 crm.MensajeError - Pedidos - 07/11/2017 11:18:44 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 38 crm.MensajeError - Pedidos - 07/11/2017 11:19:26 a.m.- La clase base incluye el campo 'btnEditar1', pero su tipo (System.Web.UI.WebControls.ImageButton) no es compatible con el tipo de control (System.Web.UI.WebControls.LinkButton). - Page_Load - Admin
+ERROR 23 crm.MensajeError - Pedidos - 07/11/2017 11:20:50 a.m.- El controlador de eventos onclick no puede ser una cadena vacía. - Page_Load - Admin
+ERROR 8 crm.MensajeError - Pedidos - 07/11/2017 11:35:30 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 10 crm.MensajeError - Pedidos - 07/11/2017 05:22:44 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 10 crm.MensajeError - Pedidos - 07/11/2017 05:30:20 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 13 crm.MensajeError - Pedidos - 07/11/2017 05:30:43 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 11 crm.MensajeError - Pedidos - 07/11/2017 05:38:23 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 9 crm.MensajeError - Pedidos - 07/11/2017 05:38:43 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 14 crm.MensajeError - Pedidos - 07/11/2017 05:39:52 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
