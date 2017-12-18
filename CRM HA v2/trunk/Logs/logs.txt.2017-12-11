@@ -1,0 +1,4 @@
+ERROR 9 crm.MensajeError - Pedidos - 11/12/2017 01:04:01 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 6 crm.MensajeError - Pedidos - 11/12/2017 03:00:05 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 14 crm.MensajeError - Pedidos - 11/12/2017 03:02:28 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR RemoteServer_Worker-1 JobScheduler - JobScheduler - 11/12/2017 03:58:31 p.m.- Subproceso anulado. - Execute
