@@ -1,0 +1,32 @@
+ERROR 9 crm.ActualizarPrecio - CargaUnidad - 22/02/2017 09:42:40 a.m.- Subproceso anulado. - CargarArchivo - Admin
+ERROR 9 crm.ActualizarPrecio - CargaUnidad - 22/02/2017 09:44:09 a.m.- Subproceso anulado. - CargarArchivo - Admin
+ERROR 9 crm.ActualizarPrecio - CargaUnidad - 22/02/2017 09:45:21 a.m.- Subproceso anulado. - CargarArchivo - Admin
+ERROR 12 crm.ActualizarPrecio - CargaUnidad - 22/02/2017 09:47:37 a.m.- Subproceso anulado. - CargarArchivo - Admin
+ERROR 12 crm.ActualizarPrecio - CargaUnidad - 22/02/2017 09:51:03 a.m.- Subproceso anulado. - CargarArchivo - Admin
+ERROR 12 crm.ActualizarPrecio - CargaUnidad - 22/02/2017 09:52:29 a.m.- Subproceso anulado. - CargarArchivo - Admin
+ERROR 11 crm.Proyecto - Proyecto - 22/02/2017 11:25:09 a.m.- Referencia a objeto no establecida como instancia de un objeto. - Page_Load - Admin
+ERROR 13 crm.Proyecto - Proyecto - 22/02/2017 11:25:35 a.m.- Referencia a objeto no establecida como instancia de un objeto. - Page_Load - Admin
+ERROR 13 crm.Proyecto - Proyecto - 22/02/2017 11:25:53 a.m.- Referencia a objeto no establecida como instancia de un objeto. - Page_Load - Admin
+ERROR 8 crm.Proyecto - Proyecto - 22/02/2017 11:26:25 a.m.- Referencia a objeto no establecida como instancia de un objeto. - Page_Load - Admin
+ERROR 12 crm.Proyecto - Proyecto - 22/02/2017 11:27:07 a.m.- Referencia a objeto no establecida como instancia de un objeto. - Page_Load - Admin
+ERROR 15 crm.Proyecto - Proyecto - 22/02/2017 11:31:47 a.m.- Referencia a objeto no establecida como instancia de un objeto. - Page_Load - Admin
+ERROR 6 crm.DetalleCuota2 - Cliente - 22/02/2017 12:16:39 p.m.- Referencia a objeto no establecida como instancia de un objeto. - Page_Load
+ERROR 6 crm.DetalleCuota2 - Cliente - 22/02/2017 12:16:45 p.m.- Referencia a objeto no establecida como instancia de un objeto. - Page_Load
+ERROR 24 crm.DetalleCuota2 - Cliente - 22/02/2017 12:21:11 p.m.- Referencia a objeto no establecida como instancia de un objeto. - Page_Load
+ERROR 19 crm.DetalleCuota2 - Cliente - 22/02/2017 12:23:19 p.m.- Referencia a objeto no establecida como instancia de un objeto. - Page_Load
+ERROR 11 crm.DetalleCuota2 - Cliente - 22/02/2017 12:47:31 p.m.- Referencia a objeto no establecida como instancia de un objeto. - Page_Load
+ERROR 9 crm.DetalleCuota2 - Cliente - 22/02/2017 12:50:17 p.m.- Referencia a objeto no establecida como instancia de un objeto. - Page_Load
+ERROR 9 crm.CargaUnidad - CargaUnidad - 22/02/2017 02:57:42 p.m.- Invalid header signature; read 0x505954434F44213C, expected 0xE11AB1A1E011CFD0 - CargarArchivo - Admin
+ERROR 14 crm.CargaUnidad - CargaUnidad - 22/02/2017 02:57:50 p.m.- Invalid header signature; read 0x505954434F44213C, expected 0xE11AB1A1E011CFD0 - CargarArchivo - Admin
+ERROR 12 crm.CargaUnidad - CargaUnidad - 22/02/2017 02:58:27 p.m.- Invalid header signature; read 0x505954434F44213C, expected 0xE11AB1A1E011CFD0 - CargarArchivo - Admin
+ERROR 12 crm.CargaUnidad - CargaUnidad - 22/02/2017 03:02:28 p.m.- Referencia a objeto no establecida como instancia de un objeto. - CargarArchivo - Admin
+ERROR 8 crm.CargaUnidad - CargaUnidad - 22/02/2017 03:02:51 p.m.- Referencia a objeto no establecida como instancia de un objeto. - CargarArchivo - Admin
+ERROR 15 crm.CargaUnidad - CargaUnidad - 22/02/2017 03:04:40 p.m.- Referencia a objeto no establecida como instancia de un objeto. - CargarArchivo - Admin
+ERROR 16 crm.CargaUnidad - CargaUnidad - 22/02/2017 03:04:55 p.m.- Referencia a objeto no establecida como instancia de un objeto. - CargarArchivo - Admin
+ERROR 5 crm.CargaUnidad - CargaUnidad - 22/02/2017 03:55:33 p.m.- ExecuteScalar: la propiedad Connection no se ha inicializado. - CargarArchivo - Admin
+ERROR 9 crm.CargaUnidad - CargaUnidad - 22/02/2017 03:55:49 p.m.- ExecuteScalar: la propiedad Connection no se ha inicializado. - CargarArchivo - Admin
+ERROR 9 crm.CargaUnidad - CargaUnidad - 22/02/2017 03:56:01 p.m.- ExecuteScalar: la propiedad Connection no se ha inicializado. - CargarArchivo - Admin
+ERROR 14 crm.CargaUnidad - CargaUnidad - 22/02/2017 03:56:27 p.m.- ExecuteScalar: la propiedad Connection no se ha inicializado. - CargarArchivo - Admin
+ERROR 10 crm.CargaUnidad - CargaUnidad - 22/02/2017 03:57:12 p.m.- ExecuteScalar: la propiedad Connection no se ha inicializado. - CargarArchivo - Admin
+ERROR 9 crm.DetalleCuota2 - Cliente - 22/02/2017 04:29:33 p.m.- Referencia a objeto no establecida como instancia de un objeto. - Page_Load
+ERROR 22 crm.DetalleCuota2 - Cliente - 22/02/2017 05:05:43 p.m.- Referencia a objeto no establecida como instancia de un objeto. - Page_Load

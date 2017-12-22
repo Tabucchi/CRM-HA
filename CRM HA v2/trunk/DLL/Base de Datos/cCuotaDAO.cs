@@ -1372,15 +1372,20 @@ namespace DLL.Base_de_Datos
 
         public List<cCuota> GetCuotasActivasByEmpresa(string _idEmpresa)
         {
+            DateTime date = Convert.ToDateTime(DateTime.Now.Year + "-" + DateTime.Now.Month + "-" + 1);
+
             cCuotaDAO DAO = new cCuotaDAO();
             List<cCuota> cuota = new List<cCuota>();
             string query = "SELECT c.id FROM tCuota c INNER JOIN tFormaPagoOV fp ON c.idFormaPagoOV=fp.id INNER JOIN tOperacionVenta o ON o.id=fp.idOperacionVenta ";
             query += " INNER JOIN tEmpresaUnidad eu ON o.id= eu.idOv INNER JOIN tCuentaCorriente cc ON c.idCuentaCorriente=cc.id ";
-            query += " WHERE o.estado='" + (Int16)estadoOperacionVenta.Activo + "' AND eu.idEmpresa='" + _idEmpresa + "' AND c.fechaVencimiento1 > '2018-01-01'";
+            query += " WHERE o.estado='" + (Int16)estadoOperacionVenta.Activo + "' AND eu.idEmpresa='" + _idEmpresa + "' AND c.fechaVencimiento1 > @fecha";
             query += " AND c.estado='" + (Int16)estadoCuenta_Cuota.Activa + "' AND cc.estado='" + (Int16)estadoCuenta_Cuota.Activa + "'";
             query += " GROUP BY c.id";
 
             SqlCommand com = new SqlCommand();
+            com.Parameters.Add("@fecha", SqlDbType.DateTime);
+            com.Parameters["@fecha"].Value = date.AddMonths(2);
+
             com.CommandText = query.ToString();
 
             ArrayList idList = cDataBase.GetInstance().ExecuteReader(com);

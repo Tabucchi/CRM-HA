@@ -1,0 +1,7 @@
+ERROR 18 crm.MensajeError - Pedidos - 05/09/2017 09:49:15 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 37 crm.MensajeError - Pedidos - 05/09/2017 02:07:47 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 48 crm.MensajeError - Pedidos - 05/09/2017 02:07:52 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 42 crm.MensajeError - Pedidos - 05/09/2017 02:08:12 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 36 crm.MensajeError - Pedidos - 05/09/2017 02:08:33 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 44 crm.MensajeError - Pedidos - 05/09/2017 02:08:53 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 16 crm.DetalleCC - DetalleCC - 05/09/2017 02:37:43 p.m.- Referencia a objeto no establecida como instancia de un objeto. - btnAnularReserva_Click

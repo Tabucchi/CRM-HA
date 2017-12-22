@@ -14,6 +14,9 @@ using System.Collections;
 using log4net;
 using DLL.Negocio;
 using System.Threading;
+using DLL;
+using crm;
+using CrystalDecisions.CrystalReports.Engine;
 
 public class JobScheduler : IJob
 {
@@ -48,11 +51,14 @@ public class JobScheduler : IJob
             //Thread thread = new Thread(new ThreadStart(ActualizarCuentasCorrientes));
             //thread.Start();
 
-            ActualizarCuentasCorrientes();
+            //ActualizarCuentasCorrientes();
 
-            //Actualiza las cuotas con UVA
             if (DateTime.Now.Day == 25)
                 ActualizarCuotasUVA();
+
+
+            btnDescargar_Click();
+           
 
         }
         catch (Exception ex)
@@ -781,5 +787,368 @@ public class JobScheduler : IJob
         #endregion
     }
     #endregion
+    #endregion
+
+    #region Imprimir Resumen
+    
+    public void btnDescargar_Click()
+    {
+        btnDescargar_Click(null, null);
+    }
+
+    public decimal CalcularSaldo(string _idProyecto, DateTime dateDesde, DateTime dateHasta)
+    {
+        decimal _saldoTotal = 0;
+        DataTable dtSaldo1 = cCuota.GetCuotasObraByFecha(_idProyecto, dateDesde, dateHasta);
+
+        if (dtSaldo1 != null)
+        {
+            foreach (DataRow dr in dtSaldo1.Rows)
+            {
+                //Si tiene más de una obra diferente
+                ArrayList cantProyectos = cUnidad.GetCantProyectosByOV(dr[5].ToString());
+
+                if (cantProyectos.Count > 1)
+                {
+                    List<cUnidad> unidades = cUnidad.GetUnidadByOV(dr[5].ToString());
+
+                    if (unidades.Count > 1)
+                    {
+                        cOperacionVenta op = cOperacionVenta.Load(dr[5].ToString());
+
+                        DataTable dt = new DataTable();
+                        DataRow dr1;
+                        DataSet ds = new DataSet();
+                        decimal valorApeso = 0;
+                        decimal valorBoletoApeso = 0;
+                        decimal cuota = 0;
+
+                        dt.Columns.Add(new DataColumn("idUnidad"));
+                        dt.Columns.Add(new DataColumn("PorcentajeUnidad"));
+                        dt.Columns.Add(new DataColumn("PorcentajeMonto"));
+                        dt.Columns.Add(new DataColumn("idProyecto"));
+
+                        foreach (cUnidad u in unidades)
+                        {
+                            dr1 = dt.NewRow();
+
+                            cEmpresaUnidad eu = cEmpresaUnidad.GetUnidad(u.CodigoUF, u.IdProyecto);
+
+                            #region Pesificar
+                            if (op.GetMoneda == tipoMoneda.Dolar.ToString())
+                            {
+                                //Pesificar precio acordado de la unidad
+                                if (u.Moneda == Convert.ToString((Int16)tipoMoneda.Dolar))
+                                    valorApeso = eu.PrecioAcordado * cValorDolar.LoadActualValue();
+                                else
+                                    valorApeso = eu.PrecioAcordado;
+                            }
+                            else
+                            {
+                                valorApeso = eu.PrecioAcordado;
+                            }
+
+                            //Pesificar precio acordado del boleto
+                            if (op.MonedaAcordada == Convert.ToString((Int16)tipoMoneda.Dolar))
+                                valorBoletoApeso = op.PrecioAcordado * cValorDolar.LoadActualValue();
+                            else
+                                valorBoletoApeso = op.PrecioAcordado;
+
+                            //Pesificar precio de la cuota
+                            if (dr[3].ToString() == "0")
+                                cuota = Convert.ToDecimal(dr[2].ToString()) * cValorDolar.LoadActualValue();
+                            else
+                                cuota = Convert.ToDecimal(dr[2].ToString());
+                            #endregion
+
+                            decimal porcentajeUnidad = (valorApeso * 100) / valorBoletoApeso;
+                            decimal porcentajeCuota = Math.Round((porcentajeUnidad * cuota) / 100, 2);
+
+                            dr1["idUnidad"] = u.Id;
+                            dr1["PorcentajeUnidad"] = porcentajeUnidad;
+                            dr1["PorcentajeMonto"] = porcentajeCuota;
+                            dr1["idProyecto"] = u.IdProyecto;
+                            dt.Rows.Add(dr1);
+                        }
+
+                        foreach (DataRow row in dt.Rows)
+                        {
+                            if (row[3].ToString() == _idProyecto)
+                            {
+                                _saldoTotal += Convert.ToDecimal(row[2].ToString());
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    if (dr[1].ToString() == _idProyecto)
+                    {
+                        if (dr[3].ToString() == "0")
+                            _saldoTotal += Convert.ToDecimal(dr[2].ToString()) * cValorDolar.LoadActualValue();
+                        else
+                            _saldoTotal += Convert.ToDecimal(dr[2].ToString());
+                    }
+                }
+            }
+        }
+        return _saldoTotal;
+    }
+
+    public decimal CalcularSaldoMesesRestantes(string _idProyecto, DateTime date, int _cantColumnasMes)
+    {
+        DateTime hoy = Convert.ToDateTime(date.Year + " -  " + date.Month + " -  " + 1);
+        DateTime dateRestante = Convert.ToDateTime(hoy.AddMonths(_cantColumnasMes));
+
+        decimal _totalRestante = 0;
+        DataTable dtSaldoRestante = cCuota.GetCuotasObraByFechaRestante(_idProyecto, dateRestante);
+
+        foreach (DataRow dr in dtSaldoRestante.Rows)
+        {
+            //Si tiene más de una obra diferente
+            ArrayList cantProyectos = cUnidad.GetCantProyectosByOV(dr[5].ToString());
+
+            if (cantProyectos.Count > 1)
+            {
+                List<cUnidad> unidades = cUnidad.GetUnidadByOV(dr[5].ToString());
+
+                if (unidades.Count > 1)
+                {
+                    cOperacionVenta op = cOperacionVenta.Load(dr[5].ToString());
+
+                    DataTable dt = new DataTable();
+                    DataRow dr1;
+                    DataSet ds = new DataSet();
+                    decimal valorApeso = 0;
+                    decimal valorBoletoApeso = 0;
+                    decimal cuota = 0;
+
+                    dt.Columns.Add(new DataColumn("idUnidad"));
+                    dt.Columns.Add(new DataColumn("PorcentajeUnidad"));
+                    dt.Columns.Add(new DataColumn("PorcentajeMonto"));
+                    dt.Columns.Add(new DataColumn("idProyecto"));
+
+                    foreach (cUnidad u in unidades)
+                    {
+                        dr1 = dt.NewRow();
+
+                        cEmpresaUnidad eu = cEmpresaUnidad.GetUnidad(u.CodigoUF, u.IdProyecto);
+
+                        #region Pesificar
+                        if (op.GetMoneda == tipoMoneda.Dolar.ToString())
+                        {
+                            //Pesificar precio acordado de la unidad
+                            if (u.Moneda == Convert.ToString((Int16)tipoMoneda.Dolar))
+                                valorApeso = eu.PrecioAcordado * cValorDolar.LoadActualValue();
+                            else
+                                valorApeso = eu.PrecioAcordado;
+                        }
+                        else
+                        {
+                            valorApeso = eu.PrecioAcordado;
+                        }
+
+                        //Pesificar precio acordado del boleto
+                        if (op.MonedaAcordada == Convert.ToString((Int16)tipoMoneda.Dolar))
+                            valorBoletoApeso = op.PrecioAcordado * cValorDolar.LoadActualValue();
+                        else
+                            valorBoletoApeso = op.PrecioAcordado;
+
+                        //Pesificar precio de la cuota
+                        if (dr[3].ToString() == "0")
+                            cuota = Convert.ToDecimal(dr[2].ToString()) * cValorDolar.LoadActualValue();
+                        else
+                            cuota = Convert.ToDecimal(dr[2].ToString());
+                        #endregion
+
+                        decimal porcentajeUnidad = (valorApeso * 100) / valorBoletoApeso;
+                        decimal porcentajeCuota = Math.Round((porcentajeUnidad * cuota) / 100, 2);
+
+                        dr1["idUnidad"] = u.Id;
+                        dr1["PorcentajeUnidad"] = porcentajeUnidad;
+                        dr1["PorcentajeMonto"] = porcentajeCuota;
+                        dr1["idProyecto"] = u.IdProyecto;
+                        dt.Rows.Add(dr1);
+                    }
+
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        if (row[3].ToString() == _idProyecto)
+                        {
+                            _totalRestante += Convert.ToDecimal(row[2].ToString());
+                        }
+                    }
+                }
+            }
+            else
+            {
+                if (dr[1].ToString() == _idProyecto)
+                {
+                    if (dr[3].ToString() == "0")
+                        _totalRestante += Convert.ToDecimal(dr[2].ToString()) * cValorDolar.LoadActualValue();
+                    else
+                        _totalRestante += Convert.ToDecimal(dr[2].ToString());
+                }
+            }
+        }
+
+        return _totalRestante;
+    }
+
+    public DateTime GetFecha()
+    {
+        DateTime date = new DateTime();
+
+        cIndiceCAC lastIndice = cIndiceCAC.Load(cIndiceCAC.GetLastIndice().ToString());
+        if (lastIndice.Fecha.Month == DateTime.Now.AddMonths(-1).Month)
+            date = DateTime.Now.AddMonths(1);
+        else
+            date = DateTime.Now;
+
+        return date;
+    }
+
+    #region Variables
+    decimal totalCtaCte = 0;
+    decimal totalMes1 = 0;
+    decimal totalMes2 = 0;
+    decimal totalMes3 = 0;
+    decimal totalMes4 = 0;
+    decimal totalMesesRestantes = 0;
+    decimal totalDeuda = 0;
+    #endregion
+
+    public List<cCuotasObra> listSaldos()
+    {
+        List<cProyecto> list4 = cProyecto.GetProyectos();
+        List<cCuotasObra> saldos = new List<cCuotasObra>();
+        List<cCuotasObra> saldosCtaCte = new List<cCuotasObra>();
+        int cantColumnasMes = 5;
+
+        foreach (var item in list4)
+        {
+            cCuotasObra saldo = new cCuotasObra();
+            decimal _total = 0;
+
+            DateTime date = GetFecha();
+            DateTime dateDesde = Convert.ToDateTime(date.Year.ToString() + " - " + date.Month.ToString() + " - " + "1");
+            DateTime dateHasta = Convert.ToDateTime(date.Year.ToString() + " - " + date.Month.ToString() + " - " + "29");
+
+            saldo.proyecto = item.Descripcion;
+            saldo.idProyecto = item.Id;
+
+            #region 4 meses
+            //Saldo 1
+            decimal _saldo1Total = CalcularSaldo(item.Id, dateDesde.AddMonths(1), dateHasta.AddMonths(1));
+            saldo.saldo1 = String.Format("{0:#,#0.00}", _saldo1Total);
+            totalMes1 += _saldo1Total;
+
+            //Saldo 2
+            decimal _saldo2Total = CalcularSaldo(item.Id, dateDesde.AddMonths(2), dateHasta.AddMonths(2));
+            saldo.saldo2 = String.Format("{0:#,#0.00}", _saldo2Total);
+            totalMes2 += _saldo2Total;
+
+            //Saldo 3
+            decimal _saldo3Total = CalcularSaldo(item.Id, dateDesde.AddMonths(3), dateHasta.AddMonths(3));
+            saldo.saldo3 = String.Format("{0:#,#0.00}", _saldo3Total);
+            totalMes3 += _saldo3Total;
+
+            //Saldo 4
+            decimal _saldo4Total = CalcularSaldo(item.Id, dateDesde.AddMonths(4), dateHasta.AddMonths(4));
+            saldo.saldo4 = String.Format("{0:#,#0.00}", _saldo4Total);
+            totalMes4 += _saldo4Total;
+            #endregion
+
+            #region Meses restantes
+            decimal _totalRestante = CalcularSaldoMesesRestantes(item.Id, date, cantColumnasMes);
+            saldo.mesesRestantes = String.Format("{0:#,#0.00}", _totalRestante);
+            totalMesesRestantes += _totalRestante;
+            #endregion
+
+            _total = _saldo1Total + _saldo2Total + _saldo3Total + _saldo4Total + _totalRestante;
+            saldo.total = String.Format("{0:#,#0.00}", _total);
+            totalDeuda += _total;
+
+            saldos.Add(saldo);
+        }
+
+        return saldos;
+    }
+
+    private DataSet CrearDataSet()
+    {
+        List<cCuotasObra> saldos = listSaldos();
+
+        DataTable dt = new DataTable();
+        DataRow dr;
+        DataSet ds = new DataSet();
+
+        dt.Columns.Add(new DataColumn("obra"));
+        dt.Columns.Add(new DataColumn("mes1"));
+        dt.Columns.Add(new DataColumn("mes2"));
+        dt.Columns.Add(new DataColumn("mes3"));
+        dt.Columns.Add(new DataColumn("mes4"));
+        dt.Columns.Add(new DataColumn("mesesRestantes"));
+        dt.Columns.Add(new DataColumn("total"));
+
+        foreach (cCuotasObra p in saldos)
+        {
+            dr = dt.NewRow();
+            dr["obra"] = p.proyecto;
+            dr["mes1"] = p.saldo1;
+            dr["mes2"] = p.saldo2;
+            dr["mes3"] = p.saldo3;
+            dr["mes4"] = p.saldo4;
+            dr["mesesRestantes"] = p.mesesRestantes;
+            dr["total"] = p.total;
+            dt.Rows.Add(dr);
+        }
+
+        ds.Tables.Add(dt);
+        ds.Tables[0].TableName = "tCuotasObra";
+
+        ds.Tables[0].DefaultView.Sort = "obra";
+
+        return ds;
+    }
+
+    protected void btnDescargar_Click(object sender, EventArgs e)
+    {
+        string rutaURL = "C:\\PUBLICACIONES\\HA CRM\\Archivos";
+//        string rutaURL = "C:\\Users\\ntabucchi\\Documents\\GitHub\\CRM-HA\\CRM HA v2\\trunk\\Archivos\\";
+        string filename = "Cuotas a cobrar por obra.pdf";
+
+        CrystalDecisions.Web.CrystalReportSource s = new CrystalDecisions.Web.CrystalReportSource();
+        s.Report.FileName = "C:\\PUBLICACIONES\\HA CRM\\Reportes";
+        //s.Report.FileName = "C:\\Users\\ntabucchi\\Documents\\GitHub\\CRM-HA\\CRM HA v2\\trunk\\Reportes\\CuotasObra.rpt";
+
+        // Planilla
+        DataSetUnidades ds = new DataSetUnidades();
+        ds.Merge(CrearDataSet(), false, System.Data.MissingSchemaAction.Ignore);
+        s.ReportDocument.SetDataSource(ds);
+
+        #region Encabezado
+
+        DateTime date = GetFecha();
+
+        s.ReportDocument.SetParameterValue("titleMes1", String.Format("{0:MMM-yy}", date.AddMonths(1)));
+        s.ReportDocument.SetParameterValue("titleMes2", String.Format("{0:MMM-yy}", date.AddMonths(2)));
+        s.ReportDocument.SetParameterValue("titleMes3", String.Format("{0:MMM-yy}", date.AddMonths(3)));
+        s.ReportDocument.SetParameterValue("titleMes4", String.Format("{0:MMM-yy}", date.AddMonths(4)));
+
+        #endregion
+
+        s.ReportDocument.SetParameterValue("ctaCte", String.Format("{0:#,#0.00}", (cCuentaCorrienteUsuario.GetTotalCtaCte() * -1)));
+        s.ReportDocument.SetParameterValue("totalMes1", String.Format("{0:#,#0.00}", totalMes1));
+        s.ReportDocument.SetParameterValue("totalMes2", String.Format("{0:#,#0.00}", totalMes2));
+        s.ReportDocument.SetParameterValue("totalMes3", String.Format("{0:#,#0.00}", totalMes3));
+        s.ReportDocument.SetParameterValue("totalMes4", String.Format("{0:#,#0.00}", totalMes4));
+        s.ReportDocument.SetParameterValue("totalMesesRestantes", String.Format("{0:#,#0.00}", totalMesesRestantes));
+        s.ReportDocument.SetParameterValue("totalDeuda", String.Format("{0:#,#0.00}", totalDeuda));
+        s.ReportDocument.SetParameterValue("total", String.Format("{0:#,#0.00}", totalDeuda + (cCuentaCorrienteUsuario.GetTotalCtaCte() * -1)));
+
+        s.ReportDocument.ExportToDisk(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, rutaURL + filename);
+
+    }
     #endregion
 } 

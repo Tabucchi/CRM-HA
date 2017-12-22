@@ -1,0 +1,5 @@
+ERROR 10 crm.MensajeError - Pedidos - 29/08/2017 04:45:18 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 13 crm.MensajeError - Pedidos - 29/08/2017 05:40:43 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 12 crm.MensajeError - Pedidos - 29/08/2017 05:44:03 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 13 crm.DetalleCuota2 - Cliente - 29/08/2017 05:44:05 p.m.- Se produjo una excepción de tipo 'System.Exception'. - Page_Load
+ERROR RemoteServer_Worker-1 JobScheduler - JobScheduler - 29/08/2017 05:44:43 p.m.- Se produjo una excepción de tipo 'System.Exception'. - Execute

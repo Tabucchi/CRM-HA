@@ -1,0 +1,16 @@
+ERROR 25 OperacionVenta - OperacionVenta - 03/11/2017 10:51:14 a.m.- 'cbUnidad' tiene un SelectedValue que no es válido porque no existe en la lista de elementos.
+Nombre del parámetro: value - cbEmpresa_SelectedIndexChanged
+ERROR 29 OperacionVenta - OperacionVenta - 03/11/2017 11:02:21 a.m.- 'cbUnidad' tiene un SelectedValue que no es válido porque no existe en la lista de elementos.
+Nombre del parámetro: value - cbEmpresa_SelectedIndexChanged
+ERROR 5 OperacionVenta - OperacionVenta - 03/11/2017 11:20:20 a.m.- Los atributos 'SelectedIndex' y 'SelectedValue' se excluyen mutuamente. - cbEmpresa_SelectedIndexChanged
+ERROR 22 OperacionVenta - OperacionVenta - 03/11/2017 11:22:51 a.m.- 'cbUnidad' tiene un SelectedValue que no es válido porque no existe en la lista de elementos.
+Nombre del parámetro: value - cbEmpresa_SelectedIndexChanged
+ERROR 19 crm.MensajeError - Pedidos - 03/11/2017 11:26:31 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 31 crm.CuentaCorriente - CuentaCorriente - 03/11/2017 11:26:35 a.m.- Se produjo una excepción de tipo 'System.Exception'. - Page_Load
+ERROR 9 OperacionVenta - OperacionVenta - 03/11/2017 11:30:49 a.m.- 'cbUnidad' tiene un SelectedValue que no es válido porque no existe en la lista de elementos.
+Nombre del parámetro: value - cbEmpresa_SelectedIndexChanged
+ERROR 7 OperacionVenta - OperacionVenta - 03/11/2017 02:33:01 p.m.- 'cbUnidad' tiene un SelectedValue que no es válido porque no existe en la lista de elementos.
+Nombre del parámetro: value - cbEmpresa_SelectedIndexChanged
+ERROR 8 OperacionVenta - OperacionVenta - 03/11/2017 02:39:01 p.m.- 'cbUnidad' tiene un SelectedValue que no es válido porque no existe en la lista de elementos.
+Nombre del parámetro: value - cbEmpresa_SelectedIndexChanged
+ERROR 19 crm.MensajeError - Pedidos - 03/11/2017 04:03:23 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin

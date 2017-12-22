@@ -1,0 +1,27 @@
+ERROR 8 crm.MensajeError - Pedidos - 10/11/2016 12:04:23 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 8 crm.MensajeError - Pedidos - 10/11/2016 12:05:27 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 8 crm.MensajeError - Pedidos - 10/11/2016 12:13:37 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 8 crm.MensajeError - Pedidos - 10/11/2016 12:17:25 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 9 crm.MensajeError - Pedidos - 10/11/2016 12:19:30 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 8 crm.MensajeError - Pedidos - 10/11/2016 12:20:05 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 8 crm.MensajeError - Pedidos - 10/11/2016 12:25:03 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 8 crm.MensajeError - Pedidos - 10/11/2016 12:35:34 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 11 crm.MensajeError - Pedidos - 10/11/2016 12:38:41 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 11 crm.MensajeError - Pedidos - 10/11/2016 12:38:51 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 11 crm.MensajeError - Pedidos - 10/11/2016 12:39:17 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 10 crm.MensajeError - Pedidos - 10/11/2016 12:51:30 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 10 crm.MensajeError - Pedidos - 10/11/2016 12:55:18 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 10 crm.MensajeError - Pedidos - 10/11/2016 12:55:53 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 8 crm.MensajeError - Pedidos - 10/11/2016 02:17:31 p.m.- La clase base incluye el campo 'btnActualizarPrecio', pero su tipo (System.Web.UI.WebControls.LinkButton) no es compatible con el tipo de control (System.Web.UI.WebControls.Button). - Page_Load - Usuario
+ERROR 8 crm.MensajeError - Pedidos - 10/11/2016 02:17:54 p.m.- La clase base incluye el campo 'btnNuevaUnidad', pero su tipo (System.Web.UI.WebControls.LinkButton) no es compatible con el tipo de control (System.Web.UI.WebControls.Button). - Page_Load - Usuario
+ERROR 10 crm.MensajeError - Pedidos - 10/11/2016 02:17:58 p.m.- La clase base incluye el campo 'btnNuevaUnidad', pero su tipo (System.Web.UI.WebControls.LinkButton) no es compatible con el tipo de control (System.Web.UI.WebControls.Button). - Page_Load - Usuario
+ERROR 6 crm.MensajeError - Pedidos - 10/11/2016 05:26:39 p.m.- Etiqueta de servidor incorrecta. - Page_Load - Admin
+ERROR 9 crm.MensajeError - Pedidos - 10/11/2016 05:26:55 p.m.- Etiqueta de servidor incorrecta. - Page_Load - Admin
+ERROR 8 crm.MensajeError - Pedidos - 10/11/2016 05:27:17 p.m.- Etiqueta de servidor incorrecta. - Page_Load - Admin
+ERROR 12 crm.MensajeError - Pedidos - 10/11/2016 05:29:24 p.m.- Etiqueta de servidor incorrecta. - Page_Load - Admin
+ERROR 13 crm.MensajeError - Pedidos - 10/11/2016 05:29:42 p.m.- Etiqueta de servidor incorrecta. - Page_Load - Admin
+ERROR 9 crm.MensajeError - Pedidos - 10/11/2016 05:31:54 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 10 crm.MensajeError - Pedidos - 10/11/2016 05:32:57 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 8 crm.MensajeError - Pedidos - 10/11/2016 05:35:04 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 12 crm.MensajeError - Pedidos - 10/11/2016 05:35:54 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 9 crm.MensajeError - Pedidos - 10/11/2016 05:36:31 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin

@@ -1,0 +1,11 @@
+ERROR 56 crm.DetalleUnidadesVendidas - DetalleUnidadesVendidas - 22/11/2017 09:32:38 a.m.- Referencia a objeto no establecida como instancia de un objeto. - lvUnidades_ItemCommand - Admin
+ERROR 58 crm.DetalleUnidadesVendidas - DetalleUnidadesVendidas - 22/11/2017 09:38:06 a.m.- Referencia a objeto no establecida como instancia de un objeto. - lvUnidades_ItemCommand - Admin
+ERROR 14 crm.DetalleUnidadesVendidas - Proyecto - 22/11/2017 10:12:01 a.m.- Referencia a objeto no establecida como instancia de un objeto. - Page_Load - Admin
+ERROR 16 crm.DetalleUnidadesVendidas - Proyecto - 22/11/2017 10:23:08 a.m.- Referencia a objeto no establecida como instancia de un objeto. - Page_Load - Admin
+ERROR 8 crm.DetalleUnidadesVendidas - Proyecto - 22/11/2017 10:25:15 a.m.- Referencia a objeto no establecida como instancia de un objeto. - Page_Load - Admin
+ERROR 31 crm.DetalleUnidadesVendidas - DetalleUnidadesVendidas - 22/11/2017 11:04:03 a.m.- No se puede reconocer la cadena como valor DateTime válido. - btnGuardar_Click - Admin
+ERROR 24 crm.DetalleUnidadesVendidas - DetalleUnidadesVendidas - 22/11/2017 11:04:23 a.m.- No se puede reconocer la cadena como valor DateTime válido. - btnGuardar_Click - Admin
+ERROR 9 crm.DetalleUnidadesVendidas - DetalleUnidadesVendidas - 22/11/2017 11:06:51 a.m.- No se puede reconocer la cadena como valor DateTime válido. - btnGuardar_Click - Admin
+ERROR 13 crm.DetalleUnidadesVendidas - DetalleUnidadesVendidas - 22/11/2017 11:07:03 a.m.- No se puede reconocer la cadena como valor DateTime válido. - btnGuardar_Click - Admin
+ERROR 8 crm.DetalleUnidadesVendidas - DetalleUnidadesVendidas - 22/11/2017 11:08:31 a.m.- Subproceso anulado. - btnGuardar_Click - Admin
+ERROR 13 crm.DetalleUnidadesVendidas - DetalleUnidadesVendidas - 22/11/2017 11:09:43 a.m.- Subproceso anulado. - btnGuardar_Click - Admin

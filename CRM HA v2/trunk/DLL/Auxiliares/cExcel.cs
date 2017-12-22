@@ -1077,6 +1077,105 @@ public class cExcel
         }
     }
 
+    public static void DataTableToExcelClientes(DataTable tabla, String fileName)
+    {
+        try
+        {
+            //Make a new npoi workbook
+            HSSFWorkbook hssfworkbook = new HSSFWorkbook();
+
+            //Here I am making sure that I am giving the file name the right extension:
+            string filename = "";
+
+            if (fileName.EndsWith(".xls"))
+                filename = fileName;
+            else
+                filename = fileName + ".xls";
+
+            //This starts the dialogue box that allows the user to download the file
+            System.Web.HttpResponse Response = System.Web.HttpContext.Current.Response;
+            Response.ContentType = "application/vnd.ms-excel";
+            Response.AddHeader("Content-Disposition", string.Format("attachment;filename={0}", filename));
+            Response.Clear();
+
+            //make a new sheet – name it any excel-compliant string you want
+            ISheet sheet1 = hssfworkbook.CreateSheet("Sheet 1");
+
+            #region Estilo
+            ICellStyle styleHead = hssfworkbook.CreateCellStyle();
+            styleHead.FillForegroundColor = NPOI.HSSF.Util.HSSFColor.DarkRed.Index;
+            styleHead.FillPattern = FillPattern.SolidForeground;
+            styleHead.Alignment = HorizontalAlignment.Center;
+            IFont font2 = hssfworkbook.CreateFont();
+            font2.Boldweight = (short)NPOI.SS.UserModel.FontBoldWeight.None;
+            font2.FontHeightInPoints = 12;
+            font2.FontName = "Calibri";
+            font2.Color = NPOI.HSSF.Util.HSSFColor.White.Index;
+            styleHead.SetFont(font2);
+            #endregion
+            
+            //make a header row
+            IRow row1 = sheet1.CreateRow(0);
+            DataTable dt = tabla;
+
+            #region Columnas
+            ICell cell_Encabezado = row1.CreateCell(0);
+            cell_Encabezado.SetCellValue("CLIENTE");
+            cell_Encabezado.CellStyle = styleHead;
+
+            cell_Encabezado = row1.CreateCell(1);
+            cell_Encabezado.SetCellValue("DOCUMENTO");
+            cell_Encabezado.CellStyle = styleHead;
+
+            cell_Encabezado = row1.CreateCell(2);
+            cell_Encabezado.SetCellValue("TELÉFONO");
+            cell_Encabezado.CellStyle = styleHead;
+
+            cell_Encabezado = row1.CreateCell(3);
+            cell_Encabezado.SetCellValue("MAIL");
+            cell_Encabezado.CellStyle = styleHead;
+
+            cell_Encabezado = row1.CreateCell(4);
+            cell_Encabezado.SetCellValue("CUIT");
+            cell_Encabezado.CellStyle = styleHead;
+
+            cell_Encabezado = row1.CreateCell(5);
+            cell_Encabezado.SetCellValue("CONDICIÓN DE IVA");
+            cell_Encabezado.CellStyle = styleHead;
+
+            cell_Encabezado = row1.CreateCell(6);
+            cell_Encabezado.SetCellValue("CARÁCTER");
+            cell_Encabezado.CellStyle = styleHead;
+            #endregion
+
+            string rowName = null;
+            int auxRow = dt.Rows.Count;
+            //loops through data
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                IRow row = sheet1.CreateRow(i + 1);
+                for (int j = 0; j < dt.Columns.Count; j++)
+                {
+                    ICell cell = row.CreateCell(j);
+                    String columnName = dt.Columns[j].ToString();
+
+                    rowName = dt.Rows[i][columnName].ToString();
+                
+                    cell.SetCellValue(rowName);
+                }
+            }
+
+            AutoSizeColumn(sheet1);
+
+            //writing the data to binary from memory
+            Response.BinaryWrite(WriteToStream(hssfworkbook).GetBuffer());
+            Response.End();
+        }
+        catch (Exception ex)
+        {
+        }
+    }
+
     static MemoryStream WriteToStream(HSSFWorkbook hssfworkbook)
     {
         //Write the stream data of workbook to the root directory

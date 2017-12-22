@@ -625,6 +625,19 @@ SELECT id, idCuentaCorrienteUsuario, concepto, debito, credito, saldo, fecha, id
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="tAgenda" msprop:Generator_TableClassName="tAgendaDataTable" msprop:Generator_TableVarName="tabletAgenda" msprop:Generator_TablePropName="tAgenda" msprop:Generator_RowDeletingName="tAgendaRowDeleting" msprop:Generator_RowChangingName="tAgendaRowChanging" msprop:Generator_RowEvHandlerName="tAgendaRowChangeEventHandler" msprop:Generator_RowDeletedName="tAgendaRowDeleted" msprop:Generator_UserTableName="tAgenda" msprop:Generator_RowChangedName="tAgendaRowChanged" msprop:Generator_RowEvArgName="tAgendaRowChangeEvent" msprop:Generator_RowClassName="tAgendaRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="cliente" msprop:Generator_ColumnVarNameInTable="columncliente" msprop:Generator_ColumnPropNameInRow="cliente" msprop:Generator_ColumnPropNameInTable="clienteColumn" msprop:Generator_UserColumnName="cliente" type="xs:string" minOccurs="0" />
+              <xs:element name="documento" msprop:Generator_ColumnVarNameInTable="columndocumento" msprop:Generator_ColumnPropNameInRow="documento" msprop:Generator_ColumnPropNameInTable="documentoColumn" msprop:Generator_UserColumnName="documento" type="xs:string" minOccurs="0" />
+              <xs:element name="telefono" msprop:Generator_ColumnVarNameInTable="columntelefono" msprop:Generator_ColumnPropNameInRow="telefono" msprop:Generator_ColumnPropNameInTable="telefonoColumn" msprop:Generator_UserColumnName="telefono" type="xs:string" minOccurs="0" />
+              <xs:element name="mail" msprop:Generator_ColumnVarNameInTable="columnmail" msprop:Generator_ColumnPropNameInRow="mail" msprop:Generator_ColumnPropNameInTable="mailColumn" msprop:Generator_UserColumnName="mail" type="xs:string" minOccurs="0" />
+              <xs:element name="cuit" msprop:Generator_ColumnVarNameInTable="columncuit" msprop:Generator_ColumnPropNameInRow="cuit" msprop:Generator_ColumnPropNameInTable="cuitColumn" msprop:Generator_UserColumnName="cuit" type="xs:string" minOccurs="0" />
+              <xs:element name="condicionIva" msprop:Generator_ColumnVarNameInTable="columncondicionIva" msprop:Generator_ColumnPropNameInRow="condicionIva" msprop:Generator_ColumnPropNameInTable="condicionIvaColumn" msprop:Generator_UserColumnName="condicionIva" type="xs:string" minOccurs="0" />
+              <xs:element name="caracter" msprop:Generator_ColumnVarNameInTable="columncaracter" msprop:Generator_ColumnPropNameInRow="caracter" msprop:Generator_ColumnPropNameInTable="caracterColumn" msprop:Generator_UserColumnName="caracter" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">

@@ -1,0 +1,8 @@
+ERROR 20 crm.MensajeError - Pedidos - 24/08/2017 03:17:27 p.m.- La clase base incluye el campo 'btnImprimir', pero su tipo (System.Web.UI.WebControls.LinkButton) no es compatible con el tipo de control (System.Web.UI.WebControls.Button). - Page_Load - Admin
+ERROR 22 crm.Historial - Historial - 24/08/2017 03:28:40 p.m.- Se produjo una excepción de tipo 'System.Exception'. - Listar - Admin
+ERROR 27 crm.MensajeError - Pedidos - 24/08/2017 03:28:40 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 13 crm.Historial - Historial - 24/08/2017 03:44:40 p.m.- El índice de inserción estaba fuera del intervalo. Debe ser no negativo y menor o igual que el tamaño.
+Nombre del parámetro: index - Listar - Admin
+ERROR 13 crm.Historial - Historial - 24/08/2017 03:45:16 p.m.- El índice de inserción estaba fuera del intervalo. Debe ser no negativo y menor o igual que el tamaño.
+Nombre del parámetro: index - Listar - Admin
+ERROR 5 crm.Historial - Historial - 24/08/2017 03:54:15 p.m.- El descriptor de acceso de la propiedad 'GetPrecioOriginal' inició la excepción 'Se produjo una excepción de tipo 'System.Exception'.' en el objeto 'cHistorial' - btnBuscarUnidad_Click - Admin

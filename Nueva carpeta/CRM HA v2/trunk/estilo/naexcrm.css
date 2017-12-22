@@ -1,0 +1,154 @@
+﻿body {
+	font-family:Arial;
+}
+
+.button
+{
+	margin: 2px 4px;
+	background: #F0F0F0 none repeat scroll 0 0;
+	border-color: #E7E7E7 #666666 #666666 #E7E7E7;
+	color: #000000;
+	cursor: pointer;
+}
+
+.button.grilla.ver
+{
+	height: 20px;
+	width: 30px;
+}
+	
+.titulo
+{
+	font-family: Arial;	
+	font-weight:bold;
+	font-size: 1em;
+}
+
+.titulo2
+{
+	font-family:Tahoma;
+	font-weight:bold;
+	font-size:13px;
+	color:#666666;
+}
+
+.titulo gral 
+{
+	font-size: 0.9em;
+}
+
+.text
+{	
+    border: solid 1px #BDC7D8;
+    font-family:Sans-Serif;	
+    font-weight:normal;
+    font-size: 0.8em;    
+}
+
+.text.descripcion
+{
+	width: 600px;
+	height: 100px;
+}
+
+.text.w500
+{
+	width: 500px;
+}
+
+.text.w200
+{
+	width: 200px;	
+}
+
+.text.w150
+{
+	width: 150px;
+}
+
+.text.w100
+{
+	width: 100px;
+}
+
+.grilla.encabezado
+{
+	background-color: #c9d100;
+	height: 25px;
+	color: White;
+	font-family: Verdana;
+	font-size: 14px;
+	font-weight: bold;	
+	padding-left: 15px;
+}
+
+.grilla.titulos
+{
+	background-color: #d6d6d6;
+	height: 20px;
+	color: #3f3f3f;
+	font-size: 12px;
+	font-weight: bold;
+	font-family: Lucida Sans, Verdana; 
+	padding-left: 5px;	
+}
+
+.celda
+{
+	font-family: Lucida Sans, Verdana;
+	font-size: 12px;
+	padding: 1px;
+}
+
+.celda.par.hoy
+{
+	font-weight: bold;
+	color: Red;
+}
+
+.celda.impar.hoy
+{
+	font-weight: bold;
+	color: Red;
+}
+
+.celda.par
+{
+	background-color: white;
+	height: 10px;	
+}
+.celda.impar
+{
+	background-color: #e5e5e5;
+	height: 10px;
+} 
+
+.mouseSobreCelda {
+    background-color: #EBF0CC;
+    border-color: #EBF0CC;
+	cursor: pointer;
+	border-width: 0px; 
+}
+
+.invisible
+{
+	display: none;
+}
+
+.visible
+{
+}
+
+.pedidosComentados
+{ 
+	color: Blue;
+}
+
+.skinTextBoxContent
+{
+	font-family:Calibri;
+	color: #808080;
+	font-style:italic;
+	font-size:14px;
+}
+

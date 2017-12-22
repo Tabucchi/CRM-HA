@@ -1,0 +1,37 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPagePostVenta.master.cs" Inherits="crm.MasterPagePostVenta" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>CRM</title>
+	<link href='http://fonts.googleapis.com/css?family=Lato:300italic,300,900' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="css/masterStyle.css">
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script type="text/javascript" src="js/global.js"></script>
+    <script src="js/script.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    	<header>
+		<hgroup>
+			<a href="/default.aspx" id="logo">Logo</a>
+			<nav>
+				<ul>
+					<li><a href="./IngresoPedido.aspx"><span class="tickets"></span>Servicio Post-Venta</a></li>                
+				</ul>	
+			</nav>
+		</hgroup>
+	</header>
+   	<div id="wrapper">
+        <div id="main" role="main" >
+           <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+        </div>
+	</div>
+   </form>
+</body>
+</html>

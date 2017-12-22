@@ -1,0 +1,2 @@
+ERROR 8 crm.MensajeError - Pedidos - 15/02/2017 03:34:41 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 11 crm.MensajeError - Pedidos - 15/02/2017 04:16:18 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin

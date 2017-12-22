@@ -26,7 +26,6 @@ namespace crm
 
                 CargarListViesw();
                 CalcularTotales();
-
             }
         }
 
@@ -250,7 +249,7 @@ namespace crm
                     if (unidades.Count > 1)
                     {
                         cOperacionVenta op = cOperacionVenta.Load(dr[5].ToString());
-
+                        
                         DataTable dt = new DataTable();
                         DataRow dr1;
                         DataSet ds = new DataSet();
@@ -297,7 +296,7 @@ namespace crm
                             #endregion
 
                             decimal porcentajeUnidad = (valorApeso * 100) / valorBoletoApeso;
-                            decimal porcentajeCuota = Math.Round((porcentajeUnidad * cuota) / 100, 2);
+                            decimal porcentajeCuota = (porcentajeUnidad * cuota) / 100;
 
                             dr1["idUnidad"] = u.Id;
                             dr1["PorcentajeUnidad"] = porcentajeUnidad;
@@ -310,7 +309,7 @@ namespace crm
                         {
                             if (row[3].ToString() == _idProyecto)
                             {
-                                _saldoTotal += Convert.ToDecimal(row[2].ToString());
+                                _saldoTotal += Math.Round(Convert.ToDecimal(row[2].ToString()), 2);
                             }
                         }
                     }
@@ -671,7 +670,7 @@ namespace crm
             Response.End();
         }
         #endregion
-
+        
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
             CargarListViesw();

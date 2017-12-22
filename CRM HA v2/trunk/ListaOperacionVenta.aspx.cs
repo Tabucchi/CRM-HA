@@ -20,8 +20,6 @@ namespace crm
                 if (cUsuario.Load(HttpContext.Current.User.Identity.Name).IdCategoria == (Int16)eCategoria.Administración)
                     pnlNuevoOV.Visible = true;
 
-                
-
                 Cargar();
                 CalcularTotales();
             }
@@ -102,7 +100,7 @@ namespace crm
                 lvOperacionVenta.DataSource = ovs;
                 lvOperacionVenta.DataBind();
 
-                if(ovs != null)
+                if(ovs != null && ovs.Count != 0)
                     CalcularTotales();
             }
             catch (Exception ex)

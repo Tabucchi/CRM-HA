@@ -73,15 +73,15 @@
             <section>            
                 <table style="width:100%">                            
                     <thead id="tableHead">
-                        <tr>     
+                        <tr>    
+                            <td></td> 
                             <td style="width: 20%; text-align: center">CLIENTE</td>
                             <td style="width: 20%; text-align: center">OBRA</td>                            
                             <td style="width: 10%; text-align: center">FECHA</td>
-                            <td style="width: 12%; text-align: center">PRECIO BASE UNIDAD</td>
                             <td style="width: 12%; text-align: center">PRECIO ACORDADO</td>
                             <td style="width: 12%; text-align: center">MONEDA ACORDADA</td>
+                            <td style="width: 12%; text-align: center">ÍNDICE</td>
                             <td style="width: 12%; text-align: center">PRECIO ACORDADO A PESOS</td>
-                            <td style="width: 10%; text-align: center">ESTADO</td>
                             <td style="width: 5%;"></td>
                         </tr>
                     </thead>
@@ -90,14 +90,14 @@
                     </tbody> 
                     <tfoot class="footerTable">
                         <tr>
+                            <td></td>
                             <td style="width: 1%;"></td>
                             <td style="width: 6%;"></td>
                             <td style="width: 6%;"></td>
-                            <td style="width: 9%; text-align: right"><a href="#" alt="Precio Base" class="tooltipTop tooltipColor" style="margin-left: -8px;"><b><asp:Label ID="lbPrecioBase" runat="server"></asp:Label></b></a></td>
                             <td style="width: 4%; text-align: right"><%--<a href="#" alt="Precio Acordado" class="tooltipTop tooltipColor" style="margin-left: -8px;"><b><asp:Label ID="lbTotalPrecioAcordado" runat="server"></asp:Label></b></a>--%></td>
                             <td style="width: 1%;"></td>
-                            <td style="width: 4%; text-align: right"><a href="#" alt="Precio Acordado a pesos" class="tooltipTop tooltipColor" style="margin-left: -8px;"><b><asp:Label ID="lbTotalPrecioAcordadoPesos" runat="server"></asp:Label></b></a></td>
                             <td style="width: 1%;"></td>
+                            <td style="width: 4%; text-align: right"><a href="#" alt="Precio Acordado a pesos" class="tooltipTop tooltipColor" style="margin-left: -8px;"><b><asp:Label ID="lbTotalPrecioAcordadoPesos" runat="server"></asp:Label></b></a></td>
                             <td style="width: 1%;"></td>
                         </tr>
                     </tfoot>                       
@@ -107,6 +107,9 @@
                 
         <ItemTemplate>                   
             <tr onclick="redir('<%# Eval("id") %>');" style="cursor: pointer">
+                <td style="text-align: center">
+                    <%# Container.DataItemIndex + 1 %>
+                </td>
                 <td style="text-align: left">
                     <asp:Label ID="Label1" runat="Server" Text='<%#Eval("GetEmpresa") %>' />
                 </td>
@@ -117,19 +120,16 @@
                     <asp:Label ID="Label5" runat="Server" Text='<%#Eval("GetFecha") %>' />
                 </td>
                 <td style="text-align: right">
-                    <asp:Label ID="Label4" runat="Server" Text='<%#Eval("GetPrecioBase") %>' />
-                </td>
-                <td style="text-align: right">
                     <asp:Label ID="lbPrecioAcordado" runat="Server" Text='<%#Eval("GetPrecioAcordado") %>' />
                 </td>
                 <td style="text-align: center">
                     <asp:Label ID="Label2" runat="Server" Text='<%#Eval("GetMoneda") %>' />
                 </td>
+                <td style="text-align: center">
+                    <asp:Label ID="Label3" runat="Server" Text='<%#Eval("GetIndices") %>' />
+                </td>
                 <td style="text-align: right">
                     <asp:Label ID="lbPrecioAcordadoPesos" runat="Server" Text='<%#Eval("GetPrecioAcordadoAPesos") %>' />
-                </td>
-                <td style="text-align: center">
-                    <asp:Label ID="Label3" runat="Server" Text='<%#Eval("GetEstado") %>' />
                 </td>
                 <td>
                     <a class="detailBtn" href="DetalleOperacionVenta.aspx?idOV=<%# Eval("id") %>"></a>

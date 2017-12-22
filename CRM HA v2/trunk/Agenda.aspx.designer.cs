@@ -30,6 +30,24 @@ public partial class Agenda {
     protected global::System.Web.UI.WebControls.DropDownList cbEmpresa;
     
     /// <summary>
+    /// Control divEncabezado.
+    /// </summary>
+    /// <remarks>
+    /// Campo generado automáticamente.
+    /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    /// </remarks>
+    protected global::System.Web.UI.HtmlControls.HtmlGenericControl divEncabezado;
+    
+    /// <summary>
+    /// Control btnDescargar.
+    /// </summary>
+    /// <remarks>
+    /// Campo generado automáticamente.
+    /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Button btnDescargar;
+    
+    /// <summary>
     /// Control pnlFormulario.
     /// </summary>
     /// <remarks>
@@ -46,6 +64,15 @@ public partial class Agenda {
     /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     /// </remarks>
     protected global::System.Web.UI.WebControls.ImageButton btnImprimirCliente;
+    
+    /// <summary>
+    /// Control pnlFormulario1.
+    /// </summary>
+    /// <remarks>
+    /// Campo generado automáticamente.
+    /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Panel pnlFormulario1;
     
     /// <summary>
     /// Control lvEmpresas.
@@ -118,6 +145,15 @@ public partial class Agenda {
     /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     /// </remarks>
     protected global::CrystalDecisions.Web.CrystalReportSource CrystalReportSource;
+    
+    /// <summary>
+    /// Control CrystalReportSource1.
+    /// </summary>
+    /// <remarks>
+    /// Campo generado automáticamente.
+    /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    /// </remarks>
+    protected global::CrystalDecisions.Web.CrystalReportSource CrystalReportSource1;
     
     /// <summary>
     /// Control hfIdCliente.

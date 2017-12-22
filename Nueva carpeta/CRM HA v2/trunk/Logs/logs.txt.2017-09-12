@@ -1,0 +1,2 @@
+ERROR 11 crm.CuentaCorriente - CuentaCorriente - 12/09/2017 03:50:46 p.m.- No se encontró ningún campo o propiedad 'StateID' en el origen de datos seleccionado. - Page_Load
+ERROR 19 crm.MensajeError - Pedidos - 12/09/2017 04:19:17 p.m.- El tipo 'System.Web.UI.WebControls.ListView' no tiene ninguna propiedad pública cuyo nombre sea 'div'. - Page_Load - Admin

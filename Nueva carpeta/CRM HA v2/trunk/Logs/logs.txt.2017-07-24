@@ -1,0 +1,11 @@
+ERROR 21 crm.MensajeError - Pedidos - 24/07/2017 10:14:52 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 26 crm.MensajeError - Pedidos - 24/07/2017 10:18:04 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 7 crm.MensajeError - Pedidos - 24/07/2017 10:24:58 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 13 crm.MensajeError - Pedidos - 24/07/2017 10:41:27 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 13 crm.MensajeError - Pedidos - 24/07/2017 10:47:35 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 11 crm.MensajeError - Pedidos - 24/07/2017 10:50:35 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 12 crm.MensajeError - Pedidos - 24/07/2017 10:51:07 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 12 OperacionVenta - OperacionVenta - 24/07/2017 03:19:59 p.m.- La cadena de entrada no tiene el formato correcto. - txtMontoMonedaAcordada_TextChanged
+ERROR 24 OperacionVenta - OperacionVenta - 24/07/2017 03:19:59 p.m.- La cadena de entrada no tiene el formato correcto. - txtMontoMonedaAcordada_TextChanged
+ERROR 13 OperacionVenta - OperacionVenta - 24/07/2017 03:49:37 p.m.- La cadena de entrada no tiene el formato correcto. - txtMontoMonedaAcordada_TextChanged
+ERROR RemoteServer_Worker-1 JobScheduler - JobScheduler - 24/07/2017 05:44:17 p.m.- Se produjo una excepción de tipo 'System.Exception'. - Execute

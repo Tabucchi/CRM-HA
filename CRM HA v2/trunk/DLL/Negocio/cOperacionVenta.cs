@@ -258,6 +258,24 @@ namespace DLL.Negocio
                 return fecha;
             }
         }
+
+        public string GetIndices
+        {
+            get
+            {
+                string indice = null;
+                if (cac == true)
+                    indice = "CAC";
+
+                if (uva == true)
+                    indice = "UVA";
+
+                if (indice == null)
+                    indice = "-";
+                
+                return indice;
+            }
+        }
         #endregion
 
         public int Save()

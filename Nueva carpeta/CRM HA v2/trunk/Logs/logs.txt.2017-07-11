@@ -1,0 +1,12 @@
+ERROR 6 crm.MensajeError - Pedidos - 11/07/2017 09:18:36 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 15 crm.MensajeError - Pedidos - 11/07/2017 09:18:54 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 11 crm.CuentaCorriente - CuentaCorriente - 11/07/2017 10:00:46 a.m.- Referencia a objeto no establecida como instancia de un objeto. - Page_Load
+ERROR 5 crm.MensajeError - Pedidos - 11/07/2017 10:49:57 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 12 crm.MensajeError - Pedidos - 11/07/2017 10:51:29 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 12 crm.MensajeError - Pedidos - 11/07/2017 10:52:08 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 31 crm.MensajeError - Pedidos - 11/07/2017 10:57:16 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 8 crm.MensajeError - Pedidos - 11/07/2017 10:58:40 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 8 crm.CuentaCorriente - CuentaCorriente - 11/07/2017 01:00:28 p.m.- Referencia a objeto no establecida como instancia de un objeto. - Page_Load
+ERROR 6 crm.MensajeError - Pedidos - 11/07/2017 04:41:38 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 11 crm.MensajeError - Pedidos - 11/07/2017 04:43:16 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 13 crm.MensajeError - Pedidos - 11/07/2017 04:45:22 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin

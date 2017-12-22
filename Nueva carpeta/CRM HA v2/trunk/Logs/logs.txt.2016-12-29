@@ -1,0 +1,13 @@
+ERROR 8 crm.MensajeError - Pedidos - 29/12/2016 11:10:39 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 9 crm.MensajeError - Pedidos - 29/12/2016 11:58:29 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 19 crm.MensajeError - Pedidos - 29/12/2016 12:05:37 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 8 crm.MensajeError - Pedidos - 29/12/2016 12:07:16 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 6 crm.Proyecto - Proyecto - 29/12/2016 02:32:38 p.m.- Subproceso anulado. - btnFinalizar_Click - Admin
+ERROR 8 crm.Proyecto - Proyecto - 29/12/2016 02:35:08 p.m.- Subproceso anulado. - btnFinalizar_Click - Admin
+ERROR 13 crm.Proyecto - Proyecto - 29/12/2016 02:36:15 p.m.- Subproceso anulado. - btnFinalizar_Click - Admin
+ERROR 13 crm.Proyecto - Proyecto - 29/12/2016 02:37:23 p.m.- Subproceso anulado. - btnFinalizar_Click - Admin
+ERROR 10 crm.Proyecto - Proyecto - 29/12/2016 02:44:49 p.m.- Subproceso anulado. - btnFinalizar_Click - Admin
+ERROR 9 crm.Proyecto - Proyecto - 29/12/2016 02:47:26 p.m.- Subproceso anulado. - btnFinalizar_Click - Admin
+ERROR 13 crm.Unidad - Unidad - 29/12/2016 03:06:16 p.m.- 'cbFiltroAmbiente' tiene un SelectedValue que no es válido porque no existe en la lista de elementos.
+Nombre del parámetro: value - btnVerTodos_Click - Admin
+ERROR 19 crm.MensajeError - Pedidos - 29/12/2016 03:12:10 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin

@@ -531,7 +531,7 @@ namespace DLL.Negocio
             return DAO.GetCuotasPendientes(_idEmpresa, fechaHoy);
             //return DAO.GetCuotasPendientes(_idOV, fechaHoy, _existCuota);
         }
-
+        
         public static List<cCuota> GetCuotasPendientes(string _idEmpresa, DateTime fechaHoy, Int16 indice)
         {
             cCuotaDAO DAO = new cCuotaDAO();

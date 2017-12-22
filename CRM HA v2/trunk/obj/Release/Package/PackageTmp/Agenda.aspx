@@ -38,19 +38,26 @@
                 <label style="padding: 5px 0px 0px 20px; width:32%">
                 <asp:DropDownList ID="cbEmpresa" Width="77%" runat="server" AutoPostBack="True" OnSelectedIndexChanged="cbEmpresa_SelectedIndexChanged" ><asp:ListItem Text="Todas" Value="0" /></asp:DropDownList>
                 </label>
-                <div style="float:right; width:160px; padding-top: 14px;">
-                    <asp:Panel ID="pnlFormulario" runat="server" Visible="false">
-                        <div style="float:left; position:absolute; margin-left: -39px;">
-                            <a alt="Imprimir formulario nuevo cliente" class="tooltip tooltipColor">
-                                <asp:ImageButton ID="btnImprimirCliente" ImageUrl="~/images/iconPrint.png" runat="server" CssClass="iconPrint" style="margin-right: 15px;" OnClick="btnImprimirCliente_Click"/>
-                            </a>
+                <div runat="server" id="divEncabezado" style="float:right; width:356px; padding-top: 14px;">                    
+                        <div style="float:left; position:absolute;">
+                            <div style="float:left; margin-top: -7px;">
+                                <asp:Button ID="btnDescargar" runat="server" Text="Descargar listado" CssClass="formBtnNar" OnClick="btnDescargar_Click" />
+                            </div>
+                            <asp:Panel ID="pnlFormulario" runat="server" Visible="false">
+                                <div style="float:right; margin-left: 154px; margin-top: -23px;">
+                                    <a alt="Imprimir formulario nuevo cliente" class="tooltip tooltipColor">
+                                        <asp:ImageButton ID="btnImprimirCliente" ImageUrl="~/images/iconPrint.png" runat="server" CssClass="iconPrint" style="margin-right: 15px;" OnClick="btnImprimirCliente_Click"/>
+                                    </a>
+                                </div> 
+                            </asp:Panel>                           
                         </div>
+                    <asp:Panel ID="pnlFormulario1" runat="server" Visible="false">
                         <div style="float:right">
                             <b>
                                 <a href="NuevoCliente.aspx" class="formBtnGrey" style="margin-top: -10px;">Agregar nuevo cliente</a>
                             </b>
                        </div>
-                    </asp:Panel>
+                    </asp:Panel> 
                 </div>
             </div>
         </div>
@@ -188,34 +195,104 @@
                                 </table>
                             </section>
                         </LayoutTemplate>
-                        <ItemTemplate>
-                            <tr onclick='Visible(<%# Eval("id")%> )' style="cursor: pointer">
-                                <td style="text-align:center">
-                                    <%#Eval("GetProyecto") %>
-                                </td> 
-                                <td style="text-align:center">
-                                    <%#Eval("FechaAdquision", "{0:d}") %>
-                                </td> 
-                                <td style="text-align:center">
-                                    <%#Eval("CodigoUF") %>
-                                </td>   
-                                <td style="text-align:center">
-                                    <%#Eval("Nivel") %>
-                                </td>  
-                                <td style="text-align:center">
-                                    <%#Eval("NroUnidad") %>
-                                </td>   
-                                <td style="text-align:center">
-                                    <%#Eval("GetEstado") %>
-                                </td>  
-                                <td style="text-align:center">
-                                    <%#Eval("GetMoneda") %>
-                                </td> 
-                                <td style="text-align:right">
-                                    <%#Eval("PrecioBase", "{0:#,#}") %>
-                                </td>
-                            </tr>
-                        </ItemTemplate>
+                        <ItemTemplate>               
+                <li>
+                    <div class="accordionButton">
+                        <span style="width: 18%" id="lbCliente1" class="listCel">
+                            <asp:Label ID="lbCliente" runat="Server" Text='<%#Eval("GetNombreCompleto") %>' />
+                            <%--<%#Eval("GetNombreCompleto") %>--%>
+                        </span>
+                        <span style="width: 09%" class="listCel">
+                            <asp:Label ID="lbTipoDoc" runat="Server" Text='<%#Eval("GetTipoDoc") %>' />&nbsp;
+                            <asp:Label ID="lbDocumento" runat="Server" Text='<%#Eval("Documento") %>' />
+                            <%--<%#Eval("GetTipoDoc") %>&nbsp;<%#Eval("Documento") %>--%>
+                        </span>
+                        <span style="width: 10%" class="listCel">
+                            <asp:Label ID="lbTelefono" runat="Server" Text='<%#Eval("telefono") %>' />
+                           <%-- <%#Eval("telefono") %>--%>
+                        </span>
+                        <span style="width: 18%" class="listCel">
+                            <asp:Label ID="lbMail" runat="Server" Text='<%#Eval("Mail") %>' />
+                            <%--<%#Eval("Mail") %>--%>
+                        </span>
+                        <span style="width: 09%" class="listCel">
+                            <asp:Label ID="lbCuit" runat="Server" Text='<%#Eval("cuit") %>' />
+                            <%--<%#Eval("cuit") %>--%>
+                        </span>
+                        <span style="width: 10%" class="listCel">
+                            <asp:Label ID="lbCondicionIva" runat="Server" Text='<%#Eval("GetCondicionIva") %>' />
+                            <%--<%#Eval("GetCondicionIva") %>--%>
+                        </span>   
+                        <span style="width: 08%" class="listCel">
+                            <asp:Label ID="lbCaracter" runat="Server" Text='<%#Eval("GetCaracter") %>' />
+                            <%--<%#Eval("GetCaracter") %>--%>
+                        </span>                 
+                        <span style="width: 04%" class="listCel"><asp:LinkButton ID="btnDetalle" runat="server" CssClass="detailBtn" CommandName="Detalle" Text="Detalle" ToolTip="Detalle" CommandArgument='<%# DataBinder.Eval(Container.DataItem, "id")%>'/></span>
+                        <span style="width: 04%" class="listCel">
+                            <asp:Panel ID="pnlEditar" runat="server" Visible="true">
+                                <a id="btnEditar" class="editBtn"  href="EditarCliente.aspx?idCliente=<%# Eval("id") %>"></a>
+                            </asp:Panel>
+                        </span>
+                    </div>
+		            <div class="accordionContent">
+                        <asp:Panel ID="Panel1" runat="server">
+                            <div>
+                                <p style="border-top: none; padding-top: 10px; margin-top: -9px;"><strong>DIRECCIÓN:</strong><span><%# Eval("domicilio.Calle")%>&nbsp;<%# Eval("domicilio.Direccion")%></span></p>
+                            </div>
+                            <div>
+                                <p class="col3" style="padding-bottom: 12px !important;"><strong>CIUDAD:</strong><span><%# Eval("domicilio.Ciudad")%></span></p>
+                                <p class="col3" style="padding-bottom: 12px !important;"><strong>COD. POSTAL:</strong><span><%# Eval("domicilio.CodPostal")%></span></p>
+                                <p class="col3" style="padding-bottom: 12px !important;"><strong>PROVINCIA:</strong><span><%# Eval("GetProvincia")%></span></p>
+                            </div>
+                        </asp:Panel>
+                        <asp:Panel ID="asd" runat="server">
+                            <div>
+                                <p style="border-top: 1px dotted #666; padding-top: 20px;">
+                                    <strong style="color: #666; font-style: italic;">APODERADO</strong>
+                                </p>
+                                <p class="col3">
+                                    <strong>RAZÓN SOCIAL:</strong><span><%# Eval("apoderadoClass.RazonSocial")%></span>
+                                </p>
+                                <p class="col3">
+                                    <strong>DOCUMENTO:</strong><span><%# Eval("apoderadoClass.GetTipoDoc")%>&nbsp;<%# Eval("apoderadoClass.Documento")%></span>
+                                </p>
+                                <p class="col3">
+                                    <strong>CUIT:</strong><span><%# Eval("apoderadoClass.Cuit")%></span>
+                                </p>
+                                <p class="col3">
+                                    <strong>TELÉFONO:</strong><span><%# Eval("apoderadoClass.Telefono")%></span>
+                                </p>
+                                <p class="col3">
+                                    <strong>MAIL:</strong><span><%# Eval("apoderadoClass.Mail")%></span>
+                                </p>
+
+                                <p class="col3">
+                                    <strong>DIRECCIÓN:</strong><span><%# Eval("domicilioApoderado.Direccion")%></span>
+                                </p>
+                                <p class="col3">
+                                    <strong>CIUDAD:</strong><span><%# Eval("domicilioApoderado.Ciudad")%></span>
+                                </p>
+                                <p class="col3">
+                                    <strong>COD. POSTAL:</strong><span><%# Eval("domicilioApoderado.CodPostal")%></span>
+                                </p>
+                                <p class="col3">
+                                    <strong>PROVINCIA:</strong><span><%# Eval("GetProvinciaApoderado")%></span>
+                                </p>
+                            </div>
+                        </asp:Panel>
+                        <asp:Panel ID="Panel2" runat="server">
+                            <div>
+                                <p style="border-top: 1px dotted #666; padding-top: 20px;">
+                                    <strong style="color: #666; font-style: italic;">COMENTARIOS</strong>
+                                </p>
+                            </div>
+                            <div>
+                                <p class="col3" style="padding-bottom: 12px !important; width:100% !important"><span style="width:100%"><%# Eval("Comentarios")%></span></p>
+                            </div>
+                        </asp:Panel>
+                    </div>
+                </li>               
+            </ItemTemplate>
                         <EmptyDataTemplate>
                             <section>
                                 <table id="Table1" style="width:100%" runat="server">
@@ -247,6 +324,10 @@
 
     <CR:CrystalReportSource ID="CrystalReportSource" runat="server" Visible="false">
         <Report FileName="Reportes/Cliente.rpt"></Report>
+    </CR:CrystalReportSource>
+
+    <CR:CrystalReportSource ID="CrystalReportSource1" runat="server" Visible="false">
+        <Report FileName="Reportes/Agenda.rpt"></Report>
     </CR:CrystalReportSource>
 
     <asp:HiddenField ID="hfIdCliente" runat="server" />

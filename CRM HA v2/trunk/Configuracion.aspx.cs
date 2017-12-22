@@ -157,7 +157,7 @@ namespace crm
             string _idCC = null;
             string _idFormaPagoOv = null;
 
-            List<cCuota> cuotas2 = cCuota.GetCuotasPendientes(_idEmpresa, _fecha);
+            List<cCuota> cuotas2 = cCuota.GetCuotasPendientes(_idEmpresa, _fecha, (Int16)eIndice.CAC);
             decimal _saldo = 0;
             decimal valorCuotaVencimiento1 = 0;
             decimal valorCuotaVencimiento2 = 0;
@@ -469,12 +469,12 @@ namespace crm
         {
             DateTime fecha = DateTime.Now;
 
-            //lbFechaIndiceUVA.Text = String.Format("{0:MMMM yyyy}", fecha);
-            //mpeIndiceUVA.Show();
+            lbFechaIndiceUVA.Text = String.Format("{0:MMMM yyyy}", fecha);
+            ModalPopupExtender1.Show();
         }
 
         protected void btnFinalizarIndiceUVA_Click(object sender, EventArgs e)
-        {/*
+        {
             decimal indice1 = Convert.ToDecimal(txtIndiceUVA.Text);
             decimal indice2 = Convert.ToDecimal(txtConfirmIndiceUVA.Text);
 
@@ -485,10 +485,11 @@ namespace crm
             }
             else
             {
-                cIndiceCAC lastIndice = cIndiceCAC.Load(cIndiceCAC.GetLastIndice().ToString());
-                //DateTime fecha = Convert.ToDateTime("25" + lbFechaIndiceUVA.Text);
+                cUVA lastIndice = cUVA.Load(cUVA.GetLastIdIndice().ToString());
+                //cIndiceCAC lastIndice = cIndiceCAC.Load(cIndiceCAC.GetLastIndice().ToString());
+                DateTime fecha = Convert.ToDateTime("25" + lbFechaIndiceUVA.Text);
 
-                DateTime fecha = Convert.ToDateTime(DateTime.Now.Year + "-" + DateTime.Now.Month + "-" + "25");
+                //DateTime fecha = Convert.ToDateTime(DateTime.Now.Year + "-" + DateTime.Now.Month + "-" + "25");
                 //DateTime fecha = Convert.ToDateTime("15" + " mayo 2017");
 
                 if (lastIndice.Fecha < fecha)
@@ -507,13 +508,14 @@ namespace crm
 
                             Int32 id = indice.Save();
 
-                            cUVA.ActualizarIndiceUVACuotas(id.ToString(), fecha.AddMonths(1), indice_anterior);
+                            //cUVA.ActualizarIndiceUVACuotas(id.ToString(), fecha.AddMonths(1), indice_anterior);
+                            cUVA.ActualizarCuotasUVA(id.ToString());
 
                             lvUVA.EditIndex = -1;
                             lvUVA.DataSource = cUVA.GetIndiceUVA();
                             lvUVA.DataBind();
 
-                            mpeIndiceUVA.Hide();
+                            ModalPopupExtender1.Hide();
 
                             pnlMensajeIndiceUVA.Visible = false;
 
@@ -533,15 +535,14 @@ namespace crm
                     pnlMensajeIndiceUVA.Visible = true;
                     lbMensajeUVA.Text = "El índice para este mes ya fue ingresado";
                 }
-            }*/
+            }
         }
 
         protected void btnCancelarUVA_Click(object sender, EventArgs e)
         {
-            //mpeIndiceUVA.Hide();
+            ModalPopupExtender1.Hide();
         }
         #endregion
-
 
         #region Renovar servicio
         //protected void btnFinalizarServicio_Click(object sender, EventArgs e)

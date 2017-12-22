@@ -73,6 +73,12 @@
             window.setTimeout("updateProgress.set_visible(true)", updateProgress.get_displayAfter());
             return true;
         }
+
+        function postbackButtonClick() {
+            updateProgress = $find("<%= UpdateProgress2.ClientID %>");
+            window.setTimeout("updateProgress.set_visible(true)", updateProgress.get_displayAfter());
+            return true;
+        }
     </script>
 
 </asp:Content>
@@ -191,9 +197,9 @@
                             <%--<div style="float:left">
                                 <asp:Button ID="btnRenovarUVA" runat="server" CssClass="formBtnNar" Text="Renovar servicio" style="border: 1px solid rgba(0, 0, 0, 0.2); margin-right: 10px;"/>
                             </div>--%>
-                            <%--<div style="float:right">
+                            <div style="float:right">
                                 <asp:Button ID="btnIngresarUVA" runat="server" CssClass="formBtnNar" Text="Ingresar nuevo índice" style="border: 1px solid rgba(0, 0, 0, 0.2);" OnClick="btnIngresarUVA_Click"/>
-                            </div>--%>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -321,10 +327,8 @@
             BackgroundCssClass="ModalBackground"
             DropShadow="true" /> 
     </section>--%>
-
     
-
-</div>
+    <div>
     <section>
     <asp:UpdatePanel ID="pnlIndiceCAC" runat="server" Width="410px" HorizontalAlign="Center" class="modal" style="background-color:white">
         <ContentTemplate>
@@ -402,10 +406,92 @@
         TargetControlID="hfIndiceCAC"
         PopupControlID="pnlIndiceCAC" 
         CancelControlID="lblCloseIndice"
-        BackgroundCssClass="ModalBackground"
-        DropShadow="true" /> 
-</section>
+        BackgroundCssClass="ModalBackground" /> 
+    </section>
+    </div>
+
     
+</div>
+    
+    <div>
+        <section>
+            <asp:UpdatePanel ID="pnlIndiceUVA" runat="server" Width="410px" HorizontalAlign="Center" class="modal" style="background-color:white">
+                <ContentTemplate>
+                    <table style="width: 100%">  
+                        <asp:Label ID="lblCloseIndiceUVA" Text="X" runat="server" CssClass="closebtn1" style="right: -11px !important;"></asp:Label> 
+                        <tr>
+                            <td colspan="2"><modalTitle><b>Ingrese el índice UVA</b></modalTitle></td>
+                        </tr> 
+                        <tr>
+                            <td style="width:25%; font-size:18px; text-align:right;">
+                                <b>Mes:</b>
+                            </td>
+                            <td>
+                                <asp:Label ID="lbFechaIndiceUVA" runat="server" style="font-size: 18px;"></asp:Label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width:25%; color:#706F6F; font-family:Tahoma,Verdana,Arial,Helvetica,sans-serif; font-size:12px; text-align:right;">
+                                Índice: 
+                            </td>
+                            <td>
+                                <asp:TextBox ID="txtIndiceUVA" CssClass="textBoxForm decimal" Width="400px" runat="server"></asp:TextBox>
+                            </td>
+                        </tr>
+                        <tr runat="server">
+                            <td style="width:25%; color:#706F6F; font-family:Tahoma,Verdana,Arial,Helvetica,sans-serif; font-size:12px; text-align:right;">
+                                Confirme el índice: 
+                            </td>
+                            <td>
+                                <asp:TextBox ID="txtConfirmIndiceUVA" CssClass="textBoxForm decimal" Width="400px" runat="server"></asp:TextBox>
+                            </td>
+                        </tr>
+                        <tr class="spacer">
+                            <td colspan="2" > <hr /> </td>
+                        </tr>
+                        <asp:Panel ID="pnlMensajeIndiceUVA" runat="server" Visible="false">
+                            <tr>
+                                <td colspan="2" style="height: 23px;">
+                                    <div runat="server" class="formHolderAlert alert" style="padding: 14px 25px 12px; margin-top: -10px; margin-left: -12px; width: 95%;">
+                                        <div><asp:Label ID="lbMensajeUVA" runat="server"></asp:Label></div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </asp:Panel>
+                        <tr>            
+                        <td>
+                            <div align="center">
+                                <asp:UpdateProgress ID="UpdateProgress2" runat="server" DisplayAfter="0" AssociatedUpdatePanelID="pnlIndiceUVA">
+                                    <ProgressTemplate>
+                                        <script type="text/javascript">document.write("<div class='UpdateProgressBackground'></div>");</script>
+                                        <center>
+                                            <div class="UpdateProgressContent">
+                                                <div style="float:left;"><img src="images/ring_loading.gif" width="300px" style="height: 30px; width:30px" ImageAlign="left"  /></div>
+                                                <div style="float:right; padding: 8px 0 0 10px">
+                                                    <font style="font-size: 25px; color: #B7B7B7; font-weight: bold;"> Procesando... </font>
+                                                </div>                                    
+                                            </div>
+                                        </center>
+                                    </ProgressTemplate>
+                                </asp:UpdateProgress>
+                            </div>
+                        </td>
+                        <td>
+                            <div style="float:right">
+                                <asp:Button ID="btnFinalizarIndiceUVA" runat="server" CssClass="formBtnNar" Text="Aceptar" OnClick="btnFinalizarIndiceUVA_Click"/>
+                                <asp:Button ID="btnCancelarUVA" runat="server" Text="Cancelar" style="margin-left:15px; border-radius: 3px; -webkit-border-radius: 3px; -moz-border-radius: 3px; border: 1px solid #ccc; background-color:white" OnClick="btnCancelarUVA_Click"/>
+                            </div>
+                        </td>            
+                    </tr>
+                    </table>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+        </section>
+        <asp:HiddenField ID="hfUva" runat="server" />
+    <ajax:ModalPopupExtender ID="ModalPopupExtender1" runat="server" 
+        TargetControlID="hfUva"
+        PopupControlID="pnlIndiceUVA" 
+        BackgroundCssClass="ModalBackground" /> 
     <%--<section>
         <asp:UpdatePanel ID="pnlIndiceUVA" runat="server" Width="410px" HorizontalAlign="Center" class="modal" style="background-color:white">
             <ContentTemplate>
@@ -414,6 +500,14 @@
                     <tr>
                         <td colspan="2"><modalTitle><b>Ingrese el índice UVA</b></modalTitle></td>
                     </tr> 
+                     <tr>
+                    <td style="width:25%; font-size:18px; text-align:right;">
+                        <b>Mes:</b>
+                    </td>
+                    <td>
+                        <asp:Label ID="lbFechaIndiceUVA" runat="server" style="font-size: 18px;"></asp:Label>
+                    </td>
+                </tr>
                     <tr>
                         <td style="width:25%; color:#706F6F; font-family:Tahoma,Verdana,Arial,Helvetica,sans-serif; font-size:12px; text-align:right;">
                             Índice: 
@@ -478,6 +572,8 @@
             BackgroundCssClass="ModalBackground"
             DropShadow="true" /> 
     </section>--%>
+    </div>
+    
 
 </asp:Content>
 

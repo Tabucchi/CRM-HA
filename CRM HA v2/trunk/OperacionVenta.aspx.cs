@@ -834,6 +834,14 @@ public partial class OperacionVenta : System.Web.UI.Page
             {
                 Label idUnidad = item.FindControl("lbId") as Label;
                 cUnidad u = cUnidad.Load(idUnidad.Text);
+
+                cEmpresaUnidad validarEU = cEmpresaUnidad.GetUnidad(u.CodigoUF, u.IdProyecto);
+                if (validarEU != null)
+                {
+                    validarEU.Papelera = (Int16)papelera.Eliminado;
+                    validarEU.Save();
+                }
+
                 eu.CodUF = u.CodigoUF;
                 eu.IdProyecto = u.IdProyecto;
                 eu.IdUnidad = u.Id;

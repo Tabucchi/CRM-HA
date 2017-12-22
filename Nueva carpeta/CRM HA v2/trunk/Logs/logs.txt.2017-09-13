@@ -1,0 +1,13 @@
+ERROR 23 crm.Unidad - Unidad - 13/09/2017 10:31:34 a.m.- 'ddlEditUnidadFuncional' tiene un SelectedValue que no es válido porque no existe en la lista de elementos.
+Nombre del parámetro: value - lvUnidades_ItemCommand - Admin
+ERROR 38 crm.Unidad - Unidad - 13/09/2017 11:16:00 a.m.- 'ddlEditUnidadFuncional' tiene un SelectedValue que no es válido porque no existe en la lista de elementos.
+Nombre del parámetro: value - lvUnidades_ItemCommand - Admin
+ERROR 39 crm.Unidad - Unidad - 13/09/2017 11:17:32 a.m.- 'ddlEditUnidadFuncional' tiene un SelectedValue que no es válido porque no existe en la lista de elementos.
+Nombre del parámetro: value - lvUnidades_ItemCommand - Admin
+ERROR 7 crm.MensajeError - Pedidos - 13/09/2017 11:20:08 a.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 8 crm.MensajeError - Pedidos - 13/09/2017 12:29:58 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 10 crm.CuentaCorriente - CuotasCliente - 13/09/2017 12:40:29 p.m.- Referencia a objeto no establecida como instancia de un objeto. - CalcularTotales - Admin
+ERROR 8 crm.CuentaCorriente - CuotasCliente - 13/09/2017 12:40:30 p.m.- Referencia a objeto no establecida como instancia de un objeto. - CalcularTotales - Admin
+ERROR 10 crm.CuentaCorriente - CuotasCliente - 13/09/2017 12:42:05 p.m.- Referencia a objeto no establecida como instancia de un objeto. - CalcularTotales - Admin
+ERROR 14 crm.CuentaCorriente - CuotasCliente - 13/09/2017 12:42:06 p.m.- Referencia a objeto no establecida como instancia de un objeto. - CalcularTotales - Admin
+ERROR 7 crm.MensajeError - Pedidos - 13/09/2017 05:32:50 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin

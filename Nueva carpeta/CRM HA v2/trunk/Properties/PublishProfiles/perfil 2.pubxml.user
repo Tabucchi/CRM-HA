@@ -1,0 +1,523 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+Este archivo es utilizado por el proceso de paquete/publicación de nuestro proyecto Web. Puede personalizar el comportamiento de este proceso
+editando este archivo MSBuild. Para conocer más acerca de esto, visite http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\PUBLICACIONES\CRM\test</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="Agenda.aspx">
+      <publishTime>09/25/2015 15:44:21</publishTime>
+    </File>
+    <File Include="AgendaClientesPosibles.aspx">
+      <publishTime>07/20/2015 16:59:42</publishTime>
+    </File>
+    <File Include="bin/AjaxControlToolkit.dll">
+      <publishTime>05/13/2014 15:12:48</publishTime>
+    </File>
+    <File Include="bin/Common.Logging.dll">
+      <publishTime>05/13/2014 15:17:39</publishTime>
+    </File>
+    <File Include="bin/crm.dll">
+      <publishTime>10/06/2015 13:43:47</publishTime>
+    </File>
+    <File Include="bin/DLL.dll">
+      <publishTime>10/06/2015 11:28:01</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>10/01/2015 17:02:57</publishTime>
+    </File>
+    <File Include="bin/es/EntityFramework.resources.dll">
+      <publishTime>10/01/2015 17:03:09</publishTime>
+    </File>
+    <File Include="bin/es/Microsoft.AspNet.Identity.Core.resources.dll">
+      <publishTime>10/01/2015 17:03:10</publishTime>
+    </File>
+    <File Include="bin/es/Microsoft.AspNet.Identity.EntityFramework.resources.dll">
+      <publishTime>10/01/2015 17:03:10</publishTime>
+    </File>
+    <File Include="bin/es/Microsoft.AspNet.Identity.Owin.resources.dll">
+      <publishTime>10/01/2015 17:03:10</publishTime>
+    </File>
+    <File Include="bin/es/Microsoft.Owin.resources.dll">
+      <publishTime>10/01/2015 17:03:11</publishTime>
+    </File>
+    <File Include="bin/es/Microsoft.Owin.Security.resources.dll">
+      <publishTime>10/01/2015 17:03:11</publishTime>
+    </File>
+    <File Include="bin/es/Microsoft.QualityTools.Testing.Fakes.resources.dll">
+      <publishTime>10/05/2013 04:09:56</publishTime>
+    </File>
+    <File Include="bin/es/System.Net.Http.Formatting.resources.dll">
+      <publishTime>10/01/2015 17:02:52</publishTime>
+    </File>
+    <File Include="bin/es/System.Web.Http.Owin.resources.dll">
+      <publishTime>10/01/2015 17:03:13</publishTime>
+    </File>
+    <File Include="bin/es/System.Web.Http.resources.dll">
+      <publishTime>10/01/2015 17:02:52</publishTime>
+    </File>
+    <File Include="bin/es/System.Web.Http.WebHost.resources.dll">
+      <publishTime>10/01/2015 17:02:52</publishTime>
+    </File>
+    <File Include="bin/es/System.Web.Mvc.resources.dll">
+      <publishTime>10/01/2015 17:02:51</publishTime>
+    </File>
+    <File Include="bin/es/System.Web.Optimization.resources.dll">
+      <publishTime>10/01/2015 17:02:53</publishTime>
+    </File>
+    <File Include="bin/es/System.Web.Razor.resources.dll">
+      <publishTime>10/01/2015 17:02:50</publishTime>
+    </File>
+    <File Include="bin/es/System.Web.WebPages.Deployment.resources.dll">
+      <publishTime>10/01/2015 17:02:51</publishTime>
+    </File>
+    <File Include="bin/es/System.Web.WebPages.Razor.resources.dll">
+      <publishTime>10/01/2015 17:02:51</publishTime>
+    </File>
+    <File Include="bin/es/System.Web.WebPages.resources.dll">
+      <publishTime>10/01/2015 17:02:51</publishTime>
+    </File>
+    <File Include="bin/log4net.dll">
+      <publishTime>05/13/2014 15:17:39</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Identity.Core.dll">
+      <publishTime>10/01/2015 17:03:03</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Identity.EntityFramework.dll">
+      <publishTime>10/01/2015 17:03:04</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Identity.Owin.dll">
+      <publishTime>10/01/2015 17:03:04</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.dll">
+      <publishTime>10/01/2015 17:03:04</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.Cookies.dll">
+      <publishTime>10/01/2015 17:03:05</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.dll">
+      <publishTime>10/01/2015 17:03:05</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.OAuth.dll">
+      <publishTime>10/01/2015 17:03:06</publishTime>
+    </File>
+    <File Include="bin/Microsoft.QualityTools.Testing.Fakes.dll">
+      <publishTime>10/05/2013 02:38:22</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>10/02/2015 16:00:26</publishTime>
+    </File>
+    <File Include="bin/NPOI.dll">
+      <publishTime>01/04/2014 21:01:13</publishTime>
+    </File>
+    <File Include="bin/NPOI.OOXML.dll">
+      <publishTime>01/04/2014 21:01:19</publishTime>
+    </File>
+    <File Include="bin/NPOI.OpenXml4Net.dll">
+      <publishTime>01/04/2014 21:01:14</publishTime>
+    </File>
+    <File Include="bin/NPOI.OpenXmlFormats.dll">
+      <publishTime>01/04/2014 21:01:18</publishTime>
+    </File>
+    <File Include="bin/OpenPop.dll">
+      <publishTime>05/17/2013 15:03:07</publishTime>
+    </File>
+    <File Include="bin/Owin.dll">
+      <publishTime>10/01/2015 17:03:04</publishTime>
+    </File>
+    <File Include="bin/Quartz.dll">
+      <publishTime>04/16/2014 16:10:13</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>10/01/2015 17:02:43</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.dll">
+      <publishTime>10/01/2015 17:02:44</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.Owin.dll">
+      <publishTime>10/01/2015 17:03:08</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.WebHost.dll">
+      <publishTime>10/01/2015 17:02:44</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>10/01/2015 17:02:43</publishTime>
+    </File>
+    <File Include="bin/System.Web.Optimization.dll">
+      <publishTime>10/01/2015 17:02:41</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>10/01/2015 17:02:40</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>10/01/2015 17:02:41</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>10/01/2015 17:02:41</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>10/01/2015 17:02:41</publishTime>
+    </File>
+    <File Include="bin/WebApiCRM.dll">
+      <publishTime>10/06/2015 13:28:20</publishTime>
+    </File>
+    <File Include="BuscarCompra.aspx">
+      <publishTime>10/03/2014 11:38:16</publishTime>
+    </File>
+    <File Include="CambiarContraseña.aspx">
+      <publishTime>07/02/2015 16:46:59</publishTime>
+    </File>
+    <File Include="CambiarContraseñaCliente.aspx">
+      <publishTime>10/03/2014 11:38:46</publishTime>
+    </File>
+    <File Include="Cliente.aspx">
+      <publishTime>04/23/2015 17:14:21</publishTime>
+    </File>
+    <File Include="ClientePosible.aspx">
+      <publishTime>10/03/2014 11:40:54</publishTime>
+    </File>
+    <File Include="Clientes.aspx">
+      <publishTime>06/30/2015 16:40:13</publishTime>
+    </File>
+    <File Include="Compra.aspx">
+      <publishTime>10/03/2014 11:58:51</publishTime>
+    </File>
+    <File Include="Compras.aspx">
+      <publishTime>10/03/2014 11:54:21</publishTime>
+    </File>
+    <File Include="CotizacionCliente.aspx">
+      <publishTime>10/03/2014 11:54:55</publishTime>
+    </File>
+    <File Include="css/masterStyle.css">
+      <publishTime>08/10/2015 13:41:09</publishTime>
+    </File>
+    <File Include="css/orange.css">
+      <publishTime>07/20/2015 11:36:43</publishTime>
+    </File>
+    <File Include="DatosTecnicos.aspx">
+      <publishTime>09/25/2015 12:53:32</publishTime>
+    </File>
+    <File Include="Default.aspx">
+      <publishTime>06/24/2015 11:38:00</publishTime>
+    </File>
+    <File Include="DetalleManual.aspx">
+      <publishTime>04/08/2015 11:46:24</publishTime>
+    </File>
+    <File Include="DetallePedido.aspx">
+      <publishTime>07/30/2015 13:15:48</publishTime>
+    </File>
+    <File Include="DetallePedidoCliente.aspx">
+      <publishTime>10/03/2014 12:10:25</publishTime>
+    </File>
+    <File Include="EstadisticasClientes.aspx">
+      <publishTime>10/03/2014 12:13:09</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>09/16/2015 10:18:33</publishTime>
+    </File>
+    <File Include="images/addClient.png">
+      <publishTime>03/13/2015 12:47:51</publishTime>
+    </File>
+    <File Include="images/advertise.png">
+      <publishTime>04/23/2015 17:02:25</publishTime>
+    </File>
+    <File Include="images/bg-content-body.jpg">
+      <publishTime>05/13/2014 15:08:03</publishTime>
+    </File>
+    <File Include="images/bg-content.jpg">
+      <publishTime>05/13/2014 15:08:03</publishTime>
+    </File>
+    <File Include="images/bg_01.jpg">
+      <publishTime>05/13/2014 15:08:03</publishTime>
+    </File>
+    <File Include="images/bg_02.jpg">
+      <publishTime>05/13/2014 15:08:03</publishTime>
+    </File>
+    <File Include="images/Error.png">
+      <publishTime>05/30/2014 10:54:16</publishTime>
+    </File>
+    <File Include="images/icons/icon_01.png">
+      <publishTime>05/13/2014 15:08:04</publishTime>
+    </File>
+    <File Include="images/icons/icon_02.png">
+      <publishTime>05/13/2014 15:08:04</publishTime>
+    </File>
+    <File Include="images/icons/icon_03.png">
+      <publishTime>05/13/2014 15:08:04</publishTime>
+    </File>
+    <File Include="images/icons/icon_04.png">
+      <publishTime>05/13/2014 15:08:04</publishTime>
+    </File>
+    <File Include="images/icons/icon_05.png">
+      <publishTime>05/13/2014 15:08:04</publishTime>
+    </File>
+    <File Include="images/icons/icon_06.png">
+      <publishTime>05/13/2014 15:08:04</publishTime>
+    </File>
+    <File Include="images/icons/icon_07.png">
+      <publishTime>05/13/2014 15:08:04</publishTime>
+    </File>
+    <File Include="images/icons/icon_08.png">
+      <publishTime>05/13/2014 15:08:04</publishTime>
+    </File>
+    <File Include="images/icons/icon_09.png">
+      <publishTime>05/13/2014 15:08:04</publishTime>
+    </File>
+    <File Include="images/icons/icon_10.png">
+      <publishTime>05/13/2014 15:08:04</publishTime>
+    </File>
+    <File Include="images/icons/icon_11.png">
+      <publishTime>05/13/2014 15:08:04</publishTime>
+    </File>
+    <File Include="images/icons/icon_12.png">
+      <publishTime>05/13/2014 15:08:04</publishTime>
+    </File>
+    <File Include="images/icons/icon_13.png">
+      <publishTime>05/13/2014 15:08:04</publishTime>
+    </File>
+    <File Include="images/icons/icon_14.png">
+      <publishTime>05/13/2014 15:08:04</publishTime>
+    </File>
+    <File Include="images/icons/icon_15.png">
+      <publishTime>05/13/2014 15:08:04</publishTime>
+    </File>
+    <File Include="images/icons/icon_16.png">
+      <publishTime>05/13/2014 15:08:04</publishTime>
+    </File>
+    <File Include="images/icons/icon_17.png">
+      <publishTime>05/13/2014 15:08:04</publishTime>
+    </File>
+    <File Include="images/icons/icon_18.png">
+      <publishTime>05/13/2014 15:08:04</publishTime>
+    </File>
+    <File Include="images/icons/icon_19.png">
+      <publishTime>05/13/2014 15:08:04</publishTime>
+    </File>
+    <File Include="images/icons/icon_20.png">
+      <publishTime>05/13/2014 15:08:04</publishTime>
+    </File>
+    <File Include="images/icons/icon_21.png">
+      <publishTime>05/13/2014 15:08:04</publishTime>
+    </File>
+    <File Include="images/icons/icon_22.png">
+      <publishTime>05/13/2014 15:08:04</publishTime>
+    </File>
+    <File Include="images/login_07.png">
+      <publishTime>05/13/2014 15:08:04</publishTime>
+    </File>
+    <File Include="images/login_11.png">
+      <publishTime>05/13/2014 15:08:03</publishTime>
+    </File>
+    <File Include="images/login_13.png">
+      <publishTime>05/13/2014 15:08:03</publishTime>
+    </File>
+    <File Include="images/login_15.png">
+      <publishTime>05/13/2014 15:08:03</publishTime>
+    </File>
+    <File Include="images/login_18.png">
+      <publishTime>05/13/2014 15:08:03</publishTime>
+    </File>
+    <File Include="images/logo.png">
+      <publishTime>05/13/2014 15:08:03</publishTime>
+    </File>
+    <File Include="images/logoLogin.png">
+      <publishTime>05/13/2014 15:08:03</publishTime>
+    </File>
+    <File Include="images/nav-bg.png">
+      <publishTime>05/13/2014 15:08:04</publishTime>
+    </File>
+    <File Include="images/nav-break.png">
+      <publishTime>05/13/2014 15:08:03</publishTime>
+    </File>
+    <File Include="images/twitter.png">
+      <publishTime>05/13/2014 15:08:03</publishTime>
+    </File>
+    <File Include="images/twitter_27.png">
+      <publishTime>05/13/2014 15:08:04</publishTime>
+    </File>
+    <File Include="images/twitter_29.png">
+      <publishTime>05/13/2014 15:08:04</publishTime>
+    </File>
+    <File Include="images/twitter_32.png">
+      <publishTime>05/13/2014 15:08:03</publishTime>
+    </File>
+    <File Include="IngresarPedidoCliente.aspx">
+      <publishTime>10/07/2014 10:19:00</publishTime>
+    </File>
+    <File Include="IngresoPedido.aspx">
+      <publishTime>09/15/2015 10:12:33</publishTime>
+    </File>
+    <File Include="Inventario.aspx">
+      <publishTime>11/28/2014 13:50:16</publishTime>
+    </File>
+    <File Include="js/autocomplete/autocomplete.min.css">
+      <publishTime>07/03/2015 13:13:31</publishTime>
+    </File>
+    <File Include="js/autocomplete/completer.css">
+      <publishTime>02/06/2015 17:32:09</publishTime>
+    </File>
+    <File Include="js/autocomplete/completer.js">
+      <publishTime>02/06/2015 17:32:09</publishTime>
+    </File>
+    <File Include="js/autocomplete/jquery-1.4.1.min.js">
+      <publishTime>07/06/2015 12:08:33</publishTime>
+    </File>
+    <File Include="js/autocomplete/jquery-ui.min.css">
+      <publishTime>07/03/2015 13:13:31</publishTime>
+    </File>
+    <File Include="js/autocomplete/jquery-ui.min.js">
+      <publishTime>07/03/2015 13:11:32</publishTime>
+    </File>
+    <File Include="js/autocomplete/jquery.autocomplete.css">
+      <publishTime>07/06/2015 12:08:33</publishTime>
+    </File>
+    <File Include="js/autocomplete/jquery.autocomplete.js">
+      <publishTime>07/06/2015 12:08:33</publishTime>
+    </File>
+    <File Include="js/autocomplete/jquery.min.js">
+      <publishTime>07/03/2015 13:11:32</publishTime>
+    </File>
+    <File Include="js/autocomplete/jquery.ui.autocomplete.css">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="js/autocomplete/jquery.ui.autocomplete.js">
+      <publishTime>06/04/2015 12:16:42</publishTime>
+    </File>
+    <File Include="js/autocomplete/jquery.ui.menu.js">
+      <publishTime>06/04/2015 10:02:16</publishTime>
+    </File>
+    <File Include="js/autocomplete/jquery.ui.position.js">
+      <publishTime>06/03/2015 13:11:38</publishTime>
+    </File>
+    <File Include="js/datepicker/jquery.ui.datepicker.css">
+      <publishTime>06/26/2015 16:56:04</publishTime>
+    </File>
+    <File Include="js/datepicker/jquery.ui.datepicker.js">
+      <publishTime>06/29/2015 12:07:04</publishTime>
+    </File>
+    <File Include="js/datepicker2/demos.css">
+      <publishTime>06/30/2015 13:54:33</publishTime>
+    </File>
+    <File Include="js/datepicker2/jquery.ui.all.css">
+      <publishTime>06/30/2015 13:52:52</publishTime>
+    </File>
+    <File Include="js/datepicker2/jquery.ui.datepicker.js">
+      <publishTime>06/30/2015 13:53:57</publishTime>
+    </File>
+    <File Include="js/global.js">
+      <publishTime>07/15/2015 16:27:59</publishTime>
+    </File>
+    <File Include="js/jquery-1.10.2.js">
+      <publishTime>05/26/2015 13:28:44</publishTime>
+    </File>
+    <File Include="js/jquery.ui.autocomplete.css">
+      <publishTime>02/06/2015 15:34:41</publishTime>
+    </File>
+    <File Include="js/jquery.ui.autocomplete.js">
+      <publishTime>02/06/2015 15:41:06</publishTime>
+    </File>
+    <File Include="js/jquery.ui.core.js">
+      <publishTime>05/26/2015 13:30:05</publishTime>
+    </File>
+    <File Include="js/jquery.ui.datepicker.css">
+      <publishTime>01/06/2015 17:24:36</publishTime>
+    </File>
+    <File Include="js/jquery.ui.datepicker.js">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="js/jquery.ui.menu.js">
+      <publishTime>02/06/2015 15:28:52</publishTime>
+    </File>
+    <File Include="js/jquery.ui.position.js">
+      <publishTime>02/06/2015 15:28:38</publishTime>
+    </File>
+    <File Include="js/jquery.ui.widget.js">
+      <publishTime>05/26/2015 13:30:05</publishTime>
+    </File>
+    <File Include="js/NewFolder1/jquery-1.4.1.min.js">
+      <publishTime>07/03/2015 13:29:26</publishTime>
+    </File>
+    <File Include="js/NewFolder1/jquery.autocomplete.css">
+      <publishTime>07/06/2015 11:41:51</publishTime>
+    </File>
+    <File Include="js/NewFolder1/jquery.autocomplete.js">
+      <publishTime>07/03/2015 13:29:26</publishTime>
+    </File>
+    <File Include="Login.aspx">
+      <publishTime>08/12/2015 12:54:08</publishTime>
+    </File>
+    <File Include="Manual.aspx">
+      <publishTime>07/20/2015 17:04:53</publishTime>
+    </File>
+    <File Include="MasterPage.master">
+      <publishTime>09/24/2015 16:34:16</publishTime>
+    </File>
+    <File Include="MasterPageCliente.master">
+      <publishTime>06/05/2014 15:58:36</publishTime>
+    </File>
+    <File Include="MasterPageCotizacion.master">
+      <publishTime>05/13/2014 15:08:06</publishTime>
+    </File>
+    <File Include="Mensaje.aspx">
+      <publishTime>06/30/2015 10:25:41</publishTime>
+    </File>
+    <File Include="MensajeError.aspx">
+      <publishTime>05/21/2015 13:15:15</publishTime>
+    </File>
+    <File Include="MyAutocompleteService.asmx">
+      <publishTime>05/13/2014 15:07:59</publishTime>
+    </File>
+    <File Include="Novedad.aspx">
+      <publishTime>07/20/2015 17:41:44</publishTime>
+    </File>
+    <File Include="Pedidos.aspx">
+      <publishTime>08/18/2015 15:04:30</publishTime>
+    </File>
+    <File Include="PedidosAcobrar.aspx">
+      <publishTime>07/20/2015 16:38:40</publishTime>
+    </File>
+    <File Include="Proveedor.aspx">
+      <publishTime>10/03/2014 12:37:49</publishTime>
+    </File>
+    <File Include="ResponsableEmpresa.aspx">
+      <publishTime>07/02/2015 13:37:00</publishTime>
+    </File>
+    <File Include="Search_CS.ashx">
+      <publishTime>03/07/2015 13:27:22</publishTime>
+    </File>
+    <File Include="sidebar.ascx">
+      <publishTime>08/10/2015 12:48:25</publishTime>
+    </File>
+    <File Include="stats.aspx">
+      <publishTime>10/03/2014 12:39:46</publishTime>
+    </File>
+    <File Include="Test.aspx">
+      <publishTime>09/15/2015 16:51:41</publishTime>
+    </File>
+    <File Include="Usuario.aspx">
+      <publishTime>07/02/2015 16:44:13</publishTime>
+    </File>
+    <File Include="Web-Service/GetTickets.asmx">
+      <publishTime>09/30/2015 17:40:01</publishTime>
+    </File>
+    <File Include="Web-Service/Search_CS.ashx">
+      <publishTime>09/23/2015 16:03:29</publishTime>
+    </File>
+    <File Include="web.config">
+      <publishTime>10/06/2015 11:36:34</publishTime>
+    </File>
+    <File Include="web1.config">
+      <publishTime>08/12/2015 17:16:08</publishTime>
+    </File>
+    <File Include="WebForm1.aspx">
+      <publishTime>07/03/2015 16:47:38</publishTime>
+    </File>
+    <File Include="WebForm2.aspx">
+      <publishTime>06/07/2015 12:09:33</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

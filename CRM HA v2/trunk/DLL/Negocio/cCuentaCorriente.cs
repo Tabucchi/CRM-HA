@@ -117,10 +117,6 @@ namespace DLL.Negocio
 
                     return saldo;*/
 
-                    int asd=0;
-                    if (IdOperacionVenta == "189")
-                        asd++;
-
                     cOperacionVenta op = cOperacionVenta.Load(IdOperacionVenta);
                     List<cFormaPagoOV> saldos = cFormaPagoOV.GetFormaPagoOVByIdOV(op.Id);
                     decimal _saldoPesos = 0;
@@ -144,9 +140,9 @@ namespace DLL.Negocio
                                 else
                                 {
                                     cCuota cuota_pagada = cCuota.GetFirstPagada(id, fp.Id);
-                                    if (fp.CantCuotas > cuota_pagada.Nro)
+                                    if (cuota_pagada != null)
                                     {
-                                        if (cuota_pagada != null)
+                                        if (fp.CantCuotas > cuota_pagada.Nro)
                                         {
                                             _saldoPesos += cuota_pagada.MontoAjustado;
                                         }
@@ -159,23 +155,23 @@ namespace DLL.Negocio
                             cCuota cuota_pendiente = cCuota.GetFirstPendiente(id, fp.Id);
                             if (cuota_pendiente != null)
                             {
-                                _saldoPesos += cValorDolar.ConvertToPeso(cuota_pendiente.MontoAjustado, op.ValorDolar);
+                                _saldoPesos += cValorDolar.ConvertToPeso(cuota_pendiente.MontoAjustado, cValorDolar.LoadActualValue());
                             }
                             else
                             {
                                 cCuota cuota_activa = cCuota.GetFirstActiva(id, fp.Id);
                                 if (cuota_activa != null)
                                 {
-                                    _saldoPesos += cValorDolar.ConvertToPeso(cuota_activa.MontoAjustado, op.ValorDolar);
+                                    _saldoPesos += cValorDolar.ConvertToPeso(cuota_activa.MontoAjustado, cValorDolar.LoadActualValue());
                                 }
                                 else
                                 {
                                     cCuota cuota_pagada = cCuota.GetFirstPagada(id, fp.Id);
-                                    if (fp.CantCuotas > cuota_pagada.Nro)
+                                    if (cuota_pagada != null)
                                     {
-                                        if (cuota_pagada != null)
+                                        if (fp.CantCuotas > cuota_pagada.Nro)
                                         {
-                                            _saldoPesos += cValorDolar.ConvertToPeso(cuota_pagada.MontoAjustado, op.ValorDolar);
+                                            _saldoPesos += cValorDolar.ConvertToPeso(cuota_pagada.MontoAjustado, cValorDolar.LoadActualValue());
                                         }
                                     }
                                 }

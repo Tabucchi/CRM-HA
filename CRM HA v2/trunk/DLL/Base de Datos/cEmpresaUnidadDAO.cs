@@ -68,8 +68,12 @@ public class cEmpresaUnidadDAO
     {
         string query = "SELECT idOv FROM tEmpresaUnidad where idUnidad='" + _idUnidad + "' AND papelera='" + (Int16)papelera.Activo + "'";
         SqlCommand com = new SqlCommand(query);
+        string result = cDataBase.GetInstance().ExecuteScalar(com);
 
-        return Convert.ToString(cDataBase.GetInstance().ExecuteScalar(com));
+        if (result != null)
+            return Convert.ToString(result);
+        else
+            return null;
     }
 
     public cEmpresaUnidad GetUnidad(string _codUF, string _idProyecto)

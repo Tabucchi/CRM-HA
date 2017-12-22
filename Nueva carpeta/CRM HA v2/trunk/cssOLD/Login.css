@@ -1,0 +1,133 @@
+﻿body 
+{	
+    background: none repeat scroll 0 0 #FFFFFF;
+    color: #706F6F;
+    font-family: Tahoma,verdana,arial,sans-serif;
+    font-size: 11px;
+    line-height: 1.28;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+.lfloat {
+    float: left;
+}
+
+.rfloat {
+    float: right;
+}
+
+.textoLogin {
+	color: #000000;
+	font-weight:400;
+	font-size:12px;
+    padding-left: 1px;
+    padding-bottom: 1px;
+}
+
+.textboxLogin {
+	 border: 1px solid #BDC7D8;
+     font-family: tahoma,verdana,arial,sans-serif;
+     font-size: 11px;
+     padding: 3px;
+     width: 150px;
+}
+
+.botonLogin 
+{	
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: bold;
+    color: #333333;
+    padding: 2px 6px;
+}
+
+.panelSuperior
+{
+	background-color: #FFE117;
+    height: 82px;
+    min-width: 980px;
+}
+
+.Contenedor
+{
+	margin: 0 auto;
+    position: relative;
+    height: 500px;
+}
+
+.panelSuperior.Contenido  
+{
+    clear: both;
+    content: ".";
+    display: block;
+    font-size: 0;
+    height: 0;
+    line-height: 0;
+    visibility: hidden;
+}
+
+.loggedout_menubar {
+    margin: 0 auto;
+    padding-top: 30px;
+    width: 964px;
+}
+
+.footer {
+border-top:1px solid #CDCDCD;
+border-left:0px none;
+border-right:0px none;
+clear:both;
+padding-top:5px;
+margin-top:20px;
+}
+
+.mensajeError 
+{
+	font-size: 12px;
+	font-weight:bold;
+	color:Red;
+}
+
+.ajax__combobox_textboxcontainer input
+{
+    background-image: url("../Imagenes/toolkit-bg.gif");
+    background-position: left top;
+    border: 0 none;
+    font-size: 11px;
+    height: 17px;
+    margin: 0;
+    padding: 2px 0 0 8px;
+    width: 300px;
+    height:21px;
+}
+.ajax__combobox_inputcontainer
+.ajax__combobox_buttoncontainer button
+{
+    background-image: url("../Imagenes/toolkit-arrow.gif");
+    background-position: center;
+	border: 0 none;
+    height: 15px;
+    width: 15px;
+}
+
+.ajax__combobox_itemlist
+{
+    visibility: visible; 
+    z-index: 1000; 
+    overflow-x: hidden; 
+    overflow-y: auto; 
+    width: 200px; 
+    height: 414px; 
+    left: 603px; 
+    top: 500px; 
+    display: block;
+}
+
+.ajax__combobox_itemlist li
+{
+    white-space: nowrap;
+    width: 100%;
+    padding: 0 3px 0 2px;
+} 

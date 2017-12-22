@@ -48,7 +48,7 @@ namespace DLL.Negocio
         {
             get
             {
-                /*List<cCuota> cuotas = cCuota.GetCuotasActivasByEmpresa(IdEmpresa);
+                List<cCuota> cuotas = cCuota.GetCuotasActivasByEmpresa(IdEmpresa);
                 decimal total = 0;
 
                 if (cuotas != null)
@@ -62,8 +62,8 @@ namespace DLL.Negocio
                     }
                 }
                 
-                return String.Format("{0:#,#0.00}", total);*/
-                decimal total = 0;
+                return String.Format("{0:#,#0.00}", total);
+                /*decimal total = 0;
 
                 List<cOperacionVenta> operaciones = cOperacionVenta.GetOVByIdEmpresa(IdEmpresa);
                 foreach (cOperacionVenta o in operaciones)
@@ -106,14 +106,14 @@ namespace DLL.Negocio
                                 cCuota cuota_pendiente = cCuota.GetFirstPendiente(cc.Id, fp.Id);
                                 if (cuota_pendiente != null)
                                 {
-                                    total += cValorDolar.ConvertToPeso(cuota_pendiente.MontoAjustado, o.ValorDolar);
+                                    total += cValorDolar.ConvertToPeso(cuota_pendiente.MontoAjustado, cValorDolar.LoadActualValue());
                                 }
                                 else
                                 {
                                     cCuota cuota_activa = cCuota.GetFirstActiva(cc.Id, fp.Id);
                                     if (cuota_activa != null)
                                     {
-                                        total += cValorDolar.ConvertToPeso(cuota_activa.MontoAjustado, o.ValorDolar);
+                                        total += cValorDolar.ConvertToPeso(cuota_activa.MontoAjustado, cValorDolar.LoadActualValue());
                                     }
                                     else
                                     {
@@ -122,7 +122,7 @@ namespace DLL.Negocio
                                         {
                                             if (cuota_pagada != null)
                                             {
-                                                total += cValorDolar.ConvertToPeso(cuota_pagada.MontoAjustado, o.ValorDolar);
+                                                total += cValorDolar.ConvertToPeso(cuota_pagada.MontoAjustado, cValorDolar.LoadActualValue());
                                             }
                                         }
                                     }
@@ -131,7 +131,7 @@ namespace DLL.Negocio
                         }
                     }
                 }
-                return String.Format("{0:#,#0.00}", total);
+                return String.Format("{0:#,#0.00}", total);*/
             }
         }
 

@@ -1,0 +1,3 @@
+ERROR 21 crm.MensajeError - Pedidos - 28/07/2017 02:54:35 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 7 crm.MensajeError - Pedidos - 28/07/2017 03:01:23 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR RemoteServer_Worker-1 JobScheduler - JobScheduler - 28/07/2017 05:44:57 p.m.- Referencia a objeto no establecida como instancia de un objeto. - Execute

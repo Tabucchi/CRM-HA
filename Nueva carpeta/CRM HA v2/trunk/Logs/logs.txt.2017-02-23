@@ -1,0 +1,10 @@
+ERROR 8 crm.CargaUnidad - CargaUnidad - 23/02/2017 02:17:12 p.m.- La cadena de entrada no tiene el formato correcto. - CargarArchivo - Admin
+ERROR 6 crm.CargaUnidad - CargaUnidad - 23/02/2017 02:17:27 p.m.- La cadena de entrada no tiene el formato correcto. - CargarArchivo - Admin
+ERROR 9 crm.CargaUnidad - CargaUnidad - 23/02/2017 02:22:19 p.m.- La cadena de entrada no tiene el formato correcto. - CargarArchivo - Admin
+ERROR 14 crm.CargaUnidad - CargaUnidad - 23/02/2017 02:51:09 p.m.- La cadena de entrada no tiene el formato correcto. - CargarArchivo - Admin
+ERROR 20 crm.CargaUnidad - CargaUnidad - 23/02/2017 02:56:50 p.m.- Cannot get a numeric value from a text cell - CargarArchivo - Admin
+ERROR 19 crm.CargaUnidad - CargaUnidad - 23/02/2017 02:57:33 p.m.- Cannot get a numeric value from a text cell - CargarArchivo - Admin
+ERROR 10 crm.CargaUnidad - CargaUnidad - 23/02/2017 02:59:37 p.m.- Cannot get a numeric value from a text cell - CargarArchivo - Admin
+ERROR 7 crm.CargaUnidad - CargaUnidad - 23/02/2017 03:01:20 p.m.- Cannot get a numeric value from a text cell - CargarArchivo - Admin
+ERROR 11 crm.MensajeError - Pedidos - 23/02/2017 03:38:02 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 5 crm.MensajeError - Pedidos - 23/02/2017 05:40:17 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
