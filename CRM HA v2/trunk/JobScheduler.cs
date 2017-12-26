@@ -1114,9 +1114,9 @@ public class JobScheduler : IJob
 
     protected void btnDescargar_Click(object sender, EventArgs e)
     {
-        string rutaURL = "C:\\PUBLICACIONES\\HA CRM\\Archivos";
-//        string rutaURL = "C:\\Users\\ntabucchi\\Documents\\GitHub\\CRM-HA\\CRM HA v2\\trunk\\Archivos\\";
-        string filename = "Cuotas a cobrar por obra.pdf";
+        string rutaURL = "C:\\PUBLICACIONES\\HA CRM\\Archivos\\Cuotas.pdf";
+        //string rutaURL = "C:\\Users\\ntabucchi\\Documents\\GitHub\\CRM-HA\\CRM HA v2\\trunk\\Archivos\\Cuotas.pdf";
+        //string filename = "Cuotas a cobrar por obra.pdf";
 
         CrystalDecisions.Web.CrystalReportSource s = new CrystalDecisions.Web.CrystalReportSource();
         s.Report.FileName = "C:\\PUBLICACIONES\\HA CRM\\Reportes";
@@ -1147,8 +1147,14 @@ public class JobScheduler : IJob
         s.ReportDocument.SetParameterValue("totalDeuda", String.Format("{0:#,#0.00}", totalDeuda));
         s.ReportDocument.SetParameterValue("total", String.Format("{0:#,#0.00}", totalDeuda + (cCuentaCorrienteUsuario.GetTotalCtaCte() * -1)));
 
-        s.ReportDocument.ExportToDisk(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, rutaURL + filename);
+        s.ReportDocument.ExportToDisk(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, rutaURL);
 
+        FileStream stream = new FileStream(rutaURL, FileMode.Open, FileAccess.Read);
+        BinaryReader reader = new BinaryReader(stream);
+
+        cArchivoCuotasObra arch = new cArchivoCuotasObra(reader.ReadBytes((int)stream.Length));
+
+        stream.Close();
     }
     #endregion
 } 

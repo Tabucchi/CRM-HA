@@ -42,9 +42,16 @@
         <div class="headOptions">
             <div style="float:left"><h2>Cuotas a cobrar por obra</h2></div>
             <div style="float:right">
-                <label class="rigthLabel" style="width: 37%;">
-                    <asp:Button ID="btnDescargar" runat="server" Text="Descargar" CssClass="formBtnNar" OnClick="btnDescargar_Click" />
-                </label>
+                <div style="width:100%">
+                    <div style="float:left; margin-right:10px">
+                        <b><asp:LinkButton ID="btnNuevoOV" runat="server" CssClass="formBtnGrey" Text="Resumenes" OnClick="btnNuevoOV_Click" style="margin-top: -2px;"></asp:LinkButton></b>
+                    </div>
+                    <div style="float:right">
+                        <label class="rigthLabel" style="width: 37%;">
+                            <asp:Button ID="btnDescargar" runat="server" Text="Descargar" CssClass="formBtnNar" OnClick="btnDescargar_Click" />
+                        </label>
+                    </div>
+                </div>
             </div>
         </div>
         <div>

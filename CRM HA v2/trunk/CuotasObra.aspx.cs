@@ -676,5 +676,10 @@ namespace crm
             CargarListViesw();
             CalcularTotales();
         }
+
+        protected void btnNuevoOV_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ResumenCuotasObra.aspx");
+        }
     }
 }

@@ -24,6 +24,10 @@ namespace DLL.Negocio
             get { return fecha; }
             set { fecha = value; }
         }
+        public string GetFecha
+        {
+            get { return Fecha.ToString("dd/MM/yyyy"); }
+        }
         public byte[] Archivo
         {
             get { return archivo; }
@@ -43,7 +47,7 @@ namespace DLL.Negocio
             return DAO.Save(this);
         }
 
-        public static cArchivo Load(string id)
+        public static cArchivoCuotasObra Load(string id)
         {
             cArchivoCuotasObraDAO DAO = new cArchivoCuotasObraDAO();
             return DAO.Load(id);
@@ -63,8 +67,14 @@ namespace DLL.Negocio
         
         public static byte[] GetFile(string idProyecto)
         {
-            cArchivoDAO DAO = new cArchivoDAO();
+            cArchivoCuotasObraDAO DAO = new cArchivoCuotasObraDAO();
             return DAO.GetFile(idProyecto);
+        }
+
+        public static List<cArchivoCuotasObra> Search(string _desde, string _hasta)
+        {
+            cArchivoCuotasObraDAO DAO = new cArchivoCuotasObraDAO();
+            return DAO.Search(_desde, _hasta);
         }
     }
 }

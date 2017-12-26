@@ -1004,8 +1004,8 @@ namespace crm
         
         protected void btnDescargar_Click(object sender, EventArgs e)
         {
-            string rutaURL = HttpContext.Current.Request.PhysicalApplicationPath + "\\Archivos\\";
-            string filename = "Cuotas a cobrar por obra.pdf";
+            string rutaURL = HttpContext.Current.Request.PhysicalApplicationPath + "\\Archivos\\Cuotas.pdf";
+            //string filename = "Cuotas a cobrar por obra.pdf";
 
             CrystalDecisions.Web.CrystalReportSource s = new CrystalDecisions.Web.CrystalReportSource();
             s.Report.FileName = HttpContext.Current.Request.PhysicalApplicationPath + "Reportes\\CuotasObra.rpt";
@@ -1035,10 +1035,19 @@ namespace crm
             s.ReportDocument.SetParameterValue("totalDeuda", String.Format("{0:#,#0.00}", totalDeuda));
             s.ReportDocument.SetParameterValue("total", String.Format("{0:#,#0.00}", totalDeuda + (cCuentaCorrienteUsuario.GetTotalCtaCte() * -1)));
 
-            s.ReportDocument.ExportToDisk(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, rutaURL + filename);
+            //s.ReportDocument.ExportToDisk(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, rutaURL + filename);
+            s.ReportDocument.ExportToDisk(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, rutaURL);
+            
+            //cArchivoCuotasObra archivo = new cArchivoCuotasObra()
 
+            FileStream stream = new FileStream(rutaURL, FileMode.Open, FileAccess.Read);
+            BinaryReader reader = new BinaryReader(stream);
+
+            cArchivoCuotasObra arch = new cArchivoCuotasObra(reader.ReadBytes((int)stream.Length));
+            arch.Save();
+            
+            stream.Close();
         }
         #endregion
-
     }
 }
