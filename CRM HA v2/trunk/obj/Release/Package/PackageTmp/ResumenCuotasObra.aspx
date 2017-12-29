@@ -65,7 +65,7 @@
                     <asp:Label ID="Label1" runat="Server" Text='<%#Eval("GetFecha") %>' />
                 </td>
                 <td style="text-align: center">
-                    <asp:LinkButton ID="lkbDescargar" runat="server" class="detailBtn" style="margin-right: auto !important;" OnClick="lkbDescargar_Click" CommandArgument='<%# Eval("Id") %>'/>
+                    <asp:LinkButton ID="lkbDescargar" runat="server" class="detailBtn" style="margin-right: auto !important; float: inherit !important;" OnClick="lkbDescargar_Click" CommandArgument='<%# Eval("Id") %>'/>
                 </td>
             </tr>
         </ItemTemplate>

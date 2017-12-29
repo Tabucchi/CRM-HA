@@ -57,8 +57,8 @@ public class JobScheduler : IJob
                 ActualizarCuotasUVA();
 
 
-            btnDescargar_Click();
-           
+            Thread th = new Thread(btnDescargar_Click);
+            th.Start();          
 
         }
         catch (Exception ex)
@@ -1114,47 +1114,55 @@ public class JobScheduler : IJob
 
     protected void btnDescargar_Click(object sender, EventArgs e)
     {
-        string rutaURL = "C:\\PUBLICACIONES\\HA CRM\\Archivos\\Cuotas.pdf";
-        //string rutaURL = "C:\\Users\\ntabucchi\\Documents\\GitHub\\CRM-HA\\CRM HA v2\\trunk\\Archivos\\Cuotas.pdf";
-        //string filename = "Cuotas a cobrar por obra.pdf";
+        try
+        {
+            string rutaURL = "C:\\PUBLICACIONES\\HA CRM\\Archivos\\Cuotas.pdf";
+            //string rutaURL = "C:\\Users\\ntabucchi\\Documents\\GitHub\\CRM-HA\\CRM HA v2\\trunk\\Archivos\\Cuotas.pdf";
+            //string filename = "Cuotas a cobrar por obra.pdf";
 
-        CrystalDecisions.Web.CrystalReportSource s = new CrystalDecisions.Web.CrystalReportSource();
-        s.Report.FileName = "C:\\PUBLICACIONES\\HA CRM\\Reportes";
-        //s.Report.FileName = "C:\\Users\\ntabucchi\\Documents\\GitHub\\CRM-HA\\CRM HA v2\\trunk\\Reportes\\CuotasObra.rpt";
+            CrystalDecisions.Web.CrystalReportSource s = new CrystalDecisions.Web.CrystalReportSource();
+            s.Report.FileName = "C:\\PUBLICACIONES\\HA CRM\\Reportes";
+            //s.Report.FileName = "C:\\Users\\ntabucchi\\Documents\\GitHub\\CRM-HA\\CRM HA v2\\trunk\\Reportes\\CuotasObra.rpt";
 
-        // Planilla
-        DataSetUnidades ds = new DataSetUnidades();
-        ds.Merge(CrearDataSet(), false, System.Data.MissingSchemaAction.Ignore);
-        s.ReportDocument.SetDataSource(ds);
+            // Planilla
+            DataSetUnidades ds = new DataSetUnidades();
+            ds.Merge(CrearDataSet(), false, System.Data.MissingSchemaAction.Ignore);
+            s.ReportDocument.SetDataSource(ds);
 
-        #region Encabezado
+            #region Encabezado
 
-        DateTime date = GetFecha();
+            DateTime date = GetFecha();
 
-        s.ReportDocument.SetParameterValue("titleMes1", String.Format("{0:MMM-yy}", date.AddMonths(1)));
-        s.ReportDocument.SetParameterValue("titleMes2", String.Format("{0:MMM-yy}", date.AddMonths(2)));
-        s.ReportDocument.SetParameterValue("titleMes3", String.Format("{0:MMM-yy}", date.AddMonths(3)));
-        s.ReportDocument.SetParameterValue("titleMes4", String.Format("{0:MMM-yy}", date.AddMonths(4)));
+            s.ReportDocument.SetParameterValue("titleMes1", String.Format("{0:MMM-yy}", date.AddMonths(1)));
+            s.ReportDocument.SetParameterValue("titleMes2", String.Format("{0:MMM-yy}", date.AddMonths(2)));
+            s.ReportDocument.SetParameterValue("titleMes3", String.Format("{0:MMM-yy}", date.AddMonths(3)));
+            s.ReportDocument.SetParameterValue("titleMes4", String.Format("{0:MMM-yy}", date.AddMonths(4)));
 
-        #endregion
+            #endregion
 
-        s.ReportDocument.SetParameterValue("ctaCte", String.Format("{0:#,#0.00}", (cCuentaCorrienteUsuario.GetTotalCtaCte() * -1)));
-        s.ReportDocument.SetParameterValue("totalMes1", String.Format("{0:#,#0.00}", totalMes1));
-        s.ReportDocument.SetParameterValue("totalMes2", String.Format("{0:#,#0.00}", totalMes2));
-        s.ReportDocument.SetParameterValue("totalMes3", String.Format("{0:#,#0.00}", totalMes3));
-        s.ReportDocument.SetParameterValue("totalMes4", String.Format("{0:#,#0.00}", totalMes4));
-        s.ReportDocument.SetParameterValue("totalMesesRestantes", String.Format("{0:#,#0.00}", totalMesesRestantes));
-        s.ReportDocument.SetParameterValue("totalDeuda", String.Format("{0:#,#0.00}", totalDeuda));
-        s.ReportDocument.SetParameterValue("total", String.Format("{0:#,#0.00}", totalDeuda + (cCuentaCorrienteUsuario.GetTotalCtaCte() * -1)));
+            s.ReportDocument.SetParameterValue("ctaCte", String.Format("{0:#,#0.00}", (cCuentaCorrienteUsuario.GetTotalCtaCte() * -1)));
+            s.ReportDocument.SetParameterValue("totalMes1", String.Format("{0:#,#0.00}", totalMes1));
+            s.ReportDocument.SetParameterValue("totalMes2", String.Format("{0:#,#0.00}", totalMes2));
+            s.ReportDocument.SetParameterValue("totalMes3", String.Format("{0:#,#0.00}", totalMes3));
+            s.ReportDocument.SetParameterValue("totalMes4", String.Format("{0:#,#0.00}", totalMes4));
+            s.ReportDocument.SetParameterValue("totalMesesRestantes", String.Format("{0:#,#0.00}", totalMesesRestantes));
+            s.ReportDocument.SetParameterValue("totalDeuda", String.Format("{0:#,#0.00}", totalDeuda));
+            s.ReportDocument.SetParameterValue("total", String.Format("{0:#,#0.00}", totalDeuda + (cCuentaCorrienteUsuario.GetTotalCtaCte() * -1)));
 
-        s.ReportDocument.ExportToDisk(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, rutaURL);
+            s.ReportDocument.ExportToDisk(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, rutaURL);
 
-        FileStream stream = new FileStream(rutaURL, FileMode.Open, FileAccess.Read);
-        BinaryReader reader = new BinaryReader(stream);
+            FileStream stream = new FileStream(rutaURL, FileMode.Open, FileAccess.Read);
+            BinaryReader reader = new BinaryReader(stream);
 
-        cArchivoCuotasObra arch = new cArchivoCuotasObra(reader.ReadBytes((int)stream.Length));
+            cArchivoCuotasObra arch = new cArchivoCuotasObra(reader.ReadBytes((int)stream.Length));
 
-        stream.Close();
+            stream.Close();
+        }
+        catch (Exception ex)
+        {
+            log4net.Config.XmlConfigurator.Configure();
+            log.Error("JobScheduler - " + DateTime.Now + "- " + ex.Message + " - btnDescargar_Click");
+        }
     }
     #endregion
 } 

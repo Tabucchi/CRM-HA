@@ -130,6 +130,15 @@ namespace crm {
         protected global::System.Web.UI.WebControls.HiddenField hfTotal;
         
         /// <summary>
+        /// Control btnNuevoOV.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnNuevoOV;
+        
+        /// <summary>
         /// Control btnDescargar.
         /// </summary>
         /// <remarks>
