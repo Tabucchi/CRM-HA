@@ -309,6 +309,24 @@ public partial class Reserva {
     protected global::System.Web.UI.WebControls.Panel pnlMensaje;
     
     /// <summary>
+    /// Control pnlEstado.
+    /// </summary>
+    /// <remarks>
+    /// Campo generado automáticamente.
+    /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Panel pnlEstado;
+    
+    /// <summary>
+    /// Control rblEstado.
+    /// </summary>
+    /// <remarks>
+    /// Campo generado automáticamente.
+    /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.RadioButtonList rblEstado;
+    
+    /// <summary>
     /// Control pnlDevolucion.
     /// </summary>
     /// <remarks>

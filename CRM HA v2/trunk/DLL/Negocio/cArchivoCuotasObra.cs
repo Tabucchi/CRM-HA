@@ -26,7 +26,7 @@ namespace DLL.Negocio
         }
         public string GetFecha
         {
-            get { return Fecha.ToString("dd/MM/yyyy"); }
+            get { return Fecha.ToString("dd/MM/yyyy HH:mm"); }
         }
         public byte[] Archivo
         {

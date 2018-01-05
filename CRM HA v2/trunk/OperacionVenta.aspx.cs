@@ -865,6 +865,10 @@ public partial class OperacionVenta : System.Web.UI.Page
                 u.PrecioBase = Convert.ToDecimal(_precioAcordado.Text);
                 u.Save();
 
+                cReserva unidadReservada = cReserva.GetReservaByIdUnidad(idUnidad.Text);
+                unidadReservada.Papelera = (Int16)papelera.Eliminado;
+                unidadReservada.Save();
+
                 cHistorial _historial = new cHistorial(DateTime.Now, historial.Evolución_de_precios.ToString(), valorviejo, Convert.ToDecimal(_precioAcordado.Text), u.CodigoUF, u.NroUnidad, u.IdEstado, u.IdEstado, HttpContext.Current.User.Identity.Name, u.IdProyecto);
                 _historial.Save();
             }
@@ -3179,45 +3183,6 @@ public partial class OperacionVenta : System.Web.UI.Page
                     lvUnidades.DataBind();
                 }
             }
-
-            /*string _idUnidad = cReserva.GetIdUnidadByIdEmpresa1(cbEmpresa.SelectedValue);
-            if (_idUnidad != null)
-            {
-                pnlReserva.Visible = true;
-                
-                cUnidad unidad = cUnidad.Load(_idUnidad);
-                cbProyectos.SelectedValue = unidad.IdProyecto;
-
-                lbImporteReserva.Text = unidad.GetImporteReserva;
-
-                cbUnidadFuncional.Enabled = true;
-                cbUnidadFuncional.DataSource = cUnidad.GroupByUnidadFuncional(cbProyectos.SelectedValue);
-                cbUnidadFuncional.DataBind();
-                ListItem uf = new ListItem("Seleccione un tipo de unidad funcional", "0");
-                cbUnidadFuncional.Items.Insert(0, uf);
-                cbUnidadFuncional.SelectedIndex = 0;
-                cbUnidadFuncional.SelectedValue = unidad.UnidadFuncional;
-
-                cbNivel.Enabled = true;
-                cbNivel.DataSource = cUnidad.GroupByNivel(cbProyectos.SelectedValue);
-                cbNivel.DataBind();
-                ListItem inivel = new ListItem("Seleccione un nivel...", "0");
-                cbNivel.Items.Insert(0, inivel);
-                cbNivel.SelectedIndex = 0;
-                cbNivel.SelectedValue = unidad.Nivel;
-
-                cbUnidad.Enabled = true;
-                cbUnidad.DataSource = cUnidad.GetNroUnidadReservadaByIdProyecto(cbProyectos.SelectedValue, cbNivel.SelectedItem.Text, cbEmpresa.SelectedValue);
-                cbUnidad.DataBind();
-                ListItem iunidad = new ListItem("Seleccione el nro. de unidad...", "0");
-                cbUnidad.Items.Insert(0, iunidad);
-                cbUnidad.SelectedIndex = 0;
-                cbUnidad.SelectedValue = unidad.NroUnidad;
-
-                lbPrecio.Text = unidad.GetPrecioBase;
-                lbMoneda.Text = "(" + unidad.GetMoneda + ")";
-                hfCodUfUnidad.Value = unidad.Id;
-            }*/
         }
         catch (Exception ex)
         {

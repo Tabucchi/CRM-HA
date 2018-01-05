@@ -109,7 +109,7 @@ public partial class Reserva : System.Web.UI.Page
             decimal importe = 0;
             int idItemCCU = 0;
 
-            if (string.IsNullOrEmpty(cReserva.GetReservaByIdUnidad(cbUnidad.SelectedValue))) //Verifica que la unidad no este reservada
+            if (string.IsNullOrEmpty(cReserva.GetIdReservaByIdUnidad(cbUnidad.SelectedValue))) //Verifica que la unidad no este reservada
             {
                 cUnidad unidad = cUnidad.Load(cbUnidad.SelectedValue);
                 unidad.IdEstado = Convert.ToString((Int16)estadoUnidad.Reservado);
@@ -222,6 +222,7 @@ public partial class Reserva : System.Web.UI.Page
         if (flag == true)
         {
             pnlDevolucion.Visible = true;
+            pnlEstado.Visible = true;
             pnlMensaje.Visible = false;
         }
         else
@@ -246,19 +247,23 @@ public partial class Reserva : System.Web.UI.Page
                 if (check.Checked)
                 {
                     Label id = item.FindControl("lbId") as Label;
-                    string _idReserva = cReserva.GetReservaByIdUnidad(id.Text);
+                    string _idReserva = cReserva.GetIdReservaByIdUnidad(id.Text);
 
                     cReserva reserva = cReserva.Load(_idReserva);
                     reserva.Papelera = (Int16)papelera.Eliminado;
                     reserva.Save();
 
                     cUnidad unidad = cUnidad.Load(id.Text);
-                    unidad.IdEstado = Convert.ToString((Int16)estadoUnidad.Disponible);
-                    unidad.Save();
-
                     cEmpresaUnidad eu = cEmpresaUnidad.Load(reserva.IdEmpresaUnidad);
-                    eu.Papelera = (Int16)papelera.Eliminado;
-                    eu.Save();
+
+                    if (rblEstado.SelectedValue == "Si")
+                    {
+                        unidad.IdEstado = Convert.ToString((Int16)estadoUnidad.Disponible);
+                        unidad.Save();
+
+                        eu.Papelera = (Int16)papelera.Eliminado;
+                        eu.Save();
+                    }
 
                     #region Actualiza la cuenta corriente
                     if (rblDevolucion.SelectedValue == "Si")

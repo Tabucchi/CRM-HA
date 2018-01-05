@@ -26,7 +26,7 @@
         //A las 10:15 am del día 15 de cada mes
         //Quartz.CronTrigger trigger1 = new Quartz.CronTrigger("myTriggerJob", null, "myTrigger", null, DateTime.UtcNow, null, "0 15 10 01 * ?");
         //Quartz.CronTrigger trigger1 = new Quartz.CronTrigger("myTriggerJob", null, "myTrigger", null, DateTime.UtcNow, null, "0 06 15 02 * ?");
-        Quartz.CronTrigger trigger1 = new Quartz.CronTrigger("myTriggerJob", null, "myTrigger", null, DateTime.UtcNow, null, "0 10 08 * * ? *");
+        Quartz.CronTrigger trigger1 = new Quartz.CronTrigger("myTriggerJob", null, "myTrigger", null, DateTime.UtcNow, null, "0 10 09 * * ? *");
                        
         // schedule the job
         sched.ScheduleJob(job, trigger1);

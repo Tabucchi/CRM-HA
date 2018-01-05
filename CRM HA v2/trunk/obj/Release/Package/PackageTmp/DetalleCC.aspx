@@ -71,9 +71,11 @@
 
         <asp:HiddenField ID="hfIdCuota" runat="server" />
 
-        <asp:TextBox ID="TextBoxFecha" runat="server" CssClass="textBox textBoxForm" TabIndex="7" style="width: 256px;"></asp:TextBox>
-        <ajax:CalendarExtender ID="CalendarExtender2" runat="server" CssClass="orange" TargetControlID="TextBoxFecha" Format="dd/MM/yyyy" PopupButtonID="imgCalendarD" />
-        <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click" />
+        <asp:Panel runat="server" Visible="false">
+            <asp:TextBox ID="TextBoxFecha" runat="server" CssClass="textBox textBoxForm" TabIndex="7" style="width: 256px;"></asp:TextBox>
+            <ajax:CalendarExtender ID="CalendarExtender2" runat="server" CssClass="orange" TargetControlID="TextBoxFecha" Format="dd/MM/yyyy" PopupButtonID="imgCalendarD" />
+            <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click" />
+        </asp:Panel>
 
         <section>
             <div class="headOptions">

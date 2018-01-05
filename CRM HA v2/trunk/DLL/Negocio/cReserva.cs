@@ -122,10 +122,16 @@ public class cReserva
         return DAO.Load(id);
     }
 
-    public static string GetReservaByIdUnidad(string _idUnidad)
+    public static cReserva GetReservaByIdUnidad(string _idUnidad)
     {
         cReservaDAO DAO = new cReservaDAO();
         return DAO.GetReservaByIdUnidad(_idUnidad);
+    }
+
+    public static string GetIdReservaByIdUnidad(string _idUnidad)
+    {
+        cReservaDAO DAO = new cReservaDAO();
+        return DAO.GetIdReservaByIdUnidad(_idUnidad);
     }
 
     public static decimal GetImporteReservaByIdUnidad(string _idUnidad)

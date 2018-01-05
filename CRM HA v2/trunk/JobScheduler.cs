@@ -56,9 +56,8 @@ public class JobScheduler : IJob
             if (DateTime.Now.Day == 25)
                 ActualizarCuotasUVA();
 
-
             Thread th = new Thread(btnDescargar_Click);
-            th.Start();          
+            th.Start();
 
         }
         catch (Exception ex)

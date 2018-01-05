@@ -322,6 +322,24 @@
                 </asp:Panel>    
                 
                 <section>
+                    <asp:Panel ID="pnlEstado" runat="server" Visible="false">
+                        <div class="formHolder" style="padding: 22px 25px 12px;">
+                            <div><modaltitle style="text-align:left">¿Desea pasar a disponible la unidad?</modaltitle></div><hr>
+                            <div class="divFormInLine"> 
+                                <div>
+                                    <label>
+                                        <asp:RadioButtonList ID="rblEstado" runat="server" RepeatDirection="Horizontal" TabIndex="7" AutoPostBack="true" style="box-shadow: inherit; margin-bottom: -36px !important;">
+                                            <asp:ListItem Value="Si" Selected="True">Si</asp:ListItem>
+                                            <asp:ListItem Value="No">No</asp:ListItem>
+                                        </asp:RadioButtonList>                                    
+                                    </label> 
+                                </div>
+                            </div>
+                        </div>
+                    </asp:Panel>
+                </section> 
+
+                <section>
                     <asp:Panel ID="pnlDevolucion" runat="server" Visible="false">
                         <div class="formHolder" style="padding: 22px 25px 12px;">
                             <div><modaltitle style="text-align:left">Devolución de reserva</modaltitle></div><hr>
@@ -337,8 +355,8 @@
                             </div>
                         </div>
                     </asp:Panel>
-                </section>    
-
+                </section> 
+                
                 <section>
                     <asp:UpdatePanel ID="pnlFinalizarCancelarReserva" runat="server" Visible="false">
                         <ContentTemplate>

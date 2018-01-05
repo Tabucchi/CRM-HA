@@ -52,7 +52,19 @@ namespace DLL.Base_de_Datos
             return reserva;
         }
 
-        public string GetReservaByIdUnidad(string _idUnidad)
+        public cReserva GetReservaByIdUnidad(string _idUnidad)
+        {
+            string query = "SELECT id FROM " + GetTable + " WHERE Papelera = '" + (Int16)papelera.Activo + "' AND idUnidad= '" + _idUnidad + "'";
+
+            SqlCommand com = new SqlCommand(query);
+            string id = cDataBase.GetInstance().ExecuteScalar(com);
+            if (id == null)
+                return null;
+            else
+                return Load(Convert.ToString(id));
+        }
+
+        public string GetIdReservaByIdUnidad(string _idUnidad)
         {
             string query = "SELECT id FROM " + GetTable + " WHERE Papelera = '" + (Int16)papelera.Activo + "' AND idUnidad= '" + _idUnidad + "'";
             SqlCommand cmd = new SqlCommand(query);
