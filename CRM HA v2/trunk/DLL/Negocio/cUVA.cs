@@ -357,51 +357,54 @@ namespace DLL.Negocio
             decimal newSaldo = 0;
             int contCuotasDolar = 0;
             List<cItemCCU> cuotasPendientes = cItemCCU.GetItemByCuotasPendientes(_idCCU);
-            foreach (cItemCCU item in cuotasPendientes)
+            if (cuotasPendientes != null)
             {
-                if (item.Fecha != DateTime.Now)
+                foreach (cItemCCU item in cuotasPendientes)
                 {
-                    cCuota cuota = cCuota.Load(item.IdCuota);
-                    if (cFormaPagoOV.Load(cuota.IdFormaPagoOV).Moneda == Convert.ToString((Int16)tipoMoneda.Dolar))
+                    if (item.Fecha != DateTime.Now)
                     {
-                        #region Actualizo el valor de la fila que contine la cuota pendiente
-                        //Actualizo el saldo
-                        //Saldo -: (-debito) || Saldo +: (-debito)
-                        if (item.Saldo < 0)
-                            item.Saldo = item.Saldo - item.Debito;
-                        else
-                            item.Saldo = item.Saldo + item.Debito;
-
-                        if (contCuotasDolar == 0)
-                            newSaldo += item.Saldo + (cuota.Vencimiento1 * cValorDolar.LoadActualValue() * -1);
-                        else
-                            newSaldo += item.Debito;
-
-                        if (item.Debito != 0)
-                            item.Debito = cuota.Vencimiento1 * cValorDolar.LoadActualValue() * -1;
-
-                        contCuotasDolar++;
-
-                        #endregion
-                    }
-                    else
-                    {
-                        DateTime now = Convert.ToDateTime(DateTime.Now.Year + "/" + DateTime.Now.Month + "/" + DateTime.Now.Day);
-                        DateTime fechaVenc = cuota.FechaVencimiento1.AddDays(2);
-                        fechaVenc = Convert.ToDateTime(fechaVenc.Year + "/" + fechaVenc.Month + "/" + fechaVenc.Day);
-
-                        if (fechaVenc < now)
+                        cCuota cuota = cCuota.Load(item.IdCuota);
+                        if (cFormaPagoOV.Load(cuota.IdFormaPagoOV).Moneda == Convert.ToString((Int16)tipoMoneda.Dolar))
                         {
-                            int ads = cItemCCU.GetCantCuotasById(cuota.Id);
-                            string lastSaldo = cItemCCU.GetLastSaldoByIdCCU(_idCCU);
-                            if (cItemCCU.GetCantCuotasById(cuota.Id) < 2) //Para que solo una vez agregue la fila con el segundo vencimiento
-                            {
-                                cuota.Estado = (Int16)estadoCuenta_Cuota.Pendiente;
-                                cuota.Save();
+                            #region Actualizo el valor de la fila que contine la cuota pendiente
+                            //Actualizo el saldo
+                            //Saldo -: (-debito) || Saldo +: (-debito)
+                            if (item.Saldo < 0)
+                                item.Saldo = item.Saldo - item.Debito;
+                            else
+                                item.Saldo = item.Saldo + item.Debito;
 
-                                decimal diferencia = (cuota.Vencimiento2 - cuota.Vencimiento1) * -1;
-                                decimal newSaldo1 = Convert.ToDecimal(lastSaldo) + diferencia;
-                                cItemCCU newItem = new cItemCCU(item.IdCuentaCorrienteUsuario, DateTime.Now, "Recargo por segundo vencimiento de la cuota " + cuota.Nro, diferencia, 0, newSaldo1, cuota.Id);
+                            if (contCuotasDolar == 0)
+                                newSaldo += item.Saldo + (cuota.Vencimiento1 * cValorDolar.LoadActualValue() * -1);
+                            else
+                                newSaldo += item.Debito;
+
+                            if (item.Debito != 0)
+                                item.Debito = cuota.Vencimiento1 * cValorDolar.LoadActualValue() * -1;
+
+                            contCuotasDolar++;
+
+                            #endregion
+                        }
+                        else
+                        {
+                            DateTime now = Convert.ToDateTime(DateTime.Now.Year + "/" + DateTime.Now.Month + "/" + DateTime.Now.Day);
+                            DateTime fechaVenc = cuota.FechaVencimiento1.AddDays(2);
+                            fechaVenc = Convert.ToDateTime(fechaVenc.Year + "/" + fechaVenc.Month + "/" + fechaVenc.Day);
+
+                            if (fechaVenc < now)
+                            {
+                                int ads = cItemCCU.GetCantCuotasById(cuota.Id);
+                                string lastSaldo = cItemCCU.GetLastSaldoByIdCCU(_idCCU);
+                                if (cItemCCU.GetCantCuotasById(cuota.Id) < 2) //Para que solo una vez agregue la fila con el segundo vencimiento
+                                {
+                                    cuota.Estado = (Int16)estadoCuenta_Cuota.Pendiente;
+                                    cuota.Save();
+
+                                    decimal diferencia = (cuota.Vencimiento2 - cuota.Vencimiento1) * -1;
+                                    decimal newSaldo1 = Convert.ToDecimal(lastSaldo) + diferencia;
+                                    cItemCCU newItem = new cItemCCU(item.IdCuentaCorrienteUsuario, DateTime.Now, "Recargo por segundo vencimiento de la cuota " + cuota.Nro, diferencia, 0, newSaldo1, cuota.Id);
+                                }
                             }
                         }
                     }
@@ -459,6 +462,12 @@ namespace DLL.Negocio
                 foreach (cCuota c in cuotas)
                 {
                     cCuentaCorriente cc = cCuentaCorriente.Load(c.IdCuentaCorriente);
+
+                    int asd = 0;
+                    if (cc.Id == "10598")
+                        asd = asd + 1;
+
+
                     decimal interes = 0;
                         
                     if (c.Nro == 1)
@@ -527,7 +536,7 @@ namespace DLL.Negocio
 
                                     valorCuota = c.Nro != 1 ? cCuota.CalcularCuota(_cantCuota, _saldo) : cCuota.CalcularCuota(fp.CantCuotas, _saldo);
 
-                                    actualizarCuotas(cc.Id, c.Nro, fp.CantCuotas, _cantAnticipo, tipoMoneda.Pesos.ToString(), _saldo, ov);
+                                    actualizarCuotas(cc.Id, c.Nro, fp.CantCuotas, _cantAnticipo, tipoMoneda.Pesos.ToString(), _saldo, ov, fp.Id);
                                 }
                             }
                         }
@@ -551,7 +560,7 @@ namespace DLL.Negocio
             }
         }
 
-        private static void actualizarCuotas(string _idCC, int _nroCuota, int _cantCuota, int _cantAnticipo, string _moneda, decimal _saldo1, cOperacionVenta _idOV)
+        private static void actualizarCuotas(string _idCC, int _nroCuota, int _cantCuota, int _cantAnticipo, string _moneda, decimal _saldo1, cOperacionVenta _idOV, string _idFormaPago)
         {
             decimal _totalComision = 0;
             decimal _vencimiento1 = 0;
@@ -562,7 +571,7 @@ namespace DLL.Negocio
             int _cuotasRestantes = ((_cantCuota - _nroCuota) + 1) - _cantAnticipo;
 
             #region Actualizo el resto de las cuotas
-            foreach (cCuota c in cCuota.GetCuotasByNro(_idCC, _nroCuota, _cantCuota))
+            foreach (cCuota c in cCuota.GetCuotasByNro(_idCC, _nroCuota, _cantCuota, _idFormaPago))
             {
                 if (_nro != c.Nro)
                 {
@@ -708,7 +717,7 @@ namespace DLL.Negocio
 
                                             valorCuota = c.Nro != 1 ? cCuota.CalcularCuota(_cantCuota, _saldo) : cCuota.CalcularCuota(fpov.CantCuotas, _saldo);
 
-                                            actualizarCuotas(cc.Id, c.Nro, fpov.CantCuotas, _cantAnticipo, tipoMoneda.Pesos.ToString(), _saldo, ov);
+                                            actualizarCuotas(cc.Id, c.Nro, fpov.CantCuotas, _cantAnticipo, tipoMoneda.Pesos.ToString(), _saldo, ov, fp.Id);
                                         }
                                     }
                                 }
@@ -760,7 +769,7 @@ namespace DLL.Negocio
 
                                             valorCuota = c.Nro != 1 ? cCuota.CalcularCuota(_cantCuota, _saldo) : cCuota.CalcularCuota(fpov.CantCuotas, _saldo);
 
-                                            actualizarCuotas(cc.Id, c.Nro, fpov.CantCuotas, _cantAnticipo, tipoMoneda.Pesos.ToString(), _saldo, ov);
+                                            actualizarCuotas(cc.Id, c.Nro, fpov.CantCuotas, _cantAnticipo, tipoMoneda.Pesos.ToString(), _saldo, ov, fp.Id);
                                         }
                                         else
                                         {
@@ -772,7 +781,7 @@ namespace DLL.Negocio
 
                                             valorCuota = c.Nro != 1 ? cCuota.CalcularCuota(_cantCuota, _saldo) : cCuota.CalcularCuota(fpov.CantCuotas, _saldo);
 
-                                            actualizarCuotas(cc.Id, c.Nro, fpov.CantCuotas, _cantAnticipo, tipoMoneda.Dolar.ToString(), _saldo, ov);
+                                            actualizarCuotas(cc.Id, c.Nro, fpov.CantCuotas, _cantAnticipo, tipoMoneda.Dolar.ToString(), _saldo, ov, fp.Id);
                                         }
                                     }
                                 }

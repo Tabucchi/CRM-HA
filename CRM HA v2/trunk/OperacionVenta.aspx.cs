@@ -866,8 +866,11 @@ public partial class OperacionVenta : System.Web.UI.Page
                 u.Save();
 
                 cReserva unidadReservada = cReserva.GetReservaByIdUnidad(idUnidad.Text);
-                unidadReservada.Papelera = (Int16)papelera.Eliminado;
-                unidadReservada.Save();
+                if (unidadReservada != null)
+                {
+                    unidadReservada.Papelera = (Int16)papelera.Eliminado;
+                    unidadReservada.Save();
+                }
 
                 cHistorial _historial = new cHistorial(DateTime.Now, historial.Evolución_de_precios.ToString(), valorviejo, Convert.ToDecimal(_precioAcordado.Text), u.CodigoUF, u.NroUnidad, u.IdEstado, u.IdEstado, HttpContext.Current.User.Identity.Name, u.IdProyecto);
                 _historial.Save();

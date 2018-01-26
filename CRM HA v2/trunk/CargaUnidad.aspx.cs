@@ -23,8 +23,8 @@ namespace crm
         {
             if (!IsPostBack)
             {
-                if (cUsuario.Load(HttpContext.Current.User.Identity.Name).IdCategoria != (Int32)eCategoria.Administración)
-                    Response.Redirect("Default.aspx");
+                /*if (cUsuario.Load(HttpContext.Current.User.Identity.Name).IdCategoria != (Int32)eCategoria.Administración)
+                    Response.Redirect("Default.aspx");*/
 
                 #region Combo
                 cbMoneda.DataSource = cCampoGenerico.CargarComboMoneda();

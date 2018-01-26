@@ -84,15 +84,15 @@ public partial class _Default : System.Web.UI.Page
 
 
                 #region Genera el archivo de cuotas por obra
-                DateTime date = DateTime.Now;
-                DateTime desde = new DateTime(date.Year, date.Month, date.Day);
-                DateTime hasta = new DateTime(date.Year, date.Month, date.Day + 1);
+                //DateTime date = DateTime.Now;
+                //DateTime desde = new DateTime(date.Year, date.Month, date.Day);
+                //DateTime hasta = new DateTime(date.Year, date.Month, date.Day + 1);
 
-                List<cArchivoCuotasObra> archivo = cArchivoCuotasObra.Search(String.Format("{0:dd/MM/yyyy}", desde), String.Format("{0:dd/MM/yyyy}", hasta));
-                if (archivo.Count == 0)
-                {
-                    btnDescargar_Click();
-                }
+                //List<cArchivoCuotasObra> archivo = cArchivoCuotasObra.Search(String.Format("{0:dd/MM/yyyy}", desde), String.Format("{0:dd/MM/yyyy}", hasta));
+                //if (archivo.Count == 0)
+                //{
+                //    btnDescargar_Click();
+                //}
                 #endregion
             }
             catch

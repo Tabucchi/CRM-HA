@@ -359,9 +359,9 @@ namespace crm.Controles
             
 
             if (cuota.Nro != 1)
-                actualizarCuotas(_idCC, cuota.Nro, _lastCuotaAdelanto.Nro, fp.GetMoneda, _saldo, _montoAdelanto, cOperacionVenta.Load(fp.IdOperacionVenta));
+                actualizarCuotas(_idCC, cuota.Nro, _lastCuotaAdelanto.Nro, fp.GetMoneda, _saldo, _montoAdelanto, cOperacionVenta.Load(fp.IdOperacionVenta), fp.IdOperacionVenta);
             else
-                actualizarCuotas(_idCC, 0, _lastCuotaAdelanto.Nro, fp.GetMoneda, _saldo, _montoAdelanto, cOperacionVenta.Load(fp.IdOperacionVenta));
+                actualizarCuotas(_idCC, 0, _lastCuotaAdelanto.Nro, fp.GetMoneda, _saldo, _montoAdelanto, cOperacionVenta.Load(fp.IdOperacionVenta), fp.IdOperacionVenta);
             #endregion
         }
 
@@ -389,7 +389,7 @@ namespace crm.Controles
             return _idCuota;
         }
 
-        private void actualizarCuotas(string _idCC, int _nroCuota, int _cantCuota, string _moneda, decimal _saldo1, decimal _montoAdelanto, cOperacionVenta _idOV)
+        private void actualizarCuotas(string _idCC, int _nroCuota, int _cantCuota, string _moneda, decimal _saldo1, decimal _montoAdelanto, cOperacionVenta _idOV, string _idFormaPago)
         {
             decimal _totalComision = 0;
             decimal _vencimiento1 = 0;
@@ -399,7 +399,7 @@ namespace crm.Controles
             int index = 0; //La primer cuota solo se modifica el valor de la cuota que es igual al monto del adelanto
 
             #region Actualizo el resto de las cuotas
-            foreach (cCuota c in cCuota.GetCuotasByNro(_idCC, _nroCuota, _cantCuota))
+            foreach (cCuota c in cCuota.GetCuotasByNro(_idCC, _nroCuota, _cantCuota, _idFormaPago))
             {
                 if (c.Estado != (Int16)estadoCuenta_Cuota.Anticipo)
                 {

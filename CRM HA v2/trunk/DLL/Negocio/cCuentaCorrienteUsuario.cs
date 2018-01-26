@@ -48,6 +48,14 @@ namespace DLL.Negocio
         {
             get
             {
+                int asd = 0;
+                if (IdEmpresa == "30")
+                    asd = asd + 1;
+
+                if (IdEmpresa == "279")
+                    asd = asd + 1;
+
+
                 List<cCuota> cuotas = cCuota.GetCuotasActivasByEmpresa(IdEmpresa);
                 decimal total = 0;
 
@@ -63,6 +71,20 @@ namespace DLL.Negocio
                 }
                 
                 return String.Format("{0:#,#0.00}", total);
+
+
+                /*List<cOperacionVenta> ops = cOperacionVenta.GetOVByIdEmpresa(IdEmpresa);
+                decimal total = 0;
+
+                foreach (cOperacionVenta o in ops)
+                {
+                    cCuentaCorriente cc = cCuentaCorriente.GetCuentaCorrienteByIdOv(o.Id);
+                    if(cc != null)
+                        total += Convert.ToDecimal(cc.GetSaldoPesos);
+                }
+                return String.Format("{0:#,#0.00}", total);*/
+                
+
                 /*decimal total = 0;
 
                 List<cOperacionVenta> operaciones = cOperacionVenta.GetOVByIdEmpresa(IdEmpresa);

@@ -860,10 +860,10 @@ namespace DLL.Negocio
             return DAO.GetCuotaByNro(_idCC, __idFormaPago, _nro);
         }
 
-        public static List<cCuota> GetCuotasByNro(string _idCC, int _nroDesde, int _nroA)
+        public static List<cCuota> GetCuotasByNro(string _idCC, int _nroDesde, int _nroA, string _idFormaPago)
         {
             cCuotaDAO DAO = new cCuotaDAO();
-            return DAO.GetCuotasByNro(_idCC, _nroDesde, _nroA);
+            return DAO.GetCuotasByNro(_idCC, _nroDesde, _nroA, _idFormaPago);
         }
 
         public static cCuota GetFirst(string idCC, string _idFormaPago)
@@ -882,6 +882,12 @@ namespace DLL.Negocio
         { 
             cCuotaDAO DAO = new cCuotaDAO();
             return DAO.GetFirstPendiente(idCC, _idFormaPago);
+        }
+
+        public static cCuota GetFirstNextPendiente(string idCC, string _idFormaPago)
+        {
+            cCuotaDAO DAO = new cCuotaDAO();
+            return DAO.GetFirstNextPendiente(idCC, _idFormaPago);
         }
 
         public static cCuota GetFirstPagada(string idCC, string _idFormaPago)
@@ -937,6 +943,12 @@ namespace DLL.Negocio
             cCuotaDAO DAO = new cCuotaDAO();
             return DAO.GetCantCuotasPagas(idCC);
         }
+        
+        public static Int16 GetCantCuotasPagasAnticipos(string _idCC)
+        {
+            cCuotaDAO DAO = new cCuotaDAO();
+            return DAO.GetCantCuotasPagasAnticipos(_idCC);
+        }
 
         public static List<cCuota> GetCuotasPagas(string _idCC, string _idFormaPagoOV)
         {
@@ -944,7 +956,7 @@ namespace DLL.Negocio
             return DAO.GetCuotasPagas(_idCC, _idFormaPagoOV);
         }
 
-        public static Int16 GetCantCuotasPagasAdelantos(string _idCC, string _idFormaPagoOV)
+        public static Int32 GetCantCuotasPagasAdelantos(string _idCC, string _idFormaPagoOV)
         {
             cCuotaDAO DAO = new cCuotaDAO();
             return DAO.GetCantCuotasPagasAdelantos(_idCC, _idFormaPagoOV);

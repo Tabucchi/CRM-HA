@@ -35,7 +35,7 @@ public class cSendMailPostVenta
         _mail.To.Add(new MailAddress("esampaolesi@haemprendimientos.com.ar"));
         _mail.To.Add(new MailAddress("tmonsegur@haemprendimientos.com.ar"));
         _mail.To.Add(new MailAddress("info@haemprendimientos.com.ar"));
-        _mail.To.Add(new MailAddress("ntabucchi@naex.com.ar"));
+        //_mail.To.Add(new MailAddress("ntabucchi@naex.com.ar"));
 
         _mail.Subject = "Nuevo Consulta";
 

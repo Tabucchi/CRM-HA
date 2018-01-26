@@ -109,14 +109,7 @@ namespace DLL.Negocio
             {
                 if (IdOperacionVenta != "-1")
                 {
-                    /*cOperacionVenta ov = cOperacionVenta.Load(IdOperacionVenta);
-                    string saldo = cFormaPagoOV.GetTotalSaldo(ov.Id, ov.MonedaAcordada, ov.ValorDolar);
-
-                    if (ov.GetMoneda == tipoMoneda.Dolar.ToString())
-                        saldo = String.Format("{0:#,#0.00}", Convert.ToDecimal(saldo) * ov.ValorDolar);
-
-                    return saldo;*/
-
+                    int cantCuotasPagasAnticipos = 0;
                     cOperacionVenta op = cOperacionVenta.Load(IdOperacionVenta);
                     List<cFormaPagoOV> saldos = cFormaPagoOV.GetFormaPagoOVByIdOV(op.Id);
                     decimal _saldoPesos = 0;
@@ -178,70 +171,90 @@ namespace DLL.Negocio
                             }
                         }
 
+                        cantCuotasPagasAnticipos = cantCuotasPagasAnticipos + fp.CantCuotas;
+                    }
 
-                        /*decimal saldoCuota = cCuota.SaldoCC(id, fp.Id, fp.Moneda);
+                    if (cCuota.GetCantCuotasPagasAnticipos(Id) == cantCuotasPagasAnticipos)
+                    {
+                        _saldoPesos = 0;
+                        cCuentaCorriente cc = cCuentaCorriente.Load(Id);
+                        cc.IdEstado = (Int16)estadoCuenta_Cuota.Pagado;
+                        cc.Save();
+                    }
 
-                        //_saldoPesos = saldoCuota;
+                    return String.Format("{0:#,#0.00}", _saldoPesos);
+                }
+                else
+                    return "0";
+            }
+        }
+
+        public string GetSaldoPesos2
+        {
+            get
+            {
+                if (IdOperacionVenta != "-1")
+                {
+                    cOperacionVenta op = cOperacionVenta.Load(IdOperacionVenta);
+                    List<cFormaPagoOV> saldos = cFormaPagoOV.GetFormaPagoOVByIdOV(op.Id);
+                    decimal _saldoPesos = 0;
+
+                    foreach (cFormaPagoOV fp in saldos)
+                    {
                         if (fp.GetMoneda == tipoMoneda.Pesos.ToString())
                         {
-                            cCuota c = cCuota.GetFirst(id, fp.Id);
-
-                            if (c != null)
+                            cCuota cuota_pendiente = cCuota.GetFirstNextPendiente(id, fp.Id);
+                            if (cuota_pendiente != null)
                             {
-
-                                if (fp.CantCuotas >= c.Nro + 1)
+                                _saldoPesos += cuota_pendiente.MontoAjustado;
+                            }
+                            else
+                            {
+                                cCuota cuota_activa = cCuota.GetFirstActiva(id, fp.Id);
+                                if (cuota_activa != null)
                                 {
-                                    cCuota c1 = cCuota.GetCuotaByNro(id, c.Nro + 1, fp.Id);
-
-                                    if (c1 != null)
+                                    _saldoPesos += cuota_activa.MontoAjustado;
+                                }
+                                else
+                                {
+                                    cCuota cuota_pagada = cCuota.GetFirstPagada(id, fp.Id);
+                                    if (cuota_pagada != null)
                                     {
-                                        if (c1.Estado == (Int16)estadoCuenta_Cuota.Activa || c1.Estado == (Int16)estadoCuenta_Cuota.Pendiente)
-                                            _saldoPesos += c1.MontoAjustado;
-                                        else
-                                            _saldoPesos = saldoCuota;
+                                        if (fp.CantCuotas > cuota_pagada.Nro)
+                                        {
+                                            _saldoPesos += cuota_pagada.MontoAjustado;
+                                        }
                                     }
                                 }
                             }
-
-
-                            //if (c != null)
-                            //{
-                            //    if (c.Estado == (Int16)estadoCuenta_Cuota.Activa)
-                            //        _saldoPesos += saldoCuota;
-                            //    else
-                            //        _saldoPesos = saldoCuota;
-                            //}
                         }
                         else
                         {
-                            cCuota c = cCuota.GetFirst(id, fp.Id);
-                            if (c != null)
+                            cCuota cuota_pendiente = cCuota.GetFirstNextPendiente(id, fp.Id);
+                            if (cuota_pendiente != null)
                             {
-                                if (c.Estado == (Int16)estadoCuenta_Cuota.Activa)
-                                    _saldoPesos += cValorDolar.ConvertToPeso(saldoCuota, op.ValorDolar);
-                                else
-                                    _saldoPesos = cValorDolar.ConvertToPeso(saldoCuota, op.ValorDolar);
+                                _saldoPesos += cValorDolar.ConvertToPeso(cuota_pendiente.MontoAjustado, cValorDolar.LoadActualValue());
                             }
-                        }
-
-                        if (saldoCuota == 0)
-                        {
-                            cCuota c = cCuota.GetFirst(id, fp.Id);
-                            if (c != null)
+                            else
                             {
-                                if (c.Estado != (Int16)estadoCuenta_Cuota.Pagado)
+                                cCuota cuota_activa = cCuota.GetFirstActiva(id, fp.Id);
+                                if (cuota_activa != null)
                                 {
-                                    if (fp.GetMoneda == tipoMoneda.Dolar.ToString())
+                                    _saldoPesos += cValorDolar.ConvertToPeso(cuota_activa.MontoAjustado, cValorDolar.LoadActualValue());
+                                }
+                                else
+                                {
+                                    cCuota cuota_pagada = cCuota.GetFirstPagada(id, fp.Id);
+                                    if (cuota_pagada != null)
                                     {
-                                        _saldoPesos += cValorDolar.ConvertToPeso(c.MontoAjustado, op.ValorDolar);
-                                    }
-                                    else
-                                    {
-                                        _saldoPesos += c.MontoAjustado;
+                                        if (fp.CantCuotas > cuota_pagada.Nro)
+                                        {
+                                            _saldoPesos += cValorDolar.ConvertToPeso(cuota_pagada.MontoAjustado, cValorDolar.LoadActualValue());
+                                        }
                                     }
                                 }
                             }
-                        }*/
+                        }
                     }
 
                     return String.Format("{0:#,#0.00}", _saldoPesos);

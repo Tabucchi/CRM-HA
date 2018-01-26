@@ -6,11 +6,10 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click" />
 
+    <br /><br /><br /><br />
     <asp:Button ID="Button2" runat="server" Text="Button" OnClick="Button2_Click" />
 
-    <br /><br /><br /><br />
-    <asp:Button ID="Button3" runat="server" Text="UVA" OnClick="Button3_Click"/>
+    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
 
-    <br /><br /><br /><br />
-    <asp:Button ID="Button4" runat="server" Text="DESCARGA" OnClick="Button4_Click"/>
+
 </asp:Content>

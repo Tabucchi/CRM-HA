@@ -296,7 +296,7 @@ namespace crm
                             #endregion
 
                             decimal porcentajeUnidad = (valorApeso * 100) / valorBoletoApeso;
-                            decimal porcentajeCuota = (porcentajeUnidad * cuota) / 100;
+                            decimal porcentajeCuota = Math.Round((porcentajeUnidad * cuota) / 100, 2);
 
                             dr1["idUnidad"] = u.Id;
                             dr1["PorcentajeUnidad"] = porcentajeUnidad;
@@ -309,7 +309,7 @@ namespace crm
                         {
                             if (row[3].ToString() == _idProyecto)
                             {
-                                _saldoTotal += Math.Round(Convert.ToDecimal(row[2].ToString()), 2);
+                                _saldoTotal += Convert.ToDecimal(row[2].ToString());
                             }
                         }
                     }
@@ -442,7 +442,7 @@ namespace crm
 
                 DateTime date = GetFecha();
                 DateTime dateDesde = Convert.ToDateTime(date.Year.ToString() + " - " + date.Month.ToString() + " - " + "1");
-                DateTime dateHasta = Convert.ToDateTime(date.Year.ToString() + " - " + date.Month.ToString() + " - " + "29");
+                DateTime dateHasta = Convert.ToDateTime(date.Year.ToString() + " - " + date.Month.ToString() + " - " + "28");
 
                 saldo.proyecto = item.Descripcion;
                 saldo.idProyecto = item.Id;
@@ -514,7 +514,7 @@ namespace crm
 
                 DateTime date = GetFecha();
                 DateTime dateDesde = Convert.ToDateTime(date.Year.ToString() + " - " + date.Month.ToString() + " - " + "1");
-                DateTime dateHasta = Convert.ToDateTime(date.Year.ToString() + " - " + date.Month.ToString() + " - " + "29");
+                DateTime dateHasta = Convert.ToDateTime(date.Year.ToString() + " - " + date.Month.ToString() + " - " + "28");
 
                 foreach (ListViewItem item in lvSaldos.Items)
                 {

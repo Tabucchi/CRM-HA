@@ -596,11 +596,11 @@ namespace DLL.Base_de_Datos
             return Load(Convert.ToString(id));
         }
 
-        public List<cCuota> GetCuotasByNro(string _idCC, int _nroDesde, int _nroA)
+        public List<cCuota> GetCuotasByNro(string _idCC, int _nroDesde, int _nroA, string _idFormaPago)
         {
             cCuotaDAO DAO = new cCuotaDAO();
             List<cCuota> cuota = new List<cCuota>();
-            string query = "SELECT * FROM tCuota WHERE nro BETWEEN '" + _nroDesde + "' AND '" + _nroA + "' AND idCuentaCorriente = '" + _idCC + "'";
+            string query = "SELECT * FROM tCuota WHERE nro BETWEEN '" + _nroDesde + "' AND '" + _nroA + "' AND idCuentaCorriente = '" + _idCC + "' AND idFormaPagoOV = '" + _idFormaPago + "'";
             SqlCommand com = new SqlCommand(query);
 
             com.CommandText = query.ToString();
@@ -677,6 +677,13 @@ namespace DLL.Base_de_Datos
             return Convert.ToInt16(cDataBase.GetInstance().ExecuteScalar(cmd));
         }
 
+        public Int16 GetCantCuotasPagasAnticipos(string _idCC)
+        {
+            string query = "SELECT Count(id) FROM " + GetTable + " WHERE idCuentaCorriente=" + _idCC + " AND (estado=" + (Int16)estadoCuenta_Cuota.Pagado + " OR estado=" + (Int16)estadoCuenta_Cuota.Anticipo + ")";
+            SqlCommand cmd = new SqlCommand(query);
+            return Convert.ToInt16(cDataBase.GetInstance().ExecuteScalar(cmd));
+        }
+
         public List<cCuota> GetCuotasPagas(string _idCC, string _idFormaPagoOV)
         {
             cCuotaDAO DAO = new cCuotaDAO();
@@ -694,7 +701,7 @@ namespace DLL.Base_de_Datos
             return cuota;
         }
 
-        public Int16 GetCantCuotasPagasAdelantos(string _idCC, string _idFormaPagoOV)
+        public Int32 GetCantCuotasPagasAdelantos(string _idCC, string _idFormaPagoOV)
         {
             string query = "SELECT Count(id) FROM " + GetTable + " WHERE idCuentaCorriente=" + _idCC + " AND idFormaPagoOV=" + _idFormaPagoOV + " AND (estado=" + (Int16)estadoCuenta_Cuota.Pagado + " OR estado=" + (Int16)estadoCuenta_Cuota.Anticipo + ")";
             SqlCommand cmd = new SqlCommand(query);
@@ -743,6 +750,27 @@ namespace DLL.Base_de_Datos
             string query = "SELECT Top(1) id FROM tCuota WHERE idCuentaCorriente=" + idCC + " AND idFormaPagoOV = '" + _idFormaPago + "' AND estado='" + (Int16)estadoCuenta_Cuota.Pendiente + "' order by id ASC";
 
             SqlCommand com = new SqlCommand(query);
+            string id = cDataBase.GetInstance().ExecuteScalar(com);
+            if (!string.IsNullOrEmpty(id))
+                return Load(Convert.ToString(id));
+            else
+                return null;
+        }
+
+        public cCuota GetFirstNextPendiente(string idCC, string _idFormaPago)
+        {
+            DateTime date = Convert.ToDateTime(DateTime.Now.Year + "-" + DateTime.Now.Month + "-" + 1);
+
+            string query = "SELECT Top(1) id FROM tCuota WHERE idCuentaCorriente=" + idCC + " AND idFormaPagoOV = '" + _idFormaPago + "' AND estado='" + (Int16)estadoCuenta_Cuota.Pendiente;
+            query += "' AND c.fechaVencimiento1 > @fecha"; 
+            query += "' order by id ASC";
+
+            SqlCommand com = new SqlCommand();
+            com.Parameters.Add("@fecha", SqlDbType.DateTime);
+            com.Parameters["@fecha"].Value = date.AddMonths(2);
+
+            com.CommandText = query.ToString();
+
             string id = cDataBase.GetInstance().ExecuteScalar(com);
             if (!string.IsNullOrEmpty(id))
                 return Load(Convert.ToString(id));
@@ -1380,6 +1408,10 @@ namespace DLL.Base_de_Datos
             query += " INNER JOIN tEmpresaUnidad eu ON o.id= eu.idOv INNER JOIN tCuentaCorriente cc ON c.idCuentaCorriente=cc.id ";
             query += " WHERE o.estado='" + (Int16)estadoOperacionVenta.Activo + "' AND eu.idEmpresa='" + _idEmpresa + "' AND c.fechaVencimiento1 > @fecha";
             query += " AND c.estado='" + (Int16)estadoCuenta_Cuota.Activa + "' AND cc.estado='" + (Int16)estadoCuenta_Cuota.Activa + "'";
+
+            if(_idEmpresa == "30")
+                query += " AND (variacionCAC=0 AND variacionUVA=0)";
+
             query += " GROUP BY c.id";
 
             SqlCommand com = new SqlCommand();

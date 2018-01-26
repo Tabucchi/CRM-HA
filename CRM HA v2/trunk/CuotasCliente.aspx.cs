@@ -73,7 +73,7 @@ namespace crm
                 string date = DateTime.Now.Year.ToString() + " - " + DateTime.Now.Month.ToString() + " - " + "1";
 
                 DateTime dateDesde = Convert.ToDateTime(_date.Year.ToString() + " - " + _date.Month.ToString() + " - " + "1");
-                DateTime dateHasta = Convert.ToDateTime(_date.Year.ToString() + " - " + _date.Month.ToString() + " - " + "29");
+                DateTime dateHasta = Convert.ToDateTime(_date.Year.ToString() + " - " + _date.Month.ToString() + " - " + "28");
 
                 string ccu = cCuentaCorrienteUsuario.GetCuentaCorrienteByIdEmpresa(empresa.Id);
                 _saldoCtaCte = Convert.ToDecimal(cCuentaCorrienteUsuario.Load(ccu).GetSaldo) * -1;
