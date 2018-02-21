@@ -182,20 +182,23 @@ namespace crm
                     decimal _totalPrecioAcordado = 0;
                     decimal _totalPrecioAcordadoPesos = 0;
 
-                    foreach (ListViewItem item in lvOperacionVenta.Items)
+                    if (lvOperacionVenta.Items.Count != 0)
                     {
-                        //Label lbPrecioAcordado = item.FindControl("lbPrecioAcordado") as Label;
-                        Label lbPrecioAcordadoPesos = item.FindControl("lbPrecioAcordadoPesos") as Label;
+                        foreach (ListViewItem item in lvOperacionVenta.Items)
+                        {
+                            //Label lbPrecioAcordado = item.FindControl("lbPrecioAcordado") as Label;
+                            Label lbPrecioAcordadoPesos = item.FindControl("lbPrecioAcordadoPesos") as Label;
 
-                        //_totalPrecioAcordado += Convert.ToDecimal(lbPrecioAcordado.Text);
-                        _totalPrecioAcordadoPesos += Convert.ToDecimal(lbPrecioAcordadoPesos.Text);
+                            //_totalPrecioAcordado += Convert.ToDecimal(lbPrecioAcordado.Text);
+                            _totalPrecioAcordadoPesos += Convert.ToDecimal(lbPrecioAcordadoPesos.Text);
+                        }
+
+                        //Label lblTotalPrecioAcordado = (Label)lvOperacionVenta.FindControl("lbTotalPrecioAcordado");
+                        Label lblTotalPrecioAcordadoPesos = (Label)lvOperacionVenta.FindControl("lbTotalPrecioAcordadoPesos");
+
+                        //lblTotalPrecioAcordado.Text = String.Format("{0:#,#0.00}", _totalPrecioAcordado);
+                        lblTotalPrecioAcordadoPesos.Text = String.Format("{0:#,#0.00}", _totalPrecioAcordadoPesos);
                     }
-
-                    //Label lblTotalPrecioAcordado = (Label)lvOperacionVenta.FindControl("lbTotalPrecioAcordado");
-                    Label lblTotalPrecioAcordadoPesos = (Label)lvOperacionVenta.FindControl("lbTotalPrecioAcordadoPesos");
-
-                    //lblTotalPrecioAcordado.Text = String.Format("{0:#,#0.00}", _totalPrecioAcordado);
-                    lblTotalPrecioAcordadoPesos.Text = String.Format("{0:#,#0.00}", _totalPrecioAcordadoPesos);
                 //}
             }
             catch (Exception ex)

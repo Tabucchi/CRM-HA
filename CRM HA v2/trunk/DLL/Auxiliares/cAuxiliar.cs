@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -73,8 +74,7 @@ public class cAuxiliar
             return false;
         }
     }
-
-
+    
     public static string GetMoneda(string _idMoneda)
     {
         string moneda = null;
@@ -228,5 +228,25 @@ public class cAuxiliar
             if ((value - Math.Truncate(value / 1000000000000) * 1000000000000) > 0) Num2Text = Num2Text + " " + toText(value - Math.Truncate(value / 1000000000000) * 1000000000000);
         }
         return Num2Text;
+    }
+
+    public static void RegistrarCuotasActualizadas(string _text)
+    {
+        string path = HttpContext.Current.Request.PhysicalApplicationPath + "\\Logs\\";
+        string pathFile = HttpContext.Current.Request.PhysicalApplicationPath + "\\Logs\\" + "indice.txt";
+
+        if (Directory.Exists(path))
+        {
+            DirectoryInfo di = Directory.CreateDirectory(path);
+            if (!File.Exists(pathFile))
+            {
+                StreamWriter sw = File.CreateText(pathFile);
+                sw.Close();
+            }
+        }
+        
+        StreamWriter writer = new StreamWriter(pathFile, true);
+        writer.WriteLine(_text);
+        writer.Close();
     }
 }

@@ -20,7 +20,6 @@ namespace crm
         {
             if (!IsPostBack)
             {
-               
             }
         }
 
@@ -57,15 +56,20 @@ namespace crm
                             decimal vCAC = Convert.ToDecimal("0");
 
                             //CAMBIAR
-                            switch (c.Nro)
+                            /*switch (c.Nro)
                             {
-                                case 1:
-                                    //c.VariacionCAC = vCAC;
-                                    c.VariacionCAC = Convert.ToDecimal("2,33100");
-                                    vCAC = Convert.ToDecimal("2,33100");
+                                
+                                case 17:
+                                    if (c.IdCuentaCorriente == "10302")
+                                    {
+                                        //c.VariacionCAC = vCAC;
+                                        c.VariacionCAC = Convert.ToDecimal("0");
+                                        vCAC = Convert.ToDecimal("0");
+                                    }
                                     //1,01000
                                     break;
-                            }
+
+                            }*/
 
 
                             decimal _saldo = cc.Saldo;
@@ -108,8 +112,9 @@ namespace crm
 
                                             valorCuota = c.Nro != 1 ? cCuota.CalcularCuota(_cantCuota, _saldo) : cCuota.CalcularCuota(fp.CantCuotas, _saldo);
 
+                                            decimal _saldoFinal = _saldo - valorCuota;
 
-                                            actualizarCuotas(cc.Id, c.Nro, fp.CantCuotas, _cantAnticipo, tipoMoneda.Pesos.ToString(), _saldo, ov, fp.Id);
+                                            actualizarCuotas(cc.Id, c.Nro + 1, fp.CantCuotas, _cantAnticipo, tipoMoneda.Pesos.ToString(), _saldoFinal, ov, fp.Id);
                                         }
                                     }
                                 }
@@ -206,7 +211,7 @@ namespace crm
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            ActualizarIndiceCACCuotas("10606", "433", 1, 1);
+            ActualizarIndiceCACCuotas("10509", "218", 18, 24);
         }
 
         protected void Button2_Click(object sender, EventArgs e)
@@ -684,6 +689,304 @@ namespace crm
         }
         #endregion
 
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            ActualizarCuentasCorrientes();
+        }
+
+        public void ActualizarCuentasCorrientes()
+        {
+            List<cCuentaCorrienteUsuario> cuentas = cCuentaCorrienteUsuario.GetCuentaCorriente();
+            cIndiceCAC lastIndice = cIndiceCAC.Load(cIndiceCAC.GetLastIndice().ToString());
+
+            foreach (cCuentaCorrienteUsuario c in cuentas)
+            {
+                CargarCuotas(DateTime.Now, c.Id, c.IdEmpresa);
+                actualizarEstadoCuotas(c.Id);
+
+                if (lastIndice.Fecha.Month == DateTime.Now.AddMonths(-1).Month)
+                    CargarCuotas(DateTime.Now.AddMonths(1), c.Id, c.IdEmpresa);
+            }
+        }
+
+        public void CargarCuotas(DateTime _fecha, string _idCCU, string _idEmpresa)
+        {
+            string _idCC = null;
+            string _idFormaPagoOv = null;
+
+            List<cCuota> cuotas2 = cCuota.GetCuotasPendientes(_idEmpresa, _fecha, (Int16)eIndice.CAC);
+            decimal _saldo = 0;
+            decimal valorCuotaVencimiento1 = 0;
+            decimal valorCuotaVencimiento2 = 0;
+
+            #region Carga de cuotas del mes correspondiente
+            if (cuotas2 != null && cuotas2.Count != 0)
+            {
+                foreach (cCuota cuota in cuotas2)
+                {
+                    if (cFormaPagoOV.Load(cuota.IdFormaPagoOV).Moneda == Convert.ToString((Int16)tipoMoneda.Pesos) && (cuota.VariacionCAC != 0 || cuota.VariacionUVA != 0))
+                    {
+                        if (cuota.Estado != (Int16)estadoCuenta_Cuota.Pagado)
+                        {
+                            //if (cItemCCU.GetCantCuotasById(cuota.Id) == 0)
+                            //{
+                                decimal lastSaldo = Convert.ToDecimal(cItemCCU.GetLastSaldoByIdCCU(_idCCU));
+                                cCuentaCorriente cc = cCuentaCorriente.Load(cuota.IdCuentaCorriente);
+                                string idCCU = cCuentaCorrienteUsuario.GetCuentaCorrienteByIdEmpresa(cc.IdEmpresa);
+                                cFormaPagoOV fpov = cFormaPagoOV.Load(cuota.IdFormaPagoOV);
+                                _idCC = cc.Id;
+                                _idFormaPagoOv = fpov.Id;
+
+                                //if (string.IsNullOrEmpty(cItemCCU.GetCCByIdCuota(cuota.Id)))
+                                //{
+                                    if (cFormaPagoOV.Load(cuota.IdFormaPagoOV).Moneda == Convert.ToString((Int16)tipoMoneda.Dolar))
+                                    {
+                                        valorCuotaVencimiento1 = cuota.Vencimiento1 * cValorDolar.LoadActualValue();
+                                        valorCuotaVencimiento2 = cuota.Vencimiento2 * cValorDolar.LoadActualValue();
+                                    }
+                                    else
+                                    {
+                                        valorCuotaVencimiento1 = cuota.Vencimiento1;
+                                        valorCuotaVencimiento2 = cuota.Vencimiento2;
+                                    }
+
+                                    cItemCCU existingItem = cItemCCU.GetItemCCUByIdCuota(cuota.Id);
+                                    if (existingItem != null)
+                                    {
+                                        existingItem.IdEstado = (Int16)eEstadoItem.Pagado;
+                                        existingItem.Save();
+                                        
+                                        cItemCCU ccuNew1 = new cItemCCU();
+                                        ccuNew1.IdCuentaCorrienteUsuario = existingItem.IdCuentaCorrienteUsuario;
+                                        ccuNew1.Fecha = DateTime.Now;
+                                        ccuNew1.Concepto = "Anulación de item por CAC incorrecto";
+                                        ccuNew1.Debito = 0;
+                                        ccuNew1.Credito = (existingItem.Debito) * -1;
+
+                                        string _lastSaldo = cItemCCU.GetLastSaldoByIdCCU(existingItem.IdCuentaCorrienteUsuario);
+                                        decimal _nuevoSaldo = Convert.ToDecimal(_lastSaldo) + ((existingItem.Debito) * -1);
+
+                                        ccuNew1.Saldo = _nuevoSaldo;
+                                        ccuNew1.IdCuota = cuota.Id;
+                                        ccuNew1.IdEstado = (Int16)eEstadoItem.Pagado;
+                                        ccuNew1.TipoOperacion = (Int16)eTipoOperacion.Condonacion;
+                                        int _idItemCCU = ccuNew1.Save();
+                                                                                
+                                        lastSaldo = _nuevoSaldo;
+                                    }
+
+                                    cItemCCU ccuNew = new cItemCCU();
+                                    ccuNew.IdCuentaCorrienteUsuario = _idCCU;
+                                    ccuNew.Concepto = "Cuota nro " + cuota.Nro + " de la obra " + cc.GetProyecto + " - Cod. U.F.: " + cUnidad.LoadByIdEmpresaUnidad(cc.IdEmpresaUnidad).CodigoUF;
+                                    ccuNew.Debito = valorCuotaVencimiento1 * -1;
+
+                                    _saldo += lastSaldo;
+
+                                    ccuNew.Saldo = _saldo + (valorCuotaVencimiento1 * -1);
+
+                                    ccuNew.Credito = 0;
+                                    ccuNew.Fecha = DateTime.Now;
+                                    ccuNew.IdCuota = cuota.Id;
+                                    ccuNew.IdEstado = (Int16)eEstadoItem.Cuota;
+                                    ccuNew.Save();
+
+                                    #region En caso que haya pagos a cuenta
+                                    if (lastSaldo != 0)
+                                    {
+                                        cItemCCU item = cItemCCU.GetLastItemById(_idCCU);
+                                        if (item != null && item.IdEstado == (Int16)eEstadoItem.Pagado)
+                                        {
+                                            if (lastSaldo > valorCuotaVencimiento1)
+                                            {
+                                                decimal diferencia = lastSaldo - valorCuotaVencimiento1;
+
+                                                cItemCCU ccuPago = new cItemCCU();
+                                                ccuPago.IdCuentaCorrienteUsuario = _idCCU;
+                                                ccuPago.Fecha = DateTime.Now;
+                                                ccuPago.Concepto = "Pago cuota " + cuota.Nro + " por saldo a favor"; ;
+                                                ccuPago.Debito = 0;
+                                                ccuPago.Credito = 0;
+                                                ccuPago.Saldo = diferencia;
+                                                ccuPago.IdCuota = cuota.Id;
+                                                ccuPago.IdEstado = (Int16)eEstadoItem.Pagado;
+                                                ccuPago.TipoOperacion = (Int16)eTipoOperacion.PagoCuota;
+
+                                                int _idItemCCU = ccuPago.Save();
+
+                                                //hfIdItemCC.Value = _idItemCCU.ToString();
+
+                                                //Genera el recibo del pago
+                                                //cReciboCuota recibo = cReciboCuota.CrearRecibo(cuota.Id, _idItemCCU.ToString(), cuota.Vencimiento1);
+                                                cReciboCuota lastNroRecibo = cReciboCuota.GetLastReciboByCCU(idCCU);
+                                                cReciboCuota recibo = new cReciboCuota(cuota.Id, _idItemCCU.ToString(), lastNroRecibo.Nro, DateTime.Now);
+                                                recibo.Monto = lastNroRecibo.Monto;
+                                                recibo._Papelera = 1;
+                                                recibo.Save();
+
+                                                cuota.Estado = (Int16)estadoCuenta_Cuota.Pagado;
+                                                cuota.Save();
+
+                                                item.IdEstado = (Int16)eEstadoItem.Pagado;
+                                                item.Save();
+                                            }
+
+                                            if (lastSaldo < valorCuotaVencimiento1)
+                                            {
+                                                decimal diferencia = lastSaldo - valorCuotaVencimiento1;
+
+                                                cItemCCU ccuPago = new cItemCCU();
+                                                ccuPago.IdCuentaCorrienteUsuario = _idCCU;
+                                                ccuPago.Fecha = DateTime.Now;
+                                                ccuPago.Concepto = "Pago parcial cuota " + cuota.Nro + " por saldo a favor";
+                                                ccuPago.Debito = 0;
+                                                ccuPago.Credito = 0;
+                                                ccuPago.Saldo = diferencia;
+                                                ccuPago.IdCuota = cuota.Id;
+                                                ccuPago.IdEstado = (Int16)eEstadoItem.Pagado;
+                                                ccuPago.TipoOperacion = (Int16)eTipoOperacion.PagoCuota;
+
+                                                int _idItemCCU = ccuPago.Save();
+
+                                                //hfIdItemCC.Value = _idItemCCU.ToString();
+
+                                                //Genera el recibo del pago
+                                                cReciboCuota lastNroRecibo = cReciboCuota.GetLastReciboByCCU(_idCCU);
+                                                cReciboCuota recibo = new cReciboCuota(cuota.Id, _idItemCCU.ToString(), lastNroRecibo.Nro, DateTime.Now);
+                                                recibo.Monto = lastNroRecibo.Monto;
+                                                recibo._Papelera = 1;
+                                                recibo.Save();
+                                            }
+                                        }
+                                    }
+                                    #endregion
+                                //}
+                            //}
+                        }
+                    }
+                    else
+                    {
+                        if (cuota.Estado != (Int16)estadoCuenta_Cuota.Pagado)
+                        {
+                            if (cItemCCU.GetCantCuotasById(cuota.Id) == 0)
+                            {
+                                decimal lastSaldo = Convert.ToDecimal(cItemCCU.GetLastSaldoByIdCCU(_idCCU));
+                                cCuentaCorriente cc = cCuentaCorriente.Load(cuota.IdCuentaCorriente);
+                                string idCCU = cCuentaCorrienteUsuario.GetCuentaCorrienteByIdEmpresa(cc.IdEmpresa);
+                                cFormaPagoOV fpov = cFormaPagoOV.Load(cuota.IdFormaPagoOV);
+                                _idCC = cc.Id;
+                                _idFormaPagoOv = fpov.Id;
+
+                                if (string.IsNullOrEmpty(cItemCCU.GetCCByIdCuota(cuota.Id)))
+                                {
+                                    if (cFormaPagoOV.Load(cuota.IdFormaPagoOV).Moneda == Convert.ToString((Int16)tipoMoneda.Dolar))
+                                    {
+                                        valorCuotaVencimiento1 = cuota.Vencimiento1 * cValorDolar.LoadActualValue();
+                                        valorCuotaVencimiento2 = cuota.Vencimiento2 * cValorDolar.LoadActualValue();
+                                    }
+                                    else
+                                    {
+                                        valorCuotaVencimiento1 = cuota.Vencimiento1;
+                                        valorCuotaVencimiento2 = cuota.Vencimiento2;
+                                    }
+
+                                    cItemCCU ccuNew = new cItemCCU();
+                                    ccuNew.IdCuentaCorrienteUsuario = _idCCU;
+                                    ccuNew.Concepto = "Cuota nro " + cuota.Nro;
+                                    ccuNew.Debito = valorCuotaVencimiento1 * -1;
+
+                                    _saldo += lastSaldo;
+                                    if (_saldo < 0)
+                                        ccuNew.Saldo = (valorCuotaVencimiento1 * -1) + (_saldo);
+                                    else
+                                        ccuNew.Saldo = _saldo - valorCuotaVencimiento1;
+
+                                    if (_saldo == 0)
+                                        ccuNew.Saldo = _saldo - valorCuotaVencimiento1;
+
+                                    ccuNew.Credito = 0;
+                                    ccuNew.Fecha = DateTime.Now;
+                                    ccuNew.IdCuota = cuota.Id;
+                                    ccuNew.IdEstado = (Int16)eEstadoItem.Cuota;
+                                    ccuNew.Save();
+
+                                    #region En caso que haya pagos a cuenta
+                                    if (lastSaldo != 0)
+                                    {
+                                        cItemCCU item = cItemCCU.GetLastItemById(_idCCU);
+                                        if (item != null && item.IdEstado == (Int16)eEstadoItem.Pagado)
+                                        {
+                                            if (lastSaldo > valorCuotaVencimiento1)
+                                            {
+                                                decimal diferencia = lastSaldo - valorCuotaVencimiento1;
+
+                                                cItemCCU ccuPago = new cItemCCU();
+                                                ccuPago.IdCuentaCorrienteUsuario = _idCCU;
+                                                ccuPago.Fecha = DateTime.Now;
+                                                ccuPago.Concepto = "Pago cuota " + cuota.Nro + " por saldo a favor";
+                                                ccuPago.Debito = 0;
+                                                ccuPago.Credito = cuota.Vencimiento1;
+                                                ccuPago.Saldo = diferencia;
+                                                ccuPago.IdCuota = cuota.Id;
+                                                ccuPago.IdEstado = (Int16)eEstadoItem.Pagado;
+                                                ccuPago.TipoOperacion = (Int16)eTipoOperacion.PagoCuota;
+
+                                                int _idItemCCU = ccuPago.Save();
+
+                                                //hfIdItemCC.Value = _idItemCCU.ToString();
+
+                                                //Genera el recibo del pago
+                                                //cReciboCuota recibo = cReciboCuota.CrearRecibo(cuota.Id, _idItemCCU.ToString(), cuota.Vencimiento1);
+                                                cReciboCuota lastNroRecibo = cReciboCuota.GetLastReciboByCCU(idCCU);
+                                                cReciboCuota recibo = new cReciboCuota(cuota.Id, _idItemCCU.ToString(), lastNroRecibo.Nro, DateTime.Now);
+                                                recibo.Monto = lastNroRecibo.Monto;
+                                                recibo._Papelera = 1;
+                                                recibo.Save();
+
+                                                cuota.Estado = (Int16)estadoCuenta_Cuota.Pagado;
+                                                cuota.Save();
+
+                                                item.IdEstado = (Int16)eEstadoItem.Pagado;
+                                                item.Save();
+                                            }
+
+                                            if (lastSaldo < valorCuotaVencimiento1)
+                                            {
+                                                decimal diferencia = lastSaldo - valorCuotaVencimiento1;
+
+                                                cItemCCU ccuPago = new cItemCCU();
+                                                ccuPago.IdCuentaCorrienteUsuario = _idCCU;
+                                                ccuPago.Fecha = DateTime.Now;
+                                                ccuPago.Concepto = "Pago parcial cuota " + cuota.Nro + " por saldo a favor";
+                                                ccuPago.Debito = 0;
+                                                ccuPago.Credito = 0;
+                                                ccuPago.Saldo = diferencia;
+                                                ccuPago.IdCuota = cuota.Id;
+                                                ccuPago.IdEstado = (Int16)eEstadoItem.Pagado;
+                                                ccuPago.TipoOperacion = (Int16)eTipoOperacion.PagoCuota;
+
+                                                int _idItemCCU = ccuPago.Save();
+
+                                                //hfIdItemCC.Value = _idItemCCU.ToString();
+
+                                                //Genera el recibo del pago
+                                                cReciboCuota lastNroRecibo = cReciboCuota.GetLastReciboByCCU(_idCCU);
+                                                cReciboCuota recibo = new cReciboCuota(cuota.Id, _idItemCCU.ToString(), lastNroRecibo.Nro, DateTime.Now);
+                                                recibo.Monto = lastNroRecibo.Monto;
+                                                recibo._Papelera = 1;
+                                                recibo.Save();
+                                            }
+                                        }
+                                    }
+                                    #endregion
+
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            #endregion
+        }
 
     }
 }

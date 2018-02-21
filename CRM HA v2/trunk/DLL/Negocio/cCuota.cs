@@ -538,6 +538,12 @@ namespace DLL.Negocio
             return DAO.GetCuotasPendientes(_idEmpresa, fechaHoy, indice);
         }
 
+        public static List<cCuota> GetCuotas(string _idEmpresa, DateTime fechaHoy, Int16 indice)
+        {
+            cCuotaDAO DAO = new cCuotaDAO();
+            return DAO.GetCuotas(_idEmpresa, fechaHoy, indice);
+        }
+
         public static List<cCuota> GetCuotasPendientesSoloCuotasActivas(string _idEmpresa, DateTime fechaHoy, Int16 indice)
         {
             cCuotaDAO DAO = new cCuotaDAO();
@@ -619,6 +625,12 @@ namespace DLL.Negocio
             return DAO.GetCuotasLastMonth(_idCC, fecha);
         }
 
+        public static List<cCuota> GetCuotasLastUVA()
+        {
+            cCuotaDAO DAO = new cCuotaDAO();
+            return DAO.GetCuotasLastUVA();
+        }
+
         public static List<cCuota> GetCuotasActivaByFecha(DateTime fecha)
         {
             cCuotaDAO DAO = new cCuotaDAO();
@@ -631,6 +643,12 @@ namespace DLL.Negocio
             return DAO.GetCuotasActivaCAC();
         }
 
+        public static List<cCuota> GetCuotasLastCAC()
+        {
+            cCuotaDAO DAO = new cCuotaDAO();
+            return DAO.GetCuotasLastCAC();
+        }
+        
         public static List<cCuota> GetCuotasActivaUVA()
         {
             cCuotaDAO DAO = new cCuotaDAO();
@@ -685,6 +703,37 @@ namespace DLL.Negocio
                     {
                         decimal indiceBase = cIndiceCAC.Load(_indiceBase).Valor;
                         decimal indiceMes = cIndiceCAC.Load(_indiceMes).Valor;
+
+                        decimal variacion = Math.Round((indiceMes / indiceBase), 5) * 100;
+                        //decimal variacion = (indiceMes / indiceBase) * 100;
+
+                        aux = variacion - 100;
+                    }
+                    else
+                        aux = 0;
+                }
+                else
+                    aux = 0;
+            }
+            else
+            {
+                aux = 0;
+            }
+
+            return aux;
+        }
+
+        public static decimal CalcularVariacionMensualUVA(string _indiceBase, string _indiceMes, bool uva)
+        {
+            decimal aux = 0;
+            if (uva == true)
+            {
+                if (_indiceBase != "0")
+                {
+                    if (_indiceMes != "0")//Si el índice CAC no esta actualizado
+                    {
+                        decimal indiceBase = cUVA.Load(_indiceBase).Valor;
+                        decimal indiceMes = cUVA.Load(_indiceMes).Valor;
 
                         decimal variacion = Math.Round((indiceMes / indiceBase), 5) * 100;
                         //decimal variacion = (indiceMes / indiceBase) * 100;
@@ -1238,6 +1287,18 @@ namespace DLL.Negocio
         {
             cCuotaDAO DAO = new cCuotaDAO();
             return DAO.GetCuotasObraByFechaRestante(idObra, dateDesde);
+        }
+
+        public static DataTable GetCuotasObraByFechaAndIdEmpresa(string _idEmpresa, DateTime dateDesde, DateTime dateHasta)
+        {
+            cCuotaDAO DAO = new cCuotaDAO();
+            return DAO.GetCuotasObraByFechaAndIdEmpresa(_idEmpresa, dateDesde, dateHasta);
+        }
+
+        public static DataTable GetCuotasObraByFechaAndIdEmpresa(string _IdEmpresa, DateTime dateDesde)
+        {
+            cCuotaDAO DAO = new cCuotaDAO();
+            return DAO.GetCuotasObraByFechaAndIdEmpresa(_IdEmpresa, dateDesde);
         }
 
         public static ArrayList GetEmpresas()

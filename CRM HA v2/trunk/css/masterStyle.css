@@ -195,7 +195,7 @@ background: linear-gradient(to bottom,  #b40b0b 0%,#890909 100%); /* W3C, IE10+,
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b40b0b', endColorstr='#890909',GradientType=0 ); /* IE6-9 */ cursor: pointer;}
 
 .formBtnNarCancel { text-decoration: none; border: 1px solid rgba(0, 0, 0, 0.2); color: #fff; float: right; line-height: 18px; width: auto !important;
-    padding: 6px 15px !important; border-radius: 3px; -webkit-border-radius: 3px; -moz-border-radius: 3px; color: black; background: white; background: -moz-linear-gradient(top, #b40b0b 0%, #890909 100%);
+    padding: 6px 15px !important; border-radius: 3px; -webkit-border-radius: 3px; -moz-border-radius: 3px; color: black; background: white; 
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b40b0b', endColorstr='#890909',GradientType=0 ); cursor: pointer; box-sizing: border-box;
     -moz-box-sizing: border-box; -webkit-box-sizing: border-box; float: left; margin-top: 15px;
 }

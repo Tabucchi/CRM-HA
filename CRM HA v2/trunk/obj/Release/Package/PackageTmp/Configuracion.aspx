@@ -79,6 +79,12 @@
             window.setTimeout("updateProgress.set_visible(true)", updateProgress.get_displayAfter());
             return true;
         }
+
+        function postbackButtonClick() {
+            updateProgress = $find("<%= UpdateProgress3.ClientID %>");
+            window.setTimeout("updateProgress.set_visible(true)", updateProgress.get_displayAfter());
+            return true;
+        }
     </script>
 
 </asp:Content>
@@ -364,7 +370,7 @@
                 <tr class="spacer">
                     <td colspan="2" > <hr /> </td>
                 </tr>
-                <asp:Panel ID="pnlMensajeIndiceCAC" runat="server" Visible="false">
+                <%--<asp:Panel ID="pnlMensajeIndiceCAC" runat="server" Visible="false">
                     <tr>
                         <td colspan="2" style="height: 23px;">
                             <div runat="server" class="formHolderAlert alert" style="padding: 14px 25px 12px; margin-top: -10px; margin-left: -12px; width: 95%;">
@@ -372,32 +378,72 @@
                             </div>
                         </td>
                     </tr>
+                </asp:Panel>--%>
+                <asp:Panel ID="pnlBotones" runat="server" Visible="true">
+                    <tr>            
+                        <td colspan="2">
+                            <div align="center" style="display: table; margin: 0 auto;">
+                                <asp:UpdateProgress ID="UpdateProgress1" runat="server" DisplayAfter="0" AssociatedUpdatePanelID="pnlIndiceCAC">
+                                    <ProgressTemplate>
+                                        <script type="text/javascript">document.write("<div class='UpdateProgressBackground'></div>");</script>
+                                        <center>
+                                            <div class="UpdateProgressContent">
+                                                <div style="float:left;"><img src="images/ring_loading.gif" width="300px" style="height: 30px; width:30px" ImageAlign="left"  /></div>
+                                                <div style="float:right; padding: 0px 0 0 10px">
+                                                    <font style="font-size: 25px; color: #B7B7B7; font-weight: bold;"> Procesando... </font>
+                                                </div>                                    
+                                            </div>
+                                        </center>
+                                    </ProgressTemplate>
+                                </asp:UpdateProgress>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div style="display: table; margin: 0 auto;">
+                                <asp:Button ID="btnFinalizarIndice" runat="server" CssClass="formBtnNar" Text="Aceptar" OnClick="btnFinalizarIndice_Click"/>
+                                <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" style="margin-left:15px; border-radius: 3px; -webkit-border-radius: 3px; -moz-border-radius: 3px; border: 1px solid #ccc; background-color:white" OnClick="btnCancelar_Click"/>
+                            </div>
+                        </td>            
+                    </tr>
                 </asp:Panel>
-                <tr>            
-                    <td>
-                        <div align="center">
-                            <asp:UpdateProgress ID="UpdateProgress1" runat="server" DisplayAfter="0" AssociatedUpdatePanelID="pnlIndiceCAC">
-                                <ProgressTemplate>
-                                    <script type="text/javascript">document.write("<div class='UpdateProgressBackground'></div>");</script>
-                                    <center>
-                                        <div class="UpdateProgressContent">
-                                            <div style="float:left;"><img src="images/ring_loading.gif" width="300px" style="height: 30px; width:30px" ImageAlign="left"  /></div>
-                                            <div style="float:right; padding: 8px 0 0 10px">
-                                                <font style="font-size: 25px; color: #B7B7B7; font-weight: bold;"> Procesando... </font>
-                                            </div>                                    
-                                        </div>
-                                    </center>
-                                </ProgressTemplate>
-                            </asp:UpdateProgress>
-                        </div>
-                    </td>
-                    <td>
-                        <div style="float:right">
-                            <asp:Button ID="btnFinalizarIndice" runat="server" CssClass="formBtnNar" Text="Aceptar" OnClick="btnFinalizarIndice_Click"/>
-                            <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" style="margin-left:15px; border-radius: 3px; -webkit-border-radius: 3px; -moz-border-radius: 3px; border: 1px solid #ccc; background-color:white" OnClick="btnCancelar_Click"/>
-                        </div>
-                    </td>            
-                </tr>
+                <asp:Panel ID="pnlMensajeIndiceCAC" runat="server" Visible="false">
+                    <tr>
+                        <td colspan="2" style="height: 23px;">
+                            <div runat="server" class="formHolderAlert alert" style="padding: 14px 25px 12px; margin-top: -10px; margin-left: -12px; width: 95%;">
+                                <div style="display: table; margin: 0 auto;"><asp:Label ID="lbMensaje" runat="server"></asp:Label></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div style="display: table; margin: 0 auto;">
+                                <asp:UpdateProgress ID="UpdateProgress3" runat="server" DisplayAfter="0" AssociatedUpdatePanelID="pnlIndiceCAC">
+                                    <ProgressTemplate>
+                                        <script type="text/javascript">document.write("<div class='UpdateProgressBackground'></div>");</script>
+                                        <center>
+                                            <div class="UpdateProgressContent">
+                                                <div style="float:left;"><img src="images/ring_loading.gif" width="300px" style="height: 30px; width:30px" ImageAlign="left"  /></div>
+                                                <div style="float:right; padding: 0px 0 0 10px">
+                                                    <font style="font-size: 25px; color: #B7B7B7; font-weight: bold;"> Procesando... </font>
+                                                </div>                                    
+                                            </div>
+                                        </center>
+                                    </ProgressTemplate>
+                                </asp:UpdateProgress>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div style="display: table; margin: 0 auto; margin-top: 20px;">
+                                <asp:Button ID="btnIndiceSi" runat="server" CssClass="formBtnNar" Text="Si" style="width: 80px; height: 40px;" OnClick="btnIndiceSi_Click"/>
+                                <asp:Button ID="btnIndiceNo" runat="server" Text="No" style="width: 80px; height: 40px; margin-left:35px; border-radius: 3px; -webkit-border-radius: 3px; -moz-border-radius: 3px; border: 1px solid #ccc; background-color:white" OnClick="btnCancelar_Click"/>
+                            </div>
+                        </td>
+                    </tr>
+                </asp:Panel>
             </table>
         </ContentTemplate>
     </asp:UpdatePanel>   

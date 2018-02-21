@@ -71,7 +71,7 @@ namespace DLL.Base_de_Datos
         
         public string GetLastIndiceMonth()
         {
-            DateTime min = new DateTime(DateTime.Today.Month == 1 ? DateTime.Today.Year - 1 : DateTime.Today.Year, DateTime.Today.AddMonths(-2).Month, 15);
+            DateTime min = new DateTime(DateTime.Today.Month == 2 ? DateTime.Today.Year - 1 : DateTime.Today.Year, DateTime.Today.AddMonths(-2).Month, 15);
             //DateTime max = new DateTime(DateTime.Today.Month == 12 ? DateTime.Today.Year + 1 : DateTime.Today.Year, DateTime.Today.Month == 12 ? 1 : DateTime.Today.Month + 1, 14);
             DateTime max = new DateTime(DateTime.Today.Month == 1 ? DateTime.Today.Year - 1 : DateTime.Today.Year, DateTime.Today.AddMonths(-1).Month, 14);
             

@@ -450,13 +450,85 @@ namespace DLL.Base_de_Datos
         //Trae las cuotas con CAC activas de cada forma de pago
         public List<cCuota> GetCuotasActivaCAC()
         {
+            DateTime date = DateTime.Now;
+            DateTime min = new DateTime(date.Month == 12 ? date.Year + 1 : date.Year, date.Month == 12 ? 1 : date.Month + 1, 1);
+            DateTime max = new DateTime(date.Month == 12 ? date.Year + 1 : date.Year, date.Month == 12 ? 1 : date.Month + 1, 28);
+
             cCuotaDAO DAO = new cCuotaDAO();
             List<cCuota> cuota = new List<cCuota>();
             string query = "SELECT c.id FROM (SELECT c.*, row_number() over (partition by c.idFormaPagoOV order by c.id ASC) as rn FROM tCuota c INNER JOIN ";
             query += " tCuentaCorriente cc ON c.idCuentaCorriente=cc.id INNER JOIN tOperacionVenta op ON cc.idOperacionVenta=op.id WHERE c.estado=1 and cc.estado=" + (Int16)estadoCuenta_Cuota.Activa;
-            query += " AND op.cac = 1) c INNER JOIN tFormaPagoOV fp ON c.idFormaPagoOV = fp.id WHERE c.rn = 1 order by c.idCuentaCorriente";
+            query += " AND op.cac = 1 AND c.fechaVencimiento1 BETWEEN @fechaDesde AND @fechaHasta) c INNER JOIN tFormaPagoOV fp ON c.idFormaPagoOV = fp.id WHERE c.rn = 1 order by c.idCuentaCorriente";
 
             SqlCommand com = new SqlCommand(query);
+            com.Parameters.Add("@fechaDesde", SqlDbType.DateTime);
+            com.Parameters["@fechaDesde"].Value = min;
+
+            com.Parameters.Add("@fechaHasta", SqlDbType.DateTime);
+            com.Parameters["@fechaHasta"].Value = max;
+            
+            com.CommandText = query.ToString();
+            ArrayList idList = cDataBase.GetInstance().ExecuteReader(com);
+            if (idList == null)
+                return null;
+
+            for (int i = 0; idList.Count > i; i++)
+            {
+                cuota.Add(DAO.Load(Convert.ToString(idList[i])));
+            }
+            return cuota;
+        }
+
+        public List<cCuota> GetCuotasLastCAC()
+        {
+            DateTime date = DateTime.Now;
+            DateTime min = new DateTime(date.Month == 12 ? date.Year + 1 : date.Year, date.Month == 12 ? 1 : date.Month, 1);
+            DateTime max = new DateTime(date.Month == 12 ? date.Year + 1 : date.Year, date.Month == 12 ? 1 : date.Month, 28);
+
+            cCuotaDAO DAO = new cCuotaDAO();
+            List<cCuota> cuota = new List<cCuota>();
+            string query = "SELECT c.id FROM (SELECT c.*, row_number() over (partition by c.idFormaPagoOV order by c.id ASC) as rn FROM tCuota c INNER JOIN ";
+            query += " tCuentaCorriente cc ON c.idCuentaCorriente=cc.id INNER JOIN tOperacionVenta op ON cc.idOperacionVenta=op.id WHERE cc.estado=" + (Int16)estadoCuenta_Cuota.Activa;
+            query += " AND op.cac = 1 AND c.fechaVencimiento1 BETWEEN @fechaDesde AND @fechaHasta) c INNER JOIN tFormaPagoOV fp ON c.idFormaPagoOV = fp.id WHERE c.rn = 1 order by c.idCuentaCorriente";
+
+            SqlCommand com = new SqlCommand(query);
+            com.Parameters.Add("@fechaDesde", SqlDbType.DateTime);
+            com.Parameters["@fechaDesde"].Value = min;
+
+            com.Parameters.Add("@fechaHasta", SqlDbType.DateTime);
+            com.Parameters["@fechaHasta"].Value = max;
+
+            com.CommandText = query.ToString();
+            ArrayList idList = cDataBase.GetInstance().ExecuteReader(com);
+            if (idList == null)
+                return null;
+
+            for (int i = 0; idList.Count > i; i++)
+            {
+                cuota.Add(DAO.Load(Convert.ToString(idList[i])));
+            }
+            return cuota;
+        }
+
+        public List<cCuota> GetCuotasLastUVA()
+        {
+            DateTime date = DateTime.Now;
+            DateTime min = new DateTime(date.Month == 12 ? date.Year + 1 : date.Year, date.Month == 12 ? 1 : date.Month, 1);
+            DateTime max = new DateTime(date.Month == 12 ? date.Year + 1 : date.Year, date.Month == 12 ? 1 : date.Month, 28);
+
+            cCuotaDAO DAO = new cCuotaDAO();
+            List<cCuota> cuota = new List<cCuota>();
+            string query = "SELECT c.id FROM (SELECT c.*, row_number() over (partition by c.idFormaPagoOV order by c.id ASC) as rn FROM tCuota c INNER JOIN ";
+            query += " tCuentaCorriente cc ON c.idCuentaCorriente=cc.id INNER JOIN tOperacionVenta op ON cc.idOperacionVenta=op.id WHERE cc.estado=" + (Int16)estadoCuenta_Cuota.Activa;
+            query += " AND op.uva = 1 AND c.fechaVencimiento1 BETWEEN @fechaDesde AND @fechaHasta) c INNER JOIN tFormaPagoOV fp ON c.idFormaPagoOV = fp.id WHERE c.rn = 1 order by c.idCuentaCorriente";
+
+            SqlCommand com = new SqlCommand(query);
+            com.Parameters.Add("@fechaDesde", SqlDbType.DateTime);
+            com.Parameters["@fechaDesde"].Value = min;
+
+            com.Parameters.Add("@fechaHasta", SqlDbType.DateTime);
+            com.Parameters["@fechaHasta"].Value = max;
+
             com.CommandText = query.ToString();
             ArrayList idList = cDataBase.GetInstance().ExecuteReader(com);
             if (idList == null)
@@ -495,7 +567,7 @@ namespace DLL.Base_de_Datos
         {
             //Lista las cuotas desde 15 del mes hasta el 14 del siguiente mes para actualizar el índice CAC de las cuotas del actual mes.
             DateTime min = new DateTime(fecha.Year, fecha.Month, 1);
-            DateTime max = new DateTime(fecha.Year, fecha.Month, 30);
+            DateTime max = new DateTime(fecha.Year, fecha.Month, 28);
 
             cCuotaDAO DAO = new cCuotaDAO();
             List<cCuota> cuota = new List<cCuota>();
@@ -526,7 +598,7 @@ namespace DLL.Base_de_Datos
         {
             //Lista las cuotas desde 15 del mes hasta el 14 del siguiente mes para actualizar el índice CAC de las cuotas del actual mes.
             DateTime min = new DateTime(fecha.Year, fecha.Month, 1);
-            DateTime max = new DateTime(fecha.Year, fecha.Month, 30);
+            DateTime max = new DateTime(fecha.Year, fecha.Month, 28);
 
 
             //DateTime min = new DateTime(2017, 11, 25);
@@ -977,6 +1049,41 @@ namespace DLL.Base_de_Datos
             return ovs;
         }
 
+        public List<cCuota> GetCuotas(string _idEmpresa, DateTime fechaHoy, Int16 indice)
+        {
+            DateTime min = new DateTime(fechaHoy.Year, fechaHoy.AddMonths(2).Month, 10);
+            DateTime max = new DateTime(fechaHoy.Year, fechaHoy.AddMonths(2).Month, 15);
+            
+            List<cCuota> ovs = new List<cCuota>();
+            string query = "SELECT c.id FROM tCuota c INNER JOIN tCuentaCorriente cc ON c.idCuentaCorriente = cc.id INNER JOIN tOperacionVenta op ON cc.idOperacionVenta = op.id ";
+            query += " WHERE cc.idEmpresa='" + _idEmpresa + "' AND cc.estado ='1' AND (c.fechaVencimiento1 BETWEEN @fechaMin AND @fechaMax)";
+
+            switch (indice)
+            {
+                case (Int16)eIndice.CAC:
+                    query += " AND op.cac = '" + Convert.ToInt16(true) + "'";
+                    break;
+                case (Int16)eIndice.UVA:
+                    query += " AND op.uva = '" + Convert.ToInt16(true) + "'";
+                    break;
+            }
+
+            SqlCommand com = new SqlCommand();
+            com.Parameters.Add("@fechaMin", SqlDbType.DateTime);
+            com.Parameters["@fechaMin"].Value = min;
+
+            com.Parameters.Add("@fechaMax", SqlDbType.DateTime);
+            com.Parameters["@fechaMax"].Value = max;
+
+            com.CommandText = query.ToString();
+            ArrayList idList = cDataBase.GetInstance().ExecuteReader(com);
+            if (idList == null) return null;
+            for (int i = 0; idList.Count > i; i++)
+                ovs.Add(Load(Convert.ToString(idList[i])));
+
+            return ovs;
+        }
+
         public List<cCuota> GetCuotasPendientesSoloCuotasActivas(string _idEmpresa, DateTime fechaHoy, Int16 indice)
         {
             List<cCuota> ovs = new List<cCuota>();
@@ -1416,7 +1523,7 @@ namespace DLL.Base_de_Datos
 
             SqlCommand com = new SqlCommand();
             com.Parameters.Add("@fecha", SqlDbType.DateTime);
-            com.Parameters["@fecha"].Value = date.AddMonths(2);
+            com.Parameters["@fecha"].Value = date.AddMonths(1);
 
             com.CommandText = query.ToString();
 
@@ -1528,6 +1635,8 @@ namespace DLL.Base_de_Datos
 
             return dt;
         }
+
+
         public DataTable GetCuotasConMasProyectoByFecha(DateTime dateDesde, DateTime dateHasta)
         {
             string query = "SELECT eu.idOv, c.monto, fp.moneda, op.valorDolar, count(eu.id)";
@@ -1545,7 +1654,6 @@ namespace DLL.Base_de_Datos
             return dt;
         }
 
-
         public DataTable GetCuotasObraByFechaRestante(string idObra, DateTime dateDesde)
         {
             string query = "SELECT e.id, p.id, c.monto, fp.moneda, op.valorDolar, op.id, c.fechaVencimiento1, c.nro, c.idCuentaCorriente, fp.id FROM tEmpresa e INNER JOIN tEmpresaUnidad eu ON e.id = eu.idEmpresa INNER JOIN tOperacionVenta op ON ";
@@ -1554,6 +1662,45 @@ namespace DLL.Base_de_Datos
             query += " AND cc.estado='1' AND c.estado='1' AND p.id='" + idObra + "'";
             query += " GROUP BY e.id, p.id, c.monto, fp.moneda, op.valorDolar, op.id, c.fechaVencimiento1, c.nro, c.idCuentaCorriente, fp.id ";
             query += " ORDER BY e.id,p.id, c.nro, c.idCuentaCorriente";
+
+            SqlCommand com = new SqlCommand(query);
+            com.Parameters.Add("@fechaDesde", SqlDbType.DateTime);
+            com.Parameters["@fechaDesde"].Value = dateDesde;
+
+            DataTable dt = cDataBase.GetInstance().GetDataReader(com);
+
+            return dt;
+        }
+
+        public DataTable GetCuotasObraByFechaAndIdEmpresa(string _idEmpresa, DateTime dateDesde, DateTime dateHasta)
+        {
+            string query = "SELECT e.id, e.id, c.Monto, fp.moneda, op.valorDolar, op.id, c.fechaVencimiento1, c.nro, c.idCuentaCorriente, fp.id";
+            query += " FROM tEmpresa e INNER JOIN tEmpresaUnidad eu ON e.id = eu.idEmpresa INNER JOIN tOperacionVenta op ON ";
+            query += " op.id=eu.idOv INNER JOIN tFormaPagoOV fp ON op.id=fp.idOperacionVenta INNER JOIN tCuota c ON c.idFormaPagoOV = fp.id INNER JOIN tProyecto p ON p.id = ";
+            query += " eu.idProyecto INNER JOIN tCuentaCorriente cc ON cc.id = c.idCuentaCorriente WHERE eu.papelera = '1' AND eu.idOv <> '-1' AND c.fechaVencimiento1 BETWEEN @fechaDesde ";
+            query += " AND @fechaHasta AND cc.estado='1' AND c.estado='1' AND eu.idEmpresa='" + _idEmpresa + "'";
+            query += " GROUP BY e.id, c.Monto, fp.moneda, op.valorDolar, op.id, c.fechaVencimiento1, c.nro, c.idCuentaCorriente, fp.id";
+            query += " ORDER BY c.nro, c.idCuentaCorriente";
+
+            SqlCommand com = new SqlCommand(query);
+            com.Parameters.Add("@fechaDesde", SqlDbType.DateTime);
+            com.Parameters["@fechaDesde"].Value = dateDesde;
+            com.Parameters.Add("@fechaHasta", SqlDbType.DateTime);
+            com.Parameters["@fechaHasta"].Value = dateHasta;
+
+            DataTable dt = cDataBase.GetInstance().GetDataReader(com);
+
+            return dt;
+        }
+
+        public DataTable GetCuotasObraByFechaAndIdEmpresa(string _IdEmpresa, DateTime dateDesde)
+        {
+            string query = "SELECT e.id, e.id, c.monto, fp.moneda, op.valorDolar, op.id, c.fechaVencimiento1, c.nro, c.idCuentaCorriente, fp.id FROM tEmpresa e INNER JOIN tEmpresaUnidad eu ON e.id = eu.idEmpresa INNER JOIN tOperacionVenta op ON ";
+            query += " op.id=eu.idOv INNER JOIN tFormaPagoOV fp ON op.id=fp.idOperacionVenta INNER JOIN tCuota c ON c.idFormaPagoOV = fp.id INNER JOIN tProyecto p ON p.id = ";
+            query += " eu.idProyecto INNER JOIN tCuentaCorriente cc ON cc.id = c.idCuentaCorriente WHERE eu.papelera = '1' AND eu.idOv <> '-1' AND c.fechaVencimiento1 > @fechaDesde ";
+            query += " AND cc.estado='1' AND c.estado='1' AND eu.idEmpresa='" + _IdEmpresa + "'";
+            query += " GROUP BY e.id, c.monto, fp.moneda, op.valorDolar, op.id, c.fechaVencimiento1, c.nro, c.idCuentaCorriente, fp.id ";
+            query += " ORDER BY e.id, c.nro, c.idCuentaCorriente";
 
             SqlCommand com = new SqlCommand(query);
             com.Parameters.Add("@fechaDesde", SqlDbType.DateTime);

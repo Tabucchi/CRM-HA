@@ -319,7 +319,7 @@ namespace DLL.Negocio
                 cEmpresaUnidad eu = cEmpresaUnidad.GetUnidad(CodigoUF, IdProyecto);
                 cCuentaCorriente cc = cCuentaCorriente.GetCuentaCorrienteByIdEmpresaUnidad(eu.Id);
                 if (cc == null) return "-";
-                return cCuota.GetFirst(cc.Id).Fecha.ToString();
+                return String.Format("{0:dd/MM/yyyy}", cCuota.GetFirst(cc.Id).Fecha);
             }
         }
         public Int16 Papelera

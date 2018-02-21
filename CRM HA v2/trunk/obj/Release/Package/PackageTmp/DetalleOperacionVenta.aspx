@@ -6,7 +6,7 @@
 
 <script type="text/javascript">
     var updateProgress = null;
-
+    
     function postbackButtonClick() {
         updateProgress = $find("<%= UpdateProgress1.ClientID %>");
         window.setTimeout("updateProgress.set_visible(true)", updateProgress.get_displayAfter());

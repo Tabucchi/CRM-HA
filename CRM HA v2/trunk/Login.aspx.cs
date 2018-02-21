@@ -34,7 +34,7 @@ public partial class Login : System.Web.UI.Page
                         1, // Versión del ticket
                         Convert.ToString(id), //ID de usuario asociado al ticket
                         DateTime.Now, //Fecha de creación del ticket
-                        DateTime.Now.AddMinutes(15), //Fecha y Hora de las expiración de la cookie
+                        DateTime.Now.AddMinutes(55), //Fecha y Hora de las expiración de la cookie
                         false, //Si es TRUE la cookie no expira.
                         tipoUsuario.ToString(), //Almacena datos del usuario, en este caso los roles
                         FormsAuthentication.FormsCookiePath); // El path de la cookie especificado en el Web.Config

@@ -163,7 +163,9 @@ namespace crm
                                         unidad.SupDescubierta = r[6].ToString();
                                 }
                                 else
-                                    unidad.SupDescubierta = "0";
+                                    erroresExcel.Add("El valor de la superficie descubierta esta vacía. <b>Fila:</b> " + fila + " - <b>Columna:</b> 6");
+                                //else
+                                //    unidad.SupDescubierta = "0";
 
                                 if (!string.IsNullOrEmpty(r[7].ToString()))
                                 {

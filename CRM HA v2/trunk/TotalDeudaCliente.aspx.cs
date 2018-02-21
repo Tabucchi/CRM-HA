@@ -85,8 +85,13 @@ namespace crm
                 Label lblTotalDeuda = (Label)lvCC.FindControl("lbTotalTotalDeuda");
                 lblTotalDeuda.Text = String.Format("{0:#,#0.00}", _totalDeuda);
 
+                //lblTotalDeuda.Text = String.Format("{0:#,#0.00}", CuotasObra.TotalDeuda());
+
                 Label lblTotal = (Label)lvCC.FindControl("lbTotalTotal");
                 lblTotal.Text = String.Format("{0:#,#0.00}", _total);
+
+                //decimal _total2 = Convert.ToDecimal(lblTotalDeuda.Text) + Convert.ToDecimal(lblTotalCtaCte.Text);
+                //lblTotal.Text = String.Format("{0:#,#0.00}", _total2);
             }
             catch (Exception ex)
             {

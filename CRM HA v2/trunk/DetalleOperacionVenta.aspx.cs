@@ -369,10 +369,10 @@ namespace crm
                             {
                                 if (variacionCAC != 0)
                                 {
-                                    if (cuota.Nro == 1)
-                                        valorCuota = _saldo;
-                                    else
-                                        valorCuota = cCuota.CalcularCuota((cantCuotas - cuota.Nro) + 1, _saldoAjustado);
+                                    //if (cuota.Nro == 1)
+                                    //    valorCuota = _saldo;
+                                    //else
+                                    valorCuota = cCuota.CalcularCuota((cantCuotas - cuota.Nro) + 1, _saldoAjustado);
 
                                     _totalComision = cCuota.CalcularComisionIva(valorCuota, _comision, ov.Iva);
 
@@ -409,10 +409,10 @@ namespace crm
                             {
                                 if (variacionUVA != 0)
                                 {
-                                    if (cuota.Nro == 1)
-                                        valorCuota = cCuota.CalcularCuota(cantCuotas, _saldoAjustado);
-                                    else
-                                        valorCuota = cCuota.CalcularCuota((cantCuotas - cuota.Nro) + 1, _saldoAjustado);
+                                    //if (cuota.Nro == 1)
+                                    //    valorCuota = cCuota.CalcularCuota(cantCuotas, _saldoAjustado);
+                                    //else
+                                    valorCuota = cCuota.CalcularCuota((cantCuotas - cuota.Nro) + 1, _saldoAjustado);
 
                                     _totalComision = cCuota.CalcularComisionIva(valorCuota, _comision, ov.Iva);
 
