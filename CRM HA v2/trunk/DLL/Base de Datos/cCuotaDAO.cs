@@ -1505,6 +1505,26 @@ namespace DLL.Base_de_Datos
             return cuota;
         }
 
+        public DataTable GetCuotasActivasByEmpresa(string _idEmpresa, DateTime date, DateTime dateHasta)
+        {
+            string query = "SELECT c.id, c.nro, c.fechaVencimiento1, c.montoAjustado, fp.moneda, c.idCuentaCorriente, fp.id FROM tCuota c INNER JOIN tFormaPagoOV fp ";
+            query += " ON c.idFormaPagoOV=fp.id INNER JOIN tOperacionVenta op ON fp.idOperacionVenta=op.id INNER JOIN tEmpresaUnidad eu ";
+            query += " ON op.idEmpresaUnidad=eu.id INNER JOIN tEmpresa e ON eu.idEmpresa=e.id INNER JOIN tCuentaCorriente cc ON cc.id=c.idCuentaCorriente ";
+            query += " WHERE c.estado='" + (Int16)estadoCuenta_Cuota.Activa + "' ";
+            query += " AND op.estado='" + (Int16)estadoOperacionVenta.Activo + "' AND cc.estado='" + (Int16)estadoCuenta_Cuota.Activa + "'";
+            query += " AND c.fechaVencimiento1 > @fecha and e.id='" + _idEmpresa + "'";
+
+            //string query = "SELECT op.valorDolar, c.fechaVencimiento1, c.nro,c.Monto, fp.moneda, c.idCuentaCorriente, e.id, p.id, op.id, fp.id FROM tEmpresa e INNER JOIN tEmpresaUnidad eu ON e.id = eu.idEmpresa INNER JOIN tOperacionVenta op ON op.id=eu.idOv INNER JOIN tFormaPagoOV fp ON op.id=fp.idOperacionVenta INNER JOIN tCuota c ON c.idFormaPagoOV = fp.id INNER JOIN tProyecto p ON p.id = eu.idProyecto INNER JOIN tCuentaCorriente cc ON cc.id = c.idCuentaCorriente WHERE eu.papelera = '1' AND eu.idOv <> '-1' AND fechaVencimiento1 > '2018-03-01' AND e.id='" + _idEmpresa + "' AND cc.estado='1' AND c.estado='1' GROUP BY c.Monto, fp.moneda, op.valorDolar, c.fechaVencimiento1, c.nro, c.idCuentaCorriente, e.id, p.id, op.id, fp.id ORDER BY e.id,p.id, c.nro, c.idCuentaCorriente";
+
+            SqlCommand com = new SqlCommand(query);
+            com.Parameters.Add("@fecha", SqlDbType.DateTime);
+            com.Parameters["@fecha"].Value = date;
+
+            DataTable dt = cDataBase.GetInstance().GetDataReader(com);
+
+            return dt;
+        }
+
         public List<cCuota> GetCuotasActivasByEmpresa(string _idEmpresa)
         {
             DateTime date = Convert.ToDateTime(DateTime.Now.Year + "-" + DateTime.Now.Month + "-" + 1);
@@ -1621,7 +1641,7 @@ namespace DLL.Base_de_Datos
             query += " FROM tEmpresa e INNER JOIN tEmpresaUnidad eu ON e.id = eu.idEmpresa INNER JOIN tOperacionVenta op ON ";
             query += " op.id=eu.idOv INNER JOIN tFormaPagoOV fp ON op.id=fp.idOperacionVenta INNER JOIN tCuota c ON c.idFormaPagoOV = fp.id INNER JOIN tProyecto p ON p.id = ";
             query += " eu.idProyecto INNER JOIN tCuentaCorriente cc ON cc.id = c.idCuentaCorriente WHERE eu.papelera = '1' AND eu.idOv <> '-1' AND c.fechaVencimiento1 BETWEEN @fechaDesde ";
-            query += " AND @fechaHasta AND cc.estado='1' AND c.estado='1' AND p.id='" + idObra + "'";
+            query += " AND @fechaHasta AND cc.estado='1' AND c.estado='1' AND p.id='" + idObra + "' AND op.estado='1'";
             query += " GROUP BY e.id, p.id, c.Monto, fp.moneda, op.valorDolar, op.id, c.fechaVencimiento1, c.nro, c.idCuentaCorriente, fp.id";
             query += " ORDER BY p.id, c.nro, c.idCuentaCorriente";
 
@@ -1659,7 +1679,7 @@ namespace DLL.Base_de_Datos
             string query = "SELECT e.id, p.id, c.monto, fp.moneda, op.valorDolar, op.id, c.fechaVencimiento1, c.nro, c.idCuentaCorriente, fp.id FROM tEmpresa e INNER JOIN tEmpresaUnidad eu ON e.id = eu.idEmpresa INNER JOIN tOperacionVenta op ON ";
             query += " op.id=eu.idOv INNER JOIN tFormaPagoOV fp ON op.id=fp.idOperacionVenta INNER JOIN tCuota c ON c.idFormaPagoOV = fp.id INNER JOIN tProyecto p ON p.id = ";
             query += " eu.idProyecto INNER JOIN tCuentaCorriente cc ON cc.id = c.idCuentaCorriente WHERE eu.papelera = '1' AND eu.idOv <> '-1' AND c.fechaVencimiento1 > @fechaDesde ";
-            query += " AND cc.estado='1' AND c.estado='1' AND p.id='" + idObra + "'";
+            query += " AND cc.estado='1' AND c.estado='1' AND p.id='" + idObra + "' AND op.estado='1' ";
             query += " GROUP BY e.id, p.id, c.monto, fp.moneda, op.valorDolar, op.id, c.fechaVencimiento1, c.nro, c.idCuentaCorriente, fp.id ";
             query += " ORDER BY e.id,p.id, c.nro, c.idCuentaCorriente";
 

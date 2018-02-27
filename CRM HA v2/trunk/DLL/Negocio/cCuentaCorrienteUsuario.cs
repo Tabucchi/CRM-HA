@@ -48,7 +48,48 @@ namespace DLL.Negocio
         {
             get
             {
-                List<cCuota> cuotas = cCuota.GetCuotasActivasByEmpresa(IdEmpresa);
+                DateTime date = new DateTime();
+                DateTime dateHasta = new DateTime();
+
+                cIndiceCAC lastIndice = cIndiceCAC.Load(cIndiceCAC.GetLastIndice().ToString());
+                if (lastIndice.Fecha.Month == DateTime.Now.AddMonths(-1).Month)
+                    date = DateTime.Now.AddMonths(1);
+                else
+                    date = DateTime.Now;
+
+                date = date.AddMonths(1);
+                date = Convert.ToDateTime(date.Year + "/" + date.Month + "/" + "1");
+                dateHasta = Convert.ToDateTime(date.Year + "/" + date.Month + "/" + "28");
+
+                int asd=0;
+                if (IdEmpresa == "313")
+                    asd++;
+
+                if (IdEmpresa == "316")
+                    asd++;
+
+
+                DataTable dtSaldos = cCuota.GetCuotasActivasByEmpresa(IdEmpresa, date, dateHasta);
+                decimal total = 0;
+                string auxFormaPago = null;
+               //c.id, c.nro, c.fechaVencimiento1, c.montoAjustado, fp.moneda, c.idCuentaCorriente
+
+                foreach (DataRow dr in dtSaldos.Rows)
+                {
+                    if (dr[6].ToString() != auxFormaPago)
+                    {
+                        if (dr[4].ToString() == Convert.ToString((Int16)tipoMoneda.Dolar))
+                            total += Convert.ToDecimal(dr[3].ToString()) * cValorDolar.LoadActualValue();
+                        else
+                            total += Convert.ToDecimal(dr[3].ToString());
+
+                        auxFormaPago = dr[6].ToString();
+                    }
+                }
+
+                return String.Format("{0:#,#0.00}", total);
+
+               /* List<cCuota> cuotas = cCuota.GetCuotasActivasByEmpresa(IdEmpresa);
                 decimal total = 0;
 
                 if (cuotas != null)
@@ -62,7 +103,7 @@ namespace DLL.Negocio
                     }
                 }
                 
-                return String.Format("{0:#,#0.00}", total);               
+                return String.Format("{0:#,#0.00}", total);    */       
             }
         }
 

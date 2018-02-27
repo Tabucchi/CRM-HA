@@ -481,7 +481,7 @@ public partial class _Default : System.Web.UI.Page
             FileStream stream = new FileStream(rutaURL, FileMode.Open, FileAccess.Read);
             BinaryReader reader = new BinaryReader(stream);
 
-            cArchivoCuotasObra arch = new cArchivoCuotasObra(reader.ReadBytes((int)stream.Length));
+           // cArchivoCuotasObra arch = new cArchivoCuotasObra(reader.ReadBytes((int)stream.Length));
 
             stream.Close();
         }

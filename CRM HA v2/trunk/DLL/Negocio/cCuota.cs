@@ -1241,6 +1241,12 @@ namespace DLL.Negocio
             return DAO.GetCuotasProyectoRestantesRepetidos(_dateDesde, _tipoMoneda);
         }
 
+        public static DataTable GetCuotasActivasByEmpresa(string _idEmpresa, DateTime date, DateTime dateHasta)
+        {
+            cCuotaDAO DAO = new cCuotaDAO();
+            return DAO.GetCuotasActivasByEmpresa(_idEmpresa, date, dateHasta);
+        }
+
         public static List<cCuota> GetCuotasActivasByEmpresa(string _idEmpresa)
         {
             cCuotaDAO DAO = new cCuotaDAO();

@@ -1,0 +1,6 @@
+ERROR 16 crm.MensajeError - Pedidos - 23/02/2018 09:48:15 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR 17 crm.TotalDeudaCliente - CuentaCorriente - 23/02/2018 10:04:11 p.m.- Referencia a objeto no establecida como instancia de un objeto. - Page_Load
+ERROR 14 crm.MensajeError - Pedidos - 23/02/2018 10:04:11 p.m.- Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'. - Page_Load - Admin
+ERROR RemoteServer_Worker-1 JobScheduler - JobScheduler - 24/02/2018 17:18:36- Referencia a objeto no establecida como instancia de un objeto. - Execute
+ERROR 39 crm.TotalDeudaCliente - CuentaCorriente - 24/02/2018 05:18:44 p.m.- Se produjo una excepción de tipo 'System.Exception'. - Page_Load
+ERROR 33 crm.TotalDeudaCliente - CuentaCorriente - 24/02/2018 06:34:43 p.m.- Se produjo una excepción de tipo 'System.Exception'. - Page_Load
