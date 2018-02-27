@@ -334,6 +334,7 @@ namespace crm
 
         public decimal CalcularSaldoMesesRestantes(string _idProyecto, DateTime date, int _cantColumnasMes)
         {
+            string auxFormaPago = null;
             DateTime hoy = Convert.ToDateTime(date.Year + " -  " + date.Month + " -  " + 1);
             DateTime dateRestante = Convert.ToDateTime(hoy.AddMonths(_cantColumnasMes));
 
@@ -421,10 +422,15 @@ namespace crm
                 {
                     if (dr[1].ToString() == _idProyecto)
                     {
-                        if (dr[3].ToString() == "0")
-                            _totalRestante += Convert.ToDecimal(dr[2].ToString()) * cValorDolar.LoadActualValue();
-                        else
-                            _totalRestante += Convert.ToDecimal(dr[2].ToString());
+                        if (dr[9].ToString() == auxFormaPago)//nuevo
+                        {
+                            if (dr[3].ToString() == "0")
+                                _totalRestante += Convert.ToDecimal(dr[2].ToString()) * cValorDolar.LoadActualValue();
+                            else
+                                _totalRestante += Convert.ToDecimal(dr[2].ToString());
+
+                            auxFormaPago = dr[9].ToString();//nuevo
+                        }
                     }
                 }
             }
