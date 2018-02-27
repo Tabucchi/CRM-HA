@@ -1676,11 +1676,12 @@ namespace DLL.Base_de_Datos
 
         public DataTable GetCuotasObraByFechaRestante(string idObra, DateTime dateDesde)
         {
-            string query = "SELECT e.id, p.id, c.monto, fp.moneda, op.valorDolar, op.id, c.fechaVencimiento1, c.nro, c.idCuentaCorriente, fp.id FROM tEmpresa e INNER JOIN tEmpresaUnidad eu ON e.id = eu.idEmpresa INNER JOIN tOperacionVenta op ON ";
+            //string query = "SELECT e.id, p.id, c.monto, fp.moneda, op.valorDolar, op.id, c.fechaVencimiento1, c.nro, c.idCuentaCorriente, fp.id FROM tEmpresa e INNER JOIN tEmpresaUnidad eu ON e.id = eu.idEmpresa INNER JOIN tOperacionVenta op ON ";
+            string query = "SELECT e.id, p.id, c.montoAjustado, fp.moneda, op.valorDolar, op.id, c.fechaVencimiento1, c.nro, c.idCuentaCorriente, fp.id FROM tEmpresa e INNER JOIN tEmpresaUnidad eu ON e.id = eu.idEmpresa INNER JOIN tOperacionVenta op ON ";
             query += " op.id=eu.idOv INNER JOIN tFormaPagoOV fp ON op.id=fp.idOperacionVenta INNER JOIN tCuota c ON c.idFormaPagoOV = fp.id INNER JOIN tProyecto p ON p.id = ";
             query += " eu.idProyecto INNER JOIN tCuentaCorriente cc ON cc.id = c.idCuentaCorriente WHERE eu.papelera = '1' AND eu.idOv <> '-1' AND c.fechaVencimiento1 > @fechaDesde ";
             query += " AND cc.estado='1' AND c.estado='1' AND p.id='" + idObra + "' AND op.estado='1' ";
-            query += " GROUP BY e.id, p.id, c.monto, fp.moneda, op.valorDolar, op.id, c.fechaVencimiento1, c.nro, c.idCuentaCorriente, fp.id ";
+            query += " GROUP BY e.id, p.id, c.montoAjustado, fp.moneda, op.valorDolar, op.id, c.fechaVencimiento1, c.nro, c.idCuentaCorriente, fp.id ";
             query += " ORDER BY e.id,p.id, c.nro, c.idCuentaCorriente";
 
             SqlCommand com = new SqlCommand(query);

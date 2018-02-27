@@ -348,81 +348,86 @@ namespace crm
 
                 if (cantProyectos.Count > 1)
                 {
-                    List<cUnidad> unidades = cUnidad.GetUnidadByOV(dr[5].ToString());
-
-                    if (unidades.Count > 1)
+                    if (dr[9].ToString() != auxFormaPago)//nuevo
                     {
-                        cOperacionVenta op = cOperacionVenta.Load(dr[5].ToString());
+                        List<cUnidad> unidades = cUnidad.GetUnidadByOV(dr[5].ToString());
 
-                        DataTable dt = new DataTable();
-                        DataRow dr1;
-                        DataSet ds = new DataSet();
-                        decimal valorApeso = 0;
-                        decimal valorBoletoApeso = 0;
-                        decimal cuota = 0;
-
-                        dt.Columns.Add(new DataColumn("idUnidad"));
-                        dt.Columns.Add(new DataColumn("PorcentajeUnidad"));
-                        dt.Columns.Add(new DataColumn("PorcentajeMonto"));
-                        dt.Columns.Add(new DataColumn("idProyecto"));
-
-                        foreach (cUnidad u in unidades)
+                        if (unidades.Count > 1)
                         {
-                            dr1 = dt.NewRow();
+                            cOperacionVenta op = cOperacionVenta.Load(dr[5].ToString());
 
-                            cEmpresaUnidad eu = cEmpresaUnidad.GetUnidad(u.CodigoUF, u.IdProyecto);
+                            DataTable dt = new DataTable();
+                            DataRow dr1;
+                            DataSet ds = new DataSet();
+                            decimal valorApeso = 0;
+                            decimal valorBoletoApeso = 0;
+                            decimal cuota = 0;
 
-                            #region Pesificar
-                            if (op.GetMoneda == tipoMoneda.Dolar.ToString())
+                            dt.Columns.Add(new DataColumn("idUnidad"));
+                            dt.Columns.Add(new DataColumn("PorcentajeUnidad"));
+                            dt.Columns.Add(new DataColumn("PorcentajeMonto"));
+                            dt.Columns.Add(new DataColumn("idProyecto"));
+
+                            foreach (cUnidad u in unidades)
                             {
-                                //Pesificar precio acordado de la unidad
-                                if (u.Moneda == Convert.ToString((Int16)tipoMoneda.Dolar))
-                                    valorApeso = eu.PrecioAcordado * cValorDolar.LoadActualValue();
+                                dr1 = dt.NewRow();
+
+                                cEmpresaUnidad eu = cEmpresaUnidad.GetUnidad(u.CodigoUF, u.IdProyecto);
+
+                                #region Pesificar
+                                if (op.GetMoneda == tipoMoneda.Dolar.ToString())
+                                {
+                                    //Pesificar precio acordado de la unidad
+                                    if (u.Moneda == Convert.ToString((Int16)tipoMoneda.Dolar))
+                                        valorApeso = eu.PrecioAcordado * cValorDolar.LoadActualValue();
+                                    else
+                                        valorApeso = eu.PrecioAcordado;
+                                }
                                 else
+                                {
                                     valorApeso = eu.PrecioAcordado;
+                                }
+
+                                //Pesificar precio acordado del boleto
+                                if (op.MonedaAcordada == Convert.ToString((Int16)tipoMoneda.Dolar))
+                                    valorBoletoApeso = op.PrecioAcordado * cValorDolar.LoadActualValue();
+                                else
+                                    valorBoletoApeso = op.PrecioAcordado;
+
+                                //Pesificar precio de la cuota
+                                if (dr[3].ToString() == "0")
+                                    cuota = Convert.ToDecimal(dr[2].ToString()) * cValorDolar.LoadActualValue();
+                                else
+                                    cuota = Convert.ToDecimal(dr[2].ToString());
+                                #endregion
+
+                                decimal porcentajeUnidad = (valorApeso * 100) / valorBoletoApeso;
+                                decimal porcentajeCuota = Math.Round((porcentajeUnidad * cuota) / 100, 2);
+
+                                dr1["idUnidad"] = u.Id;
+                                dr1["PorcentajeUnidad"] = porcentajeUnidad;
+                                dr1["PorcentajeMonto"] = porcentajeCuota;
+                                dr1["idProyecto"] = u.IdProyecto;
+                                dt.Rows.Add(dr1);
                             }
-                            else
+
+                            foreach (DataRow row in dt.Rows)
                             {
-                                valorApeso = eu.PrecioAcordado;
+                                if (row[3].ToString() == _idProyecto)
+                                {
+                                    _totalRestante += Convert.ToDecimal(row[2].ToString());
+                                }
                             }
-
-                            //Pesificar precio acordado del boleto
-                            if (op.MonedaAcordada == Convert.ToString((Int16)tipoMoneda.Dolar))
-                                valorBoletoApeso = op.PrecioAcordado * cValorDolar.LoadActualValue();
-                            else
-                                valorBoletoApeso = op.PrecioAcordado;
-
-                            //Pesificar precio de la cuota
-                            if (dr[3].ToString() == "0")
-                                cuota = Convert.ToDecimal(dr[2].ToString()) * cValorDolar.LoadActualValue();
-                            else
-                                cuota = Convert.ToDecimal(dr[2].ToString());
-                            #endregion
-
-                            decimal porcentajeUnidad = (valorApeso * 100) / valorBoletoApeso;
-                            decimal porcentajeCuota = Math.Round((porcentajeUnidad * cuota) / 100, 2);
-
-                            dr1["idUnidad"] = u.Id;
-                            dr1["PorcentajeUnidad"] = porcentajeUnidad;
-                            dr1["PorcentajeMonto"] = porcentajeCuota;
-                            dr1["idProyecto"] = u.IdProyecto;
-                            dt.Rows.Add(dr1);
                         }
 
-                        foreach (DataRow row in dt.Rows)
-                        {
-                            if (row[3].ToString() == _idProyecto)
-                            {
-                                _totalRestante += Convert.ToDecimal(row[2].ToString());
-                            }
-                        }
+                        auxFormaPago = dr[9].ToString();
                     }
                 }
                 else
                 {
                     if (dr[1].ToString() == _idProyecto)
                     {
-                        if (dr[9].ToString() == auxFormaPago)//nuevo
+                        if (dr[9].ToString() != auxFormaPago)//nuevo
                         {
                             if (dr[3].ToString() == "0")
                                 _totalRestante += Convert.ToDecimal(dr[2].ToString()) * cValorDolar.LoadActualValue();
@@ -867,6 +872,7 @@ namespace crm
 
         public static decimal CalcularSaldoMesesRestantes1(string _idProyecto, DateTime date, int _cantColumnasMes)
         {
+            string auxFormaPago = null;
             DateTime hoy = Convert.ToDateTime(date.Year + " -  " + date.Month + " -  " + 1);
             DateTime dateRestante = Convert.ToDateTime(hoy.AddMonths(_cantColumnasMes));
 
@@ -880,84 +886,94 @@ namespace crm
 
                 if (cantProyectos.Count > 1)
                 {
-                    List<cUnidad> unidades = cUnidad.GetUnidadByOV(dr[5].ToString());
-
-                    if (unidades.Count > 1)
+                    if (dr[9].ToString() != auxFormaPago)//nuevo
                     {
-                        cOperacionVenta op = cOperacionVenta.Load(dr[5].ToString());
+                        List<cUnidad> unidades = cUnidad.GetUnidadByOV(dr[5].ToString());
 
-                        DataTable dt = new DataTable();
-                        DataRow dr1;
-                        DataSet ds = new DataSet();
-                        decimal valorApeso = 0;
-                        decimal valorBoletoApeso = 0;
-                        decimal cuota = 0;
-
-                        dt.Columns.Add(new DataColumn("idUnidad"));
-                        dt.Columns.Add(new DataColumn("PorcentajeUnidad"));
-                        dt.Columns.Add(new DataColumn("PorcentajeMonto"));
-                        dt.Columns.Add(new DataColumn("idProyecto"));
-
-                        foreach (cUnidad u in unidades)
+                        if (unidades.Count > 1)
                         {
-                            dr1 = dt.NewRow();
+                            cOperacionVenta op = cOperacionVenta.Load(dr[5].ToString());
 
-                            cEmpresaUnidad eu = cEmpresaUnidad.GetUnidad(u.CodigoUF, u.IdProyecto);
+                            DataTable dt = new DataTable();
+                            DataRow dr1;
+                            DataSet ds = new DataSet();
+                            decimal valorApeso = 0;
+                            decimal valorBoletoApeso = 0;
+                            decimal cuota = 0;
 
-                            #region Pesificar
-                            if (op.GetMoneda == tipoMoneda.Dolar.ToString())
+                            dt.Columns.Add(new DataColumn("idUnidad"));
+                            dt.Columns.Add(new DataColumn("PorcentajeUnidad"));
+                            dt.Columns.Add(new DataColumn("PorcentajeMonto"));
+                            dt.Columns.Add(new DataColumn("idProyecto"));
+
+                            foreach (cUnidad u in unidades)
                             {
-                                //Pesificar precio acordado de la unidad
-                                if (u.Moneda == Convert.ToString((Int16)tipoMoneda.Dolar))
-                                    valorApeso = eu.PrecioAcordado * cValorDolar.LoadActualValue();
+                                dr1 = dt.NewRow();
+
+                                cEmpresaUnidad eu = cEmpresaUnidad.GetUnidad(u.CodigoUF, u.IdProyecto);
+
+                                #region Pesificar
+                                if (op.GetMoneda == tipoMoneda.Dolar.ToString())
+                                {
+                                    //Pesificar precio acordado de la unidad
+                                    if (u.Moneda == Convert.ToString((Int16)tipoMoneda.Dolar))
+                                        valorApeso = eu.PrecioAcordado * cValorDolar.LoadActualValue();
+                                    else
+                                        valorApeso = eu.PrecioAcordado;
+                                }
                                 else
+                                {
                                     valorApeso = eu.PrecioAcordado;
+                                }
+
+                                //Pesificar precio acordado del boleto
+                                if (op.MonedaAcordada == Convert.ToString((Int16)tipoMoneda.Dolar))
+                                    valorBoletoApeso = op.PrecioAcordado * cValorDolar.LoadActualValue();
+                                else
+                                    valorBoletoApeso = op.PrecioAcordado;
+
+                                //Pesificar precio de la cuota
+                                if (dr[3].ToString() == "0")
+                                    cuota = Convert.ToDecimal(dr[2].ToString()) * cValorDolar.LoadActualValue();
+                                else
+                                    cuota = Convert.ToDecimal(dr[2].ToString());
+                                #endregion
+
+                                decimal porcentajeUnidad = (valorApeso * 100) / valorBoletoApeso;
+                                decimal porcentajeCuota = Math.Round((porcentajeUnidad * cuota) / 100, 2);
+
+                                dr1["idUnidad"] = u.Id;
+                                dr1["PorcentajeUnidad"] = porcentajeUnidad;
+                                dr1["PorcentajeMonto"] = porcentajeCuota;
+                                dr1["idProyecto"] = u.IdProyecto;
+                                dt.Rows.Add(dr1);
                             }
-                            else
+
+                            foreach (DataRow row in dt.Rows)
                             {
-                                valorApeso = eu.PrecioAcordado;
+                                if (row[3].ToString() == _idProyecto)
+                                {
+                                    _totalRestante += Convert.ToDecimal(row[2].ToString());
+                                }
                             }
-
-                            //Pesificar precio acordado del boleto
-                            if (op.MonedaAcordada == Convert.ToString((Int16)tipoMoneda.Dolar))
-                                valorBoletoApeso = op.PrecioAcordado * cValorDolar.LoadActualValue();
-                            else
-                                valorBoletoApeso = op.PrecioAcordado;
-
-                            //Pesificar precio de la cuota
-                            if (dr[3].ToString() == "0")
-                                cuota = Convert.ToDecimal(dr[2].ToString()) * cValorDolar.LoadActualValue();
-                            else
-                                cuota = Convert.ToDecimal(dr[2].ToString());
-                            #endregion
-
-                            decimal porcentajeUnidad = (valorApeso * 100) / valorBoletoApeso;
-                            decimal porcentajeCuota = Math.Round((porcentajeUnidad * cuota) / 100, 2);
-
-                            dr1["idUnidad"] = u.Id;
-                            dr1["PorcentajeUnidad"] = porcentajeUnidad;
-                            dr1["PorcentajeMonto"] = porcentajeCuota;
-                            dr1["idProyecto"] = u.IdProyecto;
-                            dt.Rows.Add(dr1);
                         }
 
-                        foreach (DataRow row in dt.Rows)
-                        {
-                            if (row[3].ToString() == _idProyecto)
-                            {
-                                _totalRestante += Convert.ToDecimal(row[2].ToString());
-                            }
-                        }
+                        auxFormaPago = dr[9].ToString();
                     }
                 }
                 else
                 {
                     if (dr[1].ToString() == _idProyecto)
                     {
-                        if (dr[3].ToString() == "0")
-                            _totalRestante += Convert.ToDecimal(dr[2].ToString()) * cValorDolar.LoadActualValue();
-                        else
-                            _totalRestante += Convert.ToDecimal(dr[2].ToString());
+                        if (dr[9].ToString() != auxFormaPago)//nuevo
+                        {
+                            if (dr[3].ToString() == "0")
+                                _totalRestante += Convert.ToDecimal(dr[2].ToString()) * cValorDolar.LoadActualValue();
+                            else
+                                _totalRestante += Convert.ToDecimal(dr[2].ToString());
+
+                            auxFormaPago = dr[9].ToString();//nuevo
+                        }
                     }
                 }
             }
