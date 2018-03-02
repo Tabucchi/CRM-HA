@@ -687,8 +687,8 @@ public partial class OperacionVenta : System.Web.UI.Page
                 listUnidades.Add(u);
             }
 
-            if (unidad.UnidadFuncional != _auxTipoUnidad)
-            {
+            //if (unidad.UnidadFuncional != _auxTipoUnidad)
+            //{
                 unidad.PrecioAcordado = Convert.ToDecimal(txtPrecioAcordado.Text);
                 listUnidades.Add(unidad);
 
@@ -713,11 +713,11 @@ public partial class OperacionVenta : System.Web.UI.Page
                 lvUnidades.DataSource = listUnidades;
                 lvUnidades.DataBind();
                 pnlMensajeUF.Visible = false;
-            }
-            else
-            {
-                pnlMensajeUF.Visible = true;
-            }
+            //}
+            //else
+            //{
+            //    pnlMensajeUF.Visible = true;
+            //}
 
             LimpiarCampos();
         }

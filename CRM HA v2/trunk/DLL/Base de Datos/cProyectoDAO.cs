@@ -114,6 +114,21 @@ namespace DLL.Base_de_Datos
             return unidades;
         }
 
+        public ArrayList GetProyectoByIdEmpresaAndIdOperacionVenta(string _idEmpresa, string _idCC)
+        {
+            ArrayList unidades = new ArrayList();
+            string query = "SELECT p.descripcion FROM tOperacionVenta op INNER JOIN tCuentaCorriente cc ON op.id=cc.idOperacionVenta INNER JOIN tEmpresaUnidad eu ON eu.idOv=op.id INNER JOIN tUnidad u ON eu.idUnidad=u.id ";
+            query += " INNER JOIN tProyecto p ON p.id=eu.idProyecto	WHERE eu.idEmpresa='" + _idEmpresa + "' AND cc.id='" + _idCC + "' GROUP BY p.descripcion";
+
+            SqlCommand com = new SqlCommand(query);
+            ArrayList idList = cDataBase.GetInstance().ExecuteReader(com);
+            for (int i = 0; idList.Count > i; i++)
+            {
+                unidades.Add(Convert.ToString(idList[i]));
+            }
+            return unidades;
+        }
+
         public List<cProyecto> GetUnidadesGroupByIdProyecto(string _idOpv)
         {
             List<cProyecto> cc = new List<cProyecto>();

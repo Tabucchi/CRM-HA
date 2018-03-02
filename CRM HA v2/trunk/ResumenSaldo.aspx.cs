@@ -65,7 +65,10 @@ namespace crm
 
                 lblTotalSaldoAnterior.Text = String.Format("{0:#,#0.00}",Convert.ToDecimal( _totalSaldoAnterior.ToString()));
                 lblTotalSaldoActual.Text = String.Format("{0:#,#0.00}", Convert.ToDecimal(_totalSaldoActual.ToString()));
-                lblTotalVariacion.Text = String.Format("{0:#,#0.00}", Convert.ToDecimal(_totalSaldoAnterior.ToString()) / Convert.ToDecimal(_totalSaldoActual.ToString()));
+
+                decimal totalIndice = (Convert.ToDecimal(_totalSaldoActual.ToString()) / Convert.ToDecimal(_totalSaldoAnterior.ToString()) * 100) - 100;
+
+                lblTotalVariacion.Text = String.Format("{0:#,#0.00}", totalIndice);
                 #endregion
 
                 #region UVA
@@ -87,7 +90,10 @@ namespace crm
 
                 lblTotalSaldoAnteriorUVA.Text = String.Format("{0:#,#0.00}", Convert.ToDecimal(_totalSaldoAnteriorUVA.ToString()));
                 lblTotalSaldoActualUVA.Text = String.Format("{0:#,#0.00}", Convert.ToDecimal(_totalSaldoActualUVA.ToString()));
-                lblTotalVariacionUVA.Text = String.Format("{0:#,#0.00}", Convert.ToDecimal(_totalSaldoAnteriorUVA.ToString()) / Convert.ToDecimal(_totalSaldoActualUVA.ToString()));
+
+                decimal totalIndiceUVA = (Convert.ToDecimal(_totalSaldoActualUVA.ToString()) / Convert.ToDecimal(_totalSaldoAnteriorUVA.ToString()) * 100) - 100;
+
+                lblTotalVariacionUVA.Text = String.Format("{0:#,#0.00}", totalIndiceUVA);
                 #endregion
             }
             catch (Exception ex)

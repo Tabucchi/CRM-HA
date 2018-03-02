@@ -617,8 +617,6 @@ namespace crm
         #region Descargar
         private DataSet CrearDataSet()
         {
-            List<cCuotasObra> saldos = listSaldos();
-
             DataTable dt = new DataTable();
             DataRow dr;
             DataSet ds = new DataSet();
@@ -631,16 +629,24 @@ namespace crm
             dt.Columns.Add(new DataColumn("mesesRestantes"));
             dt.Columns.Add(new DataColumn("total"));
 
-            foreach (cCuotasObra p in saldos)
+            foreach (ListViewItem item in lvSaldos.Items)
             {
+                Label lbObra = item.FindControl("lbObra") as Label;
+                Label lbMes1 = item.FindControl("lbMes1") as Label;
+                Label lbMes2 = item.FindControl("lbMes2") as Label;
+                Label lbMes3 = item.FindControl("lbMes3") as Label;
+                Label lbMes4 = item.FindControl("lbMes4") as Label;
+                Label lbMesesRestantes = item.FindControl("lbMesesRestantes") as Label;
+                Label lbDeuda = item.FindControl("lbDeuda") as Label;
+
                 dr = dt.NewRow();
-                dr["obra"] = p.proyecto;
-                dr["mes1"] = p.saldo1;
-                dr["mes2"] = p.saldo2;
-                dr["mes3"] = p.saldo3;
-                dr["mes4"] = p.saldo4;
-                dr["mesesRestantes"] = p.mesesRestantes;
-                dr["total"] = p.total;
+                dr["obra"] = lbObra.Text;
+                dr["mes1"] = lbMes1.Text;
+                dr["mes2"] = lbMes2.Text;
+                dr["mes3"] = lbMes3.Text;
+                dr["mes4"] = lbMes4.Text;
+                dr["mesesRestantes"] = lbMesesRestantes.Text;
+                dr["total"] = lbDeuda.Text;
                 dt.Rows.Add(dr);
             }
 

@@ -316,11 +316,20 @@ namespace DLL.Negocio
         {
             get
             {
+                int asd = 0;
+                if (IdCuentaCorriente == "10581")
+                    asd++;
+
                 decimal variacion = 0;
 
                 if (Nro - 1 != 0)
                 {
                     decimal _saldo = cCuota.GetCuotaByNro(IdCuentaCorriente, Nro - 1, IdFormaPagoOV).Saldo;
+
+                    cFormaPagoOV fp = cFormaPagoOV.Load(IdFormaPagoOV);
+                    if (fp.InteresAnual != 0)
+                        MontoAjustado = (MontoAjustado * 100) / ((fp.InteresAnual / 12) + 100);
+
                     if (_saldo != 0)
                         variacion = (MontoAjustado * 100) / _saldo;
                 }

@@ -145,6 +145,12 @@ public class cProyecto
         return DAO.GetProyectoByIdOperacionVenta(_idOperacionVenta);
     }
 
+    public static ArrayList GetProyectoByIdEmpresaAndIdOperacionVenta(string _idEmpresa, string _idCC)
+    {
+        cProyectoDAO DAO = new cProyectoDAO();
+        return DAO.GetProyectoByIdEmpresaAndIdOperacionVenta(_idEmpresa, _idCC);
+    }
+
     public static List<cProyecto> GetUnidadesGroupByIdProyecto(string _idOpv)
     {
         cProyectoDAO DAO = new cProyectoDAO();

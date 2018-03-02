@@ -109,7 +109,7 @@
         <ItemTemplate>                
             <tr onclick="redir('<%# Eval("idProyecto") %>');" style="cursor: pointer">  
                 <td class="fontListview" style="text-align: center">
-                    <asp:Label ID="Label6" runat="Server" Text='<%#Eval("proyecto") %>' />
+                    <asp:Label ID="lbObra" runat="Server" Text='<%#Eval("proyecto") %>' />
                 </td> 
                 <td class="fontListview" style="text-align: right">
                     <asp:Label ID="lbMes1" runat="Server" Text='<%#Eval("saldo1") %>' />
@@ -163,7 +163,7 @@
         <ItemTemplate>                   
             <tr style="cursor: pointer">
                 <td class="fontListview" style="text-align: center; width: 13%;">
-                    <asp:Label ID="Label6" runat="Server" Text='<%#Eval("proyecto") %>' />
+                    <asp:Label ID="lbObra" runat="Server" Text='<%#Eval("proyecto") %>' />
                 </td> 
                 <td class="fontListview" style="text-align: right; width: 10%; padding-right: 17px;">
                     <asp:Label ID="lbMes1" runat="Server" Text='<%#Eval("saldo1") %>' />

@@ -573,7 +573,7 @@ namespace DLL.Base_de_Datos
             List<cCuota> cuota = new List<cCuota>();
             string query = " SELECT c.id FROM tCuota c INNER JOIN tCuentaCorriente cc ON c.idCuentaCorriente=cc.id INNER JOIN tOperacionVenta o ON o.id=cc.idOperacionVenta INNER JOIN tEmpresa e ON e.id=cc.IdEmpresa ";
             query += " WHERE (c.estado = " + (Int16)estadoCuenta_Cuota.Activa + " OR c.estado=" + (Int16)estadoCuenta_Cuota.Pendiente + "  OR c.estado=" + (Int16)estadoCuenta_Cuota.Pagado + ") AND o.estado='" + (Int16)estadoOperacionVenta.Activo + "' ";
-            query += " AND cc.estado<>2 AND o.cac = 1 AND c.ajusteCAC = 1 AND c.fecha BETWEEN @fechaDesde AND @fechaHasta Order by e.Apellido, e.Nombre ASC";
+            query += " AND cc.estado='1' AND o.cac = 1 AND c.fecha BETWEEN @fechaDesde AND @fechaHasta Order by e.Apellido, e.Nombre ASC";
 
             SqlCommand com = new SqlCommand(query);
             com.Parameters.Add("@fechaDesde", SqlDbType.DateTime);
@@ -1512,8 +1512,9 @@ namespace DLL.Base_de_Datos
             query += " ON op.idEmpresaUnidad=eu.id INNER JOIN tEmpresa e ON eu.idEmpresa=e.id INNER JOIN tCuentaCorriente cc ON cc.id=c.idCuentaCorriente ";
             query += " WHERE c.estado='" + (Int16)estadoCuenta_Cuota.Activa + "' ";
             query += " AND op.estado='" + (Int16)estadoOperacionVenta.Activo + "' AND cc.estado='" + (Int16)estadoCuenta_Cuota.Activa + "'";
-            query += " AND c.fechaVencimiento1 > @fecha and e.id='" + _idEmpresa + "'";
+            query += " AND c.fechaVencimiento1 > @fecha and e.id='" + _idEmpresa + "' ORDER BY fp.id, c.id";
 
+            //query += " AND (eu.idProyecto='16') AND (eu.idProyecto='42')";
             //string query = "SELECT op.valorDolar, c.fechaVencimiento1, c.nro,c.Monto, fp.moneda, c.idCuentaCorriente, e.id, p.id, op.id, fp.id FROM tEmpresa e INNER JOIN tEmpresaUnidad eu ON e.id = eu.idEmpresa INNER JOIN tOperacionVenta op ON op.id=eu.idOv INNER JOIN tFormaPagoOV fp ON op.id=fp.idOperacionVenta INNER JOIN tCuota c ON c.idFormaPagoOV = fp.id INNER JOIN tProyecto p ON p.id = eu.idProyecto INNER JOIN tCuentaCorriente cc ON cc.id = c.idCuentaCorriente WHERE eu.papelera = '1' AND eu.idOv <> '-1' AND fechaVencimiento1 > '2018-03-01' AND e.id='" + _idEmpresa + "' AND cc.estado='1' AND c.estado='1' GROUP BY c.Monto, fp.moneda, op.valorDolar, c.fechaVencimiento1, c.nro, c.idCuentaCorriente, e.id, p.id, op.id, fp.id ORDER BY e.id,p.id, c.nro, c.idCuentaCorriente";
 
             SqlCommand com = new SqlCommand(query);
@@ -1677,12 +1678,12 @@ namespace DLL.Base_de_Datos
         public DataTable GetCuotasObraByFechaRestante(string idObra, DateTime dateDesde)
         {
             //string query = "SELECT e.id, p.id, c.monto, fp.moneda, op.valorDolar, op.id, c.fechaVencimiento1, c.nro, c.idCuentaCorriente, fp.id FROM tEmpresa e INNER JOIN tEmpresaUnidad eu ON e.id = eu.idEmpresa INNER JOIN tOperacionVenta op ON ";
-            string query = "SELECT e.id, p.id, c.montoAjustado, fp.moneda, op.valorDolar, op.id, c.fechaVencimiento1, c.nro, c.idCuentaCorriente, fp.id FROM tEmpresa e INNER JOIN tEmpresaUnidad eu ON e.id = eu.idEmpresa INNER JOIN tOperacionVenta op ON ";
+            string query = "SELECT e.id, p.id, c.montoAjustado, fp.moneda, op.valorDolar, op.id, c.fechaVencimiento1, c.nro, c.idCuentaCorriente, fp.id, c.id FROM tEmpresa e INNER JOIN tEmpresaUnidad eu ON e.id = eu.idEmpresa INNER JOIN tOperacionVenta op ON ";
             query += " op.id=eu.idOv INNER JOIN tFormaPagoOV fp ON op.id=fp.idOperacionVenta INNER JOIN tCuota c ON c.idFormaPagoOV = fp.id INNER JOIN tProyecto p ON p.id = ";
             query += " eu.idProyecto INNER JOIN tCuentaCorriente cc ON cc.id = c.idCuentaCorriente WHERE eu.papelera = '1' AND eu.idOv <> '-1' AND c.fechaVencimiento1 > @fechaDesde ";
             query += " AND cc.estado='1' AND c.estado='1' AND p.id='" + idObra + "' AND op.estado='1' ";
-            query += " GROUP BY e.id, p.id, c.montoAjustado, fp.moneda, op.valorDolar, op.id, c.fechaVencimiento1, c.nro, c.idCuentaCorriente, fp.id ";
-            query += " ORDER BY e.id,p.id, c.nro, c.idCuentaCorriente";
+            query += " GROUP BY e.id, p.id, c.montoAjustado, fp.moneda, op.valorDolar, op.id, c.fechaVencimiento1, c.nro, c.idCuentaCorriente, fp.id, c.id ";
+            query += " ORDER BY fp.id, c.id";
 
             SqlCommand com = new SqlCommand(query);
             com.Parameters.Add("@fechaDesde", SqlDbType.DateTime);

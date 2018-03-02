@@ -93,11 +93,13 @@ namespace DLL.Negocio
                 return total;
             }
         }
+
         public decimal Saldo
         {
             get { return saldo; }
             set { saldo = value; }
         }
+
         public string GetSaldo
         {
             get { return String.Format("{0:#,#0.00}", Saldo); }
@@ -326,6 +328,7 @@ namespace DLL.Negocio
             get { return saldoPeso; }
             set { saldoPeso = value; }
         }
+
         public string GetSaldoPeso
         {
             get { return String.Format("{0:#,#0.00}", SaldoPeso); }
@@ -336,6 +339,7 @@ namespace DLL.Negocio
             get { return formaPago; }
             set { formaPago = value; }
         }
+
         public string GetFormaPago
         {
             get
@@ -372,8 +376,31 @@ namespace DLL.Negocio
         {
             get
             {
-                cEmpresaUnidad proyecto = cEmpresaUnidad.Load(IdEmpresaUnidad);
-                return cProyecto.Load(proyecto.IdProyecto).Descripcion;
+                /*cEmpresaUnidad proyecto = cEmpresaUnidad.Load(IdEmpresaUnidad);
+                return cProyecto.Load(proyecto.IdProyecto).Descripcion;*/
+                
+                ArrayList proyectos = cProyecto.GetProyectoByIdEmpresaAndIdOperacionVenta(IdEmpresa, Id);
+                int count = 1;
+                string texto = null;
+                foreach (string proyecto in proyectos)
+                {
+                    if (proyectos.Count == 1)
+                        texto = proyecto;
+                    else
+                    {
+                        if (proyectos.Count != count)
+                            texto += proyecto + " <br/> ";
+                        else
+                            texto += proyecto;
+
+                        count++;
+                    }
+                }
+
+                return texto;
+
+
+
                 /*string p = "";
 
                 if (!string.IsNullOrEmpty(IdOperacionVenta))

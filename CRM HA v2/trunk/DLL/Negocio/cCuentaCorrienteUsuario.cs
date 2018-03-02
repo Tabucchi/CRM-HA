@@ -62,10 +62,7 @@ namespace DLL.Negocio
                 dateHasta = Convert.ToDateTime(date.Year + "/" + date.Month + "/" + "28");
 
                 int asd=0;
-                if (IdEmpresa == "51")
-                    asd++;
-
-                if (IdEmpresa == "316")
+                if (IdEmpresa == "55")
                     asd++;
                 
                 DataTable dtSaldos = cCuota.GetCuotasActivasByEmpresa(IdEmpresa, date, dateHasta);
