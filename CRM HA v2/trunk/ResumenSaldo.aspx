@@ -7,7 +7,7 @@
     <ajax:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server" EnableScriptGlobalization="True" />
     <section>
         <div class="headOptions">
-            <div style="float:left"><h2>Resumen Saldos</h2></div>
+            <div style="float:left"><h2>Control de índices</h2></div>
             <%--<div style="float:right">
                 <label class="rigthLabel" style="width: 37%;">
                     <asp:Button ID="btnDescargar" runat="server" Text="Descargar" CssClass="formBtnNar" OnClick="btnDescargar_Click" style="margin-right: 25px;"/>

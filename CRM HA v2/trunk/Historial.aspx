@@ -22,7 +22,7 @@
             <section>
                 <div class="formHolder" id="searchBoxTop">
                     <div class="headOptions headLine">
-                        <div style="float:left"><h2>Historial</h2></div>
+                        <div style="float:left"><h2>Evolución de unidades</h2></div>
                         <div style="float:right; padding-top: 5px;">
                             <div style="float:left; margin-right: 6px;">
                                 <label style="width:20%">

@@ -19,20 +19,75 @@ namespace crm
         {
             if (!IsPostBack)
             {
-                cIndiceCAC lastIndice = cIndiceCAC.Load(cIndiceCAC.GetLastIndice().ToString());
-                if (lastIndice.Fecha.Month == DateTime.Now.AddMonths(-1).Month)
-                {
-                    lvCuotas.DataSource = cCuota.GetCuotasMes((Int16)estadoCuenta_Cuota.Activa, lastIndice.Fecha.AddMonths(2));
-                    lvCuotas.DataBind();
-                }
-                else
-                {
-                    lvCuotas.DataSource = cCuota.GetCuotasMes((Int16)estadoCuenta_Cuota.Activa, lastIndice.Fecha.AddMonths(2));
-                    lvCuotas.DataBind();
-                }
+                CargaCombo();
+                CargaListView(null);
             }
         }
 
+        #region Carga
+        public void CargaListView(string _idEmpresa)
+        {
+            cIndiceCAC lastIndice = cIndiceCAC.Load(cIndiceCAC.GetLastIndice().ToString());
+            if (lastIndice.Fecha.Month == DateTime.Now.AddMonths(-1).Month)
+            {
+                lvCuotas.DataSource = cCuota.GetEnvioCuotasMes((Int16)estadoCuenta_Cuota.Activa, lastIndice.Fecha.AddMonths(2), _idEmpresa);
+                lvCuotas.DataBind();
+            }
+            else
+            {
+                lvCuotas.DataSource = cCuota.GetEnvioCuotasMes((Int16)estadoCuenta_Cuota.Activa, lastIndice.Fecha.AddMonths(2), _idEmpresa);
+                lvCuotas.DataBind();
+            }
+        }
+
+        public void CargaCombo()
+        {
+            cbEmpresa.DataSource = cEmpresa.GetDataTable();
+            cbEmpresa.DataValueField = "id";
+            cbEmpresa.DataTextField = "nombre";
+            cbEmpresa.DataBind();
+            ListItem ce = new ListItem("Seleccione un cliente...", "0");
+            cbEmpresa.Items.Insert(0, ce);
+        }
+        #endregion
+
+        #region Filtro
+        protected void btnBuscar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                CargaListView(cbEmpresa.SelectedValue);
+            }
+            catch (Exception ex)
+            {
+                log4net.Config.XmlConfigurator.Configure();
+                log.Error("EnvioCuotas - " + DateTime.Now + "- " + ex.Message + " - btnBuscar_Click");
+                Response.Redirect("MensajeError.aspx");
+            }
+        }
+
+        protected void btnVerTodos_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                IniciarFiltro();
+                CargaListView(null);
+            }
+            catch (Exception ex)
+            {
+                log4net.Config.XmlConfigurator.Configure();
+                log.Error("ListaOperacionVenta - " + DateTime.Now + "- " + ex.Message + " - btnVerTodos_Click");
+                Response.Redirect("MensajeError.aspx");
+            }
+        }
+
+        public void IniciarFiltro()
+        {
+            cbEmpresa.SelectedValue = "0";
+        }
+        #endregion
+
+        #region Envio
         protected void btnEnviar_Click(object sender, EventArgs e)
         {
             try
@@ -55,12 +110,15 @@ namespace crm
                             try
                             {
                                 send.EnviarAvisoCuota(empresa.Text, mail.Text, idCuota.Text);
+                                cCuota cuota = cCuota.Load(idCuota.Text);
+                                cuota.Enviado = true;
+                                cuota.Save();
                                 Thread.Sleep(500);
                             }
-                            catch
+                            catch (Exception ex1)
                             {
                                 HtmlControl ttError = (HtmlControl)item.FindControl("idTr");
-                                ttError.Style.Add("background-color", "#c8e6c9");
+                                ttError.Style.Add("background-color", "#ffcdd2");
 
                                 Label estadoError = item.FindControl("lbEstado") as Label;
                                 estadoError.Text = "Error";
@@ -75,7 +133,7 @@ namespace crm
                         else
                         {
                             HtmlControl tt = (HtmlControl)item.FindControl("idTr");
-                            tt.Style.Add("background-color", "#f2dede");
+                            tt.Style.Add("background-color", "#ffcdd2");
 
                             pnlMensajeError.Visible = true;
                         }
@@ -89,5 +147,6 @@ namespace crm
                 Response.Redirect("MensajeError.aspx");
             }
         }
+        #endregion
     }
 }

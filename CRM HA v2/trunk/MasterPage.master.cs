@@ -36,7 +36,7 @@ namespace crm
                         pnlReservas.Visible = true;                        
                     }
 
-                    if (cUsuario.Load(HttpContext.Current.User.Identity.Name).IdCategoria == (Int32)eCategoria.Vendedor || cUsuario.Load(HttpContext.Current.User.Identity.Name).IdCategoria == (Int32)eCategoria.Usuario)
+                    if (cUsuario.Load(HttpContext.Current.User.Identity.Name).IdCategoria == (Int32)eCategoria.Vendedor)
                     {                        
                         pnlDatosAnalisis.Visible = false;
                     }

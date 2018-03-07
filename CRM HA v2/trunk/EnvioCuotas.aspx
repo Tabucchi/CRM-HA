@@ -27,11 +27,10 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <ajax:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server"></ajax:ToolkitScriptManager>
-    <asp:UpdatePanel ID="pnlClientes" runat="server">
-        <ContentTemplate>
-            <section>
-                <div class="formHolder" id="searchBoxTop">
+    <section>
+                <div class="formHolder formHolderCalendar" id="searchBoxTop">
                     <div class="headOptions headLine">
+                        <a href="#" class="toggleFiltr" style="margin-top: 9px; margin-right:5px">v</a>
                         <h2>Envío de cuotas</h2>
                         <div style="float:right;">
                             <div style="float:right">
@@ -39,10 +38,22 @@
                             </div>
                         </div>
                     </div>
+                    <div class="hideOpt" style="width: 100%;">
+                        <label class="col3">
+                            <span>CLIENTE</span>
+                            <asp:DropDownList ID="cbEmpresa" runat="server"/>
+                        </label>
+                    </div>  
+                    <div class="hideOpt footerLine" style="width: 100%;">
+                        <label class="leftLabel" style="width: 17%;">
+                            <asp:Button ID="btnBuscar" Text="Buscar" CssClass="formBtnNar" runat="server" OnClick="btnBuscar_Click" style="margin-right: 32px !important;"/>
+                            <asp:Button ID="btnVerTodos" Text="Ver Todos" CssClass="formBtnGrey1" runat="server" Onclick="btnVerTodos_Click"/>
+                        </label>
+                    </div>
                 </div>
             </section>
 
-            <asp:Panel ID="pnlMensajeError" runat="server" Visible="false">
+    <asp:Panel ID="pnlMensajeError" runat="server" Visible="false">
                 <section>
                     <div runat="server" class="formHolderAlert alert" style="padding: 14px 25px 12px; background-color: #dff0d8; border-color: #d6e9c6;">
                         <div>
@@ -51,7 +62,9 @@
                     </div>
                 </section>
             </asp:Panel>
-                
+        
+    <asp:UpdatePanel ID="pnlClientes" runat="server">
+        <ContentTemplate>
             <asp:ListView ID="lvCuotas" runat="server">
                 <LayoutTemplate>
                     <section>            
@@ -80,7 +93,7 @@
                     </section>   
                 </LayoutTemplate>                
                 <ItemTemplate>                   
-                    <tr style="cursor: pointer" id="idTr" runat="server">
+                    <tr style="cursor: pointer" id="idTr" runat="server" class='<%#Eval("GetEnvio") %>' >
                         <td style="text-align:center">
                             <asp:CheckBox ID="chBoxOV" runat="server"/>
                             <asp:Label ID="lbId" runat="server" Text='<%# Eval("id") %>' Visible="false"></asp:Label>
@@ -135,9 +148,6 @@
                 </EmptyDataTemplate>
             </asp:ListView>     
         </ContentTemplate>
-        <%--<Triggers>
-            <asp:PostBackTrigger ControlID="btnEnviar" />             
-        </Triggers>--%>
     </asp:UpdatePanel>
 
     <div style="float:left">
@@ -145,7 +155,7 @@
             <ProgressTemplate>
                 <div class="overlay">
                     <div class="overlayContent">
-                        <div style="float:left;"><img src="images/ring_loading.gif"  width="300px" class="loading100" ImageAlign="left"  /></div>
+                        <div style="float:left;"><img src="images/ring_loading.gif"  width="300px" class="loading100" ImageAlign="left" /></div>
                         <div style="float:left; padding: 8px 0 0 10px">
                             <h2> Enviando... </h2>
                         </div>                                    

@@ -87,9 +87,9 @@ namespace crm
                     foreach (DataRow dr in dtSaldo1.Rows)
                     {
                         if (dr[1].ToString() == "0")
-                            _saldo1 += Convert.ToDecimal(dr[0].ToString()) * Convert.ToDecimal(dr[2].ToString());
+                            _saldo1 += Convert.ToDecimal(dr[2].ToString()) * Convert.ToDecimal(dr[3].ToString());
                         else
-                            _saldo1 += Convert.ToDecimal(dr[0].ToString());
+                            _saldo1 += Convert.ToDecimal(dr[2].ToString());
                     }
                     saldo.saldo1 = String.Format("{0:#,#0.00}", _saldo1);
                 }
@@ -101,9 +101,9 @@ namespace crm
                     foreach (DataRow dr in dtSaldo2.Rows)
                     {
                         if (dr[1].ToString() == "0")
-                            _saldo2 += Convert.ToDecimal(dr[0].ToString()) * Convert.ToDecimal(dr[2].ToString());
+                            _saldo2 += Convert.ToDecimal(dr[2].ToString()) * Convert.ToDecimal(dr[3].ToString());
                         else
-                            _saldo2 += Convert.ToDecimal(dr[0].ToString());
+                            _saldo2 += Convert.ToDecimal(dr[2].ToString());
                     }
                     saldo.saldo2 = String.Format("{0:#,#0.00}", _saldo2);
                 }
@@ -115,9 +115,9 @@ namespace crm
                     foreach (DataRow dr in dtSaldo3.Rows)
                     {
                         if (dr[1].ToString() == "0")
-                            _saldo3 += Convert.ToDecimal(dr[0].ToString()) * Convert.ToDecimal(dr[2].ToString());
+                            _saldo3 += Convert.ToDecimal(dr[2].ToString()) * Convert.ToDecimal(dr[3].ToString());
                         else
-                            _saldo3 += Convert.ToDecimal(dr[0].ToString());
+                            _saldo3 += Convert.ToDecimal(dr[2].ToString());
                     }
                     saldo.saldo3 = String.Format("{0:#,#0.00}", _saldo3);
                 }
@@ -129,9 +129,9 @@ namespace crm
                     foreach (DataRow dr in dtSaldo4.Rows)
                     {
                         if (dr[1].ToString() == "0")
-                            _saldo4 += Convert.ToDecimal(dr[0].ToString()) * Convert.ToDecimal(dr[2].ToString());
+                            _saldo4 += Convert.ToDecimal(dr[2].ToString()) * Convert.ToDecimal(dr[3].ToString());
                         else
-                            _saldo4 += Convert.ToDecimal(dr[0].ToString());
+                            _saldo4 += Convert.ToDecimal(dr[2].ToString());
                     }
                     saldo.saldo4 = String.Format("{0:#,#0.00}", _saldo4);
                 }
@@ -140,14 +140,21 @@ namespace crm
                 #region Meses restantes
                 DateTime hoy = Convert.ToDateTime(_date.Year + " -  " + _date.Month + " -  " + 1);
                 DateTime dateNextYearDesde = Convert.ToDateTime(hoy.AddMonths(cantColumnasMes));
+                string auxFormaPago = null;
 
                 DataTable dtMesesRestantes = cCuota.GetCuotasMesRestantesMontoByEmpresa(empresa.Id, dateNextYearDesde);
                 foreach (DataRow dr in dtMesesRestantes.Rows)
                 {
-                    if (dr[1].ToString() == "0")
-                        _mesesRestantes += Convert.ToDecimal(dr[0].ToString()) * Convert.ToDecimal(dr[2].ToString());
-                    else
-                        _mesesRestantes += Convert.ToDecimal(dr[0].ToString());
+                    if (dr[9].ToString() != auxFormaPago)//nuevo
+                    {
+
+                        if (dr[1].ToString() == "0")
+                            _mesesRestantes += Convert.ToDecimal(dr[2].ToString()) * Convert.ToDecimal(dr[3].ToString());
+                        else
+                            _mesesRestantes += Convert.ToDecimal(dr[2].ToString());
+
+                        auxFormaPago = dr[9].ToString();
+                    }
                 }
                 saldo.mesesRestantes = String.Format("{0:#,#0.00}", _mesesRestantes);
                 #endregion

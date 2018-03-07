@@ -192,6 +192,7 @@ namespace crm
                         cuota.IdCuentaCorriente = id.ToString();
                         cuota.IdFormaPagoOV = fpov[index].Id;
                         cuota.Nro = count;
+                        cuota.Enviado = false;
 
                         if (Convert.ToInt16(fpov[index].Moneda) == (Int16)tipoMoneda.Pesos)
                         {

@@ -38,6 +38,7 @@ namespace DLL.Base_de_Datos
             lista.Add(new cAtributo("idRegistroPago", cuota.IdRegistroPago));
             lista.Add(new cAtributo("idFormaPagoOV", cuota.IdFormaPagoOV));
             lista.Add(new cAtributo("ajusteCAC", cuota.AjusteCAC));
+            lista.Add(new cAtributo("enviado", cuota.Enviado));
             lista.Add(new cAtributo("variacionUVA", cuota.VariacionUVA));
             return lista;
         }
@@ -76,6 +77,7 @@ namespace DLL.Base_de_Datos
             cuota.IdRegistroPago = Convert.ToString(atributos["idRegistroPago"]);
             cuota.IdFormaPagoOV = Convert.ToString(atributos["idFormaPagoOV"]);
             cuota.AjusteCAC = Convert.ToBoolean(atributos["ajusteCAC"]);
+            cuota.Enviado = Convert.ToBoolean(atributos["enviado"]);
             cuota.VariacionUVA = Convert.ToDecimal(atributos["variacionUVA"]);
             return cuota;
         }
@@ -338,28 +340,33 @@ namespace DLL.Base_de_Datos
             return cuota;
         }
 
-        public List<cCuota> GetCuotasMes(Int16 estado, DateTime fecha)
+        public List<cCuota> GetEnvioCuotasMes(Int16 estado, DateTime fecha, string _idEmpresa)
         {
             //DateTime min = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
             //DateTime max = new DateTime(DateTime.Now.Month == 12 ? DateTime.Now.Year + 1 : DateTime.Now.Year, DateTime.Now.Month == 12 ? 1 : DateTime.Now.Month + 1, 1).AddDays(-1);
 
-            DateTime min = new DateTime(fecha.Year, fecha.Month, 1);
+            DateTime min = new DateTime(fecha.Year, fecha.Month, 10);
             DateTime max = new DateTime(fecha.Month == 12 ? fecha.Year + 1 : fecha.Year, fecha.Month == 12 ? 1 : fecha.Month + 1, 1).AddDays(-1);
 
             cCuotaDAO DAO = new cCuotaDAO();
             List<cCuota> cuota = new List<cCuota>();
             string query = "SELECT c.id FROM tCuota c INNER JOIN tCuentaCorriente cc ON c.idCuentaCorriente = cc.id INNER JOIN tEmpresa e ON cc.idEmpresa = e.id ";
-            query += " WHERE c.estado = " + estado;
+            query += " INNER JOIN tOperacionVenta op ON op.id=cc.idOperacionVenta ";
+            query += " WHERE (c.estado <> 0) AND op.estado='1' ";
             query += " AND cc.estado='" + Convert.ToInt16(estadoCuenta_Cuota.Activa) + "' ";
-            query += " AND fecha BETWEEN @fechaDesde AND @fechaHasta ";
+            query += " AND c.fechaVencimiento1 <= @fechaDesde ";
+
+            if (!string.IsNullOrEmpty(_idEmpresa))
+                query += " AND e.id = '" + _idEmpresa + "' ";
+
             query += " ORDER BY e.Apellido, e.Nombre ASC";
 
             SqlCommand com = new SqlCommand(query);
             com.Parameters.Add("@fechaDesde", SqlDbType.DateTime);
             com.Parameters["@fechaDesde"].Value = min;
 
-            com.Parameters.Add("@fechaHasta", SqlDbType.DateTime);
-            com.Parameters["@fechaHasta"].Value = max;
+            /*com.Parameters.Add("@fechaHasta", SqlDbType.DateTime);
+            com.Parameters["@fechaHasta"].Value = max;*/
 
             com.CommandText = query.ToString();
             ArrayList idList = cDataBase.GetInstance().ExecuteReader(com);
@@ -1657,6 +1664,34 @@ namespace DLL.Base_de_Datos
             return dt;
         }
 
+        public DataTable GetCuotasMesMontoByEmpresa(string _idEmpresa, DateTime dateDesde, DateTime dateHasta)
+        {
+            /*string query = "SELECT c.Monto, fp.moneda, op.valorDolar, e.id, p.id, p.id, op.id, c.fechaVencimiento1, c.nro, c.idCuentaCorriente, fp.id";
+            query += " FROM tEmpresa e INNER JOIN tEmpresaUnidad eu ON e.id = eu.idEmpresa INNER JOIN tOperacionVenta op ON op.id=eu.idOv INNER JOIN tFormaPagoOV fp ON op.id=fp.idOperacionVenta INNER JOIN tCuota c ON c.idFormaPagoOV = fp.id INNER JOIN tProyecto p ON p.id = eu.idProyecto INNER JOIN tCuentaCorriente cc ON cc.id = c.idCuentaCorriente WHERE eu.papelera = '1' AND eu.idOv <> '-1' AND ";
+            query += " c.fechaVencimiento1 BETWEEN @fechaDesde AND @fechaHasta AND e.id='" + _idEmpresa + "' AND cc.estado='" + (Int16)estadoCuenta_Cuota.Activa + "'";
+            query += " AND c.estado='" + (Int16)estadoCuenta_Cuota.Activa + "'";
+            query += " GROUP BY c.Monto, fp.moneda, op.valorDolar, e.id, p.id, p.id, op.id, c.fechaVencimiento1, c.nro, c.idCuentaCorriente, fp.id";
+            query += " ORDER BY p.id,c.nro, c.idCuentaCorriente";*/
+
+            string query = "SELECT e.id, p.id, c.Monto, fp.moneda, op.valorDolar, op.id, c.fechaVencimiento1, c.nro, c.idCuentaCorriente, fp.id";
+            query += " FROM tEmpresa e INNER JOIN tEmpresaUnidad eu ON e.id = eu.idEmpresa INNER JOIN tOperacionVenta op ON ";
+            query += " op.id=eu.idOv INNER JOIN tFormaPagoOV fp ON op.id=fp.idOperacionVenta INNER JOIN tCuota c ON c.idFormaPagoOV = fp.id INNER JOIN tProyecto p ON p.id = ";
+            query += " eu.idProyecto INNER JOIN tCuentaCorriente cc ON cc.id = c.idCuentaCorriente WHERE eu.papelera = '1' AND eu.idOv <> '-1' AND c.fechaVencimiento1 BETWEEN @fechaDesde ";
+            query += " AND @fechaHasta AND cc.estado='1' AND c.estado='1' AND op.estado='1' AND e.id='" + _idEmpresa  + "'";
+            query += " GROUP BY e.id, p.id, c.Monto, fp.moneda, op.valorDolar, op.id, c.fechaVencimiento1, c.nro, c.idCuentaCorriente, fp.id";
+            query += " ORDER BY p.id, c.nro, c.idCuentaCorriente";
+
+            SqlCommand com = new SqlCommand(query);
+            com.Parameters.Add("@fechaDesde", SqlDbType.DateTime);
+            com.Parameters["@fechaDesde"].Value = dateDesde;
+            com.Parameters.Add("@fechaHasta", SqlDbType.DateTime);
+            com.Parameters["@fechaHasta"].Value = dateHasta;
+
+            DataTable dt = cDataBase.GetInstance().GetDataReader(com);
+
+            return dt;
+        }
+
 
         public DataTable GetCuotasConMasProyectoByFecha(DateTime dateDesde, DateTime dateHasta)
         {
@@ -1682,6 +1717,30 @@ namespace DLL.Base_de_Datos
             query += " op.id=eu.idOv INNER JOIN tFormaPagoOV fp ON op.id=fp.idOperacionVenta INNER JOIN tCuota c ON c.idFormaPagoOV = fp.id INNER JOIN tProyecto p ON p.id = ";
             query += " eu.idProyecto INNER JOIN tCuentaCorriente cc ON cc.id = c.idCuentaCorriente WHERE eu.papelera = '1' AND eu.idOv <> '-1' AND c.fechaVencimiento1 > @fechaDesde ";
             query += " AND cc.estado='1' AND c.estado='1' AND p.id='" + idObra + "' AND op.estado='1' ";
+            query += " GROUP BY e.id, p.id, c.montoAjustado, fp.moneda, op.valorDolar, op.id, c.fechaVencimiento1, c.nro, c.idCuentaCorriente, fp.id, c.id ";
+            query += " ORDER BY fp.id, c.id";
+
+            SqlCommand com = new SqlCommand(query);
+            com.Parameters.Add("@fechaDesde", SqlDbType.DateTime);
+            com.Parameters["@fechaDesde"].Value = dateDesde;
+
+            DataTable dt = cDataBase.GetInstance().GetDataReader(com);
+
+            return dt;
+        }
+
+        public DataTable GetCuotasMesRestantesMontoByEmpresa(string _idEmpresa, DateTime dateDesde)
+        {
+            /*string query = "SELECT c.Monto, fp.moneda, op.valorDolar, c.fechaVencimiento1, c.nro, c.idCuentaCorriente, e.id, p.id, op.id, fp.id";
+            query += " FROM tEmpresa e INNER JOIN tEmpresaUnidad eu ON e.id = eu.idEmpresa INNER JOIN tOperacionVenta op ON op.id=eu.idOv INNER JOIN tFormaPagoOV fp ON op.id=fp.idOperacionVenta INNER JOIN tCuota c ON c.idFormaPagoOV = fp.id INNER JOIN tProyecto p ON p.id = eu.idProyecto INNER JOIN tCuentaCorriente cc ON cc.id = c.idCuentaCorriente WHERE eu.papelera = '1' AND eu.idOv <> '-1' AND ";
+            query += " c.fechaVencimiento1 > @fechaDesde AND e.id='" + _idEmpresa + "' AND cc.estado='" + (Int16)estadoCuenta_Cuota.Activa + "'";
+            query += " AND c.estado='" + (Int16)estadoCuenta_Cuota.Activa + "'";
+            query += " GROUP BY c.Monto, fp.moneda, op.valorDolar, c.fechaVencimiento1, c.nro, c.idCuentaCorriente, e.id, p.id, op.id, fp.id";
+            query += " ORDER BY e.id,p.id, c.nro, c.idCuentaCorriente";*/
+            string query = "SELECT e.id, p.id, c.montoAjustado, fp.moneda, op.valorDolar, op.id, c.fechaVencimiento1, c.nro, c.idCuentaCorriente, fp.id, c.id FROM tEmpresa e INNER JOIN tEmpresaUnidad eu ON e.id = eu.idEmpresa INNER JOIN tOperacionVenta op ON ";
+            query += " op.id=eu.idOv INNER JOIN tFormaPagoOV fp ON op.id=fp.idOperacionVenta INNER JOIN tCuota c ON c.idFormaPagoOV = fp.id INNER JOIN tProyecto p ON p.id = ";
+            query += " eu.idProyecto INNER JOIN tCuentaCorriente cc ON cc.id = c.idCuentaCorriente WHERE eu.papelera = '1' AND eu.idOv <> '-1' AND c.fechaVencimiento1 > @fechaDesde ";
+            query += " AND cc.estado='1' AND c.estado='1' AND op.estado='1' AND e.id='" + _idEmpresa + "'";
             query += " GROUP BY e.id, p.id, c.montoAjustado, fp.moneda, op.valorDolar, op.id, c.fechaVencimiento1, c.nro, c.idCuentaCorriente, fp.id, c.id ";
             query += " ORDER BY fp.id, c.id";
 
@@ -1786,25 +1845,7 @@ namespace DLL.Base_de_Datos
             return unidades;
         }
 
-        public DataTable GetCuotasMesMontoByEmpresa(string _idEmpresa, DateTime dateDesde, DateTime dateHasta)
-        {
-            string query = "SELECT c.Monto, fp.moneda, op.valorDolar, e.id, p.id, p.id, op.id, c.fechaVencimiento1, c.nro, c.idCuentaCorriente, fp.id";
-            query += " FROM tEmpresa e INNER JOIN tEmpresaUnidad eu ON e.id = eu.idEmpresa INNER JOIN tOperacionVenta op ON op.id=eu.idOv INNER JOIN tFormaPagoOV fp ON op.id=fp.idOperacionVenta INNER JOIN tCuota c ON c.idFormaPagoOV = fp.id INNER JOIN tProyecto p ON p.id = eu.idProyecto INNER JOIN tCuentaCorriente cc ON cc.id = c.idCuentaCorriente WHERE eu.papelera = '1' AND eu.idOv <> '-1' AND ";
-            query += " c.fechaVencimiento1 BETWEEN @fechaDesde AND @fechaHasta AND e.id='" + _idEmpresa + "' AND cc.estado='" + (Int16)estadoCuenta_Cuota.Activa + "'";
-            query += " AND c.estado='" + (Int16)estadoCuenta_Cuota.Activa + "'";
-            query += " GROUP BY c.Monto, fp.moneda, op.valorDolar, e.id, p.id, p.id, op.id, c.fechaVencimiento1, c.nro, c.idCuentaCorriente, fp.id";
-            query += " ORDER BY p.id,c.nro, c.idCuentaCorriente";
-
-            SqlCommand com = new SqlCommand(query);
-            com.Parameters.Add("@fechaDesde", SqlDbType.DateTime);
-            com.Parameters["@fechaDesde"].Value = dateDesde;
-            com.Parameters.Add("@fechaHasta", SqlDbType.DateTime);
-            com.Parameters["@fechaHasta"].Value = dateHasta;
-
-            DataTable dt = cDataBase.GetInstance().GetDataReader(com);
-
-            return dt;
-        }
+        
 
         public DataTable GetCuotasMesMontoByEmpresaAndProyecto(string _idEmpresa, string _idProyecto, DateTime dateDesde, DateTime dateHasta)
         {
@@ -1826,23 +1867,7 @@ namespace DLL.Base_de_Datos
             return dt;
         }
 
-        public DataTable GetCuotasMesRestantesMontoByEmpresa(string _idEmpresa, DateTime dateDesde)
-        {
-            string query = "SELECT c.Monto, fp.moneda, op.valorDolar, c.fechaVencimiento1, c.nro, c.idCuentaCorriente, e.id, p.id, op.id, fp.id";
-            query += " FROM tEmpresa e INNER JOIN tEmpresaUnidad eu ON e.id = eu.idEmpresa INNER JOIN tOperacionVenta op ON op.id=eu.idOv INNER JOIN tFormaPagoOV fp ON op.id=fp.idOperacionVenta INNER JOIN tCuota c ON c.idFormaPagoOV = fp.id INNER JOIN tProyecto p ON p.id = eu.idProyecto INNER JOIN tCuentaCorriente cc ON cc.id = c.idCuentaCorriente WHERE eu.papelera = '1' AND eu.idOv <> '-1' AND ";
-            query += " c.fechaVencimiento1 > @fechaDesde AND e.id='" + _idEmpresa + "' AND cc.estado='" + (Int16)estadoCuenta_Cuota.Activa + "'";
-            query += " AND c.estado='" + (Int16)estadoCuenta_Cuota.Activa + "'";
-            query += " GROUP BY c.Monto, fp.moneda, op.valorDolar, c.fechaVencimiento1, c.nro, c.idCuentaCorriente, e.id, p.id, op.id, fp.id";
-            query += " ORDER BY e.id,p.id, c.nro, c.idCuentaCorriente";
-
-            SqlCommand com = new SqlCommand(query);
-            com.Parameters.Add("@fechaDesde", SqlDbType.DateTime);
-            com.Parameters["@fechaDesde"].Value = dateDesde;
-
-            DataTable dt = cDataBase.GetInstance().GetDataReader(com);
-
-            return dt;
-        }
+       
 
         public DataTable GetCuotasMesRestantesMontoByEmpresaAndProyecto(string _idEmpresa, string _idProyecto, DateTime dateDesde)
         {

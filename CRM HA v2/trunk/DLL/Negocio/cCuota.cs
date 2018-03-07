@@ -6,6 +6,7 @@ using DLL.Base_de_Datos;
 using System.Data;
 using System.Collections;
 using System.Data.SqlClient;
+using System.Drawing;
 
 namespace DLL.Negocio
 {
@@ -31,6 +32,7 @@ namespace DLL.Negocio
         private string idRegistroPago;
         private string idFormaPagoOV;
         private bool ajusteCAC;
+        private bool enviado;
 
         #region Propiedades
         public string Id
@@ -481,6 +483,23 @@ namespace DLL.Negocio
             set { ajusteCAC = value; }
         }
 
+        public bool Enviado
+        {
+            get { return enviado; }
+            set { enviado = value; }
+        }
+
+        public string GetEnvio
+        {
+            get
+            {
+                if (Enviado == true)
+                    return "mailEnviado";
+                else
+                    return "mailNoEnviado";
+            }
+        }
+
         public List<cReciboCuota> GetRecibos
         {
             get
@@ -617,10 +636,10 @@ namespace DLL.Negocio
             cCuotaDAO DAO = new cCuotaDAO();
             return DAO.GetAllCuotasActivaByActiva(idEmpresa);
         }
-        public static List<cCuota> GetCuotasMes(Int16 estado, DateTime fecha)
+        public static List<cCuota> GetEnvioCuotasMes(Int16 estado, DateTime fecha, string _idEmpresa)
         {
             cCuotaDAO DAO = new cCuotaDAO();
-            return DAO.GetCuotasMes(estado, fecha);
+            return DAO.GetEnvioCuotasMes(estado, fecha, _idEmpresa);
         }
         public static cCuota GetCuotasByFecha(string _idCC, DateTime fecha)
         {
