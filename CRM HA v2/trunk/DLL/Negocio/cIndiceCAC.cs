@@ -56,6 +56,13 @@ namespace DLL.Negocio
             cIndiceCACDAO DAO = new cIndiceCACDAO();
             return DAO.GetIndiceCAC();
         }
+
+        public static string GetPreviousIndice()
+        {
+            cIndiceCACDAO DAO = new cIndiceCACDAO();
+            return DAO.GetPreviousIndice();
+        }
+
         public static string GetLastIndiceMonth()
         {
             cIndiceCACDAO DAO = new cIndiceCACDAO();

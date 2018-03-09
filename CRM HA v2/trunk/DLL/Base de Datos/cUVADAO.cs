@@ -87,13 +87,29 @@ namespace DLL.Base_de_Datos
             return indices;
         }
 
+        public string GetPreviousIndice()
+        {
+            DateTime min = new DateTime(DateTime.Today.Month == 2 ? DateTime.Today.Year - 1 : DateTime.Today.Year, DateTime.Today.AddMonths(-2).Month, 1);
+            DateTime max = new DateTime(DateTime.Today.Month == 2 ? DateTime.Today.Year - 1 : DateTime.Today.Year, DateTime.Today.AddMonths(-2).Month, 28);
+
+            string query = "SELECT id FROM " + GetTable + " WHERE registerDate BETWEEN @fechaDesde AND @fechaHasta ORDER BY id DESC";
+            SqlCommand com = new SqlCommand();
+            com.Parameters.Add("@fechaDesde", SqlDbType.DateTime);
+            com.Parameters["@fechaDesde"].Value = min;
+
+            com.Parameters.Add("@fechaHasta", SqlDbType.DateTime);
+            com.Parameters["@fechaHasta"].Value = max;
+            com.CommandText = query.ToString();
+            return Convert.ToString(cDataBase.GetInstance().ExecuteScalar(com));
+        }
+
         public string GetLastIndiceMonth()
         {
             DateTime min = new DateTime(DateTime.Today.Month == 2 ? DateTime.Today.Year - 1 : DateTime.Today.Year, DateTime.Today.AddMonths(-2).Month, 15);
             //DateTime max = new DateTime(DateTime.Today.Month == 12 ? DateTime.Today.Year + 1 : DateTime.Today.Year, DateTime.Today.Month == 12 ? 1 : DateTime.Today.Month + 1, 14);
             DateTime max = new DateTime(DateTime.Today.Month == 1 ? DateTime.Today.Year - 1 : DateTime.Today.Year, DateTime.Today.AddMonths(-1).Month, 14);
 
-            string query = "SELECT id FROM " + GetTable + " WHERE fecha BETWEEN @fechaDesde AND @fechaHasta ORDER BY id DESC";
+            string query = "SELECT id FROM " + GetTable + " WHERE registerDate BETWEEN @fechaDesde AND @fechaHasta ORDER BY id DESC";
             SqlCommand com = new SqlCommand();
             com.Parameters.Add("@fechaDesde", SqlDbType.DateTime);
             com.Parameters["@fechaDesde"].Value = min;

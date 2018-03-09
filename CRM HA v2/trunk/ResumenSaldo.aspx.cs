@@ -20,6 +20,20 @@ namespace crm
                 ListarCuotasCAC();
                 ListarCuotasUVA();
 
+                #region CAC
+                cIndiceCAC previousIndice = cIndiceCAC.Load(cIndiceCAC.GetPreviousIndice().ToString());
+                cIndiceCAC nuevoIndice = cIndiceCAC.Load(cIndiceCAC.GetLastIndice().ToString());
+
+                lbTotalVariacionCac.Text = String.Format("{0:#,#0.00}", cCuota.CalcularVariacionMensualCAC(previousIndice.Id, nuevoIndice.Id, true)) + " %";
+                #endregion
+
+                #region UVA
+                cUVA previousIndiceUva = cUVA.Load(cUVA.GetPreviousIndice().ToString());
+                cUVA nuevoIndiceUVA = cUVA.Load(cUVA.GetLastIdIndice().ToString());
+
+                lbTotalVariacionUva.Text = String.Format("{0:#,#0.00}", cCuota.CalcularVariacionMensualUVA(previousIndiceUva.Id, nuevoIndiceUVA.Id, true)) + " %";
+                #endregion
+
                 CalcularTotales();
             }
         }
@@ -36,7 +50,7 @@ namespace crm
         public void ListarCuotasUVA()
         {
             cUVA lastIndice = cUVA.Load(cUVA.GetLastIdIndice().ToString());
-            List<cCuota> cuotas = cCuota.GetCuotasActivaByFechaConUVA(lastIndice.Fecha);
+            List<cCuota> cuotas = cCuota.GetCuotasActivaByFechaConUVA(lastIndice.Fecha.AddMonths(1));
 
             lvSaldosUVA.DataSource = cuotas;
             lvSaldosUVA.DataBind();

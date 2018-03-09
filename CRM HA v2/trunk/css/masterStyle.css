@@ -521,4 +521,6 @@ section modalText {margin-left: 4px; font-family: Tahoma,Verdana,Arial,Helvetica
 .itemPendiente{width: 270px; border: 1px solid rgba(205, 205, 205, 3) !important; padding: 16px 14px 0px 12px !important;}
 
 .mailEnviado { background-color: #b9f6ca !Important; }
-.mailNoEnviado { background-color: inherit; }
+.colorInherit { background-color: inherit; }
+
+.error { background-color: #ffcdd2 !Important; }

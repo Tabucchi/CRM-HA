@@ -1673,13 +1673,13 @@ namespace DLL.Base_de_Datos
             query += " GROUP BY c.Monto, fp.moneda, op.valorDolar, e.id, p.id, p.id, op.id, c.fechaVencimiento1, c.nro, c.idCuentaCorriente, fp.id";
             query += " ORDER BY p.id,c.nro, c.idCuentaCorriente";*/
 
-            string query = "SELECT e.id, p.id, c.Monto, fp.moneda, op.valorDolar, op.id, c.fechaVencimiento1, c.nro, c.idCuentaCorriente, fp.id";
+            string query = "SELECT e.id, c.Monto, fp.moneda, op.valorDolar, op.id, c.fechaVencimiento1, c.nro, c.idCuentaCorriente, fp.id";
             query += " FROM tEmpresa e INNER JOIN tEmpresaUnidad eu ON e.id = eu.idEmpresa INNER JOIN tOperacionVenta op ON ";
-            query += " op.id=eu.idOv INNER JOIN tFormaPagoOV fp ON op.id=fp.idOperacionVenta INNER JOIN tCuota c ON c.idFormaPagoOV = fp.id INNER JOIN tProyecto p ON p.id = ";
-            query += " eu.idProyecto INNER JOIN tCuentaCorriente cc ON cc.id = c.idCuentaCorriente WHERE eu.papelera = '1' AND eu.idOv <> '-1' AND c.fechaVencimiento1 BETWEEN @fechaDesde ";
+            query += " op.id=eu.idOv INNER JOIN tFormaPagoOV fp ON op.id=fp.idOperacionVenta INNER JOIN tCuota c ON c.idFormaPagoOV = fp.id ";
+            query += " INNER JOIN tCuentaCorriente cc ON cc.id = c.idCuentaCorriente WHERE eu.papelera = '1' AND eu.idOv <> '-1' AND c.fechaVencimiento1 BETWEEN @fechaDesde ";
             query += " AND @fechaHasta AND cc.estado='1' AND c.estado='1' AND op.estado='1' AND e.id='" + _idEmpresa  + "'";
-            query += " GROUP BY e.id, p.id, c.Monto, fp.moneda, op.valorDolar, op.id, c.fechaVencimiento1, c.nro, c.idCuentaCorriente, fp.id";
-            query += " ORDER BY p.id, c.nro, c.idCuentaCorriente";
+            query += " GROUP BY e.id, c.Monto, fp.moneda, op.valorDolar, op.id, c.fechaVencimiento1, c.nro, c.idCuentaCorriente, fp.id";
+            query += " ORDER BY c.nro, c.idCuentaCorriente";
 
             SqlCommand com = new SqlCommand(query);
             com.Parameters.Add("@fechaDesde", SqlDbType.DateTime);
@@ -1737,11 +1737,11 @@ namespace DLL.Base_de_Datos
             query += " AND c.estado='" + (Int16)estadoCuenta_Cuota.Activa + "'";
             query += " GROUP BY c.Monto, fp.moneda, op.valorDolar, c.fechaVencimiento1, c.nro, c.idCuentaCorriente, e.id, p.id, op.id, fp.id";
             query += " ORDER BY e.id,p.id, c.nro, c.idCuentaCorriente";*/
-            string query = "SELECT e.id, p.id, c.montoAjustado, fp.moneda, op.valorDolar, op.id, c.fechaVencimiento1, c.nro, c.idCuentaCorriente, fp.id, c.id FROM tEmpresa e INNER JOIN tEmpresaUnidad eu ON e.id = eu.idEmpresa INNER JOIN tOperacionVenta op ON ";
-            query += " op.id=eu.idOv INNER JOIN tFormaPagoOV fp ON op.id=fp.idOperacionVenta INNER JOIN tCuota c ON c.idFormaPagoOV = fp.id INNER JOIN tProyecto p ON p.id = ";
-            query += " eu.idProyecto INNER JOIN tCuentaCorriente cc ON cc.id = c.idCuentaCorriente WHERE eu.papelera = '1' AND eu.idOv <> '-1' AND c.fechaVencimiento1 > @fechaDesde ";
+            string query = "SELECT e.id, c.montoAjustado, fp.moneda, op.valorDolar, op.id, c.fechaVencimiento1, c.nro, c.idCuentaCorriente, fp.id, c.id FROM tEmpresa e INNER JOIN tEmpresaUnidad eu ON e.id = eu.idEmpresa INNER JOIN tOperacionVenta op ON ";
+            query += " op.id=eu.idOv INNER JOIN tFormaPagoOV fp ON op.id=fp.idOperacionVenta INNER JOIN tCuota c ON c.idFormaPagoOV = fp.id ";
+            query += " INNER JOIN tCuentaCorriente cc ON cc.id = c.idCuentaCorriente WHERE eu.papelera = '1' AND eu.idOv <> '-1' AND c.fechaVencimiento1 > @fechaDesde ";
             query += " AND cc.estado='1' AND c.estado='1' AND op.estado='1' AND e.id='" + _idEmpresa + "'";
-            query += " GROUP BY e.id, p.id, c.montoAjustado, fp.moneda, op.valorDolar, op.id, c.fechaVencimiento1, c.nro, c.idCuentaCorriente, fp.id, c.id ";
+            query += " GROUP BY e.id, c.montoAjustado, fp.moneda, op.valorDolar, op.id, c.fechaVencimiento1, c.nro, c.idCuentaCorriente, fp.id, c.id ";
             query += " ORDER BY fp.id, c.id";
 
             SqlCommand com = new SqlCommand(query);
@@ -1796,10 +1796,12 @@ namespace DLL.Base_de_Datos
         {
             ArrayList unidades = new ArrayList();
 
-            string query = "SELECT e.id, e.apellido, e.nombre FROM tEmpresa e INNER JOIN tEmpresaUnidad eu ON e.id = eu.idEmpresa ";
+            /*string query = "SELECT e.id, e.apellido, e.nombre FROM tEmpresa e INNER JOIN tEmpresaUnidad eu ON e.id = eu.idEmpresa ";
             query += " INNER JOIN tOperacionVenta op ON op.id=eu.idOv  INNER JOIN tFormaPagoOV fp ON op.id=fp.idOperacionVenta INNER JOIN tCuota c ON c.idFormaPagoOV = fp.id ";
             query += " INNER JOIN tProyecto p ON p.id = eu.idProyecto INNER JOIN tCuentaCorriente cc ON cc.id = c.idCuentaCorriente WHERE eu.papelera = '1' AND eu.idOv <> '-1' AND cc.estado='" + (Int16)estadoCuenta_Cuota.Activa + "'";
-            query += " GROUP BY e.id, e.apellido, e.nombre ORDER BY e.apellido, e.nombre";
+            query += " GROUP BY e.id, e.apellido, e.nombre ORDER BY e.apellido, e.nombre";*/
+
+            string query = "SELECT e.id, e.apellido, e.nombre FROM tEmpresa e INNER JOIN tCuentaCorrienteUsuario cc ON cc.idEmpresa=e.id WHERE cc.papelera='1' GROUP BY e.id, e.apellido, e.nombre ORDER BY e.apellido, e.nombre";
 
             SqlCommand com = new SqlCommand();
 

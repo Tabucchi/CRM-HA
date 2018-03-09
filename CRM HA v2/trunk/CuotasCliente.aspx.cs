@@ -76,7 +76,7 @@ namespace crm
                 DateTime dateHasta = Convert.ToDateTime(_date.Year.ToString() + " - " + _date.Month.ToString() + " - " + "28");
 
                 string ccu = cCuentaCorrienteUsuario.GetCuentaCorrienteByIdEmpresa(empresa.Id);
-                _saldoCtaCte = Convert.ToDecimal(cCuentaCorrienteUsuario.Load(ccu).GetSaldo) * -1;
+                _saldoCtaCte = Convert.ToDecimal(cCuentaCorrienteUsuario.Load(ccu).GetSaldoPositivo);
                 saldo.saldoCtaCte = String.Format("{0:#,#0.00}", _saldoCtaCte);
 
                 #region 4 meses
@@ -86,10 +86,10 @@ namespace crm
                 {
                     foreach (DataRow dr in dtSaldo1.Rows)
                     {
-                        if (dr[1].ToString() == "0")
-                            _saldo1 += Convert.ToDecimal(dr[2].ToString()) * Convert.ToDecimal(dr[3].ToString());
+                        if (dr[2].ToString() == "0")
+                            _saldo1 += Convert.ToDecimal(dr[1].ToString()) * cValorDolar.LoadActualValue();
                         else
-                            _saldo1 += Convert.ToDecimal(dr[2].ToString());
+                            _saldo1 += Convert.ToDecimal(dr[1].ToString());
                     }
                     saldo.saldo1 = String.Format("{0:#,#0.00}", _saldo1);
                 }
@@ -100,10 +100,10 @@ namespace crm
                 {
                     foreach (DataRow dr in dtSaldo2.Rows)
                     {
-                        if (dr[1].ToString() == "0")
-                            _saldo2 += Convert.ToDecimal(dr[2].ToString()) * Convert.ToDecimal(dr[3].ToString());
+                        if (dr[2].ToString() == "0")
+                            _saldo2 += Convert.ToDecimal(dr[1].ToString()) * cValorDolar.LoadActualValue();
                         else
-                            _saldo2 += Convert.ToDecimal(dr[2].ToString());
+                            _saldo2 += Convert.ToDecimal(dr[1].ToString());
                     }
                     saldo.saldo2 = String.Format("{0:#,#0.00}", _saldo2);
                 }
@@ -114,10 +114,10 @@ namespace crm
                 {
                     foreach (DataRow dr in dtSaldo3.Rows)
                     {
-                        if (dr[1].ToString() == "0")
-                            _saldo3 += Convert.ToDecimal(dr[2].ToString()) * Convert.ToDecimal(dr[3].ToString());
+                        if (dr[2].ToString() == "0")
+                            _saldo3 += Convert.ToDecimal(dr[1].ToString()) * cValorDolar.LoadActualValue();
                         else
-                            _saldo3 += Convert.ToDecimal(dr[2].ToString());
+                            _saldo3 += Convert.ToDecimal(dr[1].ToString());
                     }
                     saldo.saldo3 = String.Format("{0:#,#0.00}", _saldo3);
                 }
@@ -128,10 +128,10 @@ namespace crm
                 {
                     foreach (DataRow dr in dtSaldo4.Rows)
                     {
-                        if (dr[1].ToString() == "0")
-                            _saldo4 += Convert.ToDecimal(dr[2].ToString()) * Convert.ToDecimal(dr[3].ToString());
+                        if (dr[2].ToString() == "0")
+                            _saldo4 += Convert.ToDecimal(dr[1].ToString()) * cValorDolar.LoadActualValue();
                         else
-                            _saldo4 += Convert.ToDecimal(dr[2].ToString());
+                            _saldo4 += Convert.ToDecimal(dr[1].ToString());
                     }
                     saldo.saldo4 = String.Format("{0:#,#0.00}", _saldo4);
                 }
@@ -143,23 +143,27 @@ namespace crm
                 string auxFormaPago = null;
 
                 DataTable dtMesesRestantes = cCuota.GetCuotasMesRestantesMontoByEmpresa(empresa.Id, dateNextYearDesde);
+
+                int a = 0;
+                if (empresa.Id == "51")
+                    a++;
+
                 foreach (DataRow dr in dtMesesRestantes.Rows)
                 {
-                    if (dr[9].ToString() != auxFormaPago)//nuevo
+                    if (dr[8].ToString() != auxFormaPago)//nuevo
                     {
-
-                        if (dr[1].ToString() == "0")
-                            _mesesRestantes += Convert.ToDecimal(dr[2].ToString()) * Convert.ToDecimal(dr[3].ToString());
+                        if (dr[2].ToString() == "0")
+                            _mesesRestantes += Convert.ToDecimal(dr[1].ToString()) * cValorDolar.LoadActualValue();
                         else
-                            _mesesRestantes += Convert.ToDecimal(dr[2].ToString());
+                            _mesesRestantes += Convert.ToDecimal(dr[1].ToString());
 
-                        auxFormaPago = dr[9].ToString();
+                        auxFormaPago = dr[8].ToString();
                     }
                 }
                 saldo.mesesRestantes = String.Format("{0:#,#0.00}", _mesesRestantes);
                 #endregion
 
-                _total = _saldo1 + _saldo2 + _saldo3 + _saldo4 + _mesesRestantes;
+                _total = _saldo1 + _saldo2 + _saldo3 + _saldo4 + _mesesRestantes + _saldoCtaCte;
                 saldo.total = String.Format("{0:#,#0.00}", _total);
 
                 saldos.Add(saldo);
@@ -187,6 +191,7 @@ namespace crm
         {
             try
             {
+                decimal _totalCC = 0;
                 decimal _totalMes1 = 0;
                 decimal _totalMes2 = 0;
                 decimal _totalMes3 = 0;
@@ -196,6 +201,7 @@ namespace crm
 
                 foreach (ListViewItem item in lvSaldos.Items)
                 {
+                    Label lbCC = item.FindControl("lbCC") as Label;
                     Label lbTotalMes1 = item.FindControl("lbMes1") as Label;
                     Label lbTotalMes2 = item.FindControl("lbMes2") as Label;
                     Label lbTotalMes3 = item.FindControl("lbMes3") as Label;
@@ -203,6 +209,7 @@ namespace crm
                     Label lbTotalMesesRestantes = item.FindControl("lbMesesRestantes") as Label;
                     Label lbTotalDeuda = item.FindControl("lbDeuda") as Label;
 
+                    _totalCC += Convert.ToDecimal(lbCC.Text);
                     _totalMes1 += Convert.ToDecimal(lbTotalMes1.Text);
                     _totalMes2 += Convert.ToDecimal(lbTotalMes2.Text);
                     _totalMes3 += Convert.ToDecimal(lbTotalMes3.Text);
@@ -211,6 +218,7 @@ namespace crm
                     _totalDeuda += Convert.ToDecimal(lbTotalDeuda.Text);
                 }
 
+                Label lblTotalCC = (Label)lvSaldos.FindControl("lbTotalCC");
                 Label lblTotalMes1 = (Label)lvSaldos.FindControl("lbTotalMes1");
                 Label lblTotalMes2 = (Label)lvSaldos.FindControl("lbTotalMes2");
                 Label lblTotalMes3 = (Label)lvSaldos.FindControl("lbTotalMes3");
@@ -218,6 +226,7 @@ namespace crm
                 Label lblTotalMesesRestantes = (Label)lvSaldos.FindControl("lbTotalMesesRestantes");
                 Label lblTotalDeuda = (Label)lvSaldos.FindControl("lbTotalDeuda");
 
+                lblTotalCC.Text = String.Format("{0:#,#0.00}", _totalCC);
                 lblTotalMes1.Text = String.Format("{0:#,#0.00}", _totalMes1);
                 lblTotalMes2.Text = String.Format("{0:#,#0.00}", _totalMes2);
                 lblTotalMes3.Text = String.Format("{0:#,#0.00}", _totalMes3);
@@ -225,6 +234,7 @@ namespace crm
                 lblTotalMesesRestantes.Text = String.Format("{0:#,#0.00}", _totalMesesRestantes);
                 lblTotalDeuda.Text = String.Format("{0:#,#0.00}", _totalDeuda);
 
+                hfTotalCtaCte.Value = String.Format("{0:#,#0.00}", _totalCC);
                 hfTotalMes1.Value = String.Format("{0:#,#0.00}", _totalMes1);
                 hfTotalMes2.Value = String.Format("{0:#,#0.00}", _totalMes2);
                 hfTotalMes3.Value = String.Format("{0:#,#0.00}", _totalMes3);
@@ -274,6 +284,7 @@ namespace crm
 
             dt.Columns.Add(new DataColumn("cliente"));
             dt.Columns.Add(new DataColumn("obra"));
+            dt.Columns.Add(new DataColumn("ctacte"));
             dt.Columns.Add(new DataColumn("mes1"));
             dt.Columns.Add(new DataColumn("mes2"));
             dt.Columns.Add(new DataColumn("mes3"));
@@ -284,6 +295,7 @@ namespace crm
             foreach (ListViewItem item in lvSaldos.Items)
             {
                 Label lbCliente = item.FindControl("lbCliente") as Label;
+                Label lbCtaCte = item.FindControl("lbCC") as Label;
                 Label lbMes1 = item.FindControl("lbMes1") as Label;
                 Label lbMes2 = item.FindControl("lbMes2") as Label;
                 Label lbMes3 = item.FindControl("lbMes3") as Label;
@@ -294,6 +306,7 @@ namespace crm
                 dr = dt.NewRow();
                 dr["cliente"] = lbCliente.Text;
                 dr["obra"] = "";
+                dr["ctacte"] = lbCtaCte.Text;
                 dr["mes1"] = lbMes1.Text;
                 dr["mes2"] = lbMes2.Text;
                 dr["mes3"] = lbMes3.Text;
@@ -324,6 +337,7 @@ namespace crm
             CrystalReportSource.ReportDocument.SetParameterValue("titleMes3", hfMes3.Value.ToUpper());
             CrystalReportSource.ReportDocument.SetParameterValue("titleMes4", hfMes4.Value.ToUpper());
 
+            CrystalReportSource.ReportDocument.SetParameterValue("totalCtaCte", String.Format("{0:#,#0.00}", Convert.ToDecimal(hfTotalCtaCte.Value)));
             CrystalReportSource.ReportDocument.SetParameterValue("totalMes1", String.Format("{0:#,#0.00}", Convert.ToDecimal(hfTotalMes1.Value)));
             CrystalReportSource.ReportDocument.SetParameterValue("totalMes2", String.Format("{0:#,#0.00}", Convert.ToDecimal(hfTotalMes2.Value)));
             CrystalReportSource.ReportDocument.SetParameterValue("totalMes3", String.Format("{0:#,#0.00}", Convert.ToDecimal(hfTotalMes3.Value)));

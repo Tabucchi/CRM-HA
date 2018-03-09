@@ -120,6 +120,9 @@ namespace crm
 
             if (_itemCCU.Debito != 0 && _itemCCU.TipoOperacion == (Int16)eTipoOperacion.Reserva)
                 CrearPdfRecibo(_itemCCU, _idEmpresa);
+
+            if (_itemCCU.TipoOperacion == (Int16)eTipoOperacion.Reserva)
+                CrearPdfRecibo(_itemCCU, _idEmpresa);
         }
 
         protected void CrearPdfRecibo(cItemCCU _itemCCU, string _idEmpresa)

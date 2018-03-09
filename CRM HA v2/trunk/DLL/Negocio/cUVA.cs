@@ -451,6 +451,12 @@ namespace DLL.Negocio
             return DAO.GetIndiceUVA();
         }
 
+        public static string GetPreviousIndice()
+        {
+            cUVADAO DAO = new cUVADAO();
+            return DAO.GetPreviousIndice();
+        }
+
         public static string GetLastIndiceMonth()
         {
             cUVADAO DAO = new cUVADAO();

@@ -318,10 +318,6 @@ namespace DLL.Negocio
         {
             get
             {
-                int asd = 0;
-                if (IdCuentaCorriente == "10581")
-                    asd++;
-
                 decimal variacion = 0;
 
                 if (Nro - 1 != 0)
@@ -496,10 +492,10 @@ namespace DLL.Negocio
                 if (Enviado == true)
                     return "mailEnviado";
                 else
-                    return "mailNoEnviado";
+                    return "colorInherit";
             }
         }
-
+        
         public List<cReciboCuota> GetRecibos
         {
             get

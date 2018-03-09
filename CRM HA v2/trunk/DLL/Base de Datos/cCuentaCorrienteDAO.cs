@@ -80,10 +80,10 @@ namespace DLL.Base_de_Datos
             if (!string.IsNullOrEmpty(_idEmpresa) || _idEmpresa == "0")
                 query += " cc.idEmpresa = '" + _idEmpresa + "' AND";
 
-            query += " total <> '0' AND";
+            query += " total <> '0' ";
 
-            //if (_estado != 3)
-                query += " cc.estado= '" + _estado + "'";
+            if (_estado != 0)
+                query += " AND cc.estado= '" + _estado + "'";
             //else
               //  query += " cc.estado<> '" + _estado + "'";
 
