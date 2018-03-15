@@ -19,17 +19,7 @@ public partial class _Default : System.Web.UI.Page
         if (!IsPostBack)
         {
             try
-            {
-                #region Combo
-                cbProyectos.DataSource = cProyecto.GetDataTable();
-                cbProyectos.DataValueField = "id";
-                cbProyectos.DataTextField = "descripcion";
-                cbProyectos.DataBind();
-                ListItem io = new ListItem("Seleccione una obra...", "0");
-                cbProyectos.Items.Insert(0, io);
-                cbProyectos.SelectedIndex = 0;
-                #endregion
-                
+            {                
                 #region índice CAC
                 if (cUsuario.Load(HttpContext.Current.User.Identity.Name).IdCategoria == (Int16)eCategoria.Administración)
                 {
@@ -50,39 +40,85 @@ public partial class _Default : System.Web.UI.Page
                 #region Categoría
                 if (cUsuario.Load(HttpContext.Current.User.Identity.Name).IdCategoria == (Int16)eCategoria.Administración)
                 {
-                    pnlNuevoCliente.Visible = true;
-                    pnlNuevaOV.Visible = true;
-                    //pnlReservas.Visible = true;
-                }
-                else
-                    Configuracion();
+                    pnlAdmin.Visible = true;
 
+                    #region Combo
+                    cbProyectos.DataSource = cProyecto.GetDataTable();
+                    cbProyectos.DataValueField = "id";
+                    cbProyectos.DataTextField = "descripcion";
+                    cbProyectos.DataBind();
+                    ListItem io = new ListItem("Seleccione una obra...", "0");
+                    cbProyectos.Items.Insert(0, io);
+                    cbProyectos.SelectedIndex = 0;
+                    #endregion
+
+                    lbDolar.Text = String.Format("{0:#,#0.00}", cValorDolar.LoadActualValue());
+                    lbUVA.Text = String.Format("{0:#,#0.00}", cUVA.GetLastValorIndice());
+                    lbCAC.Text = String.Format("{0:#,#0.00}", cIndiceCAC.GetLastValueIndice());
+                }
 
                 if (cUsuario.Load(HttpContext.Current.User.Identity.Name).IdCategoria == (Int16)eCategoria.Gerencia)
                 {
-                    //pnlReservas.Visible = true;
                     pnlPendientes.Visible = true;
                     lbCantPrecios.Text = cActualizarPrecio.GetPrecios().Count.ToString();
                     lbCantOV.Text = cOperacionVenta.GetOV_AConfirmar().Count.ToString();
+
+                    pnlUsuarioGerencia.Visible = true;
+
+                    #region Combo
+                    cbProyectosUsrGerencia.DataSource = cProyecto.GetDataTable();
+                    cbProyectosUsrGerencia.DataValueField = "id";
+                    cbProyectosUsrGerencia.DataTextField = "descripcion";
+                    cbProyectosUsrGerencia.DataBind();
+                    ListItem io = new ListItem("Seleccione una obra...", "0");
+                    cbProyectosUsrGerencia.Items.Insert(0, io);
+                    cbProyectosUsrGerencia.SelectedIndex = 0;
+                    #endregion
+
+                    lbDolarUsrGerencia.Text = String.Format("{0:#,#0.00}", cValorDolar.LoadActualValue());
+                    lbUVAUsrGerencia.Text = String.Format("{0:#,#0.00}", cUVA.GetLastValorIndice());
+                    lbCACUsrGerencia.Text = String.Format("{0:#,#0.00}", cIndiceCAC.GetLastValueIndice());
+                }
+
+                if (cUsuario.Load(HttpContext.Current.User.Identity.Name).IdCategoria == (Int16)eCategoria.Usuario)
+                {
+                    pnlUsuarioGerencia.Visible = true;
+
+                    #region Combo
+                    cbProyectosUsrGerencia.DataSource = cProyecto.GetDataTable();
+                    cbProyectosUsrGerencia.DataValueField = "id";
+                    cbProyectosUsrGerencia.DataTextField = "descripcion";
+                    cbProyectosUsrGerencia.DataBind();
+                    ListItem io = new ListItem("Seleccione una obra...", "0");
+                    cbProyectosUsrGerencia.Items.Insert(0, io);
+                    cbProyectosUsrGerencia.SelectedIndex = 0;
+                    #endregion
+
+                    lbDolarUsrGerencia.Text = String.Format("{0:#,#0.00}", cValorDolar.LoadActualValue());
+                    lbUVAUsrGerencia.Text = String.Format("{0:#,#0.00}", cUVA.GetLastValorIndice());
+                    lbCACUsrGerencia.Text = String.Format("{0:#,#0.00}", cIndiceCAC.GetLastValueIndice());
                 }
 
                 if (cUsuario.Load(HttpContext.Current.User.Identity.Name).IdCategoria == (Int16)eCategoria.Vendedor)
-                    pnlDatos.Visible = false;
+                {
+                    pnlVendedor.Visible = true;
 
+                    #region Combo
+                    cbProyectosVendedor.DataSource = cProyecto.GetDataTable();
+                    cbProyectosVendedor.DataValueField = "id";
+                    cbProyectosVendedor.DataTextField = "descripcion";
+                    cbProyectosVendedor.DataBind();
+                    ListItem io = new ListItem("Seleccione una obra...", "0");
+                    cbProyectosVendedor.Items.Insert(0, io);
+                    cbProyectosVendedor.SelectedIndex = 0;
+                    #endregion
+
+                    lbDolarVendedor.Text = String.Format("{0:#,#0.00}", cValorDolar.LoadActualValue());
+                    lbUVAVendedor.Text = String.Format("{0:#,#0.00}", cUVA.GetLastValorIndice());
+                    lbCACVendedor.Text = String.Format("{0:#,#0.00}", cIndiceCAC.GetLastValueIndice());
+                }
                 #endregion
-
-                lbDolar.Text = String.Format("{0:#,#0.00}", cValorDolar.LoadActualValue());
-
-                decimal asdasd = cUVA.GetLastValorIndice();
-                string sadasda = cUVA.GetLastValorIndice().ToString();
-                string addwqwe = String.Format("{0:#,#0.00}", cUVA.GetLastValorIndice());
-
-
-                lbUVA.Text = String.Format("{0:#,#0.00}", cUVA.GetLastValorIndice());
-                lbCAC.Text = String.Format("{0:#,#0.00}", cIndiceCAC.GetLastValueIndice());
-
-
-
+                
                 #region Genera el archivo de cuotas por obra
                 //DateTime date = DateTime.Now;
                 //DateTime desde = new DateTime(date.Year, date.Month, date.Day);
@@ -105,16 +141,26 @@ public partial class _Default : System.Web.UI.Page
 
     public void Configuracion()
     {
-        divAgenda.Attributes["style"] = "float:left; width:100px; padding: 20px 0 0 116px !important;";
-        divCC.Attributes["style"] = "float:right; width:150px; padding: 20px 88px 0 25px; !important;";
+        //divAgenda.Attributes["style"] = "float:left; width:100px; padding: 20px 0 0 116px !important;";
+        //divCC.Attributes["style"] = "float:right; width:150px; padding: 20px 88px 0 25px; !important;";
 
-        divOV.Attributes["style"] = "float:left; width:100px; padding: 20px 0 0 116px  !important;";
-        divHistorial.Attributes["style"] = "float:right; width:150px; padding: 20px 88px 0 25px;";
+        //divOV.Attributes["style"] = "float:left; width:100px; padding: 20px 0 0 116px  !important;";
+        //divHistorial.Attributes["style"] = "float:right; width:150px; padding: 20px 88px 0 25px;";
     }
 
     protected void btnProyectos_Click(object sender, EventArgs e)
     {
         Response.Redirect("Unidad.aspx?idProyecto=" + cbProyectos.SelectedValue, false);
+    }
+
+    protected void btnProyectosUsrGerencia_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("Unidad.aspx?idProyecto=" + cbProyectosUsrGerencia.SelectedValue, false);
+    }
+
+    protected void btnProyectosVendedor_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("Unidad.aspx?idProyecto=" + cbProyectosVendedor.SelectedValue, false);
     }
 
     #region Archivo cuotas por obra

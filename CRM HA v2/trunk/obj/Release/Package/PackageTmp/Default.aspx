@@ -105,7 +105,7 @@
                                             <a href="./Historial.aspx" class="linkMenu">
                                                 <div>
                                                     <div style="float:left"><img src="images/menu/historial.png" style="border-width:0px;"/></div>
-                                                    <div class="titleMenu">Historial</div>
+                                                    <div class="titleMenu">Evolución de unidades</div>
                                                 </div>
                                             </a>
                                         </li>
@@ -220,7 +220,7 @@
                     <div>
                         <div class="formHolderMessage panelMenu" style="padding-top: 22px !important; padding-left: 0px !important; padding-right: 0px !important;">		
                             <div style="width:366px;">
-                                <div class="encabezadoMenu"><h2> Datos de análisis </h2></div>
+                                <div class="encabezadoMenu"><h2> Información de gestión </h2></div>
                                 <div>
                                     <ul class="listSeccionMenu">
                                         <li class="liMenu">

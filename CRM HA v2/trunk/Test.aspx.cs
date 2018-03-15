@@ -59,13 +59,12 @@ namespace crm
                             /*switch (c.Nro)
                             {
                                 
-                                case 17:
-                                    if (c.IdCuentaCorriente == "10302")
-                                    {
+                                case 21:
+                                    
                                         //c.VariacionCAC = vCAC;
-                                        c.VariacionCAC = Convert.ToDecimal("0");
-                                        vCAC = Convert.ToDecimal("0");
-                                    }
+                                        c.VariacionCAC = Convert.ToDecimal("3,52600");
+                                        vCAC = Convert.ToDecimal("3,52600");
+                                   
                                     //1,01000
                                     break;
 
@@ -197,6 +196,7 @@ namespace crm
 
                             c.Estado = Convert.ToInt16(estadoCuenta_Cuota.Activa);
                             c.IdRegistroPago = "-1"; //Se guarda con menos -1, hasta que se asocie un pago
+                            c.Enviado = false;
                             c.Save();
                             _nroCuota++;
                             _cuotasRestantes--;
@@ -211,7 +211,7 @@ namespace crm
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            ActualizarIndiceCACCuotas("10509", "218", 18, 24);
+            ActualizarIndiceCACCuotas("10624", "466", 3, 8);
         }
 
         protected void Button2_Click(object sender, EventArgs e)

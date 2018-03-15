@@ -40,15 +40,18 @@ namespace DLL.Negocio
             get { return id; }
             set { id = value; }
         }
+
         public string IdEmpresa
         {
             get { return idEmpresa; }
             set { idEmpresa = value; }
         }
+
         public string GetEmpresa
         {
             get { return cEmpresa.Load(IdEmpresa).GetNombreCompleto; }
         }
+        
         public string GetEmpresaMail
         {
             get { return cEmpresa.Load(IdEmpresa).Mail; }
@@ -59,18 +62,21 @@ namespace DLL.Negocio
             get { return cantCuotas; }
             set { cantCuotas = value; }
         }
+        
         public decimal Total
         {
             get { return total; }
             set { total = value; }
         }
+        
         public string GetTotal
         {
             get
-            { //return total.ToString("N2").Replace(".", ""); 
+            { 
                 return String.Format("{0:#,#0.00}", Total);
             }
         }
+        
         public string GetTotalPesos
         {
             get
@@ -357,16 +363,19 @@ namespace DLL.Negocio
                 return _formaPago;
             }
         }
+        
         public string IdIndiceCAC
         {
             get { return idIndiceCAC; }
             set { idIndiceCAC = value; }
         }
+       
         public string IdUnidad
         {
             get { return idUnidad; }
             set { idUnidad = value; }
         }
+        
         public string GetUnidad
         {
             get { return cUnidad.Load(IdUnidad).UnidadFuncional; }
@@ -376,9 +385,6 @@ namespace DLL.Negocio
         {
             get
             {
-                /*cEmpresaUnidad proyecto = cEmpresaUnidad.Load(IdEmpresaUnidad);
-                return cProyecto.Load(proyecto.IdProyecto).Descripcion;*/
-                
                 ArrayList proyectos = cProyecto.GetProyectoByIdEmpresaAndIdOperacionVenta(IdEmpresa, Id);
                 int count = 1;
                 string texto = null;
@@ -438,11 +444,13 @@ namespace DLL.Negocio
             get { return unidadFuncional; }
             set { unidadFuncional = value; }
         }
+        
         public int IdEstado
         {
             get { return idEstado; }
             set { idEstado = value; }
         }
+        
         public string GetEstado
         {
             get
@@ -463,11 +471,13 @@ namespace DLL.Negocio
                 return _estado;
             }
         }
+        
         public decimal Anticipo
         {
             get { return anticipo; }
             set { anticipo = value; }
         }
+        
         public string GetAnticipo
         {
             get { return String.Format("{0:#,#0.00}", Anticipo); }
@@ -478,21 +488,25 @@ namespace DLL.Negocio
             get { return iva; }
             set { iva = value; }
         }
+        
         public string IdEmpresaUnidad
         {
             get { return idEmpresaUnidad; }
             set { idEmpresaUnidad = value; }
         }
+        
         public string IdOperacionVenta
         {
             get { return idOperacionVenta; }
             set { idOperacionVenta = value; }
         }
+        
         public string MonedaAcordada
         {
             get { return monedaAcordada; }
             set { monedaAcordada = value; }
         }
+        
         public string GetMoneda
         {
             get
@@ -516,6 +530,30 @@ namespace DLL.Negocio
             get { return textoAnulado; }
             set { textoAnulado = value; }
         }
+
+        public string CantCuotasDolar
+        {
+            get
+            {
+                return String.Format("{0:#,#0}", cFormaPagoOV.GetCantCuotas(IdOperacionVenta, (Int16)tipoMoneda.Dolar, false, false));
+            }
+        }
+
+        public string CantCuotasPesosCAC
+        {
+            get
+            {
+                return String.Format("{0:#,#0}", cFormaPagoOV.GetCantCuotas(IdOperacionVenta, (Int16)tipoMoneda.Pesos, true, false));
+            }
+        }
+
+        public string CantCuotasPesosUVA
+        {
+            get
+            {
+                return String.Format("{0:#,#0}", cFormaPagoOV.GetCantCuotas(IdOperacionVenta, (Int16)tipoMoneda.Pesos, false, true));
+            }
+        }
         #endregion
 
         #region Acceso a Datos
@@ -528,6 +566,12 @@ namespace DLL.Negocio
         {
             cCuentaCorrienteDAO DAO = new cCuentaCorrienteDAO();
             return DAO.Save(this);
+        }
+
+        public static List<cCuentaCorriente> GetCuentaCorrienteLastTransactions()
+        {
+            cCuentaCorrienteDAO DAO = new cCuentaCorrienteDAO();
+            return DAO.GetCuentaCorrienteLastTransactions();
         }
 
         public static List<cCuentaCorriente> GetCuentaCorriente(string _idEmpresa, Int16 _estado, string _obra, Int16 _moneda)

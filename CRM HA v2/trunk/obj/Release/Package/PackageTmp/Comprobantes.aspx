@@ -132,7 +132,6 @@
                                         <td style="width: 6%; text-align: center">NRO.</td>
                                         <td style="width: 10%; text-align: center">CLIENTE</td>
                                         <td style="width: 4%; text-align: center">FECHA</td>
-                                        <td style="width: 4%; text-align: center">ESTADO</td>
                                         <td style="width: 6%; text-align: center">IMPORTE</td>
                                         <td style="width: 1%;"></td>
                                     </tr>
@@ -142,7 +141,6 @@
                                 </tbody>  
                                 <tfoot class="footerTable">
                                     <tr>
-                                        <td style="width: 3%;"></td>
                                         <td style="width: 3%;"></td>
                                         <td style="width: 3%;"></td>
                                         <td style="width: 3%;"></td>
@@ -163,9 +161,6 @@
                             </td>
                             <td style="width: 4%; text-align: center">
                                 <asp:Label ID="lbFecha" runat="Server" Text='<%#Eval("Fecha", "{0:dd/MM/yyyy}") %>'/>
-                            </td>
-                            <td style="width: 4%; text-align: center">
-                                <asp:Label ID="lbEstado" runat="Server" Text='<%#Eval("GetEstado") %>'/>
                             </td>
                             <td style="width: 6%; text-align: right">
                                 <asp:Label ID="lbMonto" runat="Server" Text='<%#Eval("GetMonto") %>'/>
@@ -201,7 +196,6 @@
                                         <td style="width: 6%; text-align: center">NRO.</td>
                                         <td style="width: 10%; text-align: center">CLIENTE</td>
                                         <td style="width: 4%; text-align: center">FECHA</td>
-                                        <td style="width: 4%; text-align: center">ESTADO</td>
                                         <td style="width: 6%; text-align: center">IMPORTE</td>
                                         <td style="width: 1%;"></td>
                                     </tr>
@@ -211,7 +205,6 @@
                                 </tbody>  
                                 <tfoot class="footerTable">
                                     <tr>
-                                        <td style="width: 3%;"></td>
                                         <td style="width: 3%;"></td>
                                         <td style="width: 3%;"></td>
                                         <td style="width: 3%;"></td>
@@ -232,9 +225,6 @@
                             </td>
                             <td style="text-align: center">
                                 <asp:Label ID="lbFecha" runat="Server" Text='<%#Eval("Fecha", "{0:dd/MM/yyyy}") %>'/>
-                            </td>
-                            <td style="text-align: center">
-                                <asp:Label ID="lbEstado" runat="Server" Text='<%#Eval("GetEstado") %>'/>
                             </td>
                             <td style="text-align: right">
                                 <asp:Label ID="lbMonto" runat="Server" Text='<%#Eval("GetMonto") %>'/>
@@ -270,7 +260,6 @@
                                         <td style="width: 6%; text-align: center">NRO.</td>
                                         <td style="width: 10%; text-align: center">CLIENTE</td>
                                         <td style="width: 4%; text-align: center">FECHA</td>
-                                        <td style="width: 4%; text-align: center">ESTADO</td>
                                         <td style="width: 6%; text-align: center">IMPORTE</td>
                                         <td style="width: 1%;"></td>
                                     </tr>
@@ -280,7 +269,6 @@
                                 </tbody> 
                                 <tfoot class="footerTable">
                                     <tr>
-                                        <td style="width: 3%;"></td>
                                         <td style="width: 3%;"></td>
                                         <td style="width: 3%;"></td>
                                         <td style="width: 3%;"></td>
@@ -301,9 +289,6 @@
                             </td>
                             <td style="text-align: center">
                                 <asp:Label ID="lbFecha" runat="Server" Text='<%#Eval("Fecha", "{0:dd/MM/yyyy}") %>'/>
-                            </td>
-                            <td style="text-align: center">
-                                <asp:Label ID="lbEstado" runat="Server" Text='<%#Eval("GetEstado") %>'/>
                             </td>
                             <td style="text-align: right">
                                 <asp:Label ID="lbMonto" runat="Server" Text='<%#Eval("GetMonto") %>'/>
@@ -339,7 +324,6 @@
                                         <td style="width: 6%; text-align: center">NRO.</td>
                                         <td style="width: 10%; text-align: center">CLIENTE</td>
                                         <td style="width: 4%; text-align: center">FECHA</td>
-                                        <td style="width: 4%; text-align: center">ESTADO</td>
                                         <td style="width: 6%; text-align: center">IMPORTE</td>
                                         <td style="width: 1%;"></td>
                                     </tr>
@@ -349,7 +333,6 @@
                                 </tbody>  
                                 <tfoot class="footerTable">
                                     <tr>
-                                        <td style="width: 3%;"></td>
                                         <td style="width: 3%;"></td>
                                         <td style="width: 3%;"></td>
                                         <td style="width: 3%;"></td>
@@ -370,9 +353,6 @@
                             </td>
                             <td style="text-align: center">
                                 <asp:Label ID="lbFecha" runat="Server" Text='<%#Eval("Fecha", "{0:dd/MM/yyyy}") %>'/>
-                            </td>
-                            <td style="text-align: center">
-                                <asp:Label ID="lbEstado" runat="Server" Text='<%#Eval("GetEstado") %>'/>
                             </td>
                             <td style="text-align: right">
                                 <asp:Label ID="lbMonto" runat="Server" Text='<%#Eval("GetMonto") %>'/>
@@ -416,7 +396,6 @@
                                         <td style="width: 6%; text-align: center">NRO.</td>
                                         <td style="width: 10%; text-align: center">CLIENTE</td>
                                         <td style="width: 4%; text-align: center">FECHA</td>
-                                        <td style="width: 4%; text-align: center">ESTADO</td>
                                         <td style="width: 6%; text-align: center">IMPORTE</td>
                                         <td style="width: 1%;"></td>
                                     </tr>
@@ -426,7 +405,6 @@
                                 </tbody>
                                 <tfoot class="footerTable">
                                     <tr>
-                                        <td style="width: 3%;"></td>
                                         <td style="width: 3%;"></td>
                                         <td style="width: 3%;"></td>
                                         <td style="width: 3%;"></td>
@@ -447,9 +425,6 @@
                             </td>
                             <td style="text-align: center">
                                 <asp:Label ID="lbFecha" runat="Server" Text='<%#Eval("Fecha", "{0:dd/MM/yyyy}") %>'/>
-                            </td>
-                            <td style="text-align: center">
-                                <asp:Label ID="lbEstado" runat="Server" Text='<%#Eval("GetEstado") %>'/>
                             </td>
                             <td style="text-align: right">
                                 <asp:Label ID="lbMonto" runat="Server" Text='<%#Eval("GetMonto") %>'/>
@@ -481,7 +456,6 @@
                                         <td style="width: 6%; text-align: center">NRO.</td>
                                         <td style="width: 10%; text-align: center">CLIENTE</td>
                                         <td style="width: 4%; text-align: center">FECHA</td>
-                                        <td style="width: 4%; text-align: center">ESTADO</td>
                                         <td style="width: 6%; text-align: center">IMPORTE</td>
                                         <td style="width: 1%;"></td>
                                     </tr>
@@ -491,7 +465,6 @@
                                 </tbody>
                                 <tfoot class="footerTable">
                                     <tr>
-                                        <td style="width: 3%;"></td>
                                         <td style="width: 3%;"></td>
                                         <td style="width: 3%;"></td>
                                         <td style="width: 3%;"></td>
@@ -512,9 +485,6 @@
                             </td>
                             <td style="text-align: center">
                                 <asp:Label ID="lbFecha" runat="Server" Text='<%#Eval("Fecha", "{0:dd/MM/yyyy}") %>'/>
-                            </td>
-                            <td style="text-align: center">
-                                <asp:Label ID="lbEstado" runat="Server" Text='<%#Eval("GetEstado") %>'/>
                             </td>
                             <td style="text-align: right">
                                 <asp:Label ID="lbMonto" runat="Server" Text='<%#Eval("GetMonto") %>'/>

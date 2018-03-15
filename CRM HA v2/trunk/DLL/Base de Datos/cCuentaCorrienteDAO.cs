@@ -71,6 +71,29 @@ namespace DLL.Base_de_Datos
                 return cDataBase.GetInstance().UpdateObject(cuentacorriente.Id, GetTable, AttributesClass(cuentacorriente));
         }
 
+        public List<cCuentaCorriente> GetCuentaCorrienteLastTransactions()
+        {
+            DateTime hoy = DateTime.Now;
+
+            List<cCuentaCorriente> cc = new List<cCuentaCorriente>();
+            string query = "SELECT TOP(25)cc.id FROM tCuentaCorriente cc INNER JOIN tCuota c ON cc.id=c.idCuentaCorriente INNER JOIN tItemCCU i ON i.idCuota=c.id ";
+            query += " INNER JOIN tEmpresa e ON e.id = cc.idEmpresa ";
+            query += " WHERE i.fecha <= @fecha AND cc.estado= '" + (Int16)estadoCuenta_Cuota.Activa + "' ORDER BY i.fecha DESC";
+
+            SqlCommand com = new SqlCommand(query);
+            com.Parameters.Add("@fecha", SqlDbType.DateTime);
+            com.Parameters["@fecha"].Value = hoy;
+
+            ArrayList idList = cDataBase.GetInstance().ExecuteReader(com);
+            if (idList == null)
+                return null;
+            for (int i = 0; idList.Count > i; i++)
+            {
+                cc.Add(Load(Convert.ToString(idList[i])));
+            }
+            return cc;
+        }
+
         public List<cCuentaCorriente> GetCuentaCorriente(string _idEmpresa, Int16 _estado, string _obra, Int16 _moneda)
         {
             List<cCuentaCorriente> cc = new List<cCuentaCorriente>();

@@ -519,3 +519,8 @@ section modalText {margin-left: 4px; font-family: Tahoma,Verdana,Arial,Helvetica
 .bodyPendiente{padding: 0px 15px 3px 6px !important; width: 653px; background-color: rgba(125,120,130,.1); overflow: hidden; float: right; border-left: 4px solid rgba(100, 100, 100, .1); margin: 0px 0 0 1px; -webkit-box-shadow: -1px 0px 0px rgba(0, 0, 0, 0.2); -moz-box-shadow: -1px 0px 0px rgba(0, 0, 0, 0.2); box-shadow: -1px 0px 0px rgba(0, 0, 0, 0.2); -webkit-border-top-left-radius: 5px; -webkit-border-top-right-radius: 5px; -moz-border-radius-topleft: 5px; -moz-border-radius-topright: 5px; border-radius: 5px;}
 .linkPendiente{text-decoration: none; font-size: 20px; letter-spacing: 0px; color: #777; text-shadow: 0px 1px 0px #fff;}
 .itemPendiente{width: 270px; border: 1px solid rgba(205, 205, 205, 3) !important; padding: 16px 14px 0px 12px !important;}
+
+.mailEnviado { background-color: #b9f6ca !Important; }
+.colorInherit { background-color: inherit; }
+
+.error { background-color: #ffcdd2 !Important; }

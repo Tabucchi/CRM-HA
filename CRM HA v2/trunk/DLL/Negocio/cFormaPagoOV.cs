@@ -195,6 +195,12 @@ namespace DLL.Negocio
             return DAO.LoadTableFormaPago(_idEmpresa, _idUnidad);
         }
 
+        public static Int16 GetCantCuotas(string _idOperacionVenta, Int16 moneda, bool cac, bool uva)
+        {
+            cFormaPagoOVDAO DAO = new cFormaPagoOVDAO();
+            return DAO.GetCantCuotas(_idOperacionVenta, moneda, cac, uva);
+        }
+
         public static DataTable GetDataTableFormaPago(string _idEmpresa, string _idUnidad)
         {
             int count = 1;

@@ -45,7 +45,8 @@
                     <span>Moneda/índice</span>
                     <asp:DropDownList ID="cbMonedaIndice" runat="server" Height="32px"></asp:DropDownList>
                 </label>
-                <label class="col3 rigthLabel" style="margin-right: 38px !important">
+                <label class="col3 rigthLabel" style="margin-right: 38px !important; width:15%">
+                    <asp:Button ID="btnVerTodos" Text="Ver todos" CssClass="formBtnGrey1" runat="server" style="margin-left: 8px;" OnClick="btnVerTodos_Click"/>                 
                     <asp:Button ID="btnBuscar" Text="Buscar" CssClass="formBtnNar" runat="server" onclick="btnBuscar_Click" />
                 </label>
             </div>
@@ -61,10 +62,13 @@
                         <tr>     
                             <td style="width: 20px; text-align:center">CLIENTE</td>                         
                             <td style="width: 30px; text-align:center">OBRA</td>   
-                            <td style="width: 10px; text-align:center">MONEDA ACORDADA</td>
+                            <%--<td style="width: 10px; text-align:center">MONEDA ACORDADA</td>--%>
                             <td style="width: 10px; text-align:center">VALOR DE VENTA (PESOS)</td>
-                            <td style="width: 10px; text-align:center">SALDO (PESOS)</td>
-                            <td style="width: 5px;  text-align:center">ESTADO</td>
+                            <td style="width: 10px; text-align:center">DÓLAR</td>
+                            <td style="width: 10px; text-align:center">PESOS/CAC</td>
+                            <td style="width: 10px; text-align:center">PESOS/UVA</td>
+                            <%--<td style="width: 10px; text-align:center">SALDO (PESOS)</td>
+                            <td style="width: 5px;  text-align:center">ESTADO</td>--%>
                             <td style="width: 5px;  text-align:center"></td>
                         </tr>
                     </thead>
@@ -75,10 +79,13 @@
                         <tr>
                             <td style="width: 3%;"></td>
                             <td style="width: 3%;"></td>
-                            <td style="width: 3%;"></td>
-                            <td style="width: 3%; text-align:right"><a href="#" alt="Monto Acordado" class="tooltipTop tooltipColor" style="margin-left: -8px;"><b><asp:Label ID="lbValorVenta" runat="server"></asp:Label></b></a></td>
-                            <td style="width: 3%; text-align:right"><a href="#" alt="Saldo" class="tooltipTop tooltipColor" style="margin-left: -8px;"><b><asp:Label ID="lbSaldo" runat="server"></asp:Label></b></a></td>
-                            <td style="width: 1%;"></td>
+                            <%--<td style="width: 3%;"></td>--%>
+                            <td style="width: 3%; text-align:right"><a href="#" alt="Monto Acordado" class="tooltipTop tooltipColor" style="margin-left: -8px; margin-right: 4px;"><b><asp:Label ID="lbValorVenta" runat="server"></asp:Label></b></a></td>
+                            <td style="width: 3%; text-align:center"><b><asp:Label ID="lbValorDolar" runat="server"></asp:Label></b></td>
+                            <td style="width: 3%; text-align:center"><b><asp:Label ID="lbValorCAC" runat="server"></asp:Label></b></td>
+                            <td style="width: 3%; text-align:center"><b><asp:Label ID="lbValorUVA" runat="server"></asp:Label></b></td>
+                           <%-- <td style="width: 3%; text-align:right"><a href="#" alt="Saldo" class="tooltipTop tooltipColor" style="margin-left: -8px;"><b><asp:Label ID="lbSaldo" runat="server"></asp:Label></b></a></td>
+                            <td style="width: 1%;"></td>--%>
                             <td style="width: 1%;"></td>
                         </tr>
                     </tfoot>                        
@@ -98,17 +105,24 @@
                         <asp:Label ID="lbNombre" runat="Server" Text='<%#Eval("GetProyecto") %>' />
                     </a>
                 </td>                
-                <td style="text-align:center">
+                <%--<td style="text-align:center">
                     <a href="#" alt="Moneda Acordada" class="tooltip tooltipColor">
                         <asp:Label ID="Label6" runat="Server" Text='<%#Eval("GetMoneda") %>' />
                     </a>
-                </td>
+                </td>--%>
                 <td style="text-align:right">
-                    
-                        <asp:Label ID="lbTotalPesos" runat="Server" Text='<%#Eval("GetTotalPesos") %>' />
-                    
+                    <asp:Label ID="lbTotalPesos" runat="Server" Text='<%#Eval("GetTotalPesos") %>' />
                 </td>
-                <td style="text-align:right">
+                <td style="text-align:center">
+                    <asp:Label ID="lbCantCuotasDolar" runat="Server" Text='<%#Eval("CantCuotasDolar") %>' />
+                </td>
+                <td style="text-align:center">
+                    <asp:Label ID="lbCantCuotasPesosCAC" runat="Server" Text='<%#Eval("CantCuotasPesosCAC") %>' />
+                </td>
+                <td style="text-align:center">
+                    <asp:Label ID="lbCantCuotasPesosUVA" runat="Server" Text='<%#Eval("CantCuotasPesosUVA") %>' />
+                </td>
+                <%--<td style="text-align:right">
                     <a href="#" alt="Saldo" class="tooltip tooltipColor">
                         <asp:Label ID="lbSaldoPesos" runat="Server" Text='<%#Eval("GetSaldoPesos") %>' />
                     </a>
@@ -117,7 +131,7 @@
                     <a href="#" alt="Estado" class="tooltip tooltipColor">
                         <asp:Label ID="Label4" runat="Server" Text='<%#Eval("GetEstado") %>' />
                     </a>
-                </td>
+                </td>--%>
                 <td>
                     <a class="detailBtn" href="DetalleCuota2.aspx?idCC=<%# Eval("id") %>"></a>
                 </td>

@@ -7,7 +7,7 @@
     <ajax:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server" EnableScriptGlobalization="True" />
     <section>
         <div class="headOptions">
-            <div style="float:left"><h2>Resumen Saldos</h2></div>
+            <div style="float:left"><h2>Control de índices</h2></div>
             <%--<div style="float:right">
                 <label class="rigthLabel" style="width: 37%;">
                     <asp:Button ID="btnDescargar" runat="server" Text="Descargar" CssClass="formBtnNar" OnClick="btnDescargar_Click" style="margin-right: 25px;"/>
@@ -26,7 +26,15 @@
                 </div>
             </section>
 
-             <asp:ListView ID="lvSaldosCAC" runat="server">
+            <section>
+                <div class="formHolder" style="padding-bottom: 0px !important; background-color: #ffe0b2;">
+                    <div class="formHolderLine">
+                        <b style="font-size: 16px; color: #666;">Variación mensual: &nbsp;<asp:Label ID="lbTotalVariacionCac" runat="server" /></b>
+                    </div>
+                </div>  
+            </section>
+
+            <asp:ListView ID="lvSaldosCAC" runat="server">
                 <LayoutTemplate>
                     <section>            
                         <table style="width:100%">                            
@@ -34,7 +42,7 @@
                                 <tr>     
                                     <td class="fontListview" style="width: 25%; text-align: center">CLIENTE</td>
                                     <td class="fontListview" style="width: 5%; text-align: center">NRO. CUOTA</td>
-                                    <td class="fontListview" style="width: 5%; text-align: center">VARIACIÓN</td>
+                                    <td class="fontListview" style="width: 5%; text-align: center">VARIACIÓN (%)</td>
                                     <td class="fontListview" style="width: 15%; text-align: center">SALDO ANTERIOR</td>
                                     <td class="fontListview" style="width: 15%; text-align: center">SALDO ACTUAL</td>  
                                     <td class="fontListview" style="width: 15%; text-align: center">DIFERENCIA SALDOS</td> 
@@ -91,6 +99,14 @@
                 </div>
             </section>
 
+            <section>
+                <div class="formHolder" style="padding-bottom: 0px !important; background-color: #ffe0b2;">
+                    <div class="formHolderLine">
+                        <b style="font-size: 16px; color: #666;">Variación mensual: &nbsp;<asp:Label ID="lbTotalVariacionUva" runat="server" /></b>
+                    </div>
+                </div>  
+            </section>
+
             <asp:ListView ID="lvSaldosUVA" runat="server">
                 <LayoutTemplate>
                     <section>            
@@ -99,7 +115,7 @@
                                 <tr>     
                                     <td class="fontListview" style="width: 25%; text-align: center">CLIENTE</td>
                                     <td class="fontListview" style="width: 5%; text-align: center">NRO. CUOTA</td>
-                                    <td class="fontListview" style="width: 5%; text-align: center">VARIACIÓN</td>
+                                    <td class="fontListview" style="width: 5%; text-align: center">VARIACIÓN (%)</td>
                                     <td class="fontListview" style="width: 15%; text-align: center">SALDO ANTERIOR</td>
                                     <td class="fontListview" style="width: 15%; text-align: center">SALDO ACTUAL</td>  
                                     <td class="fontListview" style="width: 15%; text-align: center">DIFERENCIA SALDOS</td>                                  

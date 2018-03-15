@@ -113,6 +113,25 @@ namespace DLL.Base_de_Datos
                 formasPago.Add(Load(Convert.ToString(idList[i])));
             }
             return formasPago;
-        }       
+        }
+
+        public Int16 GetCantCuotas(string _idOperacionVenta, Int16 moneda, bool cac, bool uva)
+        {
+            string query = "SELECT Sum(fp.cantCuotas) FROM tFormaPagoOV fp INNER JOIN tOperacionVenta op ON fp.idOperacionVenta=op.id WHERE fp.idOperacionVenta='" + _idOperacionVenta + "' AND fp.moneda='" + moneda + "' ";
+            
+            if(cac==true)
+                query += " AND op.cac='" + Convert.ToInt16(cac) + "'";
+
+            if(uva==true)
+                query += " AND op.uva='" + Convert.ToInt16(uva) + "'";
+
+            SqlCommand com = new SqlCommand(query);
+            string result = cDataBase.GetInstance().ExecuteScalar(com);
+
+            if (!string.IsNullOrEmpty(result))
+                return Convert.ToInt16(cDataBase.GetInstance().ExecuteScalar(com));
+            else
+                return 0;
+        }
     }
 }

@@ -108,6 +108,7 @@ header nav ul li a:hover span.admin { background-position: 0px -29px;}
     nav span.admin-ind 	{background-image: url(../images/icons/icon_28.png);}
 	nav span.admin-est 	{background-image: url(../images/icons/icon_14.png);}
     nav span.admin-stk 	{background-image: url(../images/icons/icon_29.png);}
+nav span.Operaciones 	{background-image: url(../images/icons/icon_49.png); margin-top: 4px; background-repeat: no-repeat;}
 
 nav span.list-proyecto{background-image: url(../images/icons/icon_34.png); background-repeat: no-repeat;}
 nav span.list-reserva{background-image: url(../images/icons/icon_35.png); background-repeat: no-repeat;}
@@ -117,12 +118,13 @@ nav span.list-pagos{background-image: url(../images/icons/icon_38.png); backgrou
 nav span.list-cc{background-image: url(../images/icons/icon_39.png); background-repeat: no-repeat;}
 nav span.list-ccc{background-image: url(../images/icons/icon_40.png); background-repeat: no-repeat;}
 nav span.list-cco{background-image: url(../images/icons/icon_41.png); background-repeat: no-repeat;}
+nav span.list-tdc{background-image: url(../images/icons/icon_48.png); background-repeat: no-repeat;}
 nav span.list-comprobantes{background-image: url(../images/icons/icon_42.png); background-repeat: no-repeat;}
 nav span.list-moroso{background-image: url(../images/icons/icon_43.png); background-repeat: no-repeat;}
 nav span.list-vendidas{background-image: url(../images/icons/icon_44.png); background-repeat: no-repeat;}
 nav span.list-mail{background-image: url(../images/icons/icon_45.png); background-repeat: no-repeat;}
 nav span.list-resumen{background-image: url(../images/icons/icon_46.png); background-repeat: no-repeat;}
-nav span.list-resumenSaldos{background-image: url(../images/icons/icon_17.png); background-repeat: no-repeat;}
+nav span.list-resumenSaldos{background-image: url(../images/icons/icon_47.png); background-repeat: no-repeat;}
 
 #wrapper { background-image: url(../images/bg-content.jpg); background-repeat: repeat-x; background-position: center top;
 	border-top: 1px solid #fff; overflow: auto; height:900px}

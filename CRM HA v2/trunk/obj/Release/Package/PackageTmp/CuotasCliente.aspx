@@ -71,6 +71,7 @@
                     <thead id="tableHead">
                         <tr>     
                             <td class="fontListview" style="width: 16%; text-align: center">CLIENTE</td>
+                            <td class="fontListview" style="width: 16%; text-align: center">SALDO CUENTA CORRIENTE</td>
                             <td class="fontListview" style="width: 10%; text-align: center"><asp:Label ID="lbMes1" runat="server"></asp:Label></td>
                             <td class="fontListview" style="width: 10%; text-align: center"><asp:Label ID="lbMes2" runat="server"></asp:Label></td>
                             <td class="fontListview" style="width: 10%; text-align: center"><asp:Label ID="lbMes3" runat="server"></asp:Label></td>
@@ -92,13 +93,14 @@
                     <table style="width:100%">
                         <tfoot class="footerTable">
                             <tr>
-                                <td style="width: 8%;"></td>                           
+                                <td style="width: 8%;"></td>      
+                                <td style="width: 4%; text-align:right"><b><asp:Label ID="lbTotalCC" runat="server"></asp:Label></b></td>                     
                                 <td style="width: 3%; text-align:right"><b><asp:Label ID="lbTotalMes1" runat="server"></asp:Label></b></td>
                                 <td style="width: 3%; text-align:right"><b><asp:Label ID="lbTotalMes2" runat="server"></asp:Label></b></td>
                                 <td style="width: 3%; text-align:right"><b><asp:Label ID="lbTotalMes3" runat="server"></asp:Label></b></td>
-                                <td style="width: 3%; text-align:right"><b style="margin-right: 25px;"><asp:Label ID="lbTotalMes4" runat="server"></asp:Label></b></td>
-                                <td style="width: 2%; text-align:right"><b style="margin-right: 4px;"><asp:Label ID="lbTotalMesesRestantes" runat="server"></asp:Label></b></td>
-                                <td style="width: 4%; text-align:right"><b style="margin-right: 14px;"><asp:Label ID="lbTotalDeuda" runat="server"></asp:Label></b></td>
+                                <td style="width: 3%; text-align:right"><b style="margin-right: 10px;"><asp:Label ID="lbTotalMes4" runat="server"></asp:Label></b></td>
+                                <td style="width: 2%; text-align:right"><b style="margin-right: -1px;"><asp:Label ID="lbTotalMesesRestantes" runat="server"></asp:Label></b></td>
+                                <td style="width: 4%; text-align:right"><b style="margin-right: 17px;"><asp:Label ID="lbTotalDeuda" runat="server"></asp:Label></b></td>
                             </tr>
                         </tfoot>                  
                     </table>
@@ -111,6 +113,9 @@
                 <td class="fontListview" style="width: 16%; text-align: center">
                     <asp:Label ID="lbIdCliente" runat="Server" Text='<%#Eval("idCliente") %>' Visible="false"/>
                     <asp:Label ID="lbCliente" runat="Server" Text='<%#Eval("cliente") %>' />
+                </td>
+                <td class="fontListview" style="width: 10%; text-align: right">
+                    <asp:Label ID="lbCC" runat="Server" Text='<%#Eval("saldoCtaCte") %>' />
                 </td>
                 <td class="fontListview" style="width: 10%; text-align: right">
                     <asp:Label ID="lbMes1" runat="Server" Text='<%#Eval("saldo1") %>' />

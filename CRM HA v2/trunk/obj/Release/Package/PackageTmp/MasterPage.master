@@ -33,7 +33,7 @@
                             <li><a href="./Proyecto.aspx"><span class="list-proyecto"></span>Obras</a></li>   
                             <li><a href="./ResumenObra.aspx"><span class="list-resumen"></span>Resumen de Obras</a></li>  
                             <asp:Panel ID="pnlReservas" runat="server" Visible="false"><li><a href="./ListadoReserva.aspx"><span class="list-reserva"></span>Reservas</a></li></asp:Panel>                         
-                            <li><a href="./Historial.aspx"><span class="list-historial"></span>Historial</a></li>
+                            <li><a href="./Historial.aspx"><span class="list-historial"></span>Evolución de unidades</a></li>
 						</ul>
 					</li>  
 					<li><a href="#"><span class="clientes"></span>Clientes</a>
@@ -47,16 +47,16 @@
 					</li>                      
                     <li>
                         <asp:Panel ID="pnlDatosAnalisis" runat="server" Visible="true">
-                        <a href="#"><span class="admin"></span>Datos de análisis</a>
+                        <a href="#"><span class="admin"></span>Información de gestión</a>
 						<ul>
-							<%--<li><a href="./CuotasCliente.aspx" style="font-size:11.5px"><span class="list-ccc"></span>Cuotas a cobrar por Cliente</a></li>--%>
-                            <li><a href="./MensajeConstruccion.aspx" style="font-size:11.5px"><span class="list-ccc"></span>Cuotas a cobrar por Cliente</a></li>
+							<li><a href="./CuotasCliente.aspx" style="font-size:11.5px"><span class="list-ccc"></span>Cuotas a cobrar por Cliente</a></li>
+                            <%--<li><a href="./MensajeConstruccion.aspx" style="font-size:11.5px"><span class="list-ccc"></span>Cuotas a cobrar por Cliente</a></li>--%>
                             <li><a href="./TotalDeudaCliente.aspx" style="font-size:11.5px"><span class="list-cco"></span>Total de deuda por cliente</a></li>
                             <li><a href="./CuotasObra.aspx" style="font-size:11.5px"><span class="list-cco"></span>Cuotas a cobrar por Obra</a></li>
                             <li><a href="./ResumenCuotasObra.aspx" style="font-size:11.5px"><span class="list-cco"></span>Resumen cuotas por Obra</a></li>                            
                             <li><a href="./UnidadesVendidas.aspx" style="font-size:11.5px"><span class="list-vendidas"></span>Unidades vendidas</a></li>
                             <li><a href="./Comprobantes.aspx" style="font-size:11.5px"><span class="list-comprobantes"></span>Comprobantes</a></li>
-                            <li><a href="./ResumenSaldo.aspx" style="font-size:11.5px"><span class="resumenSaldos"></span>Resumen Saldos</a></li>
+                            <li><a href="./ResumenSaldo.aspx" style="font-size:11.5px"><span class="resumenSaldos"></span>Control de índices</a></li>
 						</ul>
                         </asp:Panel> 
 					</li>  

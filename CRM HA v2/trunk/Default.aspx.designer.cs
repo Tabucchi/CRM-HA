@@ -75,6 +75,15 @@ public partial class _Default {
     protected global::System.Web.UI.WebControls.Label lbCantOV;
     
     /// <summary>
+    /// Control pnlAdmin.
+    /// </summary>
+    /// <remarks>
+    /// Campo generado automáticamente.
+    /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Panel pnlAdmin;
+    
+    /// <summary>
     /// Control cbProyectos.
     /// </summary>
     /// <remarks>
@@ -100,60 +109,6 @@ public partial class _Default {
     /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     /// </remarks>
     protected global::System.Web.UI.WebControls.Panel pnlReservas;
-    
-    /// <summary>
-    /// Control divAgenda.
-    /// </summary>
-    /// <remarks>
-    /// Campo generado automáticamente.
-    /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    /// </remarks>
-    protected global::System.Web.UI.HtmlControls.HtmlGenericControl divAgenda;
-    
-    /// <summary>
-    /// Control pnlNuevoCliente.
-    /// </summary>
-    /// <remarks>
-    /// Campo generado automáticamente.
-    /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.Panel pnlNuevoCliente;
-    
-    /// <summary>
-    /// Control divCC.
-    /// </summary>
-    /// <remarks>
-    /// Campo generado automáticamente.
-    /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    /// </remarks>
-    protected global::System.Web.UI.HtmlControls.HtmlGenericControl divCC;
-    
-    /// <summary>
-    /// Control divOV.
-    /// </summary>
-    /// <remarks>
-    /// Campo generado automáticamente.
-    /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    /// </remarks>
-    protected global::System.Web.UI.HtmlControls.HtmlGenericControl divOV;
-    
-    /// <summary>
-    /// Control pnlNuevaOV.
-    /// </summary>
-    /// <remarks>
-    /// Campo generado automáticamente.
-    /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.Panel pnlNuevaOV;
-    
-    /// <summary>
-    /// Control divHistorial.
-    /// </summary>
-    /// <remarks>
-    /// Campo generado automáticamente.
-    /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    /// </remarks>
-    protected global::System.Web.UI.HtmlControls.HtmlGenericControl divHistorial;
     
     /// <summary>
     /// Control pnlDatos.
@@ -190,4 +145,112 @@ public partial class _Default {
     /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     /// </remarks>
     protected global::System.Web.UI.WebControls.Label lbCAC;
+    
+    /// <summary>
+    /// Control pnlUsuarioGerencia.
+    /// </summary>
+    /// <remarks>
+    /// Campo generado automáticamente.
+    /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Panel pnlUsuarioGerencia;
+    
+    /// <summary>
+    /// Control cbProyectosUsrGerencia.
+    /// </summary>
+    /// <remarks>
+    /// Campo generado automáticamente.
+    /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.DropDownList cbProyectosUsrGerencia;
+    
+    /// <summary>
+    /// Control btnProyectosUsrGerencia.
+    /// </summary>
+    /// <remarks>
+    /// Campo generado automáticamente.
+    /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Button btnProyectosUsrGerencia;
+    
+    /// <summary>
+    /// Control lbDolarUsrGerencia.
+    /// </summary>
+    /// <remarks>
+    /// Campo generado automáticamente.
+    /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Label lbDolarUsrGerencia;
+    
+    /// <summary>
+    /// Control lbUVAUsrGerencia.
+    /// </summary>
+    /// <remarks>
+    /// Campo generado automáticamente.
+    /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Label lbUVAUsrGerencia;
+    
+    /// <summary>
+    /// Control lbCACUsrGerencia.
+    /// </summary>
+    /// <remarks>
+    /// Campo generado automáticamente.
+    /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Label lbCACUsrGerencia;
+    
+    /// <summary>
+    /// Control pnlVendedor.
+    /// </summary>
+    /// <remarks>
+    /// Campo generado automáticamente.
+    /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Panel pnlVendedor;
+    
+    /// <summary>
+    /// Control cbProyectosVendedor.
+    /// </summary>
+    /// <remarks>
+    /// Campo generado automáticamente.
+    /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.DropDownList cbProyectosVendedor;
+    
+    /// <summary>
+    /// Control btnProyectosVendedor.
+    /// </summary>
+    /// <remarks>
+    /// Campo generado automáticamente.
+    /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Button btnProyectosVendedor;
+    
+    /// <summary>
+    /// Control lbDolarVendedor.
+    /// </summary>
+    /// <remarks>
+    /// Campo generado automáticamente.
+    /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Label lbDolarVendedor;
+    
+    /// <summary>
+    /// Control lbUVAVendedor.
+    /// </summary>
+    /// <remarks>
+    /// Campo generado automáticamente.
+    /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Label lbUVAVendedor;
+    
+    /// <summary>
+    /// Control lbCACVendedor.
+    /// </summary>
+    /// <remarks>
+    /// Campo generado automáticamente.
+    /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Label lbCACVendedor;
 }
