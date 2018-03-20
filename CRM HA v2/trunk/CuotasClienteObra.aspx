@@ -21,7 +21,7 @@
 
      <section>
         <div class="headOptions">
-            <div style="float:left"><h2>Cuotas a cobrar por cliente de la obra <asp:Label ID="lbObra" runat="Server" /></h2></div>
+            <div style="float:left"><h2>Cuotas a vencer por cliente de la obra <asp:Label ID="lbObra" runat="Server" /></h2></div>
             <div style="float:right">
                 <label class="rigthLabel" style="width: 37%;">
                     <asp:Button ID="btnDescargar" runat="server" Text="Descargar" CssClass="formBtnNar" OnClick="btnDescargar_Click" />
@@ -30,7 +30,7 @@
         </div>
         <div class="formHolder">
             <div class="headOptions headLine" style="padding-bottom: 0px;">
-                <div align="left" class="h7" style="float:left;width: 94%;margin-top: 9px;">Cuotas puras a cobrar sin gastos administrativos actualizada al primer vencimiento</div>
+                <div align="left" class="h7" style="float:left;width: 94%;margin-top: 9px;">Cuotas puras a vencer sin gastos administrativos actualizada al primer vencimiento. Saldos impagos en cuenta corriente.</div>
             </div>
         </div>
     </section>

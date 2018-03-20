@@ -91,6 +91,8 @@ namespace crm
             List<cCuentaCorriente> cc = cCuentaCorriente.GetCuentaCorriente("", Convert.ToInt16(ddlEstado.SelectedValue), "", (Int16)cbMonedaIndice.SelectedIndex);
             lvCC.DataSource = cc;
             lvCC.DataBind();
+
+            CalcularTotales(cc);
         }
         #endregion
 

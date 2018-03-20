@@ -36,8 +36,8 @@
                     </asp:DropDownList>
                 </label>
                 <label class="col3">
-                    <span>Estado</span>
-                    <asp:DropDownList ID="ddlEstado" runat="server" Height="32px"></asp:DropDownList>
+                    <span style="width: 30%;">Estado operación</span>
+                    <asp:DropDownList ID="ddlEstado" runat="server" Height="32px" Width="60%"></asp:DropDownList>
                 </label>
             </div>
             <div>

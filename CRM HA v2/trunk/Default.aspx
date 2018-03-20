@@ -362,7 +362,7 @@
                                                                     <a href="./CuotasCliente.aspx" class="linkMenu"><span class="clientes-dir"></span>
                                                                         <div>
                                                                             <div style="float:left"><img src="images/menu/cuotasClientes.png" style="border-width:0px;"/></div>
-                                                                            <div class="titleMenu">Cuotas a cobrar por cliente</div>
+                                                                            <div class="titleMenu">Cuotas a vencer por cliente</div>
                                                                         </div>
                                                                     </a>
                                                                 </li>
@@ -370,7 +370,7 @@
                                                                     <a href="./CuotasObra.aspx" class="linkMenu">
                                                                         <div>
                                                                             <div style="float:left"><img src="images/menu/cuotasObras.png" style="border-width:0px;"/></div>
-                                                                            <div class="titleMenu">Cuotas a cobrar por obra</div>
+                                                                            <div class="titleMenu">Saldos a cobrar por obra</div>
                                                                         </div>
                                                                     </a>
                                                                 </li>
@@ -391,7 +391,7 @@
                                                                     </a>
                                                                 </li>
                                                                 <li class="liMenu" style="margin-bottom:20px">
-                                                                    <a href="./Configuracion.aspx" class="linkMenu">
+                                                                    <a href="./ResumenSaldo.aspx" class="linkMenu">
                                                                         <div>
                                                                             <div style="float:left"><img src="images/menu/controlIndice.png" style="border-width:0px;"/></div>
                                                                             <div class="titleMenu">Control de índices</div>
@@ -525,7 +525,7 @@
                                                                 </a>
                                                             </div>
 
-                                                            <div style="float:right; width:150px; padding: 20px 88px 0 25px;">
+                                                            <div style="float:right; width:150px; padding: 20px 80px 0 25px;">
                                                                 <a href="./CuentaCorriente.aspx" class="linkMenu"><span class="clientes-dir"></span>
                                                                     <div>
                                                                         <div><img src="images/menu/cuentaCorriente.png" style="border-width:0px;"></div>
@@ -545,31 +545,40 @@
                                     <section>
                                         <div>
                                             <div class="formHolderMessage panelMenu" style="height: 153px; padding-top: 22px !important; padding-left: 0px !important; padding-right: 0px !important;">
-                                            <div style="width:480px; margin-bottom: 10px;">
-                                                <div class="encabezadoMenu"><h2> Operaciones de venta </h2></div>
-                                                <div>
-                                                    <div style="width:100%; text-align:center;">
-                                                        <div style="float:left; width:100px; padding: 20px 0 0 116px  !important;">
-                                                            <a href="./ListaOperacionVenta.aspx" class="linkMenu"><span class="clientes-dir"></span>
+                                                <div style="width:480px; margin-bottom: 10px;">
+                                                    <div class="encabezadoMenu"><h2> Operaciones de venta </h2></div>
+                                                    <div>
+                                                        <div style="width:100%; text-align:center;">
+                                                            <div style="float:left; width:100px; padding: 20px 0 0 40px;">
+                                                                <a href="./ListaOperacionVenta.aspx" class="linkMenu"><span class="clientes-dir"></span>
+                                                                    <div>
+                                                                        <div><img src="images/menu/operacionesVenta.png" style="border-width:0px;"></div>
+                                                                        <div>Operaciones de venta</div>
+                                                                    </div>
+                                                                </a>
+                                                            </div>
+                                                            <div style="display: inline-block; margin:0 auto; margin-left: 12px; width:100px; padding: 20px 0 0 28px;">
                                                                 <div>
-                                                                    <div><img src="images/menu/operacionesVenta.png" style="border-width:0px;"></div>
-                                                                    <div>Operaciones de venta</div>
+                                                                    <a href="./CC.aspx" class="linkMenu"><span class="clientes-dir"></span>
+                                                                        <div>
+                                                                            <div><img src="images/menu/historialPago.png" style="border-width:0px;"></div>
+                                                                            <div>Historial de pagos</div>
+                                                                        </div>
+                                                                    </a>
                                                                 </div>
-                                                            </a>
-                                                        </div>
-                                                                                
-                                                        <div style="float:right; width:150px; padding: 20px 88px 0 25px;">                                            
-                                                            <a href="./CC.aspx" class="linkMenu"><span class="clientes-dir"></span>
-                                                                <div>
-                                                                    <div><img src="images/menu/historialPago.png" style="border-width:0px;"></div>
-                                                                    <div>Historial de pagos</div>
-                                                                </div>
-                                                            </a>
+                                                            </div>                                        
+                                                            <div style="float:right; width:150px; padding: 20px 7px 0 9px;">                                            
+                                                                <a href="./Comprobantes.aspx" class="linkMenu"><span class="clientes-dir"></span>
+                                                                    <div>
+                                                                        <div><img src="images/menu/comprobantes.png" style="border-width:0px;"/></div>
+                                                                        <div>Comprobantes</div>
+                                                                    </div>
+                                                                </a>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
                                         </div>
                                     </section>
                                 </div>
@@ -578,58 +587,58 @@
 
                         <td>
                             <section>
+                                <div>
+                                    <div class="formHolderMessage panelMenu" style="padding-top: 22px !important; padding-left: 0px !important; padding-right: 0px !important;">		
+                                        <div style="width:366px;">
+                                            <div class="encabezadoMenu"><h2> Información de gestión </h2></div>
                                             <div>
-                                                <div class="formHolderMessage panelMenu" style="padding-top: 22px !important; padding-left: 0px !important; padding-right: 0px !important;">		
-                                                    <div style="width:366px;">
-                                                        <div class="encabezadoMenu"><h2> Información de gestión </h2></div>
-                                                        <div>
-                                                            <ul class="listSeccionMenu">
-                                                                <li class="liMenu">
-                                                                    <a href="./CuotasCliente.aspx" class="linkMenu"><span class="clientes-dir"></span>
-                                                                        <div>
-                                                                            <div style="float:left"><img src="images/menu/cuotasClientes.png" style="border-width:0px;"></div>
-                                                                            <div class="titleMenu">Cuotas a cobrar por cliente</div>
-                                                                        </div>
-                                                                    </a>
-                                                                </li>
-                                                                <li class="liMenu">
-                                                                    <a href="./CuotasObra.aspx" class="linkMenu">
-                                                                        <div>
-                                                                            <div style="float:left"><img src="images/menu/cuotasObras.png" style="border-width:0px;"></div>
-                                                                            <div class="titleMenu">Cuotas a cobrar por obra</div>
-                                                                        </div>
-                                                                    </a>
-                                                                </li>
-                                                                <li class="liMenu" style="margin-bottom:20px">
-                                                                    <a href="./TotalDeudaCliente.aspx" class="linkMenu">
-                                                                        <div>
-                                                                            <div style="float:left"><img src="images/menu/totaldeudacliente.png" style="border-width:0px;"/></div>
-                                                                            <div class="titleMenu">Total de deuda por cliente</div>
-                                                                        </div>
-                                                                    </a>
-                                                                </li>
-                                                                <li class="liMenu" style="margin-bottom:20px">
-                                                                    <a href="./UnidadesVendidas.aspx" class="linkMenu">
-                                                                        <div>
-                                                                            <div style="float:left"><img src="images/menu/vendidas.png" style="border-width:0px;"></div>
-                                                                            <div class="titleMenu">Unidades vendidas</div>
-                                                                        </div>
-                                                                    </a>
-                                                                </li>
-                                                                <li class="liMenu" style="margin-bottom:20px">
-                                                                    <a href="./Comprobantes.aspx" class="linkMenu">
-                                                                        <div>
-                                                                            <div style="float:left"><img src="images/menu/comprobantes.png" style="border-width:0px;"></div>
-                                                                            <div class="titleMenu">Comprobantes</div>
-                                                                        </div>
-                                                                    </a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                <ul class="listSeccionMenu">
+                                                    <li class="liMenu">
+                                                        <a href="./CuotasCliente.aspx" class="linkMenu"><span class="clientes-dir"></span>
+                                                            <div>
+                                                                <div style="float:left"><img src="images/menu/cuotasClientes.png" style="border-width:0px;"></div>
+                                                                <div class="titleMenu">Cuotas a vencer por cliente</div>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                    <li class="liMenu">
+                                                        <a href="./CuotasObra.aspx" class="linkMenu">
+                                                            <div>
+                                                                <div style="float:left"><img src="images/menu/cuotasObras.png" style="border-width:0px;"></div>
+                                                                <div class="titleMenu">Saldos a cobrar por obra</div>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                    <li class="liMenu" style="margin-bottom:20px">
+                                                        <a href="./TotalDeudaCliente.aspx" class="linkMenu">
+                                                            <div>
+                                                                <div style="float:left"><img src="images/menu/totaldeudacliente.png" style="border-width:0px;"/></div>
+                                                                <div class="titleMenu">Total de deuda por cliente</div>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                    <li class="liMenu" style="margin-bottom:20px">
+                                                        <a href="./UnidadesVendidas.aspx" class="linkMenu">
+                                                            <div>
+                                                                <div style="float:left"><img src="images/menu/vendidas.png" style="border-width:0px;"></div>
+                                                                <div class="titleMenu">Unidades vendidas</div>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                    <li class="liMenu" style="margin-bottom:20px">
+                                                        <a href="./ResumenSaldo.aspx" class="linkMenu">
+                                                            <div>
+                                                                <div style="float:left"><img src="images/menu/controlIndice.png" style="border-width:0px;"/></div>
+                                                                <div class="titleMenu">Control de índices</div>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                </ul>
                                             </div>
-                                        </section>       
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>       
                         </td>
                     </tr>
                 </table>
@@ -746,7 +755,7 @@
                                                             </a>
                                                         </div>
 
-                                                        <div style="float:right; width:150px; padding: 20px 88px 0 25px; !important;">
+                                                        <div style="float:right; width:150px; padding: 20px 80px 0 25px; !important;">
                                                             <a href="./CuentaCorriente.aspx" class="linkMenu"><span class="clientes-dir"></span>
                                                                 <div>
                                                                     <div><img src="images/menu/cuentaCorriente.png" style="border-width:0px;"></div>
@@ -770,20 +779,29 @@
                                                 <div class="encabezadoMenu"><h2> Operaciones de venta </h2></div>
                                                 <div>
                                                     <div style="width:100%; text-align:center;">
-                                                        <div style="float:left; width:100px; padding: 20px 0 0 116px  !important;">
+                                                        <div style="float:left; width:100px; padding: 20px 0 0 40px;">
                                                             <a href="./ListaOperacionVenta.aspx" class="linkMenu"><span class="clientes-dir"></span>
                                                                 <div>
                                                                     <div><img src="images/menu/operacionesVenta.png" style="border-width:0px;"></div>
                                                                     <div>Operaciones de venta</div>
                                                                 </div>
                                                             </a>
+                                                        </div>
+                                                        <div style="display: inline-block; margin:0 auto; margin-left: 12px; width:100px; padding: 20px 0 0 28px;">
+                                                            <div>
+                                                                <a href="./CC.aspx" class="linkMenu"><span class="clientes-dir"></span>
+                                                                    <div>
+                                                                        <div><img src="images/menu/historialPago.png" style="border-width:0px;"></div>
+                                                                        <div>Historial de pagos</div>
+                                                                    </div>
+                                                                </a>
+                                                            </div>
                                                         </div>                                        
-                                        
-                                                        <div style="float:right; width:150px; padding: 20px 88px 0 25px;">                                            
-                                                            <a href="./CC.aspx" class="linkMenu"><span class="clientes-dir"></span>
+                                                        <div style="float:right; width:150px; padding: 20px 7px 0 9px;">                                            
+                                                            <a href="./Comprobantes.aspx" class="linkMenu"><span class="clientes-dir"></span>
                                                                 <div>
-                                                                    <div><img src="images/menu/historialPago.png" style="border-width:0px;"></div>
-                                                                    <div>Historial de pagos</div>
+                                                                    <div><img src="images/menu/comprobantes.png" style="border-width:0px;"/></div>
+                                                                    <div>Comprobantes</div>
                                                                 </div>
                                                             </a>
                                                         </div>

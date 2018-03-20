@@ -317,8 +317,33 @@ namespace DLL.Negocio
         public string ValidarIndice
         {
             get
-            {
-                decimal variacion = 0;
+            {                
+                decimal _variacion = 0;
+
+                if (Nro - 1 != 0)
+                {
+                    decimal _saldo = 0;
+
+                    cCuota lastCuota = cCuota.GetCuotaByNro(IdCuentaCorriente, Nro - 1, IdFormaPagoOV);
+                    _saldo = lastCuota.Saldo - lastCuota.Monto;
+
+                    cFormaPagoOV fp = cFormaPagoOV.Load(IdFormaPagoOV);
+                    if (fp.InteresAnual != 0)
+                        Saldo = (Saldo * 100) / ((fp.InteresAnual / 12) + 100);
+
+                    if (_saldo != 0)
+                        _variacion = (Saldo / _saldo) * 100;
+                }
+                else
+                {
+                    decimal _saldo = cFormaPagoOV.Load(IdFormaPagoOV).Monto;
+                    if (_saldo != 0)
+                        _variacion = (MontoAjustado * 100) / _saldo;
+                }
+
+                return String.Format("{0:#,#0.00}", _variacion - 100);
+
+                /*decimal variacion = 0;
 
                 if (Nro - 1 != 0)
                 {
@@ -338,7 +363,7 @@ namespace DLL.Negocio
                         variacion = (MontoAjustado * 100) / _saldo;
                 }
 
-                return String.Format("{0:#,#0.00}", variacion - 100);
+                return String.Format("{0:#,#0.00}", variacion - 100);*/
             }
         }
 

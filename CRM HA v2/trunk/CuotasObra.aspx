@@ -40,7 +40,7 @@
 
     <section>
         <div class="headOptions">
-            <div style="float:left"><h2>Cuotas a cobrar por obra</h2></div>
+            <div style="float:left"><h2>Saldos a cobrar por obra</h2></div>
             <div style="float:right">
                 <div style="width:100%">
                     <div style="float:left; margin-right:10px">
@@ -58,7 +58,7 @@
             <div class="formHolder" style="padding-bottom: 4px;">
                 <div class="headOptions headLine" style="padding-bottom: 0px !important;">
                     <div style="float:left">
-                        <div class="h7" style="padding-top: 9px;">Cuotas puras a cobrar sin gastos administrativos actualizada al primer vencimiento</div>
+                        <div class="h7" style="padding-top: 9px;">Cuotas puras a vencer sin gastos administrativos actualizada al primer vencimiento</div>
                     </div>
                 </div>
                 <div class="h7" style="margin-bottom: 5px;">Todos los valores están expresados en <b>pesos</b></div>
