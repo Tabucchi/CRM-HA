@@ -56,20 +56,18 @@ namespace crm
                             decimal vCAC = Convert.ToDecimal("0");
 
                             //CAMBIAR
-                            /*switch (c.Nro)
+                            switch (c.Nro)
                             {
                                 
-                                case 17:
-                                    if (c.IdCuentaCorriente == "10302")
-                                    {
+                                case 12:
                                         //c.VariacionCAC = vCAC;
-                                        c.VariacionCAC = Convert.ToDecimal("0");
-                                        vCAC = Convert.ToDecimal("0");
-                                    }
+                                    c.VariacionCAC = Convert.ToDecimal("3,52600");
+                                    vCAC = Convert.ToDecimal("3,526000");
+                                    
                                     //1,01000
                                     break;
 
-                            }*/
+                            }
 
 
                             decimal _saldo = cc.Saldo;
@@ -211,7 +209,7 @@ namespace crm
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            ActualizarIndiceCACCuotas("10509", "218", 18, 24);
+            ActualizarIndiceCACCuotas("10481", "256", 12, 48);
         }
 
         protected void Button2_Click(object sender, EventArgs e)
